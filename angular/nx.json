@@ -2,10 +2,10 @@
   "$schema": "./node_modules/nx/schemas/nx-schema.json",
   "generators": {
     "@nx/angular:application": {
-      "e2eTestRunner": "playwright",
-      "linter": "eslint",
       "style": "scss",
-      "unitTestRunner": "jest"
+      "linter": "eslint",
+      "unitTestRunner": "jest",
+      "e2eTestRunner": "playwright"
     },
     "@nx/angular:component": {
       "style": "scss"

@@ -14,7 +14,14 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@steffbeckers/crm/companies/data-access": [
+        "libs/crm/companies/data-access/src/index.ts"
+      ],
+      "@steffbeckers/crm/companies/feature": [
+        "libs/crm/companies/feature/src/index.ts"
+      ]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }
