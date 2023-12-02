@@ -1,1 +1,6 @@
-{{ store.companies() | json }}
+<h2>Companies</h2>
+<ul>
+  @for (company of store.companies(); track company.name) {
+  <li>{{ company.name }}</li>
+  }
+</ul>
