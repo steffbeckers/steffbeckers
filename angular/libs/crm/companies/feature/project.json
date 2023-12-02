@@ -2,7 +2,7 @@
   "name": "crm-companies-feature",
   "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "libs/crm/companies/feature/src",
-  "prefix": "steffbeckers",
+  "prefix": "sb",
   "tags": [],
   "projectType": "library",
   "targets": {
