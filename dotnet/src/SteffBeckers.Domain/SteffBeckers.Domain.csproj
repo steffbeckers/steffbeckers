@@ -10,7 +10,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\SteffBeckers.Domain.Shared\SteffBeckers.Domain.Shared.csproj" />
-  </ItemGroup>
+  <ProjectReference Include="..\..\modules\SteffBeckers.CRM\src\SteffBeckers.CRM.Domain\SteffBeckers.CRM.Domain.csproj" /></ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Volo.Abp.Emailing" Version="8.0.0-rc.2" />

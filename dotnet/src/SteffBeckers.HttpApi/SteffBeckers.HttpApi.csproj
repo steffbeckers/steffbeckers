@@ -10,7 +10,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\SteffBeckers.Application.Contracts\SteffBeckers.Application.Contracts.csproj" />
-  </ItemGroup>
+  <ProjectReference Include="..\..\modules\SteffBeckers.CRM\src\SteffBeckers.CRM.HttpApi\SteffBeckers.CRM.HttpApi.csproj" /></ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Volo.Abp.Account.HttpApi" Version="8.0.0-rc.2" />

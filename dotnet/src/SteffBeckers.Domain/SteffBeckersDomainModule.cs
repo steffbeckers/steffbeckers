@@ -1,4 +1,4 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 using SteffBeckers.MultiTenancy;
 using Volo.Abp.AuditLogging;
@@ -14,6 +14,7 @@ using Volo.Abp.PermissionManagement.Identity;
 using Volo.Abp.PermissionManagement.OpenIddict;
 using Volo.Abp.SettingManagement;
 using Volo.Abp.TenantManagement;
+using SteffBeckers.CRM;
 
 namespace SteffBeckers;
 
@@ -30,7 +31,8 @@ namespace SteffBeckers;
     typeof(AbpTenantManagementDomainModule),
     typeof(AbpEmailingModule)
 )]
-public class SteffBeckersDomainModule : AbpModule
+[DependsOn(typeof(CRMDomainModule))]
+    public class SteffBeckersDomainModule : AbpModule
 {
     public override void ConfigureServices(ServiceConfigurationContext context)
     {

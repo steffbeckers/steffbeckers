@@ -1,4 +1,4 @@
-﻿using SteffBeckers.Localization;
+using SteffBeckers.Localization;
 using Volo.Abp.AuditLogging;
 using Volo.Abp.BackgroundJobs;
 using Volo.Abp.FeatureManagement;
@@ -12,6 +12,7 @@ using Volo.Abp.SettingManagement;
 using Volo.Abp.TenantManagement;
 using Volo.Abp.Validation.Localization;
 using Volo.Abp.VirtualFileSystem;
+using SteffBeckers.CRM;
 
 namespace SteffBeckers;
 
@@ -25,7 +26,8 @@ namespace SteffBeckers;
     typeof(AbpSettingManagementDomainSharedModule),
     typeof(AbpTenantManagementDomainSharedModule)    
     )]
-public class SteffBeckersDomainSharedModule : AbpModule
+[DependsOn(typeof(CRMDomainSharedModule))]
+    public class SteffBeckersDomainSharedModule : AbpModule
 {
     public override void PreConfigureServices(ServiceConfigurationContext context)
     {

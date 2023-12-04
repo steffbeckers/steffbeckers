@@ -1,0 +1,111 @@
+{
+  "folders": {
+    "items": {
+      "src": {},
+      "test": {},
+      "host": {}
+    }
+  },
+  "packages": {
+    "SteffBeckers.CRM.Domain.Shared": {
+      "path": "src/SteffBeckers.CRM.Domain.Shared/SteffBeckers.CRM.Domain.Shared.abppkg",
+      "folder": "src"
+    },
+    "SteffBeckers.CRM.Domain": {
+      "path": "src/SteffBeckers.CRM.Domain/SteffBeckers.CRM.Domain.abppkg",
+      "folder": "src"
+    },
+    "SteffBeckers.CRM.Application.Contracts": {
+      "path": "src/SteffBeckers.CRM.Application.Contracts/SteffBeckers.CRM.Application.Contracts.abppkg",
+      "folder": "src"
+    },
+    "SteffBeckers.CRM.Application": {
+      "path": "src/SteffBeckers.CRM.Application/SteffBeckers.CRM.Application.abppkg",
+      "folder": "src"
+    },
+    "SteffBeckers.CRM.EntityFrameworkCore": {
+      "path": "src/SteffBeckers.CRM.EntityFrameworkCore/SteffBeckers.CRM.EntityFrameworkCore.abppkg",
+      "folder": "src"
+    },
+    "SteffBeckers.CRM.MongoDB": {
+      "path": "src/SteffBeckers.CRM.MongoDB/SteffBeckers.CRM.MongoDB.abppkg",
+      "folder": "src"
+    },
+    "SteffBeckers.CRM.HttpApi": {
+      "path": "src/SteffBeckers.CRM.HttpApi/SteffBeckers.CRM.HttpApi.abppkg",
+      "folder": "src"
+    },
+    "SteffBeckers.CRM.HttpApi.Client": {
+      "path": "src/SteffBeckers.CRM.HttpApi.Client/SteffBeckers.CRM.HttpApi.Client.abppkg",
+      "folder": "src"
+    },
+    "SteffBeckers.CRM.TestBase": {
+      "path": "test/SteffBeckers.CRM.TestBase/SteffBeckers.CRM.TestBase.abppkg",
+      "folder": "test"
+    },
+    "SteffBeckers.CRM.EntityFrameworkCore.Tests": {
+      "path": "test/SteffBeckers.CRM.EntityFrameworkCore.Tests/SteffBeckers.CRM.EntityFrameworkCore.Tests.abppkg",
+      "folder": "test"
+    },
+    "SteffBeckers.CRM.MongoDB.Tests": {
+      "path": "test/SteffBeckers.CRM.MongoDB.Tests/SteffBeckers.CRM.MongoDB.Tests.abppkg",
+      "folder": "test"
+    },
+    "SteffBeckers.CRM.Domain.Tests": {
+      "path": "test/SteffBeckers.CRM.Domain.Tests/SteffBeckers.CRM.Domain.Tests.abppkg",
+      "folder": "test"
+    },
+    "SteffBeckers.CRM.Application.Tests": {
+      "path": "test/SteffBeckers.CRM.Application.Tests/SteffBeckers.CRM.Application.Tests.abppkg",
+      "folder": "test"
+    },
+    "SteffBeckers.CRM.HttpApi.Host": {
+      "path": "host/SteffBeckers.CRM.HttpApi.Host/SteffBeckers.CRM.HttpApi.Host.abppkg",
+      "folder": "host"
+    },
+    "SteffBeckers.CRM.Web": {
+      "path": "src/SteffBeckers.CRM.Web/SteffBeckers.CRM.Web.abppkg",
+      "folder": "src"
+    },
+    "SteffBeckers.CRM.HttpApi.Client.ConsoleTestApp": {
+      "path": "test/SteffBeckers.CRM.HttpApi.Client.ConsoleTestApp/SteffBeckers.CRM.HttpApi.Client.ConsoleTestApp.abppkg",
+      "folder": "test"
+    },
+    "SteffBeckers.CRM.Web.Host": {
+      "path": "host/SteffBeckers.CRM.Web.Host/SteffBeckers.CRM.Web.Host.abppkg",
+      "folder": "host"
+    },
+    "SteffBeckers.CRM.AuthServer": {
+      "path": "host/SteffBeckers.CRM.AuthServer/SteffBeckers.CRM.AuthServer.abppkg",
+      "folder": "host"
+    },
+    "SteffBeckers.CRM.Host.Shared": {
+      "path": "host/SteffBeckers.CRM.Host.Shared/SteffBeckers.CRM.Host.Shared.abppkg",
+      "folder": "host"
+    },
+    "SteffBeckers.CRM.Web.Unified": {
+      "path": "host/SteffBeckers.CRM.Web.Unified/SteffBeckers.CRM.Web.Unified.abppkg",
+      "folder": "host"
+    },
+    "SteffBeckers.CRM.Blazor": {
+      "path": "src/SteffBeckers.CRM.Blazor/SteffBeckers.CRM.Blazor.abppkg",
+      "folder": "src"
+    },
+    "SteffBeckers.CRM.Blazor.Host": {
+      "path": "host/SteffBeckers.CRM.Blazor.Host/SteffBeckers.CRM.Blazor.Host.abppkg",
+      "folder": "host"
+    },
+    "SteffBeckers.CRM.Blazor.Server": {
+      "path": "src/SteffBeckers.CRM.Blazor.Server/SteffBeckers.CRM.Blazor.Server.abppkg",
+      "folder": "src"
+    },
+    "SteffBeckers.CRM.Blazor.WebAssembly": {
+      "path": "src/SteffBeckers.CRM.Blazor.WebAssembly/SteffBeckers.CRM.Blazor.WebAssembly.abppkg",
+      "folder": "src"
+    },
+    "SteffBeckers.CRM.Blazor.Server.Host": {
+      "path": "host/SteffBeckers.CRM.Blazor.Server.Host/SteffBeckers.CRM.Blazor.Server.Host.abppkg",
+      "folder": "host"
+    }
+  }
+}
