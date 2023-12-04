@@ -6,6 +6,15 @@
   "tags": [],
   "projectType": "library",
   "targets": {
+    "generate-proxy": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": [
+          "nx generate @abp/ng.schematics:proxy-add cRM --target=crm-companies-data-access --url=https://localhost:44336 --no-interactive"
+        ],
+        "parallel": false
+      }
+    },
     "test": {
       "executor": "@nx/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
