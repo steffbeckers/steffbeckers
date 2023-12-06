@@ -1,7 +1,7 @@
 {
-  "culture": "nl",
-  "texts": {
-    "MyAccount": "Mijn rekening",
-    "SamplePageMessage": "Een voorbeeldpagina voor de CRM module"
-  }
+    "Culture": "nl",
+    "Texts": {
+        "Companies": "Bedrijven",
+        "Company": "Bedrijf"
+    }
 }

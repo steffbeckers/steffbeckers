@@ -1,2 +1,2 @@
-import * as Samples from './samples';
-export { Samples };
+import * as Companies from './companies';
+export { Companies };

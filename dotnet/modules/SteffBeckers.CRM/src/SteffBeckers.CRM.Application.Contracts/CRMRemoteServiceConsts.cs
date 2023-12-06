@@ -2,7 +2,7 @@
 
 public class CRMRemoteServiceConsts
 {
-    public const string RemoteServiceName = "CRM";
+	public const string RemoteServiceName = "CRM";
 
-    public const string ModuleName = "cRM";
+	public const string ModuleName = "crm";
 }

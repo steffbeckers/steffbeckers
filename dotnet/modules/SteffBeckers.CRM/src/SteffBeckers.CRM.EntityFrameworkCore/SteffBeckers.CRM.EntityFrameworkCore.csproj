@@ -1,16 +1,16 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
-  <Import Project="..\..\common.props" />
+	<Import Project="..\..\common.props" />
 
-  <PropertyGroup>
-    <TargetFramework>net8.0</TargetFramework>
-    <Nullable>enable</Nullable>
-    <RootNamespace>SteffBeckers.CRM</RootNamespace>
-  </PropertyGroup>
+	<PropertyGroup>
+		<TargetFramework>net8.0</TargetFramework>
+		<Nullable>enable</Nullable>
+		<RootNamespace>SteffBeckers.CRM</RootNamespace>
+	</PropertyGroup>
 
-  <ItemGroup>
-    <PackageReference Include="Volo.Abp.EntityFrameworkCore" Version="8.0.0-rc.2" />
-    <ProjectReference Include="..\SteffBeckers.CRM.Domain\SteffBeckers.CRM.Domain.csproj" />
-  </ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="Volo.Abp.EntityFrameworkCore" Version="8.0.0-rc.2" />
+		<ProjectReference Include="..\SteffBeckers.CRM.Domain\SteffBeckers.CRM.Domain.csproj" />
+	</ItemGroup>
 
 </Project>

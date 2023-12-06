@@ -5,5 +5,4 @@ namespace SteffBeckers.CRM.Localization;
 [LocalizationResourceName("CRM")]
 public class CRMResource
 {
-
 }
