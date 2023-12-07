@@ -12,5 +12,7 @@ import { CompaniesStore } from '@steffbeckers/crm/companies/data-access';
   providers: [CompaniesStore],
 })
 export class CompanyListComponent {
-  store = inject(CompaniesStore);
+  private store = inject(CompaniesStore);
+
+  vm = this.store.vm();
 }

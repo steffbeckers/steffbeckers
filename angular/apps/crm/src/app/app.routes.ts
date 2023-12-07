@@ -1,3 +1,4 @@
+import { authGuard } from '@abp/ng.core';
 import { Route } from '@angular/router';
 
 export const appRoutes: Route[] = [
@@ -7,6 +8,7 @@ export const appRoutes: Route[] = [
       import('@steffbeckers/crm/companies/feature').then(
         (m) => m.CompanyListComponent
       ),
+    canActivate: [authGuard],
   },
   {
     path: '**',
