@@ -1,16 +1,16 @@
 import { Environment } from '@abp/ng.core';
 
-const baseUrl = 'http://localhost:4200';
+const origin = 'https://crm.steffbeckers.local';
 
 export const environment = {
   production: false,
   application: {
-    baseUrl,
+    baseUrl: origin,
     name: 'CRM',
   },
   oAuthConfig: {
-    issuer: 'https://localhost:44336/',
-    redirectUri: baseUrl,
+    issuer: `${origin}/`,
+    redirectUri: origin,
     clientId: 'SteffBeckers_App',
     responseType: 'code',
     scope: 'offline_access openid profile email phone roles SteffBeckers',
@@ -19,7 +19,7 @@ export const environment = {
   },
   apis: {
     default: {
-      url: 'https://localhost:44336',
+      url: '',
       rootNamespace: 'SteffBeckers',
     },
   },
