@@ -1,10 +1,10 @@
 {
-  "name": "crm-companies-data-access",
   "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "libs/crm/companies/data-access/src",
+  "name": "crm-companies-data-access",
   "prefix": "sb",
-  "tags": [],
   "projectType": "library",
+  "sourceRoot": "libs/crm/companies/data-access/src",
+  "tags": [],
   "targets": {
     "generate-proxy": {
       "executor": "nx:run-commands",
@@ -15,22 +15,22 @@
         "parallel": false
       }
     },
-    "test": {
-      "executor": "@nx/jest:jest",
-      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
-      "options": {
-        "jestConfig": "libs/crm/companies/data-access/jest.config.ts"
-      }
-    },
     "lint": {
       "executor": "@nx/eslint:lint",
-      "outputs": ["{options.outputFile}"],
       "options": {
         "lintFilePatterns": [
           "libs/crm/companies/data-access/**/*.ts",
           "libs/crm/companies/data-access/**/*.html"
         ]
-      }
+      },
+      "outputs": ["{options.outputFile}"]
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "options": {
+        "jestConfig": "libs/crm/companies/data-access/jest.config.ts"
+      },
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"]
     }
   }
 }
