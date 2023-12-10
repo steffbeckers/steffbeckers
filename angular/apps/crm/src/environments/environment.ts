@@ -9,7 +9,7 @@ export const environment = {
     name: 'CRM',
   },
   oAuthConfig: {
-    issuer: `${origin}/`,
+    issuer: 'https://steffbeckers.local/',
     redirectUri: origin,
     clientId: 'SteffBeckers_App',
     responseType: 'code',
