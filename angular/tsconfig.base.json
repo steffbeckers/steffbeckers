@@ -1,27 +1,31 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
-    "rootDir": ".",
-    "sourceMap": true,
+    "baseUrl": ".",
     "declaration": false,
-    "moduleResolution": "node",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "importHelpers": true,
-    "target": "es2015",
-    "module": "esnext",
     "lib": ["es2020", "dom"],
-    "skipLibCheck": true,
-    "skipDefaultLibCheck": true,
-    "baseUrl": ".",
+    "module": "esnext",
+    "moduleResolution": "node",
     "paths": {
       "@steffbeckers/crm/companies/data-access": [
         "libs/crm/companies/data-access/src/index.ts"
       ],
       "@steffbeckers/crm/companies/feature": [
         "libs/crm/companies/feature/src/index.ts"
+      ],
+      "@steffbeckers/crm/data-access": ["libs/crm/data-access/src/index.ts"],
+      "@steffbeckers/crm/data-access/proxy/*": [
+        "libs/crm/data-access/src/lib/proxy/*"
       ]
-    }
+    },
+    "rootDir": ".",
+    "skipDefaultLibCheck": true,
+    "skipLibCheck": true,
+    "sourceMap": true,
+    "target": "es2015"
   },
   "exclude": ["node_modules", "tmp"]
 }

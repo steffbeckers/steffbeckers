@@ -1,0 +1,36 @@
+{
+  "name": "crm-data-access",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/crm/data-access/src",
+  "prefix": "steffbeckers",
+  "tags": [],
+  "projectType": "library",
+  "targets": {
+    "generate-proxy": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": [
+          "nx generate @abp/ng.schematics:proxy-add crm --target=crm-data-access --url=https://crm.steffbeckers.local --no-interactive"
+        ],
+        "parallel": false
+      }
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "libs/crm/data-access/jest.config.ts"
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": [
+          "libs/crm/data-access/**/*.ts",
+          "libs/crm/data-access/**/*.html"
+        ]
+      }
+    }
+  }
+}

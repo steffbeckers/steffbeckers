@@ -6,15 +6,6 @@
   "sourceRoot": "libs/crm/companies/data-access/src",
   "tags": [],
   "targets": {
-    "generate-proxy": {
-      "executor": "nx:run-commands",
-      "options": {
-        "commands": [
-          "nx generate @abp/ng.schematics:proxy-add crm --target=crm-companies-data-access --url=https://localhost:44336 --no-interactive"
-        ],
-        "parallel": false
-      }
-    },
     "lint": {
       "executor": "@nx/eslint:lint",
       "options": {

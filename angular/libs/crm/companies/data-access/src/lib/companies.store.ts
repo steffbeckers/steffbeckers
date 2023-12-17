@@ -7,8 +7,8 @@ import {
   withState,
 } from '@ngrx/signals';
 import { computed, inject } from '@angular/core';
-import { CompaniesService } from './proxy/crm/companies';
 import { firstValueFrom } from 'rxjs';
+import { CompaniesService } from '@steffbeckers/crm/data-access/proxy/crm/companies';
 
 export interface Company {
   name: string;
