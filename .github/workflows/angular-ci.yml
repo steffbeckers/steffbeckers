@@ -32,4 +32,5 @@ jobs:
     name: Nx Cloud - Agents
     uses: nrwl/ci/.github/workflows/nx-cloud-agents.yml@v0.13.1
     with:
+      working-directory: angular
       number-of-agents: 3
