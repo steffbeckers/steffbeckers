@@ -36,22 +36,35 @@ export const CompaniesStore = signalStore(
     const { query } = state;
     const companiesService = inject(CompaniesService);
 
-    return {
-      load: async () => {
-        const data = await firstValueFrom(
-          companiesService.getList({
-            maxResultCount: 10,
-            query: query(),
-          })
-        );
+    const load = async () => {
+      const data = await firstValueFrom(
+        companiesService.getList({
+          maxResultCount: 10,
+          query: query(),
+        })
+      );
 
-        patchState(state, setAllEntities((data.items ?? []) as Company[]));
-      },
+      patchState(state, setAllEntities((data.items ?? []) as Company[]));
+    };
+
+    const queryChanged = (query?: string) => {
+      patchState(state, { query });
+
+      load();
+    };
+
+    return {
+      load,
+      queryChanged,
     };
   }),
   withHooks({
     onInit({ load }) {
       load();
+
+      // effect(() => {
+      //   load();
+      // });
     },
   })
 );

@@ -1,4 +1,10 @@
-<h2>Companies</h2>
+<h2>{{ 'CRM::Companies' | abpLocalization }}</h2>
+<input
+  type="text"
+  [placeholder]="'::Search' | abpLocalization"
+  [ngModel]="vm.query()"
+  (ngModelChange)="queryChanged($event)"
+/>
 <ul>
   @for (company of vm.entities(); track company.id) {
   <li>{{ company.name }}</li>
