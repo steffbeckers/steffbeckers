@@ -1,32 +1,34 @@
 import {
   patchState,
   signalStore,
+  type,
   withComputed,
   withHooks,
   withMethods,
   withState,
 } from '@ngrx/signals';
+import { setAllEntities, withEntities } from '@ngrx/signals/entities';
 import { computed, inject } from '@angular/core';
 import { firstValueFrom } from 'rxjs';
 import { CompaniesService } from '@steffbeckers/crm/data-access/proxy/crm/companies';
 
 export interface Company {
+  id: string;
   name: string;
 }
 
 export interface State {
-  companies: Company[];
   query: string;
 }
 
 export const CompaniesStore = signalStore(
   withState<State>({
-    companies: [],
     query: '',
   }),
-  withComputed(({ companies, query }) => ({
+  withEntities({ entity: type<Company>() }),
+  withComputed(({ entities, query }) => ({
     vm: computed(() => ({
-      companies,
+      entities,
       query,
     })),
   })),
@@ -43,7 +45,7 @@ export const CompaniesStore = signalStore(
           })
         );
 
-        patchState(state, { companies: (data.items ?? []) as Company[] });
+        patchState(state, setAllEntities((data.items ?? []) as Company[]));
       },
     };
   }),
