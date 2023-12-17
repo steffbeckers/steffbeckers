@@ -2,10 +2,12 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Extensions.DependencyInjection;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.HttpOverrides;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
+using OpenIddict.Server.AspNetCore;
 using OpenIddict.Validation.AspNetCore;
 using SteffBeckers.EntityFrameworkCore;
 using SteffBeckers.MultiTenancy;
@@ -70,11 +72,31 @@ public class SteffBeckersHttpApiHostModule : AbpModule
 		ConfigureVirtualFileSystem(context);
 		ConfigureCors(context, configuration);
 		ConfigureSwaggerServices(context, configuration);
+		ConfigureForwardedHeaders();
+	}
+
+	private void ConfigureForwardedHeaders()
+	{
+		Configure<ForwardedHeadersOptions>(options =>
+		{
+			options.ForwardedHeaders = ForwardedHeaders.XForwardedProto;
+		});
 	}
 
 	private void ConfigureAuthentication(ServiceConfigurationContext context)
 	{
+		IConfiguration configuration = context.Services.GetConfiguration();
+
+		if (!configuration.GetValue<bool>("AuthServer:RequireHttpsMetadata"))
+		{
+			Configure<OpenIddictServerAspNetCoreOptions>(options =>
+			{
+				options.DisableTransportSecurityRequirement = true;
+			});
+		}
+
 		context.Services.ForwardIdentityAuthenticationForBearer(OpenIddictValidationAspNetCoreDefaults.AuthenticationScheme);
+
 		context.Services.Configure<AbpClaimsPrincipalFactoryOptions>(options =>
 		{
 			options.IsDynamicClaimsEnabled = true;
@@ -185,6 +207,7 @@ public class SteffBeckersHttpApiHostModule : AbpModule
 			app.UseDeveloperExceptionPage();
 		}
 
+		app.UseForwardedHeaders();
 		app.UseAbpRequestLocalization();
 
 		if (!env.IsDevelopment())

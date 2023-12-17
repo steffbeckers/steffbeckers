@@ -1,0 +1,13 @@
+{
+  "configurations": [
+    {
+      "name": "Attach Chrome *.steffbeckers.local",
+      "port": 9222,
+      "request": "attach",
+      "type": "chrome",
+      "urlFilter": "https://*.steffbeckers.local/*",
+      "webRoot": "${workspaceFolder}"
+    }
+  ],
+  "version": "0.2.0"
+}
