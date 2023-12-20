@@ -39,38 +39,35 @@ export const CompaniesStore = signalStore(
       query,
     })),
   })),
-  withMethods((state) => {
-    const { query } = state;
-    const companiesService = inject(CompaniesService);
+  withMethods(
+    ({ query, ...state }, companiesService = inject(CompaniesService)) => ({
+      getList: async () => {
+        const data = await firstValueFrom(
+          companiesService.getList({
+            maxResultCount: 10,
+            query: query(),
+          })
+        );
 
-    const load = async () => {
-      const data = await firstValueFrom(
-        companiesService.getList({
-          maxResultCount: 10,
-          query: query(),
-        })
-      );
-
-      patchState(state, setAllEntities((data.items ?? []) as Company[]));
-    };
-
-    return {
-      load,
+        patchState(state, setAllEntities((data.items ?? []) as Company[]));
+      },
       queryChanged: (query: string) => {
         patchState(state, { query });
       },
-      connectQuery: rxMethod<string>((query$) =>
-        query$.pipe(
-          debounceTime(250),
-          distinctUntilChanged(),
-          switchMap(() => from(load()))
-        )
-      ),
-    };
-  }),
+    })
+  ),
+  withMethods(({ getList }) => ({
+    connectQuery: rxMethod<string>((query$) =>
+      query$.pipe(
+        debounceTime(250),
+        distinctUntilChanged(),
+        switchMap(() => from(getList()))
+      )
+    ),
+  })),
   withHooks({
-    onInit({ load, query, connectQuery }) {
-      load();
+    onInit({ getList, query, connectQuery }) {
+      getList();
       connectQuery(query);
     },
   })
