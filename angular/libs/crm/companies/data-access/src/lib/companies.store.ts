@@ -9,8 +9,15 @@ import {
 } from '@ngrx/signals';
 import { setAllEntities, withEntities } from '@ngrx/signals/entities';
 import { computed, inject } from '@angular/core';
-import { firstValueFrom } from 'rxjs';
+import {
+  debounceTime,
+  distinctUntilChanged,
+  firstValueFrom,
+  from,
+  switchMap,
+} from 'rxjs';
 import { CompaniesService } from '@steffbeckers/crm/data-access/proxy/crm/companies';
+import { rxMethod } from '@ngrx/signals/rxjs-interop';
 
 export interface Company {
   id: string;
@@ -47,24 +54,24 @@ export const CompaniesStore = signalStore(
       patchState(state, setAllEntities((data.items ?? []) as Company[]));
     };
 
-    const queryChanged = (query?: string) => {
-      patchState(state, { query });
-
-      load();
-    };
-
     return {
       load,
-      queryChanged,
+      queryChanged: (query: string) => {
+        patchState(state, { query });
+      },
+      connectQuery: rxMethod<string>((query$) =>
+        query$.pipe(
+          debounceTime(250),
+          distinctUntilChanged(),
+          switchMap(() => from(load()))
+        )
+      ),
     };
   }),
   withHooks({
-    onInit({ load }) {
+    onInit({ load, query, connectQuery }) {
       load();
-
-      // effect(() => {
-      //   load();
-      // });
+      connectQuery(query);
     },
   })
 );

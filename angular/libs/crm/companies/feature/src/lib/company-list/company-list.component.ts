@@ -18,7 +18,7 @@ export class CompanyListComponent {
 
   vm = this.store.vm();
 
-  queryChanged(query?: string): void {
+  queryChanged(query: string): void {
     this.store.queryChanged(query);
   }
 }
