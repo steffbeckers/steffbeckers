@@ -19,6 +19,9 @@
       "@steffbeckers/crm/data-access": ["libs/crm/data-access/src/index.ts"],
       "@steffbeckers/crm/data-access/proxy/*": [
         "libs/crm/data-access/src/lib/proxy/*"
+      ],
+      "@steffbeckers/shared/utils/ngrx-signals": [
+        "libs/shared/utils/ngrx-signals/src/index.ts"
       ]
     },
     "rootDir": ".",
