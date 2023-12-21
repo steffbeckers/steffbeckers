@@ -25,11 +25,15 @@ import { rxMethod } from '@ngrx/signals/rxjs-interop';
 import { Company } from './company.model';
 
 export type PersistenceConfig = {
+  autoSave: boolean;
   keyPrefix?: string;
+  rehydrate: boolean;
   storage: Storage;
 };
 
 export const defaultPersistenceConfig: PersistenceConfig = {
+  autoSave: true,
+  rehydrate: false,
   storage: localStorage,
 };
 
@@ -45,18 +49,18 @@ export const withPersistence = <T>(
     throw 'storage is undefined';
   }
 
-  const { keyPrefix, storage } = config;
+  const { autoSave, keyPrefix, rehydrate, storage } = config;
 
   return signalStoreFeature(
     // TODO
     // { state: type<T> },
     withMethods((state) => ({
-      load: () =>
+      loadFromStorage: () =>
         patchState(
           state,
           JSON.parse(storage.getItem(`${keyPrefix ?? ''}${storageKey}`) ?? '{}')
         ),
-      save: () =>
+      saveToStorage: () =>
         storage.setItem(
           `${keyPrefix ?? ''}${storageKey}`,
           JSON.stringify(
@@ -71,11 +75,16 @@ export const withPersistence = <T>(
         ),
     })),
     withHooks({
-      onInit({ load, save }) {
-        load();
-        effect(() => {
-          save();
-        });
+      onInit({ loadFromStorage, saveToStorage }) {
+        if (rehydrate) {
+          loadFromStorage();
+        }
+
+        if (autoSave) {
+          effect(() => {
+            saveToStorage();
+          });
+        }
       },
     })
   );
@@ -92,7 +101,7 @@ export const CompaniesStore = signalStore(
     query: '',
   }),
   withEntities({ entity: type<Company>() }),
-  withPersistence<State>('companies', ['entityMap', 'ids', 'query'], {
+  withPersistence<State>('companies', ['query', 'entityMap', 'ids'], {
     keyPrefix: 'sb-',
   }),
   withMethods(
