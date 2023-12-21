@@ -38,7 +38,7 @@ export const defaultPersistenceConfig: PersistenceConfig = {
 };
 
 // TODO: Move to shared util lib?
-export const withPersistence = <T>(
+export const withPersistence = <T extends object>(
   storageKey: string,
   keys: (keyof T)[],
   config?: Partial<PersistenceConfig>
@@ -52,8 +52,7 @@ export const withPersistence = <T>(
   const { autoSave, keyPrefix, rehydrate, storage } = config;
 
   return signalStoreFeature(
-    // TODO
-    // { state: type<T> },
+    { state: type<T>() },
     withMethods((state) => ({
       loadFromStorage: () =>
         patchState(
