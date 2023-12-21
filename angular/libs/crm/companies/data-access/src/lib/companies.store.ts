@@ -24,12 +24,12 @@ import { CompaniesService } from '@steffbeckers/crm/data-access/proxy/crm/compan
 import { rxMethod } from '@ngrx/signals/rxjs-interop';
 import { Company } from './company.model';
 
-export type PersistenceOptions = {
+export type PersistenceConfig = {
   keyPrefix?: string;
   storage: Storage;
 };
 
-export const defaultPersistenceOptions: PersistenceOptions = {
+export const defaultPersistenceConfig: PersistenceConfig = {
   storage: localStorage,
 };
 
@@ -37,20 +37,28 @@ export const defaultPersistenceOptions: PersistenceOptions = {
 export const withPersistence = <T>(
   storageKey: string,
   keys: (keyof T)[],
-  { keyPrefix, storage } = defaultPersistenceOptions
-) =>
-  signalStoreFeature(
+  config?: Partial<PersistenceConfig>
+) => {
+  config = { ...defaultPersistenceConfig, ...config };
+
+  if (!config.storage) {
+    throw 'storage is undefined';
+  }
+
+  const { keyPrefix, storage } = config;
+
+  return signalStoreFeature(
     // TODO
     // { state: type<T> },
     withMethods((state) => ({
       load: () =>
         patchState(
           state,
-          JSON.parse(storage.getItem(`${keyPrefix}${storageKey}`) ?? '{}')
+          JSON.parse(storage.getItem(`${keyPrefix ?? ''}${storageKey}`) ?? '{}')
         ),
       save: () =>
         storage.setItem(
-          `${keyPrefix}${storageKey}`,
+          `${keyPrefix ?? ''}${storageKey}`,
           JSON.stringify(
             keys.reduce((prev, curr) => {
               // TODO
@@ -71,6 +79,7 @@ export const withPersistence = <T>(
       },
     })
   );
+};
 
 export interface State extends EntityState<Company> {
   query: string;
@@ -84,7 +93,6 @@ export const CompaniesStore = signalStore(
   }),
   withEntities({ entity: type<Company>() }),
   withPersistence<State>('companies', ['entityMap', 'ids', 'query'], {
-    storage: localStorage,
     keyPrefix: 'sb-',
   }),
   withMethods(
