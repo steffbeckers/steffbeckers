@@ -17,11 +17,7 @@ import {
 } from 'rxjs';
 import { CompaniesService } from '@steffbeckers/crm/data-access/proxy/crm/companies';
 import { rxMethod } from '@ngrx/signals/rxjs-interop';
-
-export interface Company {
-  id: string;
-  name: string;
-}
+import { Company } from './company.model';
 
 export const CompaniesStore = signalStore(
   withState({
