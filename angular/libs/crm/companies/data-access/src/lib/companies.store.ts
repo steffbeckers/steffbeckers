@@ -23,12 +23,8 @@ export interface Company {
   name: string;
 }
 
-export interface State {
-  query: string;
-}
-
 export const CompaniesStore = signalStore(
-  withState<State>({
+  withState({
     query: '',
   }),
   withEntities({ entity: type<Company>() }),
