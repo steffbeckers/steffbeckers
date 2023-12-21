@@ -1,9 +1,10 @@
-import { Component, inject } from '@angular/core';
+import { Component, computed, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { CompaniesStore } from '@steffbeckers/crm/companies/data-access';
 import { LocalizationModule } from '@abp/ng.core';
 import { FormsModule } from '@angular/forms';
+import { patchState } from '@ngrx/signals';
 
 @Component({
   selector: 'sb-company-list',
@@ -16,9 +17,12 @@ import { FormsModule } from '@angular/forms';
 export class CompanyListComponent {
   private store = inject(CompaniesStore);
 
-  vm = this.store.vm();
+  vm = computed(() => ({
+    entities: this.store.entities,
+    query: this.store.query,
+  }))();
 
   queryChanged(query: string): void {
-    this.store.queryChanged(query);
+    patchState(this.store, { query });
   }
 }

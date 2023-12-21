@@ -2,13 +2,12 @@ import {
   patchState,
   signalStore,
   type,
-  withComputed,
   withHooks,
   withMethods,
   withState,
 } from '@ngrx/signals';
 import { setAllEntities, withEntities } from '@ngrx/signals/entities';
-import { computed, inject } from '@angular/core';
+import { inject } from '@angular/core';
 import {
   debounceTime,
   distinctUntilChanged,
@@ -33,12 +32,6 @@ export const CompaniesStore = signalStore(
     query: '',
   }),
   withEntities({ entity: type<Company>() }),
-  withComputed(({ entities, query }) => ({
-    vm: computed(() => ({
-      entities,
-      query,
-    })),
-  })),
   withMethods(
     ({ query, ...state }, companiesService = inject(CompaniesService)) => ({
       getList: async () => {
@@ -50,9 +43,6 @@ export const CompaniesStore = signalStore(
         );
 
         patchState(state, setAllEntities((data.items ?? []) as Company[]));
-      },
-      queryChanged: (query: string) => {
-        patchState(state, { query });
       },
     })
   ),
