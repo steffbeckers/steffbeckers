@@ -37,6 +37,7 @@ export const CompaniesStore = signalStore(
   withEntities({ entity: type<Company>() }),
   withPersistence<State>('companies', ['query', 'entityMap', 'ids'], {
     keyPrefix: 'sb-',
+    rehydrate: true,
   }),
   withMethods(
     ({ query, ...state }, companiesService = inject(CompaniesService)) => ({
