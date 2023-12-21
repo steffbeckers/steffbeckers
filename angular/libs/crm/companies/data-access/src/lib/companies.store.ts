@@ -7,7 +7,7 @@ import {
   withState,
 } from '@ngrx/signals';
 import { setAllEntities, withEntities } from '@ngrx/signals/entities';
-import { inject } from '@angular/core';
+import { effect, inject } from '@angular/core';
 import {
   debounceTime,
   distinctUntilChanged,
@@ -52,9 +52,32 @@ export const CompaniesStore = signalStore(
     ),
   })),
   withHooks({
-    onInit({ getList, query, connectQuery }) {
+    onInit({ getList, connectQuery, ...state }) {
+      // TODO: This is a temp storage test
+      // Load from storage
+      const storagePrefix = 'sb-companies';
+      patchState(state, {
+        entityMap: JSON.parse(
+          localStorage.getItem(`${storagePrefix}-entityMap`) ?? '{}'
+        ),
+        ids: JSON.parse(localStorage.getItem(`${storagePrefix}-ids`) ?? '[]'),
+        query: localStorage.getItem(`${storagePrefix}-query`)!,
+      });
+      // Save to storage
+      effect(() => {
+        localStorage.setItem(
+          `${storagePrefix}-entityMap`,
+          JSON.stringify(state.entityMap())
+        );
+        localStorage.setItem(
+          `${storagePrefix}-ids`,
+          JSON.stringify(state.ids())
+        );
+        localStorage.setItem(`${storagePrefix}-query`, state.query());
+      });
+
       getList();
-      connectQuery(query);
+      connectQuery(state.query);
     },
   })
 );
