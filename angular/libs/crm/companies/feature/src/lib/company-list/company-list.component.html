@@ -4,6 +4,7 @@
   [placeholder]="'::Search' | abpLocalization"
   [ngModel]="vm.query()"
   (ngModelChange)="queryChanged($event)"
+  autofocus
 />
 <ul>
   @for (company of vm.entities(); track company.id) {

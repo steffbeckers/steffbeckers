@@ -1,12 +1,17 @@
 import {
   patchState,
   signalStore,
+  signalStoreFeature,
   type,
   withHooks,
   withMethods,
   withState,
 } from '@ngrx/signals';
-import { setAllEntities, withEntities } from '@ngrx/signals/entities';
+import {
+  EntityState,
+  setAllEntities,
+  withEntities,
+} from '@ngrx/signals/entities';
 import { effect, inject } from '@angular/core';
 import {
   debounceTime,
@@ -19,11 +24,69 @@ import { CompaniesService } from '@steffbeckers/crm/data-access/proxy/crm/compan
 import { rxMethod } from '@ngrx/signals/rxjs-interop';
 import { Company } from './company.model';
 
+export type PersistenceOptions = {
+  keyPrefix?: string;
+  storage: Storage;
+};
+
+export const defaultPersistenceOptions: PersistenceOptions = {
+  storage: localStorage,
+};
+
+// TODO: Move to shared util lib?
+export const withPersistence = <T>(
+  storageKey: string,
+  keys: (keyof T)[],
+  { keyPrefix, storage } = defaultPersistenceOptions
+) =>
+  signalStoreFeature(
+    // TODO
+    // { state: type<T> },
+    withMethods((state) => ({
+      load: () =>
+        patchState(
+          state,
+          JSON.parse(storage.getItem(`${keyPrefix}${storageKey}`) ?? '{}')
+        ),
+      save: () =>
+        storage.setItem(
+          `${keyPrefix}${storageKey}`,
+          JSON.stringify(
+            keys.reduce((prev, curr) => {
+              // TODO
+              // eslint-disable-next-line @typescript-eslint/no-explicit-any
+              prev[curr as string] = (state as any)[curr]();
+
+              return prev;
+            }, {} as { [key: string]: unknown })
+          )
+        ),
+    })),
+    withHooks({
+      onInit({ load, save }) {
+        load();
+        effect(() => {
+          save();
+        });
+      },
+    })
+  );
+
+export interface State extends EntityState<Company> {
+  query: string;
+}
+
 export const CompaniesStore = signalStore(
-  withState({
+  withState<State>({
+    entityMap: {},
+    ids: [],
     query: '',
   }),
   withEntities({ entity: type<Company>() }),
+  withPersistence<State>('companies', ['entityMap', 'ids', 'query'], {
+    storage: localStorage,
+    keyPrefix: 'sb-',
+  }),
   withMethods(
     ({ query, ...state }, companiesService = inject(CompaniesService)) => ({
       getList: async () => {
@@ -48,32 +111,10 @@ export const CompaniesStore = signalStore(
     ),
   })),
   withHooks({
-    onInit({ getList, connectQuery, ...state }) {
-      // TODO: This is a temp storage test
-      // Load from storage
-      const storagePrefix = 'sb-companies';
-      patchState(state, {
-        entityMap: JSON.parse(
-          localStorage.getItem(`${storagePrefix}-entityMap`) ?? '{}'
-        ),
-        ids: JSON.parse(localStorage.getItem(`${storagePrefix}-ids`) ?? '[]'),
-        query: localStorage.getItem(`${storagePrefix}-query`)!,
-      });
-      // Save to storage
-      effect(() => {
-        localStorage.setItem(
-          `${storagePrefix}-entityMap`,
-          JSON.stringify(state.entityMap())
-        );
-        localStorage.setItem(
-          `${storagePrefix}-ids`,
-          JSON.stringify(state.ids())
-        );
-        localStorage.setItem(`${storagePrefix}-query`, state.query());
-      });
-
+    onInit({ getList, query, connectQuery }) {
       getList();
-      connectQuery(state.query);
+
+      connectQuery(query);
     },
   })
 );
