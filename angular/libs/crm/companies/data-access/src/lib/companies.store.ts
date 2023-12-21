@@ -19,7 +19,7 @@ import {
   from,
   switchMap,
 } from 'rxjs';
-import { CompaniesService } from '@steffbeckers/crm/data-access/proxy/crm/companies';
+import { CompaniesService } from '@steffbeckers/crm/data-access';
 import { rxMethod } from '@ngrx/signals/rxjs-interop';
 import { Company } from './company.model';
 import { withPersistence } from '@steffbeckers/shared/utils/ngrx-signals';
