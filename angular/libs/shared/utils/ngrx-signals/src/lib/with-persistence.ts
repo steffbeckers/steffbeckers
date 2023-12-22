@@ -8,31 +8,33 @@ import {
 } from '@ngrx/signals';
 import { NamedEntityState } from '@ngrx/signals/entities';
 
-export type PersistenceConfig = {
+export type PersistenceConfig<T> = {
   autoSave: boolean;
+  excludedKeys: (keyof T)[];
   keyPrefix?: string;
   rehydrate: boolean;
   storage: Storage;
 };
 
-export const defaultPersistenceConfig: PersistenceConfig = {
+export const defaultPersistenceConfig: PersistenceConfig<object> = {
   autoSave: true,
+  excludedKeys: [],
   rehydrate: false,
   storage: localStorage,
 };
 
 export const withPersistence = <T extends object | NamedEntityState<T, string>>(
   storageKey: string,
-  keys: (keyof T)[],
-  config?: Partial<PersistenceConfig>
+  config?: Partial<PersistenceConfig<T>>
 ) => {
   config = { ...defaultPersistenceConfig, ...config };
+  config.excludedKeys ??= [];
 
   if (!config.storage) {
     throw 'storage is undefined';
   }
 
-  const { autoSave, keyPrefix, rehydrate, storage } = config;
+  const { autoSave, excludedKeys, keyPrefix, rehydrate, storage } = config;
 
   return signalStoreFeature(
     { state: type<T>() },
@@ -46,13 +48,15 @@ export const withPersistence = <T extends object | NamedEntityState<T, string>>(
         storage.setItem(
           `${keyPrefix ?? ''}${storageKey}`,
           JSON.stringify(
-            keys.reduce((prev, curr) => {
-              // TODO: Can we type this?
-              // eslint-disable-next-line @typescript-eslint/no-explicit-any
-              prev[curr as string] = (state as any)[curr]();
+            Object.keys(state)
+              .filter((x) => !excludedKeys.includes(x as keyof T))
+              .reduce((prev, curr) => {
+                // TODO: Can we type this state?
+                // eslint-disable-next-line @typescript-eslint/no-explicit-any
+                prev[curr as string] = (state as any)[curr]();
 
-              return prev;
-            }, {} as { [key: string]: unknown })
+                return prev;
+              }, {} as { [key: string]: unknown })
           )
         ),
       clearStorage: () => storage.removeItem(`${keyPrefix ?? ''}${storageKey}`),
