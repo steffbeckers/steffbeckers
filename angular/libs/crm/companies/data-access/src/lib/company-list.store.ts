@@ -81,9 +81,8 @@ export const CompanyListStore = signalStore(
 
       return {
         getList,
-        queryChanged: (query: string) => {
-          patchState(store, { query });
-        },
+        queryChanged: (query: string) => patchState(store, { query }),
+        // TODO: Bit weird to be a Promise?
         sortingChanged: async (sorting: string) => {
           patchState(store, { sorting });
           await firstValueFrom(getList());
