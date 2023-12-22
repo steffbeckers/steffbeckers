@@ -8,55 +8,77 @@ import {
 } from '@ngrx/signals';
 import { setAllEntities, withEntities } from '@ngrx/signals/entities';
 import { inject } from '@angular/core';
-import {
-  debounceTime,
-  distinctUntilChanged,
-  firstValueFrom,
-  from,
-  switchMap,
-} from 'rxjs';
+import { debounceTime, distinctUntilChanged, switchMap } from 'rxjs';
 import { CompaniesService } from '@steffbeckers/crm/data-access';
 import { rxMethod } from '@ngrx/signals/rxjs-interop';
 import { Company } from './company.model';
 import { withPersistence } from '@steffbeckers/shared/utils/ngrx-signals';
+import { tapResponse } from '@ngrx/operators';
+import { HttpErrorResponse } from '@angular/common/http';
 
 export const CompaniesStore = signalStore(
   withState({
+    errorMessage: '',
+    loading: false,
+    maxResultCount: 10,
     query: '',
+    skipCount: 0,
+    sorting: 'Name ASC',
   }),
   withEntities({ entity: type<Company>() }),
-  withPersistence('companies', ['query', 'entityMap', 'ids'], {
-    keyPrefix: 'sb-',
-    rehydrate: true,
-  }),
+  withPersistence(
+    'companies',
+    ['query', 'entityMap', 'ids', 'sorting', 'errorMessage'],
+    {
+      keyPrefix: 'sb-',
+      rehydrate: true,
+    }
+  ),
   withMethods(
-    ({ query, ...state }, companiesService = inject(CompaniesService)) => ({
-      getList: async () => {
-        const data = await firstValueFrom(
-          companiesService.getList({
-            maxResultCount: 10,
-            query: query(),
-          })
-        );
+    (
+      { maxResultCount, query, skipCount, sorting, ...store },
+      companiesService = inject(CompaniesService)
+    ) => ({
+      getList: () => {
+        patchState(store, { loading: true });
 
-        patchState(state, setAllEntities((data.items ?? []) as Company[]));
+        return companiesService
+          .getList({
+            maxResultCount: maxResultCount(),
+            query: query(),
+            skipCount: skipCount(),
+            sorting: sorting(),
+          })
+          .pipe(
+            tapResponse({
+              next: (data) => {
+                patchState(
+                  store,
+                  setAllEntities((data.items ?? []) as Company[])
+                );
+                patchState(store, { errorMessage: '' });
+              },
+              error: (response: HttpErrorResponse) =>
+                patchState(store, {
+                  errorMessage: response.error.error.message,
+                }),
+              finalize: () => patchState(store, { loading: false }),
+            })
+          );
       },
     })
   ),
-  withMethods(({ getList }) => ({
-    connectQuery: rxMethod<string>((query$) =>
-      query$.pipe(
-        debounceTime(250),
-        distinctUntilChanged(),
-        switchMap(() => from(getList()))
-      )
-    ),
-  })),
   withHooks({
-    onInit({ getList, query, connectQuery }) {
-      getList();
+    onInit({ query, sorting, getList }) {
+      rxMethod((x$) =>
+        x$.pipe(
+          debounceTime(250),
+          distinctUntilChanged(),
+          switchMap(() => getList())
+        )
+      )(query);
 
-      connectQuery(query);
+      rxMethod((x$) => x$.pipe(switchMap(() => getList())))(sorting);
     },
   })
 );

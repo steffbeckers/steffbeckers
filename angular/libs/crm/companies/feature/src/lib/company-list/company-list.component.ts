@@ -19,10 +19,17 @@ export class CompanyListComponent {
 
   vm = computed(() => ({
     companies: this.store.entities,
+    errorMessage: this.store.errorMessage,
+    loading: this.store.loading,
     query: this.store.query,
+    sorting: this.store.sorting,
   }))();
 
   queryChanged(query: string): void {
     patchState(this.store, { query });
+  }
+
+  sortingChanged(sorting: string): void {
+    patchState(this.store, { sorting });
   }
 }
