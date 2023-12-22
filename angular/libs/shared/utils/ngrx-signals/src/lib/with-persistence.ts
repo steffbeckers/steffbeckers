@@ -54,6 +54,7 @@ export const withPersistence = <T extends object>(
             }, {} as { [key: string]: unknown })
           )
         ),
+      clearStorage: () => storage.removeItem(`${keyPrefix ?? ''}${storageKey}`),
     })),
     withHooks({
       onInit({ loadFromStorage, saveToStorage }) {
