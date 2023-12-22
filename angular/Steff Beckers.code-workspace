@@ -5,6 +5,10 @@
       "path": "."
     },
     {
+      "name": "Localizations (CRM)",
+      "path": "../dotnet/modules/SteffBeckers.CRM/src/SteffBeckers.CRM.Domain.Shared/Localization/CRM"
+    },
+    {
       "name": "Root",
       "path": ".."
     }

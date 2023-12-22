@@ -2,6 +2,8 @@
     "Culture": "en",
     "Texts": {
         "Companies": "Companies",
-        "Company": "Company"
+        "Company": "Company",
+        "NoCompaniesFound": "No companies found.",
+        "NoCompaniesFoundForSearchTerm": "No companies found for search term <strong>{0}</strong>."
     }
 }

@@ -2,6 +2,8 @@
     "Culture": "nl",
     "Texts": {
         "Companies": "Bedrijven",
-        "Company": "Bedrijf"
+        "Company": "Bedrijf",
+        "NoCompaniesFound": "Geen bedrijven gevonden.",
+        "NoCompaniesFoundForSearchTerm": "Geen bedrijven gevonden voor zoekterm <strong>{0}</strong>."
     }
 }
