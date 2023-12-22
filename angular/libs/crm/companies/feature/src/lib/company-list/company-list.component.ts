@@ -4,7 +4,6 @@ import { CommonModule } from '@angular/common';
 import { CompaniesStore } from '@steffbeckers/crm/companies/data-access';
 import { LocalizationModule } from '@abp/ng.core';
 import { FormsModule } from '@angular/forms';
-import { patchState } from '@ngrx/signals';
 
 @Component({
   selector: 'sb-company-list',
@@ -15,8 +14,7 @@ import { patchState } from '@ngrx/signals';
   providers: [CompaniesStore],
 })
 export class CompanyListComponent {
-  private store = inject(CompaniesStore);
-
+  store = inject(CompaniesStore);
   vm = computed(() => ({
     companies: this.store.entities,
     errorMessage: this.store.errorMessage,
@@ -24,12 +22,4 @@ export class CompanyListComponent {
     query: this.store.query,
     sorting: this.store.sorting,
   }))();
-
-  queryChanged(query: string): void {
-    patchState(this.store, { query });
-  }
-
-  sortingChanged(sorting: string): void {
-    patchState(this.store, { sorting });
-  }
 }

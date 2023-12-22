@@ -36,6 +36,8 @@ export const CompaniesStore = signalStore(
       { maxResultCount, query, skipCount, sorting, ...store },
       companiesService = inject(CompaniesService)
     ) => ({
+      queryChanged: (query: string) => patchState(store, { query }),
+      sortingChanged: (sorting: string) => patchState(store, { sorting }),
       getList: () => {
         patchState(store, { loading: true });
 

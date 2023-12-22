@@ -1,13 +1,17 @@
 <h2>{{ 'CRM::Companies' | abpLocalization }}</h2>
+
 <div class="query-fields">
   <input
     type="text"
     [placeholder]="'::Search' | abpLocalization"
     [ngModel]="vm.query()"
-    (ngModelChange)="queryChanged($event)"
+    (ngModelChange)="store.queryChanged($event)"
     autofocus
   />
-  <select [ngModel]="vm.sorting()" (ngModelChange)="sortingChanged($event)">
+  <select
+    [ngModel]="vm.sorting()"
+    (ngModelChange)="store.sortingChanged($event)"
+  >
     <option ngValue="Name ASC">ASC</option>
     <option ngValue="Name DESC">DESC</option>
   </select>
