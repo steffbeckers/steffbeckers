@@ -28,6 +28,7 @@ export const CompaniesStore = signalStore(
   withEntities({ entity: type<Company>() }),
   withPersistence(
     'companies',
+    // TODO: Include all keys of state & add config to exclude keys?
     ['query', 'entityMap', 'ids', 'sorting', 'errorMessage'],
     {
       keyPrefix: 'sb-',
