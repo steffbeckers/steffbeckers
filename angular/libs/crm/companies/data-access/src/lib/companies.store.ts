@@ -6,11 +6,7 @@ import {
   withMethods,
   withState,
 } from '@ngrx/signals';
-import {
-  EntityState,
-  setAllEntities,
-  withEntities,
-} from '@ngrx/signals/entities';
+import { setAllEntities, withEntities } from '@ngrx/signals/entities';
 import { inject } from '@angular/core';
 import {
   debounceTime,
@@ -24,18 +20,12 @@ import { rxMethod } from '@ngrx/signals/rxjs-interop';
 import { Company } from './company.model';
 import { withPersistence } from '@steffbeckers/shared/utils/ngrx-signals';
 
-export interface CompaniesState extends EntityState<Company> {
-  query: string;
-}
-
 export const CompaniesStore = signalStore(
-  withState<CompaniesState>({
-    entityMap: {},
-    ids: [],
+  withState({
     query: '',
   }),
   withEntities({ entity: type<Company>() }),
-  withPersistence<CompaniesState>('companies', ['query', 'entityMap', 'ids'], {
+  withPersistence('companies', ['query', 'entityMap', 'ids'], {
     keyPrefix: 'sb-',
     rehydrate: true,
   }),

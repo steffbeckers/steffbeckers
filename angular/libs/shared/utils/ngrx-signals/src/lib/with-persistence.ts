@@ -6,6 +6,7 @@ import {
   withHooks,
   withMethods,
 } from '@ngrx/signals';
+import { NamedEntityState } from '@ngrx/signals/entities';
 
 export type PersistenceConfig = {
   autoSave: boolean;
@@ -20,7 +21,7 @@ export const defaultPersistenceConfig: PersistenceConfig = {
   storage: localStorage,
 };
 
-export const withPersistence = <T extends object>(
+export const withPersistence = <T extends object | NamedEntityState<T, string>>(
   storageKey: string,
   keys: (keyof T)[],
   config?: Partial<PersistenceConfig>
@@ -46,7 +47,7 @@ export const withPersistence = <T extends object>(
           `${keyPrefix ?? ''}${storageKey}`,
           JSON.stringify(
             keys.reduce((prev, curr) => {
-              // TODO
+              // TODO: Can we type this?
               // eslint-disable-next-line @typescript-eslint/no-explicit-any
               prev[curr as string] = (state as any)[curr]();
 

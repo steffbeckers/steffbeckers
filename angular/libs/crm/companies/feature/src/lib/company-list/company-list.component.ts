@@ -18,7 +18,7 @@ export class CompanyListComponent {
   private store = inject(CompaniesStore);
 
   vm = computed(() => ({
-    entities: this.store.entities,
+    companies: this.store.entities,
     query: this.store.query,
   }))();
 

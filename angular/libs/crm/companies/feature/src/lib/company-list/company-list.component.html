@@ -7,7 +7,7 @@
   autofocus
 />
 <ul>
-  @for (company of vm.entities(); track company.id) {
+  @for (company of vm.companies(); track company.id) {
   <li>{{ company.name }}</li>
   }
 </ul>
