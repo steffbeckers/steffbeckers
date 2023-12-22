@@ -9,7 +9,12 @@ import {
 } from '@ngrx/signals';
 import { setAllEntities, withEntities } from '@ngrx/signals/entities';
 import { computed, inject } from '@angular/core';
-import { debounceTime, distinctUntilChanged, switchMap } from 'rxjs';
+import {
+  debounceTime,
+  distinctUntilChanged,
+  firstValueFrom,
+  switchMap,
+} from 'rxjs';
 import { CompaniesService } from '@steffbeckers/crm/data-access';
 import { rxMethod } from '@ngrx/signals/rxjs-interop';
 import { withPersistence } from '@steffbeckers/shared/utils/ngrx-signals';
@@ -45,10 +50,8 @@ export const CompanyListStore = signalStore(
     (
       { maxResultCount, query, skipCount, sorting, ...store },
       companiesService = inject(CompaniesService)
-    ) => ({
-      queryChanged: (query: string) => patchState(store, { query }),
-      sortingChanged: (sorting: string) => patchState(store, { sorting }),
-      getList: () => {
+    ) => {
+      const getList = () => {
         patchState(store, { loading: true });
 
         return companiesService
@@ -74,12 +77,22 @@ export const CompanyListStore = signalStore(
               finalize: () => patchState(store, { loading: false }),
             })
           );
-      },
-    })
+      };
+
+      return {
+        getList,
+        queryChanged: (query: string) => {
+          patchState(store, { query });
+        },
+        sortingChanged: async (sorting: string) => {
+          patchState(store, { sorting });
+          await firstValueFrom(getList());
+        },
+      };
+    }
   ),
   withHooks({
-    onInit({ query, sorting, getList }) {
-      // TODO: Both rxMethod's trigger getList?
+    onInit({ getList, query }) {
       rxMethod((x$) =>
         x$.pipe(
           debounceTime(250),
@@ -87,8 +100,6 @@ export const CompanyListStore = signalStore(
           switchMap(() => getList())
         )
       )(query);
-
-      rxMethod((x$) => x$.pipe(switchMap(() => getList())))(sorting);
     },
   })
 );
