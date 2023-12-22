@@ -27,6 +27,11 @@ export const CompanyListStore = signalStore(
     sorting: 'Name ASC',
   }),
   withEntities({ entity: type<Company>() }),
+  withPersistence('companies', {
+    excludedKeys: ['loading', 'maxResultCount', 'skipCount'],
+    keyPrefix: 'sb-',
+    rehydrate: true,
+  }),
   withComputed(({ entities, errorMessage, loading, sorting, query }) => ({
     vm: computed(() => ({
       companies: entities,
@@ -36,11 +41,6 @@ export const CompanyListStore = signalStore(
       sorting,
     })),
   })),
-  withPersistence('companies', {
-    excludedKeys: ['loading', 'maxResultCount', 'skipCount'],
-    keyPrefix: 'sb-',
-    rehydrate: true,
-  }),
   withMethods(
     (
       { maxResultCount, query, skipCount, sorting, ...store },
