@@ -2,21 +2,22 @@ import {
   patchState,
   signalStore,
   type,
+  withComputed,
   withHooks,
   withMethods,
   withState,
 } from '@ngrx/signals';
 import { setAllEntities, withEntities } from '@ngrx/signals/entities';
-import { inject } from '@angular/core';
+import { computed, inject } from '@angular/core';
 import { debounceTime, distinctUntilChanged, switchMap } from 'rxjs';
 import { CompaniesService } from '@steffbeckers/crm/data-access';
 import { rxMethod } from '@ngrx/signals/rxjs-interop';
-import { Company } from './company.model';
 import { withPersistence } from '@steffbeckers/shared/utils/ngrx-signals';
 import { tapResponse } from '@ngrx/operators';
 import { HttpErrorResponse } from '@angular/common/http';
+import { Company } from './company.model';
 
-export const CompaniesStore = signalStore(
+export const CompanyListStore = signalStore(
   withState({
     errorMessage: '',
     loading: false,
@@ -26,6 +27,15 @@ export const CompaniesStore = signalStore(
     sorting: 'Name ASC',
   }),
   withEntities({ entity: type<Company>() }),
+  withComputed(({ entities, errorMessage, loading, sorting, query }) => ({
+    vm: computed(() => ({
+      companies: entities,
+      errorMessage,
+      loading,
+      query,
+      sorting,
+    })),
+  })),
   withPersistence('companies', {
     excludedKeys: ['loading', 'maxResultCount', 'skipCount'],
     keyPrefix: 'sb-',
