@@ -3,7 +3,10 @@
     "Texts": {
         "Companies": "Bedrijven",
         "Company": "Bedrijf",
+        "Email": "E-mail",
         "NoCompaniesFound": "Geen bedrijven gevonden.",
-        "NoCompaniesFoundForSearchTerm": "Geen bedrijven gevonden voor zoekterm <strong>{0}</strong>."
+        "NoCompaniesFoundForSearchTerm": "Geen bedrijven gevonden voor zoekterm <strong>{0}</strong>.",
+        "PhoneNumber": "Telefoonnummer",
+        "Website": "Website"
     }
 }

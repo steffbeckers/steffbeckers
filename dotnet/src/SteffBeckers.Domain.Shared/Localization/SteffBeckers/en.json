@@ -1,6 +1,7 @@
 {
     "Culture": "en",
     "Texts": {
+        "BackTo": "Back to {0}",
         "Save": "Save",
         "Search": "Search"
     }
