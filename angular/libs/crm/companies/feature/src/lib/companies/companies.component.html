@@ -1,5 +1,4 @@
 <h2>{{ 'CRM::Companies' | abpLocalization }}</h2>
-
 <div class="query-fields">
   <input
     type="text"
@@ -19,16 +18,15 @@
   <div>Loading...</div>
   }
 </div>
-
 @if (vm.errorMessage()) {
 <p>Error: {{ vm.errorMessage() }}</p>
 } @if (vm.companies().length > 0) {
 <ul>
   @for (company of vm.companies(); track company.id) {
-  <li>{{ company.name }}</li>
+  <li [routerLink]="company.id">{{ company.name }}</li>
   }
 </ul>
-} @else if(vm.query()) {
+} @else if (vm.query()) {
 <p
   [innerHTML]="
     'CRM::NoCompaniesFoundForSearchTerm' | abpLocalization : vm.query()

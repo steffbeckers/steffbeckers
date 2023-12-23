@@ -7,6 +7,7 @@ public class CRMApplicationAutoMapperProfile : Profile
 {
 	public CRMApplicationAutoMapperProfile()
 	{
+		CreateMap<Company, CompanyDto>();
 		CreateMap<Company, CompanyListDto>();
 	}
 }

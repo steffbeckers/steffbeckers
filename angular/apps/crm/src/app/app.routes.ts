@@ -1,12 +1,12 @@
 import { authGuard } from '@abp/ng.core';
-import { Route } from '@angular/router';
+import { Routes } from '@angular/router';
 
-export const appRoutes: Route[] = [
+export const appRoutes: Routes = [
   {
     path: 'companies',
-    loadComponent: () =>
+    loadChildren: () =>
       import('@steffbeckers/crm/companies/feature').then(
-        (m) => m.CompaniesComponent
+        (m) => m.companiesRoutes
       ),
     canActivate: [authGuard],
   },

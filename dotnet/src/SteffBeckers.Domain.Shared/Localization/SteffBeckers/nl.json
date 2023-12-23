@@ -1,6 +1,7 @@
 {
     "Culture": "nl",
     "Texts": {
+        "BackTo": "Terug naar {0}",
         "Save": "Opslaan",
         "Search": "Zoeken"
     }

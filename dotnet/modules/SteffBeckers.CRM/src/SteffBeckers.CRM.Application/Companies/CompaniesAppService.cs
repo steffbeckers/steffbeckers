@@ -1,14 +1,17 @@
 ﻿using Microsoft.AspNetCore.Authorization;
+using SteffBeckers.CRM.Permissions;
+using System;
 using System.Linq;
 using System.Linq.Dynamic.Core;
 using System.Threading.Tasks;
 using Volo.Abp.Application.Dtos;
 using Volo.Abp.Domain.ChangeTracking;
+using Volo.Abp.Domain.Entities;
 using Volo.Abp.ObjectMapping;
 
 namespace SteffBeckers.CRM.Companies;
 
-[Authorize]
+[Authorize(CRMPermissions.Companies.Default)]
 public class CompaniesAppService : CRMAppService, ICompaniesAppService
 {
 	private readonly ICompanyRepository _companyRepository;
@@ -16,6 +19,22 @@ public class CompaniesAppService : CRMAppService, ICompaniesAppService
 	public CompaniesAppService(ICompanyRepository companyRepository)
 	{
 		_companyRepository = companyRepository;
+	}
+
+	[DisableEntityChangeTracking]
+	public async Task<CompanyDto> GetAsync(Guid id)
+	{
+		IQueryable<Company> companyQueryable = await _companyRepository.GetQueryableAsync();
+		companyQueryable = companyQueryable.Where(x => x.Id == id);
+
+		CompanyDto? companyDto = await AsyncExecuter.FirstOrDefaultAsync(ObjectMapper.GetMapper().ProjectTo<CompanyDto>(companyQueryable));
+
+		if (companyDto == null)
+		{
+			throw new EntityNotFoundException(L[CRMErrorCodes.Companies.NotFound]);
+		}
+
+		return companyDto;
 	}
 
 	[DisableEntityChangeTracking]

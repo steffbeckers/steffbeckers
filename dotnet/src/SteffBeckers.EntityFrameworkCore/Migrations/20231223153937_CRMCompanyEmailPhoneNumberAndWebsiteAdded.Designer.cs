@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using SteffBeckers.EntityFrameworkCore;
 using Volo.Abp.EntityFrameworkCore;
@@ -12,9 +13,11 @@ using Volo.Abp.EntityFrameworkCore;
 namespace SteffBeckers.Migrations
 {
     [DbContext(typeof(SteffBeckersDbContext))]
-    partial class SteffBeckersDbContextModelSnapshot : ModelSnapshot
+    [Migration("20231223153937_CRMCompanyEmailPhoneNumberAndWebsiteAdded")]
+    partial class CRMCompanyEmailPhoneNumberAndWebsiteAdded
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

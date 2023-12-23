@@ -1,5 +1,12 @@
 import type { EntityDto, PagedAndSortedResultRequestDto } from '@abp/ng.core';
 
+export interface CompanyDto extends EntityDto<string> {
+  name?: string;
+  phoneNumber?: string;
+  email?: string;
+  website?: string;
+}
+
 export interface CompanyListDto extends EntityDto<string> {
   name?: string;
 }

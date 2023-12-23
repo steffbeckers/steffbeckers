@@ -8,6 +8,9 @@ namespace SteffBeckers.CRM.Companies;
 public class Company : FullAuditedAggregateRoot<Guid>, IMultiTenant
 {
 	private string name;
+	private string? email;
+	private string? phoneNumber;
+	private string? website;
 
 	public Company(
 		Guid id,
@@ -28,6 +31,36 @@ public class Company : FullAuditedAggregateRoot<Guid>, IMultiTenant
 		{
 			Check.NotNullOrEmpty(name, nameof(Name), CompanyConsts.NameMaxLength);
 			name = value;
+		}
+	}
+
+	public string? Email
+	{
+		get => email;
+		set
+		{
+			Check.Length(value, nameof(Email), CompanyConsts.EmailMaxLength);
+			email = value;
+		}
+	}
+
+	public string? PhoneNumber
+	{
+		get => phoneNumber;
+		set
+		{
+			Check.Length(value, nameof(PhoneNumber), CompanyConsts.PhoneNumberMaxLength);
+			phoneNumber = value;
+		}
+	}
+
+	public string? Website
+	{
+		get => website;
+		set
+		{
+			Check.Length(value, nameof(Website), CompanyConsts.WebsiteMaxLength);
+			website = value;
 		}
 	}
 

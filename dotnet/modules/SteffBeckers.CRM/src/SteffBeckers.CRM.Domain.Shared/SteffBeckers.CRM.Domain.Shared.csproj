@@ -23,4 +23,14 @@
     <Content Remove="Localization\CRM\*.json" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Remove="Localization\CRMErrorCodes\en.json" />
+    <None Remove="Localization\CRMErrorCodes\nl.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Localization\CRMErrorCodes\en.json" />
+    <EmbeddedResource Include="Localization\CRMErrorCodes\nl.json" />
+  </ItemGroup>
+
 </Project>

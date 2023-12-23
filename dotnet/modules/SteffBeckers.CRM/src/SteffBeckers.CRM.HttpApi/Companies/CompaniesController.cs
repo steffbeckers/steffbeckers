@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using System;
 using System.Threading.Tasks;
 using Volo.Abp;
 using Volo.Abp.Application.Dtos;
@@ -16,6 +17,13 @@ public class CompaniesController : CRMController, ICompaniesAppService
 	public CompaniesController(ICompaniesAppService companiesAppService)
 	{
 		_companiesAppService = companiesAppService;
+	}
+
+	[HttpGet]
+	[Route("{id}")]
+	public Task<CompanyDto> GetAsync(Guid id)
+	{
+		return _companiesAppService.GetAsync(id);
 	}
 
 	[HttpGet]
