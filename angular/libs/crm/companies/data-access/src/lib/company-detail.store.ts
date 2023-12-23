@@ -32,7 +32,7 @@ export const CompanyDetailStore = signalStore(
   }),
   withComputed(({ entityMap, id, errorMessage, loading }) => ({
     vm: computed(() => ({
-      company: entityMap()[id()],
+      company: computed(() => entityMap()[id()]),
       errorMessage,
       loading,
     })),
