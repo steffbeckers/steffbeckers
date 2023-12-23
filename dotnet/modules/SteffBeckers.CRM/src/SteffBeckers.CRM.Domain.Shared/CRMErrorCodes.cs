@@ -2,5 +2,10 @@
 
 public static class CRMErrorCodes
 {
-    //Add your business exception error codes here...
+	public static class Companies
+	{
+		public const string NotFound = _prefix + nameof(NotFound);
+
+		private const string _prefix = $"{nameof(Companies)}:";
+	}
 }

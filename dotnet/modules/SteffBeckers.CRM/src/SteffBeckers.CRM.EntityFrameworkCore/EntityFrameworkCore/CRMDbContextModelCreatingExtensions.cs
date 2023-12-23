@@ -17,6 +17,9 @@ public static class CRMDbContextModelCreatingExtensions
 			b.ToTable(CRMDbProperties.DbTablePrefix + "Companies", CRMDbProperties.DbSchema);
 			b.ConfigureByConvention();
 			b.Property(x => x.Name).IsRequired().HasMaxLength(CompanyConsts.NameMaxLength);
+			b.Property(x => x.Email).HasMaxLength(CompanyConsts.EmailMaxLength);
+			b.Property(x => x.PhoneNumber).HasMaxLength(CompanyConsts.PhoneNumberMaxLength);
+			b.Property(x => x.Website).HasMaxLength(CompanyConsts.WebsiteMaxLength);
 		});
 	}
 }

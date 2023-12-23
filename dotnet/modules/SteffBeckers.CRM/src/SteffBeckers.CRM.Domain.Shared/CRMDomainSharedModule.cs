@@ -27,7 +27,8 @@ public class CRMDomainSharedModule : AbpModule
 			options.Resources
 				.Add<CRMResource>("en")
 				.AddBaseTypes(typeof(AbpValidationResource))
-				.AddVirtualJson("/Localization/CRM");
+				.AddVirtualJson("/Localization/CRM")
+				.AddVirtualJson("/Localization/CRMErrorCodes");
 		});
 
 		Configure<AbpExceptionLocalizationOptions>(options =>
