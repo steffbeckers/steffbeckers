@@ -6,30 +6,25 @@
 </button>
 
 @if (vm.errorMessage()) {
-  <p>{{ vm.errorMessage() }}</p>
+<p>{{ vm.errorMessage() }}</p>
 }
 
 <!-- TODO: Is this a best practice? Or do we need to use the signal in all other places as well? -->
 @if (vm.company(); as company) {
-  <h2>{{ 'CRM::Company' | abpLocalization }} {{ company.name }}</h2>
-
-  @if (company.email; as email) {
-    <div>
-      {{ 'CRM::Email' | abpLocalization }}:
-      <a [href]="'mailto:' + company.email">{{ email }}</a>
-    </div>
-  }
-  @if (company.phoneNumber; as phoneNumber) {
-    <div>
-      {{ 'CRM::PhoneNumber' | abpLocalization }}:
-      <a [href]="'tel:' + phoneNumber">{{ phoneNumber }}</a>
-    </div>
-  }
-  
-  @if (company.website; as website) {
-    <div>
-      {{ 'CRM::Website' | abpLocalization }}:
-      <a [href]="website" target="_blank">{{ website }}</a>
-    </div>
-  }
-}
+<h2>{{ 'CRM::Company' | abpLocalization }} {{ company.name }}</h2>
+@if (company.email; as email) {
+<div>
+  {{ 'CRM::Email' | abpLocalization }}:
+  <a [href]="'mailto:' + company.email">{{ email }}</a>
+</div>
+} @if (company.phoneNumber; as phoneNumber) {
+<div>
+  {{ 'CRM::PhoneNumber' | abpLocalization }}:
+  <a [href]="'tel:' + phoneNumber">{{ phoneNumber }}</a>
+</div>
+} @if (company.website; as website) {
+<div>
+  {{ 'CRM::Website' | abpLocalization }}:
+  <a [href]="website" target="_blank">{{ website }}</a>
+</div>
+} }

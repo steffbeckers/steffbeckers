@@ -20,8 +20,7 @@
 </div>
 @if (vm.errorMessage()) {
 <p>Error: {{ vm.errorMessage() }}</p>
-}
-@if (vm.companies().length > 0) {
+} @if (vm.companies().length > 0) {
 <ul>
   @for (company of vm.companies(); track company.id) {
   <li [routerLink]="company.id">{{ company.name }}</li>
