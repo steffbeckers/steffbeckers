@@ -1,27 +1,21 @@
 {
-  "name": "shared-utils-ngrx-signals",
   "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "libs/shared/utils/ngrx-signals/src",
+  "name": "shared-utils-ngrx-signals",
   "prefix": "steffbeckers",
-  "tags": [],
   "projectType": "library",
+  "sourceRoot": "libs/shared/utils/ngrx-signals/src",
+  "tags": [],
   "targets": {
-    "test": {
-      "executor": "@nx/jest:jest",
-      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
-      "options": {
-        "jestConfig": "libs/shared/utils/ngrx-signals/jest.config.ts"
-      }
-    },
     "lint": {
       "executor": "@nx/eslint:lint",
-      "outputs": ["{options.outputFile}"],
+      "outputs": ["{options.outputFile}"]
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
       "options": {
-        "lintFilePatterns": [
-          "libs/shared/utils/ngrx-signals/**/*.ts",
-          "libs/shared/utils/ngrx-signals/**/*.html"
-        ]
-      }
+        "jestConfig": "libs/shared/utils/ngrx-signals/jest.config.ts"
+      },
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"]
     }
   }
 }
