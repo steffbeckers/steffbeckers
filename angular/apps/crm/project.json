@@ -58,18 +58,15 @@
     },
     "lint": {
       "executor": "@nx/eslint:lint",
-      "options": {
-        "lintFilePatterns": ["apps/crm/**/*.ts", "apps/crm/**/*.html"]
-      },
       "outputs": ["{options.outputFile}"]
     },
     "serve": {
       "configurations": {
         "development": {
+          "allowedHosts": ["all"],
           "buildTarget": "crm:build:development",
           "host": "0.0.0.0",
-          "port": 4200,
-          "allowedHosts": ["all"]
+          "port": 4200
         },
         "production": {
           "buildTarget": "crm:build:production"

@@ -1,23 +1,20 @@
 {
-  "name": "crm-e2e",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "implicitDependencies": ["crm"],
+  "name": "crm-e2e",
   "projectType": "application",
   "sourceRoot": "apps/crm-e2e/src",
   "targets": {
     "e2e": {
       "executor": "@nx/playwright:playwright",
-      "outputs": ["{workspaceRoot}/dist/.playwright/apps/crm-e2e"],
       "options": {
         "config": "apps/crm-e2e/playwright.config.ts"
-      }
+      },
+      "outputs": ["{workspaceRoot}/dist/.playwright/apps/crm-e2e"]
     },
     "lint": {
       "executor": "@nx/eslint:lint",
-      "outputs": ["{options.outputFile}"],
-      "options": {
-        "lintFilePatterns": ["apps/crm-e2e/**/*.{js,ts}"]
-      }
+      "outputs": ["{options.outputFile}"]
     }
-  },
-  "implicitDependencies": ["crm"]
+  }
 }

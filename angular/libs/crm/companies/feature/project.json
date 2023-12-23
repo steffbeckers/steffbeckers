@@ -8,12 +8,6 @@
   "targets": {
     "lint": {
       "executor": "@nx/eslint:lint",
-      "options": {
-        "lintFilePatterns": [
-          "libs/crm/companies/feature/**/*.ts",
-          "libs/crm/companies/feature/**/*.html"
-        ]
-      },
       "outputs": ["{options.outputFile}"]
     },
     "test": {
