@@ -4,6 +4,6 @@ export const environment = {
   production: true,
   remoteEnv: {
     url: '/dynamic-env.json',
-    method: 'GET'
-  }
+    method: 'GET',
+  },
 } as Environment;
