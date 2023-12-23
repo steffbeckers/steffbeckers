@@ -6,7 +6,7 @@ export const appRoutes: Route[] = [
     path: 'companies',
     loadComponent: () =>
       import('@steffbeckers/crm/companies/feature').then(
-        (m) => m.CompanyListComponent
+        (m) => m.CompaniesComponent
       ),
     canActivate: [authGuard],
   },
