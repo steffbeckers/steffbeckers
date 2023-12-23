@@ -8,7 +8,7 @@ import {
   withState,
 } from '@ngrx/signals';
 import { setEntity, withEntities } from '@ngrx/signals/entities';
-import { computed, inject } from '@angular/core';
+import { Signal, computed, inject } from '@angular/core';
 import { map, switchMap } from 'rxjs';
 import { CompaniesService } from '@steffbeckers/crm/data-access';
 import { rxMethod } from '@ngrx/signals/rxjs-interop';
@@ -17,12 +17,11 @@ import { tapResponse } from '@ngrx/operators';
 import { HttpErrorResponse } from '@angular/common/http';
 import { DetailedCompany } from './company.model';
 import { ActivatedRoute } from '@angular/router';
-import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
+import { toSignal } from '@angular/core/rxjs-interop';
 
 export const CompanyDetailStore = signalStore(
   withState({
     errorMessage: '',
-    id: '',
     loading: false,
   }),
   withEntities({ entity: type<DetailedCompany>() }),
@@ -30,9 +29,14 @@ export const CompanyDetailStore = signalStore(
     excludedKeys: ['loading'],
     keyPrefix: 'sb-',
   }),
+  withComputed((_, activatedRoute = inject(ActivatedRoute)) => ({
+    id: toSignal(
+      activatedRoute.paramMap.pipe(map((paramMap) => paramMap.get('companyId')))
+    ) as Signal<string>,
+  })),
   withComputed(({ entityMap, id, errorMessage, loading }) => ({
     vm: computed(() => ({
-      company: computed(() => entityMap()[id()]),
+      company: computed(() => entityMap()[id()] ?? {}),
       errorMessage,
       loading,
     })),
@@ -59,17 +63,8 @@ export const CompanyDetailStore = signalStore(
     })
   ),
   withHooks({
-    onInit({ get, id, ...store }, activatedRoute = inject(ActivatedRoute)) {
-      activatedRoute.paramMap
-        .pipe(
-          takeUntilDestroyed(),
-          map((paramMap) =>
-            patchState(store, { id: paramMap.get('companyId') ?? '' })
-          )
-        )
-        .subscribe();
-
-      // Retrieve detail based on triggers
+    onInit({ get, id }) {
+      // Retrieve detail based on id
       rxMethod((x$) => x$.pipe(switchMap(() => get())))(id);
     },
   })
