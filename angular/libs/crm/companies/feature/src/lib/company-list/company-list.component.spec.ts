@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { CompanyListComponent } from './company-list.component';
-import { CompaniesService } from '@steffbeckers/crm/data-access/proxy/crm/companies';
+import { CompaniesService } from '@steffbeckers/crm/data-access';
 
 describe('CompanyListComponent', () => {
   let component: CompanyListComponent;
