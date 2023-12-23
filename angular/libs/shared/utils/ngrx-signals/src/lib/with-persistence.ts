@@ -19,7 +19,7 @@ export type PersistenceConfig<T> = {
 export const defaultPersistenceConfig: PersistenceConfig<object> = {
   autoSave: true,
   excludedKeys: [],
-  rehydrate: false,
+  rehydrate: true,
   storage: localStorage,
 };
 

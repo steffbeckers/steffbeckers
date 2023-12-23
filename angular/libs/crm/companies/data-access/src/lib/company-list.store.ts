@@ -9,10 +9,12 @@ import {
 } from '@ngrx/signals';
 import { setAllEntities, withEntities } from '@ngrx/signals/entities';
 import { computed, inject } from '@angular/core';
+import { toObservable } from '@angular/core/rxjs-interop';
 import {
   debounceTime,
   distinctUntilChanged,
-  firstValueFrom,
+  merge,
+  skip,
   switchMap,
 } from 'rxjs';
 import { CompaniesService } from '@steffbeckers/crm/data-access';
@@ -35,7 +37,6 @@ export const CompanyListStore = signalStore(
   withPersistence('companies', {
     excludedKeys: ['loading', 'maxResultCount', 'skipCount'],
     keyPrefix: 'sb-',
-    rehydrate: true,
   }),
   withComputed(({ entities, errorMessage, loading, sorting, query }) => ({
     vm: computed(() => ({
@@ -50,8 +51,10 @@ export const CompanyListStore = signalStore(
     (
       { maxResultCount, query, skipCount, sorting, ...store },
       companiesService = inject(CompaniesService)
-    ) => {
-      const getList = () => {
+    ) => ({
+      queryChanged: (query: string) => patchState(store, { query }),
+      sortingChanged: (sorting: string) => patchState(store, { sorting }),
+      getList: () => {
         patchState(store, { loading: true });
 
         return companiesService
@@ -77,28 +80,22 @@ export const CompanyListStore = signalStore(
               finalize: () => patchState(store, { loading: false }),
             })
           );
-      };
-
-      return {
-        getList,
-        queryChanged: (query: string) => patchState(store, { query }),
-        // TODO: Bit weird to be a Promise?
-        sortingChanged: async (sorting: string) => {
-          patchState(store, { sorting });
-          await firstValueFrom(getList());
-        },
-      };
-    }
+      },
+    })
   ),
   withHooks({
-    onInit({ getList, query }) {
-      rxMethod((x$) =>
-        x$.pipe(
-          debounceTime(250),
-          distinctUntilChanged(),
-          switchMap(() => getList())
+    onInit({ getList, query, sorting }) {
+      // Retrieve list based on triggers
+      rxMethod((x$) => x$.pipe(switchMap(() => getList())))(
+        merge(
+          toObservable(query).pipe(
+            skip(1),
+            debounceTime(250),
+            distinctUntilChanged()
+          ),
+          toObservable(sorting)
         )
-      )(query);
+      );
     },
   })
 );
