@@ -1,1 +1,1 @@
-export * from './lib/companies/companies.component';
+export * from './lib/companies.routes';

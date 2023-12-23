@@ -25,7 +25,7 @@
 } @if (vm.companies().length > 0) {
 <ul>
   @for (company of vm.companies(); track company.id) {
-  <li>{{ company.name }}</li>
+  <li [routerLink]="company.id">{{ company.name }}</li>
   }
 </ul>
 } @else if(vm.query()) {
