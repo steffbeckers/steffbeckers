@@ -1,1 +1,1 @@
-export * from './lib/company-list.store';
+export * from './lib/companies.store';

@@ -1,17 +1,17 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { CompanyListComponent } from './company-list.component';
+import { CompaniesComponent } from './companies.component';
 import { CompaniesService } from '@steffbeckers/crm/data-access';
 
-describe('CompanyListComponent', () => {
-  let component: CompanyListComponent;
-  let fixture: ComponentFixture<CompanyListComponent>;
+describe('CompaniesComponent', () => {
+  let component: CompaniesComponent;
+  let fixture: ComponentFixture<CompaniesComponent>;
   const companiesServiceMock = {
     getList: jest.fn(),
   };
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [CompanyListComponent],
+      imports: [CompaniesComponent],
       providers: [
         {
           provide: CompaniesService,
@@ -20,7 +20,7 @@ describe('CompanyListComponent', () => {
       ],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(CompanyListComponent);
+    fixture = TestBed.createComponent(CompaniesComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

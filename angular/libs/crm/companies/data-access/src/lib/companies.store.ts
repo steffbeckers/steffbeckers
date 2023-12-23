@@ -24,7 +24,7 @@ import { tapResponse } from '@ngrx/operators';
 import { HttpErrorResponse } from '@angular/common/http';
 import { Company } from './company.model';
 
-export const CompanyListStore = signalStore(
+export const CompaniesStore = signalStore(
   withState({
     errorMessage: '',
     loading: false,
