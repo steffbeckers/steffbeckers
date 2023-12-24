@@ -1,8 +1,8 @@
-import { CoreTestingModule } from '@abp/ng.core/testing';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { CompaniesComponent } from './companies.component';
 import { CompaniesService } from '@steffbeckers/crm/data-access';
 import { BehaviorSubject } from 'rxjs';
+import { TestingModule } from '@steffbeckers/shared/utils/testing';
 
 describe('CompaniesComponent', () => {
   let component: CompaniesComponent;
@@ -26,7 +26,7 @@ describe('CompaniesComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [CoreTestingModule.withConfig(), CompaniesComponent],
+      imports: [TestingModule, CompaniesComponent],
       providers: [
         {
           provide: CompaniesService,

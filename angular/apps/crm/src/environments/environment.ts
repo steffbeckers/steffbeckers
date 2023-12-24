@@ -1,4 +1,4 @@
-import { Environment } from '@abp/ng.core';
+import { Environment as AbpEnvironment } from '@abp/ng.core';
 
 const origin = 'https://crm.steffbeckers.local';
 
@@ -23,4 +23,4 @@ export const environment = {
       rootNamespace: 'SteffBeckers',
     },
   },
-} as Environment;
+} as AbpEnvironment;

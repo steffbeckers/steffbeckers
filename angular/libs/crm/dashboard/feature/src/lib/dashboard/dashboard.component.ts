@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
-import { LocalizationModule } from '@abp/ng.core';
+import { LocalizationModule as AbpLocalizationModule } from '@abp/ng.core';
 
 @Component({
-  imports: [LocalizationModule],
+  imports: [AbpLocalizationModule],
   selector: 'sb-dashboard',
   standalone: true,
   styleUrl: './dashboard.component.scss',

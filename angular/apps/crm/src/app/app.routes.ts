@@ -1,4 +1,4 @@
-import { authGuard } from '@abp/ng.core';
+import { authGuard as abpAuthGuard } from '@abp/ng.core';
 import { Routes } from '@angular/router';
 
 export const appRoutes: Routes = [
@@ -8,7 +8,7 @@ export const appRoutes: Routes = [
       import('@steffbeckers/crm/companies/feature').then(
         (m) => m.companiesRoutes
       ),
-    canActivate: [authGuard],
+    canActivate: [abpAuthGuard],
   },
   {
     path: 'contacts',
@@ -16,7 +16,7 @@ export const appRoutes: Routes = [
       import('@steffbeckers/crm/contacts/feature').then(
         (m) => m.contactsRoutes
       ),
-    canActivate: [authGuard],
+    canActivate: [abpAuthGuard],
   },
   {
     path: '',
@@ -24,7 +24,7 @@ export const appRoutes: Routes = [
       import('@steffbeckers/crm/dashboard/feature').then(
         (m) => m.dashboardRoutes
       ),
-    canActivate: [authGuard],
+    canActivate: [abpAuthGuard],
   },
   {
     path: '**',
