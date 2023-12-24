@@ -3,9 +3,9 @@ import { LocalizationModule } from '@abp/ng.core';
 
 @Component({
   imports: [LocalizationModule],
-  selector: 'sb-contacts',
+  selector: 'sb-dashboard',
   standalone: true,
-  styleUrl: './contacts.component.scss',
-  templateUrl: './contacts.component.html',
+  styleUrl: './dashboard.component.scss',
+  templateUrl: './dashboard.component.html',
 })
-export class ContactsComponent {}
+export class DashboardComponent {}

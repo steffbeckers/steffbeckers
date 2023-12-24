@@ -19,6 +19,9 @@
       "@steffbeckers/crm/contacts/feature": [
         "libs/crm/contacts/feature/src/index.ts"
       ],
+      "@steffbeckers/crm/dashboard/feature": [
+        "libs/crm/dashboard/feature/src/index.ts"
+      ],
       "@steffbeckers/crm/data-access": ["libs/crm/data-access/src/index.ts"],
       "@steffbeckers/crm/ui": ["libs/crm/ui/src/index.ts"],
       "@steffbeckers/shared/data-access": [

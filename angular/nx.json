@@ -13,7 +13,9 @@
     "@nx/angular:library": {
       "linter": "eslint",
       "unitTestRunner": "jest",
-      "prefix": "sb"
+      "prefix": "sb",
+      "skipModule": true,
+      "standalone": false
     }
   },
   "namedInputs": {

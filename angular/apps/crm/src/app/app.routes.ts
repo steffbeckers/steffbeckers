@@ -19,8 +19,16 @@ export const appRoutes: Routes = [
     canActivate: [authGuard],
   },
   {
+    path: '',
+    loadChildren: () =>
+      import('@steffbeckers/crm/dashboard/feature').then(
+        (m) => m.dashboardRoutes
+      ),
+    canActivate: [authGuard],
+  },
+  {
     path: '**',
     pathMatch: 'full',
-    redirectTo: 'companies',
+    redirectTo: '',
   },
 ];
