@@ -1,8 +1,10 @@
 {
     "Culture": "en",
     "Texts": {
-        "BackTo": "Back to {0}",
+        "BackToX": "Back to {0}",
         "Save": "Save",
-        "Search": "Search"
+        "Search": "Search",
+        "NoXFound": "No {0} found.",
+        "NoXFoundForSearchTermY": "No {0} found for search term <strong>{1}</strong>."
     }
 }

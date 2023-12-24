@@ -29,9 +29,17 @@
 } @else if (vm.query()) {
 <p
   [innerHTML]="
-    'CRM::NoCompaniesFoundForSearchTerm' | abpLocalization : vm.query()
+    '::NoXFoundForSearchTermY'
+      | abpLocalization
+        : ('CRM::Companies' | abpLocalization | lowercase)
+        : vm.query()
   "
 ></p>
 } @else {
-<p>{{ 'CRM::NoCompaniesFound' | abpLocalization }}</p>
+<p>
+  {{
+    '::NoXFound'
+      | abpLocalization : ('CRM::Companies' | abpLocalization | lowercase)
+  }}
+</p>
 }

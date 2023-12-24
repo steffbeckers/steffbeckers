@@ -1,8 +1,10 @@
 {
     "Culture": "nl",
     "Texts": {
-        "BackTo": "Terug naar {0}",
+        "BackToX": "Terug naar {0}",
         "Save": "Opslaan",
-        "Search": "Zoeken"
+        "Search": "Zoeken",
+        "NoXFound": "Geen {0} gevonden.",
+        "NoXFoundForSearchTermY": "Geen {0} gevonden voor zoekterm <strong>{1}</strong>."
     }
 }

@@ -11,6 +11,14 @@ export const appRoutes: Routes = [
     canActivate: [authGuard],
   },
   {
+    path: 'contacts',
+    loadChildren: () =>
+      import('@steffbeckers/crm/contacts/feature').then(
+        (m) => m.contactsRoutes
+      ),
+    canActivate: [authGuard],
+  },
+  {
     path: '**',
     pathMatch: 'full',
     redirectTo: 'companies',
