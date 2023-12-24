@@ -3,9 +3,9 @@
     "Texts": {
         "Companies": "Companies",
         "Company": "Company",
+        "Contacts": "Contacts",
+        "Contact": "Contact",
         "Email": "Email",
-        "NoCompaniesFound": "No companies found.",
-        "NoCompaniesFoundForSearchTerm": "No companies found for search term <strong>{0}</strong>.",
         "PhoneNumber": "Phone number",
         "Website": "Website"
     }
