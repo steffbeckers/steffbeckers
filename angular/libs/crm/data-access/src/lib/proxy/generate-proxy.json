@@ -1,5 +1,7 @@
 {
-  "generated": ["crm"],
+  "generated": [
+    "crm"
+  ],
   "modules": {
     "settingManagement": {
       "rootPath": "settingManagement",
@@ -1846,6 +1848,168 @@
       "rootPath": "crm",
       "remoteServiceName": "CRM",
       "controllers": {
+        "SteffBeckers.CRM.Contacts.ContactsController": {
+          "controllerName": "Contacts",
+          "controllerGroupName": "CRM - Contacts",
+          "isRemoteService": true,
+          "isIntegrationService": false,
+          "apiVersion": null,
+          "type": "SteffBeckers.CRM.Contacts.ContactsController",
+          "interfaces": [
+            {
+              "type": "SteffBeckers.CRM.Contacts.IContactsAppService",
+              "name": "IContactsAppService",
+              "methods": [
+                {
+                  "name": "GetListAsync",
+                  "parametersOnMethod": [
+                    {
+                      "name": "input",
+                      "typeAsString": "SteffBeckers.CRM.Contacts.ContactListInputDto, SteffBeckers.CRM.Application.Contracts",
+                      "type": "SteffBeckers.CRM.Contacts.ContactListInputDto",
+                      "typeSimple": "SteffBeckers.CRM.Contacts.ContactListInputDto",
+                      "isOptional": false,
+                      "defaultValue": null
+                    }
+                  ],
+                  "returnValue": {
+                    "type": "Volo.Abp.Application.Dtos.PagedResultDto<SteffBeckers.CRM.Contacts.ContactListDto>",
+                    "typeSimple": "Volo.Abp.Application.Dtos.PagedResultDto<SteffBeckers.CRM.Contacts.ContactListDto>"
+                  }
+                },
+                {
+                  "name": "GetAsync",
+                  "parametersOnMethod": [
+                    {
+                      "name": "id",
+                      "typeAsString": "System.Guid, System.Private.CoreLib",
+                      "type": "System.Guid",
+                      "typeSimple": "string",
+                      "isOptional": false,
+                      "defaultValue": null
+                    }
+                  ],
+                  "returnValue": {
+                    "type": "SteffBeckers.CRM.Contacts.ContactDto",
+                    "typeSimple": "SteffBeckers.CRM.Contacts.ContactDto"
+                  }
+                }
+              ]
+            }
+          ],
+          "actions": {
+            "GetAsyncById": {
+              "uniqueName": "GetAsyncById",
+              "name": "GetAsync",
+              "httpMethod": "GET",
+              "url": "api/crm/contacts/{id}",
+              "supportedVersions": [],
+              "parametersOnMethod": [
+                {
+                  "name": "id",
+                  "typeAsString": "System.Guid, System.Private.CoreLib",
+                  "type": "System.Guid",
+                  "typeSimple": "string",
+                  "isOptional": false,
+                  "defaultValue": null
+                }
+              ],
+              "parameters": [
+                {
+                  "nameOnMethod": "id",
+                  "name": "id",
+                  "jsonName": null,
+                  "type": "System.Guid",
+                  "typeSimple": "string",
+                  "isOptional": false,
+                  "defaultValue": null,
+                  "constraintTypes": [],
+                  "bindingSourceId": "Path",
+                  "descriptorName": ""
+                }
+              ],
+              "returnValue": {
+                "type": "SteffBeckers.CRM.Contacts.ContactDto",
+                "typeSimple": "SteffBeckers.CRM.Contacts.ContactDto"
+              },
+              "allowAnonymous": null,
+              "implementFrom": "SteffBeckers.CRM.Contacts.IContactsAppService"
+            },
+            "GetListAsyncByInput": {
+              "uniqueName": "GetListAsyncByInput",
+              "name": "GetListAsync",
+              "httpMethod": "GET",
+              "url": "api/crm/contacts",
+              "supportedVersions": [],
+              "parametersOnMethod": [
+                {
+                  "name": "input",
+                  "typeAsString": "SteffBeckers.CRM.Contacts.ContactListInputDto, SteffBeckers.CRM.Application.Contracts",
+                  "type": "SteffBeckers.CRM.Contacts.ContactListInputDto",
+                  "typeSimple": "SteffBeckers.CRM.Contacts.ContactListInputDto",
+                  "isOptional": false,
+                  "defaultValue": null
+                }
+              ],
+              "parameters": [
+                {
+                  "nameOnMethod": "input",
+                  "name": "Query",
+                  "jsonName": null,
+                  "type": "System.String",
+                  "typeSimple": "string",
+                  "isOptional": false,
+                  "defaultValue": null,
+                  "constraintTypes": null,
+                  "bindingSourceId": "ModelBinding",
+                  "descriptorName": "input"
+                },
+                {
+                  "nameOnMethod": "input",
+                  "name": "Sorting",
+                  "jsonName": null,
+                  "type": "System.String",
+                  "typeSimple": "string",
+                  "isOptional": false,
+                  "defaultValue": null,
+                  "constraintTypes": null,
+                  "bindingSourceId": "ModelBinding",
+                  "descriptorName": "input"
+                },
+                {
+                  "nameOnMethod": "input",
+                  "name": "SkipCount",
+                  "jsonName": null,
+                  "type": "System.Int32",
+                  "typeSimple": "number",
+                  "isOptional": false,
+                  "defaultValue": null,
+                  "constraintTypes": null,
+                  "bindingSourceId": "ModelBinding",
+                  "descriptorName": "input"
+                },
+                {
+                  "nameOnMethod": "input",
+                  "name": "MaxResultCount",
+                  "jsonName": null,
+                  "type": "System.Int32",
+                  "typeSimple": "number",
+                  "isOptional": false,
+                  "defaultValue": null,
+                  "constraintTypes": null,
+                  "bindingSourceId": "ModelBinding",
+                  "descriptorName": "input"
+                }
+              ],
+              "returnValue": {
+                "type": "Volo.Abp.Application.Dtos.PagedResultDto<SteffBeckers.CRM.Contacts.ContactListDto>",
+                "typeSimple": "Volo.Abp.Application.Dtos.PagedResultDto<SteffBeckers.CRM.Contacts.ContactListDto>"
+              },
+              "allowAnonymous": null,
+              "implementFrom": "SteffBeckers.CRM.Contacts.IContactsAppService"
+            }
+          }
+        },
         "SteffBeckers.CRM.Companies.CompaniesController": {
           "controllerName": "Companies",
           "controllerGroupName": "CRM - Companies",
@@ -3642,7 +3806,7 @@
     }
   },
   "types": {
-    "SteffBeckers.CRM.Companies.CompanyDto": {
+    "SteffBeckers.CRM.Contacts.ContactDto": {
       "baseType": "Volo.Abp.Application.Dtos.EntityDto<System.Guid>",
       "isEnum": false,
       "enumNames": null,
@@ -3650,7 +3814,19 @@
       "genericArguments": null,
       "properties": [
         {
-          "name": "Name",
+          "name": "FirstName",
+          "jsonName": null,
+          "type": "System.String",
+          "typeSimple": "string",
+          "isRequired": false,
+          "minLength": null,
+          "maxLength": null,
+          "minimum": null,
+          "maximum": null,
+          "regex": null
+        },
+        {
+          "name": "LastName",
           "jsonName": null,
           "type": "System.String",
           "typeSimple": "string",
@@ -3684,18 +3860,6 @@
           "minimum": null,
           "maximum": null,
           "regex": null
-        },
-        {
-          "name": "Website",
-          "jsonName": null,
-          "type": "System.String",
-          "typeSimple": "string",
-          "isRequired": false,
-          "minLength": null,
-          "maxLength": null,
-          "minimum": null,
-          "maximum": null,
-          "regex": null
         }
       ]
     },
@@ -3704,7 +3868,9 @@
       "isEnum": false,
       "enumNames": null,
       "enumValues": null,
-      "genericArguments": ["TKey"],
+      "genericArguments": [
+        "TKey"
+      ],
       "properties": [
         {
           "name": "Id",
@@ -3728,7 +3894,7 @@
       "genericArguments": null,
       "properties": []
     },
-    "SteffBeckers.CRM.Companies.CompanyListInputDto": {
+    "SteffBeckers.CRM.Contacts.ContactListInputDto": {
       "baseType": "Volo.Abp.Application.Dtos.PagedAndSortedResultRequestDto",
       "isEnum": false,
       "enumNames": null,
@@ -3841,7 +4007,9 @@
       "isEnum": false,
       "enumNames": null,
       "enumValues": null,
-      "genericArguments": ["T"],
+      "genericArguments": [
+        "T"
+      ],
       "properties": [
         {
           "name": "TotalCount",
@@ -3862,13 +4030,126 @@
       "isEnum": false,
       "enumNames": null,
       "enumValues": null,
-      "genericArguments": ["T"],
+      "genericArguments": [
+        "T"
+      ],
       "properties": [
         {
           "name": "Items",
           "jsonName": null,
           "type": "[T]",
           "typeSimple": "[T]",
+          "isRequired": false,
+          "minLength": null,
+          "maxLength": null,
+          "minimum": null,
+          "maximum": null,
+          "regex": null
+        }
+      ]
+    },
+    "SteffBeckers.CRM.Contacts.ContactListDto": {
+      "baseType": "Volo.Abp.Application.Dtos.EntityDto<System.Guid>",
+      "isEnum": false,
+      "enumNames": null,
+      "enumValues": null,
+      "genericArguments": null,
+      "properties": [
+        {
+          "name": "FirstName",
+          "jsonName": null,
+          "type": "System.String",
+          "typeSimple": "string",
+          "isRequired": false,
+          "minLength": null,
+          "maxLength": null,
+          "minimum": null,
+          "maximum": null,
+          "regex": null
+        },
+        {
+          "name": "LastName",
+          "jsonName": null,
+          "type": "System.String",
+          "typeSimple": "string",
+          "isRequired": false,
+          "minLength": null,
+          "maxLength": null,
+          "minimum": null,
+          "maximum": null,
+          "regex": null
+        }
+      ]
+    },
+    "SteffBeckers.CRM.Companies.CompanyDto": {
+      "baseType": "Volo.Abp.Application.Dtos.EntityDto<System.Guid>",
+      "isEnum": false,
+      "enumNames": null,
+      "enumValues": null,
+      "genericArguments": null,
+      "properties": [
+        {
+          "name": "Name",
+          "jsonName": null,
+          "type": "System.String",
+          "typeSimple": "string",
+          "isRequired": false,
+          "minLength": null,
+          "maxLength": null,
+          "minimum": null,
+          "maximum": null,
+          "regex": null
+        },
+        {
+          "name": "PhoneNumber",
+          "jsonName": null,
+          "type": "System.String",
+          "typeSimple": "string",
+          "isRequired": false,
+          "minLength": null,
+          "maxLength": null,
+          "minimum": null,
+          "maximum": null,
+          "regex": null
+        },
+        {
+          "name": "Email",
+          "jsonName": null,
+          "type": "System.String",
+          "typeSimple": "string",
+          "isRequired": false,
+          "minLength": null,
+          "maxLength": null,
+          "minimum": null,
+          "maximum": null,
+          "regex": null
+        },
+        {
+          "name": "Website",
+          "jsonName": null,
+          "type": "System.String",
+          "typeSimple": "string",
+          "isRequired": false,
+          "minLength": null,
+          "maxLength": null,
+          "minimum": null,
+          "maximum": null,
+          "regex": null
+        }
+      ]
+    },
+    "SteffBeckers.CRM.Companies.CompanyListInputDto": {
+      "baseType": "Volo.Abp.Application.Dtos.PagedAndSortedResultRequestDto",
+      "isEnum": false,
+      "enumNames": null,
+      "enumValues": null,
+      "genericArguments": null,
+      "properties": [
+        {
+          "name": "Query",
+          "jsonName": null,
+          "type": "System.String",
+          "typeSimple": "string",
           "isRequired": false,
           "minLength": null,
           "maxLength": null,
@@ -4171,7 +4452,9 @@
       "isEnum": false,
       "enumNames": null,
       "enumValues": null,
-      "genericArguments": ["TPrimaryKey"],
+      "genericArguments": [
+        "TPrimaryKey"
+      ],
       "properties": [
         {
           "name": "IsDeleted",
@@ -4216,7 +4499,9 @@
       "isEnum": false,
       "enumNames": null,
       "enumValues": null,
-      "genericArguments": ["TPrimaryKey"],
+      "genericArguments": [
+        "TPrimaryKey"
+      ],
       "properties": [
         {
           "name": "LastModificationTime",
@@ -4249,7 +4534,9 @@
       "isEnum": false,
       "enumNames": null,
       "enumValues": null,
-      "genericArguments": ["TPrimaryKey"],
+      "genericArguments": [
+        "TPrimaryKey"
+      ],
       "properties": [
         {
           "name": "CreationTime",
@@ -4282,7 +4569,9 @@
       "isEnum": false,
       "enumNames": null,
       "enumValues": null,
-      "genericArguments": ["TKey"],
+      "genericArguments": [
+        "TKey"
+      ],
       "properties": [
         {
           "name": "Id",
@@ -4521,7 +4810,13 @@
         "LockedOut",
         "RequiresTwoFactor"
       ],
-      "enumValues": [1, 2, 3, 4, 5],
+      "enumValues": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
       "genericArguments": null,
       "properties": null
     },
@@ -5923,7 +6218,9 @@
       "isEnum": false,
       "enumNames": null,
       "enumValues": null,
-      "genericArguments": ["T"],
+      "genericArguments": [
+        "T"
+      ],
       "properties": [
         {
           "name": "Name",

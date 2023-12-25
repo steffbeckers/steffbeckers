@@ -1,4 +1,4 @@
-import type { CompanyDto, CompanyListDto, CompanyListInputDto } from './models';
+import type { ContactDto, ContactListDto, ContactListInputDto } from './models';
 import { RestService, Rest } from '@abp/ng.core';
 import type { PagedResultDto } from '@abp/ng.core';
 import { Injectable } from '@angular/core';
@@ -6,22 +6,22 @@ import { Injectable } from '@angular/core';
 @Injectable({
   providedIn: 'root',
 })
-export class CompaniesService {
+export class ContactsService {
   apiName = 'CRM';
   
 
   get = (id: string, config?: Partial<Rest.Config>) =>
-    this.restService.request<any, CompanyDto>({
+    this.restService.request<any, ContactDto>({
       method: 'GET',
-      url: `/api/crm/companies/${id}`,
+      url: `/api/crm/contacts/${id}`,
     },
     { apiName: this.apiName,...config });
   
 
-  getList = (input: CompanyListInputDto, config?: Partial<Rest.Config>) =>
-    this.restService.request<any, PagedResultDto<CompanyListDto>>({
+  getList = (input: ContactListInputDto, config?: Partial<Rest.Config>) =>
+    this.restService.request<any, PagedResultDto<ContactListDto>>({
       method: 'GET',
-      url: '/api/crm/companies',
+      url: '/api/crm/contacts',
       params: { query: input.query, sorting: input.sorting, skipCount: input.skipCount, maxResultCount: input.maxResultCount },
     },
     { apiName: this.apiName,...config });

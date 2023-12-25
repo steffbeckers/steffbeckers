@@ -1,2 +1,3 @@
 import * as Companies from './companies';
-export { Companies };
+import * as Contacts from './contacts';
+export { Companies, Contacts };
