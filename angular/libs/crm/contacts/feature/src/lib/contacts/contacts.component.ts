@@ -1,25 +1,19 @@
-import { Component, OnInit, inject } from '@angular/core';
-import {
-  LocalizationModule as AbpLocalizationModule,
-  LocalizationService as AbpLocalizationService,
-} from '@abp/ng.core';
-import { PageTitleService } from '@steffbeckers/shared/utils/page-title';
+import { Component, inject } from '@angular/core';
+import { LocalizationModule as AbpLocalizationModule } from '@abp/ng.core';
+import { ContactsStore } from '@steffbeckers/crm/contacts/data-access';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { RouterLink } from '@angular/router';
 
 @Component({
-  imports: [AbpLocalizationModule],
+  imports: [AbpLocalizationModule, CommonModule, FormsModule, RouterLink],
+  providers: [ContactsStore],
   selector: 'sb-contacts',
   standalone: true,
   styleUrl: './contacts.component.scss',
   templateUrl: './contacts.component.html',
 })
-export class ContactsComponent implements OnInit {
-  private abpLocalizationService = inject(AbpLocalizationService);
-  private pageTitleService = inject(PageTitleService);
-
-  ngOnInit(): void {
-    // TODO: Move to ContactsStore
-    this.pageTitleService.setTitle(
-      this.abpLocalizationService.instant('CRM::Contacts')
-    );
-  }
+export class ContactsComponent {
+  store = inject(ContactsStore);
+  vm = this.store.vm();
 }
