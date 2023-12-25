@@ -17,6 +17,7 @@ export class ContactsComponent implements OnInit {
   private abpLocalizationService = inject(AbpLocalizationService);
 
   ngOnInit(): void {
+    // TODO: Move to ContactsStore
     this.title.setTitle(
       // TODO: "CRM - " in global => own title service?
       `CRM - ${this.abpLocalizationService.instant('CRM::Contacts')}`
