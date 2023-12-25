@@ -42,7 +42,7 @@ export const CompaniesStore = signalStore(
   }),
   withComputed(({ entities, errorMessage, loading, sorting, query }) => ({
     vm: computed(() => ({
-      companies: entities,
+      entities,
       errorMessage,
       loading,
       query,

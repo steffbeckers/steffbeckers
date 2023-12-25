@@ -3,7 +3,7 @@
 }
 
 <!-- TODO: Is this a best practice? Or do we need to use the signal in all other places as well? -->
-@if (vm.company(); as company) {
+@if (vm.entity(); as company) {
 <h2>{{ 'CRM::Company' | abpLocalization }} {{ company.name }}</h2>
 @if (company.email; as email) {
 <div>

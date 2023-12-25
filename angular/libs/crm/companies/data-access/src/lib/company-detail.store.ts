@@ -37,11 +37,11 @@ export const CompanyDetailStore = signalStore(
     ) as Signal<string>,
   })),
   withComputed(({ entityMap, id }) => ({
-    company: computed(() => entityMap()[id()] ?? {}),
+    entity: computed(() => entityMap()[id()] ?? {}),
   })),
-  withComputed(({ company, errorMessage, loading }) => ({
+  withComputed(({ entity, errorMessage, loading }) => ({
     vm: computed(() => ({
-      company,
+      entity,
       errorMessage,
       loading,
     })),
@@ -69,7 +69,7 @@ export const CompanyDetailStore = signalStore(
   ),
   withHooks({
     onInit(
-      { company, get, id },
+      { entity, get, id },
       abpLocalizationService = inject(AbpLocalizationService),
       title = inject(Title)
     ) {
@@ -78,7 +78,7 @@ export const CompanyDetailStore = signalStore(
 
       // Update page title
       effect(() => {
-        const { name } = company();
+        const { name } = entity();
         if (name) {
           title.setTitle(
             // TODO: "CRM - " in global => own title service?
