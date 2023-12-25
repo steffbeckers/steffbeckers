@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using SteffBeckers.CRM.Companies;
+using SteffBeckers.CRM.Contacts;
 using Volo.Abp;
 using Volo.Abp.EntityFrameworkCore.Modeling;
 
@@ -20,6 +21,16 @@ public static class CRMDbContextModelCreatingExtensions
 			b.Property(x => x.Email).HasMaxLength(CompanyConsts.EmailMaxLength);
 			b.Property(x => x.PhoneNumber).HasMaxLength(CompanyConsts.PhoneNumberMaxLength);
 			b.Property(x => x.Website).HasMaxLength(CompanyConsts.WebsiteMaxLength);
+		});
+
+		builder.Entity<Contact>(b =>
+		{
+			b.ToTable(CRMDbProperties.DbTablePrefix + "Contacts", CRMDbProperties.DbSchema);
+			b.ConfigureByConvention();
+			b.Property(x => x.FirstName).IsRequired().HasMaxLength(ContactConsts.FirstNameMaxLength);
+			b.Property(x => x.LastName).IsRequired().HasMaxLength(ContactConsts.LastNameMaxLength);
+			b.Property(x => x.Email).HasMaxLength(ContactConsts.EmailMaxLength);
+			b.Property(x => x.PhoneNumber).HasMaxLength(ContactConsts.PhoneNumberMaxLength);
 		});
 	}
 }
