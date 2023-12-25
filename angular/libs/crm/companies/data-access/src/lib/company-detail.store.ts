@@ -18,8 +18,8 @@ import { HttpErrorResponse } from '@angular/common/http';
 import { DetailedCompany } from './company.model';
 import { ActivatedRoute } from '@angular/router';
 import { toSignal } from '@angular/core/rxjs-interop';
-import { Title } from '@angular/platform-browser';
 import { LocalizationService as AbpLocalizationService } from '@abp/ng.core';
+import { PageTitleService } from '@steffbeckers/shared/utils/page-title';
 
 export const CompanyDetailStore = signalStore(
   withState({
@@ -68,21 +68,24 @@ export const CompanyDetailStore = signalStore(
     })
   ),
   withHooks({
-    onInit(
-      { entity, get, id },
-      abpLocalizationService = inject(AbpLocalizationService),
-      title = inject(Title)
-    ) {
+    onInit({ get, id }) {
       // Retrieve detail based on id
       rxMethod((x$) => x$.pipe(switchMap(() => get())))(id);
-
+    },
+  }),
+  // TODO: This is entity specific
+  withHooks({
+    onInit(
+      { entity },
+      abpLocalizationService = inject(AbpLocalizationService),
+      pageTitleService = inject(PageTitleService)
+    ) {
       // Update page title
       effect(() => {
         const { name } = entity();
         if (name) {
-          title.setTitle(
-            // TODO: "CRM - " in global => own title service?
-            `CRM - ${abpLocalizationService.instant('CRM::Company')} ${name}`
+          pageTitleService.setTitle(
+            `${abpLocalizationService.instant('CRM::Company')} ${name}`
           );
         }
       });

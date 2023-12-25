@@ -17,6 +17,7 @@ export class DashboardComponent implements OnInit {
   private abpLocalizationService = inject(AbpLocalizationService);
 
   ngOnInit(): void {
+    // TODO: Move to DashboardStore
     this.title.setTitle(
       // TODO: "CRM - " in global => own title service?
       `CRM - ${this.abpLocalizationService.instant('::Dashboard')}`

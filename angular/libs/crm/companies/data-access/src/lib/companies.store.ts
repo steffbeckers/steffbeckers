@@ -8,7 +8,7 @@ import {
   withState,
 } from '@ngrx/signals';
 import { setAllEntities, withEntities } from '@ngrx/signals/entities';
-import { computed, effect, inject } from '@angular/core';
+import { computed, inject } from '@angular/core';
 import { toObservable } from '@angular/core/rxjs-interop';
 import {
   debounceTime,
@@ -23,8 +23,8 @@ import { withPersistence } from '@steffbeckers/shared/utils/ngrx-signals';
 import { tapResponse } from '@ngrx/operators';
 import { HttpErrorResponse } from '@angular/common/http';
 import { Company } from './company.model';
-import { Title } from '@angular/platform-browser';
 import { LocalizationService as AbpLocalizationService } from '@abp/ng.core';
+import { PageTitleService } from '@steffbeckers/shared/utils/page-title';
 
 export const CompaniesStore = signalStore(
   withState({
@@ -86,11 +86,7 @@ export const CompaniesStore = signalStore(
     })
   ),
   withHooks({
-    onInit(
-      { getList, query, sorting },
-      abpLocalizationService = inject(AbpLocalizationService),
-      title = inject(Title)
-    ) {
+    onInit({ getList, query, sorting }) {
       // Retrieve list based on triggers
       rxMethod((x$) => x$.pipe(switchMap(() => getList())))(
         merge(
@@ -102,14 +98,19 @@ export const CompaniesStore = signalStore(
           toObservable(sorting)
         )
       );
-
+    },
+  }),
+  // TODO: This is entity specific
+  withHooks({
+    onInit(
+      _,
+      abpLocalizationService = inject(AbpLocalizationService),
+      pageTitleService = inject(PageTitleService)
+    ) {
       // Update page title
-      effect(() => {
-        title.setTitle(
-          // TODO: "CRM - " in global => own title service?
-          `CRM - ${abpLocalizationService.instant('CRM::Companies')}`
-        );
-      });
+      pageTitleService.setTitle(
+        abpLocalizationService.instant('CRM::Companies')
+      );
     },
   })
 );

@@ -5,6 +5,7 @@ import { environment } from '../environments/environment';
 import { registerLocale } from '@abp/ng.core/locale';
 import { AbpOAuthModule } from '@abp/ng.oauth';
 import { appRoutes } from './app.routes';
+import { providePageTitleConfig } from '@steffbeckers/shared/utils/page-title';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -16,5 +17,8 @@ export const appConfig: ApplicationConfig = {
       AbpOAuthModule.forRoot()
     ),
     provideRouter(appRoutes),
+    providePageTitleConfig({
+      prefix: 'CRM - ',
+    }),
   ],
 };
