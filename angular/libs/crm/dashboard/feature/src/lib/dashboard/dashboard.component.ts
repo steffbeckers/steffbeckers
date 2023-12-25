@@ -3,7 +3,7 @@ import {
   LocalizationModule as AbpLocalizationModule,
   LocalizationService as AbpLocalizationService,
 } from '@abp/ng.core';
-import { Title } from '@angular/platform-browser';
+import { PageTitleService } from '@steffbeckers/shared/utils/page-title';
 
 @Component({
   imports: [AbpLocalizationModule],
@@ -13,14 +13,13 @@ import { Title } from '@angular/platform-browser';
   templateUrl: './dashboard.component.html',
 })
 export class DashboardComponent implements OnInit {
-  private title = inject(Title);
   private abpLocalizationService = inject(AbpLocalizationService);
+  private pageTitleService = inject(PageTitleService);
 
   ngOnInit(): void {
     // TODO: Move to DashboardStore
-    this.title.setTitle(
-      // TODO: "CRM - " in global => own title service?
-      `CRM - ${this.abpLocalizationService.instant('::Dashboard')}`
+    this.pageTitleService.setTitle(
+      this.abpLocalizationService.instant('::Dashboard')
     );
   }
 }
