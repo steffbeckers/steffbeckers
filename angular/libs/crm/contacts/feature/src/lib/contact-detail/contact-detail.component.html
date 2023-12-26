@@ -1,0 +1,21 @@
+@if (vm.errorMessage()) {
+<p>{{ vm.errorMessage() }}</p>
+}
+
+<!-- TODO: Is this a best practice? Or do we need to use the signal in all other places as well? -->
+@if (vm.entity(); as contact) {
+<h2>
+  {{ 'CRM::Contact' | abpLocalization }} {{ contact.firstName }}
+  {{ contact.lastName }}
+</h2>
+@if (contact.email; as email) {
+<div>
+  {{ 'CRM::Email' | abpLocalization }}:
+  <a [href]="'mailto:' + contact.email">{{ email }}</a>
+</div>
+} @if (contact.phoneNumber; as phoneNumber) {
+<div>
+  {{ 'CRM::PhoneNumber' | abpLocalization }}:
+  <a [href]="'tel:' + phoneNumber">{{ phoneNumber }}</a>
+</div>
+} }

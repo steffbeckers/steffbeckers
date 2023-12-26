@@ -4,7 +4,7 @@ export interface Contact {
   lastName: string;
 }
 
-export interface DetailedCompany extends Contact {
+export interface DetailedContact extends Contact {
   email?: string;
   phoneNumber?: string;
 }
