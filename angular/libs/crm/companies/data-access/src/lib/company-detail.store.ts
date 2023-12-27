@@ -12,7 +12,7 @@ import { Signal, computed, effect, inject } from '@angular/core';
 import { map, switchMap } from 'rxjs';
 import { CompaniesService } from '@steffbeckers/crm/data-access';
 import { rxMethod } from '@ngrx/signals/rxjs-interop';
-import { withPersistence } from '@steffbeckers/shared/utils/ngrx-signals';
+import { withPersistence } from '@steffbeckers/shared/data-access';
 import { tapResponse } from '@ngrx/operators';
 import { HttpErrorResponse } from '@angular/common/http';
 import { DetailedCompany } from './company.model';

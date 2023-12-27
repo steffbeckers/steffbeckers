@@ -30,9 +30,6 @@
       "@steffbeckers/shared/data-access": [
         "libs/shared/data-access/src/index.ts"
       ],
-      "@steffbeckers/shared/utils/ngrx-signals": [
-        "libs/shared/utils/ngrx-signals/src/index.ts"
-      ],
       "@steffbeckers/shared/utils/page-title": [
         "libs/shared/utils/page-title/src/index.ts"
       ],
