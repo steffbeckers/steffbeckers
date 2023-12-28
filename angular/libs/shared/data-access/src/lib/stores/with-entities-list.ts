@@ -1,3 +1,4 @@
+import { LocalizationService as AbpLocalizationService } from '@abp/ng.core';
 import { HttpErrorResponse } from '@angular/common/http';
 import { Type, computed, inject } from '@angular/core';
 import { toObservable } from '@angular/core/rxjs-interop';
@@ -14,6 +15,7 @@ import {
 import { EntityId, setAllEntities, withEntities } from '@ngrx/signals/entities';
 import { rxMethod } from '@ngrx/signals/rxjs-interop';
 import { withPersistence } from '@steffbeckers/shared/data-access';
+import { PageTitleService } from '@steffbeckers/shared/utils/page-title';
 import {
   Observable,
   debounceTime,
@@ -48,6 +50,7 @@ export const withEntitiesList = <
     initialState?: {
       sorting?: string;
     };
+    pageTitle?: string;
     persistence: { name: string };
   }
 ) => {
@@ -111,7 +114,11 @@ export const withEntitiesList = <
       })
     ),
     withHooks({
-      onInit({ getList, query, sorting }) {
+      onInit(
+        { getList, query, sorting },
+        abpLocalizationService = inject(AbpLocalizationService),
+        pageTitleService = inject(PageTitleService)
+      ) {
         // Retrieve list based on triggers
         rxMethod((x$) => x$.pipe(switchMap(() => getList())))(
           merge(
@@ -123,6 +130,13 @@ export const withEntitiesList = <
             toObservable(sorting)
           )
         );
+
+        // Update page title
+        if (config.pageTitle) {
+          pageTitleService.setTitle(
+            abpLocalizationService.instant(config.pageTitle)
+          );
+        }
       },
     })
   );
