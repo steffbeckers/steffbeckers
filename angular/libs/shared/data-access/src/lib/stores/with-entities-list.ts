@@ -12,7 +12,7 @@ import {
   patchState,
   signalStoreFeature,
 } from '@ngrx/signals';
-import { EntityId, setAllEntities, withEntities } from '@ngrx/signals/entities';
+import { setAllEntities, withEntities } from '@ngrx/signals/entities';
 import { rxMethod } from '@ngrx/signals/rxjs-interop';
 import { withPersistence } from '@steffbeckers/shared/data-access';
 import { PageTitleService } from '@steffbeckers/shared/utils/page-title';
@@ -24,6 +24,7 @@ import {
   skip,
   switchMap,
 } from 'rxjs';
+import { Entity } from './entity';
 
 export interface EntityListInputDto {
   maxResultCount: number;
@@ -42,7 +43,7 @@ export interface EntitiesDataService {
 }
 
 export const withEntitiesList = <
-  TEntity extends { id: EntityId },
+  TEntity extends Entity,
   TDataService extends EntitiesDataService
 >(
   dataServiceType: Type<TDataService>,
