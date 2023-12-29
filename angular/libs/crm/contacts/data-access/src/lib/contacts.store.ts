@@ -1,6 +1,9 @@
 import { signalStore } from '@ngrx/signals';
 import { ContactsService } from '@steffbeckers/crm/data-access';
-import { withEntitiesList } from '@steffbeckers/shared/data-access';
+import {
+  withEntitiesList,
+  withPageTitle,
+} from '@steffbeckers/shared/data-access';
 import { Contact } from './contact.model';
 
 export const ContactsStore = signalStore(
@@ -8,9 +11,9 @@ export const ContactsStore = signalStore(
     initialState: {
       sorting: 'FirstName ASC',
     },
-    pageTitle: 'CRM::Contacts',
     persistence: {
       name: 'contacts',
     },
-  })
+  }),
+  withPageTitle(() => ({ localizationKey: 'CRM::Contacts', params: [] }))
 );
