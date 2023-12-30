@@ -59,6 +59,7 @@ export function withEntityDetail<
         loading,
       })),
     }))
+    // TODO
     // withMethods(({ id, ...store }, dataService = inject(dataServiceType)) => ({
     //   get: () => {
     //     patchState(store, { loading: true });
