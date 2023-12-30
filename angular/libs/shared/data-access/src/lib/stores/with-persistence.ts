@@ -23,10 +23,10 @@ export const defaultPersistenceConfig: PersistenceConfig<object> = {
   storage: localStorage,
 };
 
-export const withPersistence = <T extends object | NamedEntityState<T, string>>(
+export function withPersistence<T extends object | NamedEntityState<T, string>>(
   storageKey: string,
   config?: Partial<PersistenceConfig<T>>
-) => {
+) {
   config = { ...defaultPersistenceConfig, ...config };
   config.excludedKeys ??= [];
 
@@ -75,4 +75,4 @@ export const withPersistence = <T extends object | NamedEntityState<T, string>>(
       },
     })
   );
-};
+}

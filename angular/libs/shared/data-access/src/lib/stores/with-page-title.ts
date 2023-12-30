@@ -3,10 +3,10 @@ import { inject } from '@angular/core';
 import { withHooks, signalStoreFeature } from '@ngrx/signals';
 import { PageTitleService } from '@steffbeckers/shared/utils/page-title';
 
-export const withPageTitle = (
+export function withPageTitle(
   // TODO: Include store as input of factory
   pageTitleFactory: () => { localizationKey: string; params: string[] }
-) => {
+) {
   return signalStoreFeature(
     withHooks({
       onInit(
@@ -26,4 +26,4 @@ export const withPageTitle = (
       },
     })
   );
-};
+}

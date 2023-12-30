@@ -40,7 +40,7 @@ export interface EntitiesDataService {
   getList(input: EntityListInputDto): Observable<EntityListDto>;
 }
 
-export const withEntitiesList = <
+export function withEntitiesList<
   TEntity extends Entity,
   TDataService extends EntitiesDataService
 >(
@@ -51,7 +51,7 @@ export const withEntitiesList = <
     };
     persistence: { name: string };
   }
-) => {
+) {
   return signalStoreFeature(
     withState({
       errorMessage: '',
@@ -127,4 +127,4 @@ export const withEntitiesList = <
       },
     })
   );
-};
+}

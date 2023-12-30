@@ -22,7 +22,7 @@ export interface EntityDataService {
   get(id: string): Observable<unknown>;
 }
 
-export const withEntityDetail = <
+export function withEntityDetail<
   TEntity extends Entity,
   TDataService extends EntityDataService
 >(
@@ -31,7 +31,7 @@ export const withEntityDetail = <
     entityIdRouteParam: string;
     persistence: { name: string };
   }
-) => {
+) {
   return signalStoreFeature(
     withState({
       errorMessage: '',
@@ -91,4 +91,4 @@ export const withEntityDetail = <
     //   },
     // })
   );
-};
+}
