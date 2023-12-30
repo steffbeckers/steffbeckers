@@ -9,7 +9,7 @@ import { CompaniesService } from '@steffbeckers/crm/data-access';
 export const CompaniesStore = signalStore(
   withEntitiesList<Company, CompaniesService>(CompaniesService, {
     persistence: {
-      name: 'companies',
+      name: 'sb-companies',
     },
   }),
   withPageTitle(() => ({

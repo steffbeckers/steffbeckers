@@ -13,7 +13,10 @@ import {
 } from '@ngrx/signals';
 import { setAllEntities, withEntities } from '@ngrx/signals/entities';
 import { rxMethod } from '@ngrx/signals/rxjs-interop';
-import { withPersistence } from '@steffbeckers/shared/data-access';
+import {
+  PersistenceConfig,
+  withPersistence,
+} from '@steffbeckers/shared/data-access';
 import {
   Observable,
   debounceTime,
@@ -49,9 +52,19 @@ export function withEntitiesList<
     initialState?: {
       sorting?: string;
     };
-    persistence: { name: string };
+    persistence: {
+      name: string;
+      config?: Partial<PersistenceConfig>;
+    };
   }
 ) {
+  config.persistence.config ??= {};
+  config.persistence.config.excludedKeys ??= [
+    'loading',
+    'maxResultCount',
+    'skipCount',
+  ];
+
   return signalStoreFeature(
     withState({
       errorMessage: '',
@@ -62,10 +75,7 @@ export function withEntitiesList<
       sorting: config.initialState?.sorting ?? 'Name ASC',
     }),
     withEntities({ entity: type<TEntity>() }),
-    withPersistence(config.persistence.name, {
-      excludedKeys: ['loading', 'maxResultCount', 'skipCount'],
-      keyPrefix: 'sb-',
-    }),
+    withPersistence(config.persistence.name, config.persistence.config),
     withComputed(({ entities, errorMessage, loading, sorting, query }) => ({
       vm: computed(() => ({
         entities,

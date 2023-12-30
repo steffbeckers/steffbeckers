@@ -2,30 +2,27 @@ import { effect } from '@angular/core';
 import {
   patchState,
   signalStoreFeature,
-  type,
   withHooks,
   withMethods,
 } from '@ngrx/signals';
-import { NamedEntityState } from '@ngrx/signals/entities';
 
-export type PersistenceConfig<T> = {
+export type PersistenceConfig = {
   autoSave: boolean;
-  excludedKeys: (keyof T)[];
-  keyPrefix?: string;
+  excludedKeys: string[];
   rehydrate: boolean;
   storage: Storage;
 };
 
-export const defaultPersistenceConfig: PersistenceConfig<object> = {
+export const defaultPersistenceConfig: PersistenceConfig = {
   autoSave: true,
   excludedKeys: [],
   rehydrate: true,
   storage: localStorage,
 };
 
-export function withPersistence<T extends object | NamedEntityState<T, string>>(
+export function withPersistence(
   storageKey: string,
-  config?: Partial<PersistenceConfig<T>>
+  config?: Partial<PersistenceConfig>
 ) {
   config = { ...defaultPersistenceConfig, ...config };
   config.excludedKeys ??= [];
@@ -34,22 +31,18 @@ export function withPersistence<T extends object | NamedEntityState<T, string>>(
     throw 'storage is undefined';
   }
 
-  const { autoSave, excludedKeys, keyPrefix, rehydrate, storage } = config;
+  const { autoSave, excludedKeys, rehydrate, storage } = config;
 
   return signalStoreFeature(
-    { state: type<T>() },
     withMethods((state) => ({
       loadFromStorage: () =>
-        patchState(
-          state,
-          JSON.parse(storage.getItem(`${keyPrefix ?? ''}${storageKey}`) ?? '{}')
-        ),
+        patchState(state, JSON.parse(storage.getItem(storageKey) ?? '{}')),
       saveToStorage: () =>
         storage.setItem(
-          `${keyPrefix ?? ''}${storageKey}`,
+          storageKey,
           JSON.stringify(
             Object.keys(state)
-              .filter((x) => !excludedKeys.includes(x as keyof T))
+              .filter((x) => !excludedKeys.includes(x))
               .reduce((prev, curr) => {
                 // TODO: Can we type this state?
                 // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -59,7 +52,7 @@ export function withPersistence<T extends object | NamedEntityState<T, string>>(
               }, {} as { [key: string]: unknown })
           )
         ),
-      clearStorage: () => storage.removeItem(`${keyPrefix ?? ''}${storageKey}`),
+      clearStorage: () => storage.removeItem(storageKey),
     })),
     withHooks({
       onInit({ loadFromStorage, saveToStorage }) {

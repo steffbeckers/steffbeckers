@@ -10,7 +10,7 @@ export const ContactDetailStore = signalStore(
   withEntityDetail<DetailedContact, ContactsService>(ContactsService, {
     entityIdRouteParam: 'contactId',
     persistence: {
-      name: 'contact-detail',
+      name: 'sb-contact-detail',
     },
   }),
   withPageTitle(({ entity }) => ({

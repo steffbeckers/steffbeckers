@@ -12,7 +12,7 @@ export const ContactsStore = signalStore(
       sorting: 'FirstName ASC',
     },
     persistence: {
-      name: 'contacts',
+      name: 'sb-contacts',
     },
   }),
   withPageTitle(() => ({

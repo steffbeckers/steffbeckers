@@ -10,7 +10,7 @@ export const CompanyDetailStore = signalStore(
   withEntityDetail<DetailedCompany, CompaniesService>(CompaniesService, {
     entityIdRouteParam: 'companyId',
     persistence: {
-      name: 'company-detail',
+      name: 'sb-company-detail',
     },
   }),
   withPageTitle(({ entity }) => ({
