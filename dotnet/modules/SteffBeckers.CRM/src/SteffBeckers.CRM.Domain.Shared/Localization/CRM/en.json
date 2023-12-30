@@ -3,8 +3,10 @@
     "Texts": {
         "Companies": "Companies",
         "Company": "Company",
+        "CompanyDetailPageTitle": "Company {0}",
         "Contacts": "Contacts",
         "Contact": "Contact",
+        "ContactDetailPageTitle": "Contact {0}",
         "Email": "Email",
         "PhoneNumber": "Phone number",
         "Website": "Website"
