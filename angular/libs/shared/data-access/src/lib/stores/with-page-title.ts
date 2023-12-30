@@ -1,5 +1,5 @@
 import { LocalizationService as AbpLocalizationService } from '@abp/ng.core';
-import { inject } from '@angular/core';
+import { effect, inject } from '@angular/core';
 import { withHooks } from '@ngrx/signals';
 import {
   EmptyFeatureResult,
@@ -36,6 +36,7 @@ export function withPageTitle<Input extends SignalStoreFeatureResult>(
         params ??= [];
 
         if (localizationKey) {
+          // TODO: This is not set initially when using data from detail call
           pageTitleService.setTitle(
             abpLocalizationService.instant(localizationKey, ...params)
           );
