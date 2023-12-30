@@ -59,12 +59,6 @@ export function withEntityDetail<
         loading,
       })),
     }))
-    // TODO: Adding any method breaks typing?
-    // withMethods(() => ({
-    //   get: () => {
-    //     console.log('');
-    //   },
-    // }))
     // withMethods(({ id, ...store }, dataService = inject(dataServiceType)) => ({
     //   get: () => {
     //     patchState(store, { loading: true });

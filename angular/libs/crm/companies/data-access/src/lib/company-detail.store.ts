@@ -13,9 +13,8 @@ export const CompanyDetailStore = signalStore(
       name: 'company-detail',
     },
   }),
-  withPageTitle(() => ({
+  withPageTitle(({ entity }) => ({
     localizationKey: 'CRM::CompanyDetailPageTitle',
-    // TODO: Add entity().name as param
-    params: [],
+    params: [entity().name],
   }))
 );

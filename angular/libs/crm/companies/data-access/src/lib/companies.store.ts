@@ -14,6 +14,5 @@ export const CompaniesStore = signalStore(
   }),
   withPageTitle(() => ({
     localizationKey: 'CRM::Companies',
-    params: [],
   }))
 );

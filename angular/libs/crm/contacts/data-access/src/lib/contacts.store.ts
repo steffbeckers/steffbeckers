@@ -15,5 +15,7 @@ export const ContactsStore = signalStore(
       name: 'contacts',
     },
   }),
-  withPageTitle(() => ({ localizationKey: 'CRM::Contacts', params: [] }))
+  withPageTitle(() => ({
+    localizationKey: 'CRM::Contacts',
+  }))
 );
