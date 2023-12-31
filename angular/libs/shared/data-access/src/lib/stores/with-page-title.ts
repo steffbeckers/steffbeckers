@@ -25,22 +25,18 @@ export function withPageTitle<Input extends SignalStoreFeatureResult>(
         abpLocalizationService = inject(AbpLocalizationService),
         pageTitleService = inject(PageTitleService)
       ) {
-        const { localizationKey } = pageTitleFactory({
-          ...store.slices,
-          ...store.signals,
-        });
-        let { params } = pageTitleFactory({
-          ...store.slices,
-          ...store.signals,
-        });
-        params ??= [];
+        effect(() => {
+          const { localizationKey, params } = pageTitleFactory({
+            ...store.slices,
+            ...store.signals,
+          });
 
-        if (localizationKey) {
-          // TODO: This is not set initially when using data from detail call
-          pageTitleService.setTitle(
-            abpLocalizationService.instant(localizationKey, ...params)
-          );
-        }
+          if (localizationKey) {
+            pageTitleService.setTitle(
+              abpLocalizationService.instant(localizationKey, ...(params ?? []))
+            );
+          }
+        });
       },
     })(store);
 }
