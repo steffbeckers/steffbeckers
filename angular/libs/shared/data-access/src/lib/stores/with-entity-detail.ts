@@ -10,16 +10,13 @@ import {
   withHooks,
 } from '@ngrx/signals';
 import { setEntity, withEntities } from '@ngrx/signals/entities';
-import {
-  PersistenceConfig,
-  withPersistence,
-} from '@steffbeckers/shared/data-access';
 import { Observable, map, switchMap } from 'rxjs';
 import { Entity } from './entity';
 import { ActivatedRoute } from '@angular/router';
 import { tapResponse } from '@ngrx/operators';
 import { HttpErrorResponse } from '@angular/common/http';
 import { rxMethod } from '@ngrx/signals/rxjs-interop';
+import { PersistenceConfig, withPersistence } from './with-persistence';
 
 export interface EntityDataService {
   get(id: string): Observable<unknown>;
@@ -32,12 +29,14 @@ export function withEntityDetail<
   dataServiceType: Type<TDataService>,
   config: {
     entityIdRouteParam: string;
+    getOnInit?: boolean;
     persistence: {
       name: string;
       config?: Partial<PersistenceConfig>;
     };
   }
 ) {
+  config.getOnInit ??= true;
   config.persistence.config ??= {};
   config.persistence.config.excludedKeys ??= ['loading'];
 
@@ -92,8 +91,10 @@ export function withEntityDetail<
     })),
     withHooks({
       onInit({ get, id }) {
-        // Retrieve detail based on id
-        rxMethod((x$) => x$.pipe(switchMap(() => get())))(id);
+        if (config.getOnInit) {
+          // Retrieve detail based on id
+          rxMethod((x$) => x$.pipe(switchMap(() => get())))(id);
+        }
       },
     })
   );

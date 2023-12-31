@@ -52,12 +52,14 @@ export function withEntitiesList<
     initialState?: {
       sorting?: string;
     };
+    getListOnInit?: boolean;
     persistence: {
       name: string;
       config?: Partial<PersistenceConfig>;
     };
   }
 ) {
+  config.getListOnInit ??= true;
   config.persistence.config ??= {};
   config.persistence.config.excludedKeys ??= [
     'loading',
@@ -123,17 +125,19 @@ export function withEntitiesList<
     ),
     withHooks({
       onInit({ getList, query, sorting }) {
-        // Retrieve list based on triggers
-        rxMethod((x$) => x$.pipe(switchMap(() => getList())))(
-          merge(
-            toObservable(query).pipe(
-              skip(1),
-              debounceTime(250),
-              distinctUntilChanged()
-            ),
-            toObservable(sorting)
-          )
-        );
+        if (config.getListOnInit) {
+          // Retrieve list based on triggers
+          rxMethod((x$) => x$.pipe(switchMap(() => getList())))(
+            merge(
+              toObservable(query).pipe(
+                skip(1),
+                debounceTime(250),
+                distinctUntilChanged()
+              ),
+              toObservable(sorting)
+            )
+          );
+        }
       },
     })
   );
