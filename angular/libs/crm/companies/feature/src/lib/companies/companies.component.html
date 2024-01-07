@@ -1,5 +1,8 @@
-<h2>{{ 'CRM::Companies' | abpLocalization }}</h2>
-<div class="query-fields">
+<div style="display: flex; gap: 0.5rem; align-items: center">
+  <h2>{{ 'CRM::Companies' | abpLocalization }}</h2>
+  <button routerLink="create">Create</button>
+</div>
+<div style="display: flex; gap: 0.5rem">
   <input
     type="text"
     [placeholder]="'::Search' | abpLocalization"

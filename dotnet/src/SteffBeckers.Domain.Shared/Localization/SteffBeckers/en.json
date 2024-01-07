@@ -2,6 +2,7 @@
     "Culture": "en",
     "Texts": {
         "BackToX": "Back to {0}",
+        "CreateNewX": "Create new {0}",
         "Save": "Save",
         "Search": "Search",
         "NoXFound": "No {0} found.",

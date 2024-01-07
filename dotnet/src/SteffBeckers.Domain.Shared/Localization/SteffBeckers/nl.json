@@ -2,6 +2,7 @@
     "Culture": "nl",
     "Texts": {
         "BackToX": "Terug naar {0}",
+        "CreateNewX": "Voeg nieuw {0} toe",
         "Save": "Opslaan",
         "Search": "Zoeken",
         "NoXFound": "Geen {0} gevonden.",

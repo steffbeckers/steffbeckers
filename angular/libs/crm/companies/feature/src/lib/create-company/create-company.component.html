@@ -1,0 +1,11 @@
+<form (ngSubmit)="store.execute()">
+  <h2>
+    {{
+      '::CreateNewX'
+        | abpLocalization : ('CRM::Company' | abpLocalization | lowercase)
+    }}
+  </h2>
+  <button type="submit" [disabled]="store.executing()">
+    {{ '::Save' | abpLocalization }}
+  </button>
+</form>
