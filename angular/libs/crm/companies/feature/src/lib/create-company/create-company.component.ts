@@ -1,8 +1,16 @@
 import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LocalizationModule as AbpLocalizationModule } from '@abp/ng.core';
-import { ReactiveFormsModule } from '@angular/forms';
-import { CreateCompanyStore } from '@steffbeckers/crm/companies/data-access';
+import {
+  FormControl,
+  FormGroup,
+  ReactiveFormsModule,
+  Validators,
+} from '@angular/forms';
+import {
+  CreateCompanyForm,
+  CreateCompanyStore,
+} from '@steffbeckers/crm/companies/data-access';
 
 @Component({
   imports: [AbpLocalizationModule, CommonModule, ReactiveFormsModule],
@@ -14,4 +22,17 @@ import { CreateCompanyStore } from '@steffbeckers/crm/companies/data-access';
 })
 export class CreateCompanyComponent {
   store = inject(CreateCompanyStore);
+  form = new FormGroup<CreateCompanyForm>({
+    name: new FormControl('', {
+      nonNullable: true,
+      validators: [Validators.required],
+    }),
+    email: new FormControl(''),
+    phoneNumber: new FormControl(''),
+    website: new FormControl(''),
+  });
+
+  constructor() {
+    this.store.connectForm(this.form);
+  }
 }

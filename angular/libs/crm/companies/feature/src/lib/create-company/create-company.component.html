@@ -1,11 +1,39 @@
-<form (ngSubmit)="store.execute()">
-  <h2>
-    {{
-      '::CreateNewX'
-        | abpLocalization : ('CRM::Company' | abpLocalization | lowercase)
-    }}
-  </h2>
-  <button type="submit" [disabled]="store.executing()">
-    {{ '::Save' | abpLocalization }}
-  </button>
+<form [formGroup]="form" (ngSubmit)="store.formOnSubmit($event, form)">
+  <div
+    style="
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+      gap: 0.5rem;
+    "
+  >
+    <h2>
+      {{
+        '::CreateNewX' | abpLocalization : ('CRM::Company' | abpLocalization)
+      }}
+    </h2>
+    <input
+      type="text"
+      formControlName="name"
+      [placeholder]="'::Name' | abpLocalization"
+    />
+    <input
+      type="email"
+      formControlName="email"
+      [placeholder]="'CRM::Email' | abpLocalization"
+    />
+    <input
+      type="tel"
+      formControlName="phoneNumber"
+      [placeholder]="'CRM::PhoneNumber' | abpLocalization"
+    />
+    <input
+      type="url"
+      formControlName="website"
+      [placeholder]="'CRM::Website' | abpLocalization"
+    />
+    <button type="submit" [disabled]="store.executing()">
+      {{ '::Save' | abpLocalization }}
+    </button>
+  </div>
 </form>

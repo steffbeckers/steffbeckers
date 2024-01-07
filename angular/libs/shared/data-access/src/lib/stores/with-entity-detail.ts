@@ -1,5 +1,5 @@
 import { Signal, Type, computed, inject } from '@angular/core';
-import { toSignal } from '@angular/core/rxjs-interop';
+import { takeUntilDestroyed, toSignal } from '@angular/core/rxjs-interop';
 import {
   type,
   withState,
@@ -90,10 +90,15 @@ export function withEntityDetail<
       },
     })),
     withHooks({
-      onInit({ get, id }) {
+      onInit: ({ get, id }) => {
         if (config.getOnInit) {
           // Retrieve detail based on id
-          rxMethod((x$) => x$.pipe(switchMap(() => get())))(id);
+          rxMethod((x$) =>
+            x$.pipe(
+              takeUntilDestroyed(),
+              switchMap(() => get())
+            )
+          )(id);
         }
       },
     })

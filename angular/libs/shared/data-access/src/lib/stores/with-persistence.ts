@@ -55,7 +55,7 @@ export function withPersistence(
       clearStorage: () => storage.removeItem(storageKey),
     })),
     withHooks({
-      onInit({ loadFromStorage, saveToStorage }) {
+      onInit: ({ loadFromStorage, saveToStorage }) => {
         if (rehydrate) {
           loadFromStorage();
         }

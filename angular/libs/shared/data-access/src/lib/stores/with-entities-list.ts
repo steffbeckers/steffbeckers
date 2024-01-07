@@ -1,6 +1,6 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Type, computed, inject } from '@angular/core';
-import { toObservable } from '@angular/core/rxjs-interop';
+import { takeUntilDestroyed, toObservable } from '@angular/core/rxjs-interop';
 import { tapResponse } from '@ngrx/operators';
 import {
   type,
@@ -124,10 +124,15 @@ export function withEntitiesList<
       })
     ),
     withHooks({
-      onInit({ getList, query, sorting }) {
+      onInit: ({ getList, query, sorting }) => {
         if (config.getListOnInit) {
           // Retrieve list based on triggers
-          rxMethod((x$) => x$.pipe(switchMap(() => getList())))(
+          rxMethod((x$) =>
+            x$.pipe(
+              takeUntilDestroyed(),
+              switchMap(() => getList())
+            )
+          )(
             merge(
               toObservable(query).pipe(
                 skip(1),

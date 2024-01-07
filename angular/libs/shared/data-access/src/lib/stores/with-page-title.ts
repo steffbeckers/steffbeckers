@@ -20,20 +20,26 @@ export function withPageTitle<Input extends SignalStoreFeatureResult>(
 ): SignalStoreFeature<Input, EmptyFeatureResult> {
   return (store) =>
     withHooks({
-      onInit(
+      onInit: (
         _,
         abpLocalizationService = inject(AbpLocalizationService),
         pageTitleService = inject(PageTitleService)
-      ) {
+      ) => {
         effect(() => {
           const { localizationKey, params } = pageTitleFactory({
             ...store.slices,
             ...store.signals,
           });
 
+          const localizedParams =
+            params?.map((param) => abpLocalizationService.instant(param)) ?? [];
+
           if (localizationKey) {
             pageTitleService.setTitle(
-              abpLocalizationService.instant(localizationKey, ...(params ?? []))
+              abpLocalizationService.instant(
+                localizationKey,
+                ...localizedParams
+              )
             );
           }
         });
