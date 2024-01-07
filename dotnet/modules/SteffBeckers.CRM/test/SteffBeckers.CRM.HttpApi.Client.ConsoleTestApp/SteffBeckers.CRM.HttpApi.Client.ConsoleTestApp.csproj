@@ -8,8 +8,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Volo.Abp.Http.Client.IdentityModel" Version="8.0.0" />
-    <PackageReference Include="Volo.Abp.Autofac" Version="8.0.0" />
+    <PackageReference Include="Volo.Abp.Http.Client.IdentityModel" Version="8.0.1" />
+    <PackageReference Include="Volo.Abp.Autofac" Version="8.0.1" />
     <ProjectReference Include="..\..\src\SteffBeckers.CRM.HttpApi.Client\SteffBeckers.CRM.HttpApi.Client.csproj" />
   </ItemGroup>
 
