@@ -1,8 +1,14 @@
-import { inject } from '@angular/core';
+import { computed, inject } from '@angular/core';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { FormControl, FormGroup } from '@angular/forms';
 import { tapResponse } from '@ngrx/operators';
-import { patchState, signalStore, withMethods, withState } from '@ngrx/signals';
+import {
+  patchState,
+  signalStore,
+  withComputed,
+  withMethods,
+  withState,
+} from '@ngrx/signals';
 import { rxMethod } from '@ngrx/signals/rxjs-interop';
 import { CompaniesService } from '@steffbeckers/crm/data-access';
 import { withPageTitle } from '@steffbeckers/shared/data-access';
@@ -17,12 +23,17 @@ export interface CreateCompanyForm {
 
 export const CreateCompanyStore = signalStore(
   withState({
-    executing: false,
+    saving: false,
     formValue: {},
   }),
+  withComputed(({ saving }) => ({
+    vm: computed(() => ({
+      saving,
+    })),
+  })),
   withMethods(
     (
-      { executing, formValue, ...store },
+      { saving, formValue, ...store },
       companiesService = inject(CompaniesService)
     ) => ({
       connectForm: (form: FormGroup) => {
@@ -36,11 +47,11 @@ export const CreateCompanyStore = signalStore(
       formOnSubmit: (event: SubmitEvent, form: FormGroup) => {
         event.preventDefault();
 
-        if (form.invalid || executing()) {
+        if (form.invalid || saving()) {
           return;
         }
 
-        patchState(store, { executing: true });
+        patchState(store, { saving: true });
 
         // TODO: Remove
         console.log('formValue', formValue());
@@ -54,7 +65,7 @@ export const CreateCompanyStore = signalStore(
                 next: console.log,
                 error: console.error,
                 finalize: () => {
-                  patchState(store, { executing: false });
+                  patchState(store, { saving: false });
                 },
               })
             )

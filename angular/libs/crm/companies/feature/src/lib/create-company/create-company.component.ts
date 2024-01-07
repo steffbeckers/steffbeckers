@@ -22,6 +22,7 @@ import {
 })
 export class CreateCompanyComponent {
   store = inject(CreateCompanyStore);
+  vm = this.store.vm();
   form = new FormGroup<CreateCompanyForm>({
     name: new FormControl('', {
       nonNullable: true,
