@@ -31,6 +31,7 @@ export class CreateCompanyComponent {
     website: new FormControl(''),
   });
   store = inject(CreateCompanyStore);
+  Validators = Validators;
   vm = this.store.vm();
 
   constructor() {
