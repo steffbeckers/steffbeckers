@@ -1,4 +1,8 @@
-<form [formGroup]="form" (ngSubmit)="store.formOnSubmit($event, form)">
+<form
+  [formGroup]="form"
+  #formRef="ngForm"
+  (ngSubmit)="store.formOnSubmit($event, form)"
+>
   <div
     style="
       display: flex;
@@ -12,11 +16,17 @@
         '::CreateNewX' | abpLocalization : ('CRM::Company' | abpLocalization)
       }}
     </h2>
-    <input
-      type="text"
-      formControlName="name"
-      [placeholder]="'::Name' | abpLocalization"
-    />
+    <div style="display: flex; flex-direction: column; align-items: start">
+      <input
+        type="text"
+        formControlName="name"
+        [placeholder]="'::Name' | abpLocalization"
+      />
+      @if (formRef.submitted && form.controls.name.hasError('required')) {
+      <!-- TODO -->
+      <div style="color: red">Required</div>
+      }
+    </div>
     <input
       type="email"
       formControlName="email"
