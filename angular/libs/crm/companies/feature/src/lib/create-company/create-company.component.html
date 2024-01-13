@@ -42,3 +42,15 @@
     </div>
   </div>
 </form>
+
+@if (vm.formResponse()) {
+<div>Response:</div>
+<pre>
+  {{ vm.formResponse() | json }}
+</pre>
+} @else if (vm.formErrorResponse()) {
+<div>Error response:</div>
+<pre>
+  {{ vm.formErrorResponse() | json }}
+</pre>
+}

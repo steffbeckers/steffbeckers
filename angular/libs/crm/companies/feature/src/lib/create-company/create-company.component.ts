@@ -21,17 +21,17 @@ import {
   templateUrl: './create-company.component.html',
 })
 export class CreateCompanyComponent {
-  store = inject(CreateCompanyStore);
-  vm = this.store.vm();
   form = new FormGroup<CreateCompanyForm>({
+    email: new FormControl(''),
     name: new FormControl('', {
       nonNullable: true,
       validators: [Validators.required],
     }),
-    email: new FormControl(''),
     phoneNumber: new FormControl(''),
     website: new FormControl(''),
   });
+  store = inject(CreateCompanyStore);
+  vm = this.store.vm();
 
   constructor() {
     this.store.connectForm(this.form);

@@ -1,5 +1,5 @@
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
-import { FormGroup } from '@angular/forms';
+import { FormControl, FormGroup } from '@angular/forms';
 import { tapResponse } from '@ngrx/operators';
 import {
   patchState,
@@ -9,20 +9,32 @@ import {
   withState,
 } from '@ngrx/signals';
 import { rxMethod } from '@ngrx/signals/rxjs-interop';
-import { Observable, tap } from 'rxjs';
+import { Observable, first, tap } from 'rxjs';
+import { ErrorDto } from '../dtos/error';
+import { HttpErrorResponse } from '@angular/common/http';
 
-export function withForm() {
+export type ExtractFormControl<T> = {
+  [K in keyof T]: T[K] extends FormControl<infer U> ? U : T[K];
+};
+
+export function withForm<TFormGroup, TFormResponse>() {
+  type TFormValue = ExtractFormControl<TFormGroup>;
+
   return signalStoreFeature(
     {
-      methods: type<{ formOnSave(value: object): Observable<object> }>(),
+      methods: type<{
+        formOnSave(value: TFormValue): Observable<TFormResponse>;
+      }>(),
     },
     withState({
+      formErrorResponse: type<ErrorDto | undefined>(),
+      formResponse: type<TFormResponse>(),
+      formValue: type<TFormValue>(),
       savingForm: false,
-      formValue: {},
     }),
     withMethods((store) => ({
       connectForm: (form: FormGroup) =>
-        rxMethod<object>((x$) =>
+        rxMethod<TFormValue>((x$) =>
           x$.pipe(
             takeUntilDestroyed(),
             tap((formValue) => patchState(store, { formValue }))
@@ -40,9 +52,18 @@ export function withForm() {
         store
           .formOnSave(store.formValue())
           .pipe(
+            first(),
             tapResponse({
-              next: console.log,
-              error: console.error,
+              next: (formResponse) =>
+                patchState(store, {
+                  formResponse,
+                  formErrorResponse: undefined,
+                }),
+              error: (response: HttpErrorResponse) =>
+                patchState(store, {
+                  formErrorResponse: response.error.error,
+                  formResponse: undefined,
+                }),
               finalize: () => patchState(store, { savingForm: false }),
             })
           )

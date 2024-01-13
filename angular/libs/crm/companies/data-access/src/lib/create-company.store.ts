@@ -4,6 +4,7 @@ import { signalStore, withComputed, withMethods } from '@ngrx/signals';
 import {
   CompaniesService,
   CompanyCreateInputDto,
+  CompanyDto,
 } from '@steffbeckers/crm/data-access';
 import { withForm, withPageTitle } from '@steffbeckers/shared/data-access';
 
@@ -14,18 +15,16 @@ export interface CreateCompanyForm {
   website: FormControl<string | null>;
 }
 
-type ExtractFormControl<T> = {
-  [K in keyof T]: T[K] extends FormControl<infer U> ? U : T[K];
-};
-
 export const CreateCompanyStore = signalStore(
   withMethods((_, companiesService = inject(CompaniesService)) => ({
-    formOnSave: (value: ExtractFormControl<CreateCompanyForm>) =>
+    formOnSave: (value) =>
       companiesService.create(value as CompanyCreateInputDto),
   })),
-  withForm(),
-  withComputed(({ savingForm }) => ({
+  withForm<CreateCompanyForm, CompanyDto>(),
+  withComputed(({ formErrorResponse, formResponse, savingForm }) => ({
     vm: computed(() => ({
+      formErrorResponse,
+      formResponse,
       savingForm,
     })),
   })),
