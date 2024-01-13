@@ -19,6 +19,12 @@ public class CompaniesController : CRMController, ICompaniesAppService
 		_companiesAppService = companiesAppService;
 	}
 
+	[HttpPost]
+	public Task<CompanyDto> CreateAsync(CompanyCreateInputDto input)
+	{
+		return _companiesAppService.CreateAsync(input);
+	}
+
 	[HttpGet]
 	[Route("{id}")]
 	public Task<CompanyDto> GetAsync(Guid id)

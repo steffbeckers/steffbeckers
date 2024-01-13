@@ -10,4 +10,6 @@ public interface ICompaniesAppService : IApplicationService
 	Task<PagedResultDto<CompanyListDto>> GetListAsync(CompanyListInputDto input);
 
 	Task<CompanyDto> GetAsync(Guid id);
+
+	Task<CompanyDto> CreateAsync(CompanyCreateInputDto input);
 }

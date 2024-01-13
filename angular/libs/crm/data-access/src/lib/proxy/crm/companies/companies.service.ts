@@ -1,4 +1,4 @@
-import type { CompanyDto, CompanyListDto, CompanyListInputDto } from './models';
+import type { CompanyCreateInputDto, CompanyDto, CompanyListDto, CompanyListInputDto } from './models';
 import { RestService, Rest } from '@abp/ng.core';
 import type { PagedResultDto } from '@abp/ng.core';
 import { Injectable } from '@angular/core';
@@ -8,30 +8,32 @@ import { Injectable } from '@angular/core';
 })
 export class CompaniesService {
   apiName = 'CRM';
+  
+
+  create = (input: CompanyCreateInputDto, config?: Partial<Rest.Config>) =>
+    this.restService.request<any, CompanyDto>({
+      method: 'POST',
+      url: '/api/crm/companies',
+      body: input,
+    },
+    { apiName: this.apiName,...config });
+  
 
   get = (id: string, config?: Partial<Rest.Config>) =>
-    this.restService.request<any, CompanyDto>(
-      {
-        method: 'GET',
-        url: `/api/crm/companies/${id}`,
-      },
-      { apiName: this.apiName, ...config }
-    );
+    this.restService.request<any, CompanyDto>({
+      method: 'GET',
+      url: `/api/crm/companies/${id}`,
+    },
+    { apiName: this.apiName,...config });
+  
 
   getList = (input: CompanyListInputDto, config?: Partial<Rest.Config>) =>
-    this.restService.request<any, PagedResultDto<CompanyListDto>>(
-      {
-        method: 'GET',
-        url: '/api/crm/companies',
-        params: {
-          query: input.query,
-          sorting: input.sorting,
-          skipCount: input.skipCount,
-          maxResultCount: input.maxResultCount,
-        },
-      },
-      { apiName: this.apiName, ...config }
-    );
+    this.restService.request<any, PagedResultDto<CompanyListDto>>({
+      method: 'GET',
+      url: '/api/crm/companies',
+      params: { query: input.query, sorting: input.sorting, skipCount: input.skipCount, maxResultCount: input.maxResultCount },
+    },
+    { apiName: this.apiName,...config });
 
   constructor(private restService: RestService) {}
 }

@@ -21,6 +21,25 @@ public class CompaniesAppService : CRMAppService, ICompaniesAppService
 		_companyRepository = companyRepository;
 	}
 
+	[Authorize(CRMPermissions.Companies.Create)]
+	public async Task<CompanyDto> CreateAsync(CompanyCreateInputDto input)
+	{
+		Company company = new Company(
+			id: GuidGenerator.Create(),
+			name: input.Name)
+		{
+			Email = input.Email,
+			PhoneNumber = input.PhoneNumber,
+			Website = input.Website,
+		};
+
+		await _companyRepository.InsertAsync(company);
+
+		await CurrentUnitOfWork!.SaveChangesAsync();
+
+		return await GetAsync(company.Id);
+	}
+
 	[DisableEntityChangeTracking]
 	public async Task<CompanyDto> GetAsync(Guid id)
 	{

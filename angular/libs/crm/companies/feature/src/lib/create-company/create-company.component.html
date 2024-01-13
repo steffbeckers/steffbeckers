@@ -33,10 +33,10 @@
       [placeholder]="'CRM::Website' | abpLocalization"
     />
     <div style="display: flex; gap: 0.5rem">
-      <button type="submit" [disabled]="store.saving()">
+      <button type="submit" [disabled]="store.savingForm()">
         {{ '::Save' | abpLocalization }}
       </button>
-      @if (vm.saving()) {
+      @if (vm.savingForm()) {
       <div>Saving...</div>
       }
     </div>
