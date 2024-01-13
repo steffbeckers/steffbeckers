@@ -38,6 +38,8 @@ export class CreateCompanyComponent {
   vm = this.store.vm();
 
   constructor() {
+    this.store.connectForm(this.form);
+
     // Redirect to company detail
     effect(() => {
       const companyDto = this.store.formResponse();
