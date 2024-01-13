@@ -3,9 +3,10 @@
     "Texts": {
         "BackToX": "Back to {0}",
         "CreateNewX": "Create new {0}",
+        "NoXFound": "No {0} found.",
+        "NoXFoundForSearchTermY": "No {0} found for search term <strong>{1}</strong>.",
         "Save": "Save",
         "Search": "Search",
-        "NoXFound": "No {0} found.",
-        "NoXFoundForSearchTermY": "No {0} found for search term <strong>{1}</strong>."
+        "UpdateXY": "Update {0} {1}"
     }
 }

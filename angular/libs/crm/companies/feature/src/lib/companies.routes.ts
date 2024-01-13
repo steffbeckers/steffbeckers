@@ -9,6 +9,13 @@ export const companiesRoutes: Routes = [
       ),
   },
   {
+    path: ':companyId/update',
+    loadComponent: () =>
+      import('./update-company/update-company.component').then(
+        (m) => m.UpdateCompanyComponent
+      ),
+  },
+  {
     path: ':companyId',
     loadComponent: () =>
       import('./company-detail/company-detail.component').then(

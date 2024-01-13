@@ -30,13 +30,14 @@ export function withEntityDetail<
   config: {
     entityIdRouteParam: string;
     getOnInit?: boolean;
-    persistence: {
-      name: string;
+    persistence?: {
+      name?: string;
       config?: Partial<PersistenceConfig>;
     };
   }
 ) {
   config.getOnInit ??= true;
+  config.persistence ??= {};
   config.persistence.config ??= {};
   config.persistence.config.excludedKeys ??= ['loading'];
 

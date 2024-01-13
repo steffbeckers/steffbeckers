@@ -4,6 +4,7 @@ import {
   signalStoreFeature,
   withHooks,
   withMethods,
+  withState,
 } from '@ngrx/signals';
 
 export type PersistenceConfig = {
@@ -21,9 +22,13 @@ export const defaultPersistenceConfig: PersistenceConfig = {
 };
 
 export function withPersistence(
-  storageKey: string,
+  storageKey?: string,
   config?: Partial<PersistenceConfig>
 ) {
+  if (!storageKey) {
+    return signalStoreFeature(withState({}));
+  }
+
   config = { ...defaultPersistenceConfig, ...config };
   config.excludedKeys ??= [];
 
