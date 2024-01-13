@@ -16,6 +16,9 @@
         '::CreateNewX' | abpLocalization : ('CRM::Company' | abpLocalization)
       }}
     </h2>
+    @if (vm.formErrorResponse()?.message; as errorMessage) {
+    <p style="color: red">{{ errorMessage }}</p>
+    }
     <ng-container *ngIf="form.controls.name as control">
       <div style="display: flex; flex-direction: column; align-items: start">
         <label for="name">
