@@ -33,8 +33,4 @@ export class CreateCompanyComponent {
   store = inject(CreateCompanyStore);
   Validators = Validators;
   vm = this.store.vm();
-
-  constructor() {
-    this.store.connectForm(this.form);
-  }
 }
