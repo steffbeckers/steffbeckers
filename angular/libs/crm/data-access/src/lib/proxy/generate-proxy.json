@@ -2057,6 +2057,23 @@
                   }
                 },
                 {
+                  "name": "DeleteAsync",
+                  "parametersOnMethod": [
+                    {
+                      "name": "id",
+                      "typeAsString": "System.Guid, System.Private.CoreLib",
+                      "type": "System.Guid",
+                      "typeSimple": "string",
+                      "isOptional": false,
+                      "defaultValue": null
+                    }
+                  ],
+                  "returnValue": {
+                    "type": "System.Void",
+                    "typeSimple": "System.Void"
+                  }
+                },
+                {
                   "name": "CreateAsync",
                   "parametersOnMethod": [
                     {
@@ -2064,6 +2081,31 @@
                       "typeAsString": "SteffBeckers.CRM.Companies.CompanyCreateInputDto, SteffBeckers.CRM.Application.Contracts",
                       "type": "SteffBeckers.CRM.Companies.CompanyCreateInputDto",
                       "typeSimple": "SteffBeckers.CRM.Companies.CompanyCreateInputDto",
+                      "isOptional": false,
+                      "defaultValue": null
+                    }
+                  ],
+                  "returnValue": {
+                    "type": "SteffBeckers.CRM.Companies.CompanyDto",
+                    "typeSimple": "SteffBeckers.CRM.Companies.CompanyDto"
+                  }
+                },
+                {
+                  "name": "UpdateAsync",
+                  "parametersOnMethod": [
+                    {
+                      "name": "id",
+                      "typeAsString": "System.Guid, System.Private.CoreLib",
+                      "type": "System.Guid",
+                      "typeSimple": "string",
+                      "isOptional": false,
+                      "defaultValue": null
+                    },
+                    {
+                      "name": "input",
+                      "typeAsString": "SteffBeckers.CRM.Companies.CompanyUpdateInputDto, SteffBeckers.CRM.Application.Contracts",
+                      "type": "SteffBeckers.CRM.Companies.CompanyUpdateInputDto",
+                      "typeSimple": "SteffBeckers.CRM.Companies.CompanyUpdateInputDto",
                       "isOptional": false,
                       "defaultValue": null
                     }
@@ -2110,6 +2152,43 @@
               "returnValue": {
                 "type": "SteffBeckers.CRM.Companies.CompanyDto",
                 "typeSimple": "SteffBeckers.CRM.Companies.CompanyDto"
+              },
+              "allowAnonymous": null,
+              "implementFrom": "SteffBeckers.CRM.Companies.ICompaniesAppService"
+            },
+            "DeleteAsyncById": {
+              "uniqueName": "DeleteAsyncById",
+              "name": "DeleteAsync",
+              "httpMethod": "DELETE",
+              "url": "api/crm/companies/{id}",
+              "supportedVersions": [],
+              "parametersOnMethod": [
+                {
+                  "name": "id",
+                  "typeAsString": "System.Guid, System.Private.CoreLib",
+                  "type": "System.Guid",
+                  "typeSimple": "string",
+                  "isOptional": false,
+                  "defaultValue": null
+                }
+              ],
+              "parameters": [
+                {
+                  "nameOnMethod": "id",
+                  "name": "id",
+                  "jsonName": null,
+                  "type": "System.Guid",
+                  "typeSimple": "string",
+                  "isOptional": false,
+                  "defaultValue": null,
+                  "constraintTypes": [],
+                  "bindingSourceId": "Path",
+                  "descriptorName": ""
+                }
+              ],
+              "returnValue": {
+                "type": "System.Void",
+                "typeSimple": "System.Void"
               },
               "allowAnonymous": null,
               "implementFrom": "SteffBeckers.CRM.Companies.ICompaniesAppService"
@@ -2220,6 +2299,63 @@
               "returnValue": {
                 "type": "Volo.Abp.Application.Dtos.PagedResultDto<SteffBeckers.CRM.Companies.CompanyListDto>",
                 "typeSimple": "Volo.Abp.Application.Dtos.PagedResultDto<SteffBeckers.CRM.Companies.CompanyListDto>"
+              },
+              "allowAnonymous": null,
+              "implementFrom": "SteffBeckers.CRM.Companies.ICompaniesAppService"
+            },
+            "UpdateAsyncByIdAndInput": {
+              "uniqueName": "UpdateAsyncByIdAndInput",
+              "name": "UpdateAsync",
+              "httpMethod": "PUT",
+              "url": "api/crm/companies/{id}",
+              "supportedVersions": [],
+              "parametersOnMethod": [
+                {
+                  "name": "id",
+                  "typeAsString": "System.Guid, System.Private.CoreLib",
+                  "type": "System.Guid",
+                  "typeSimple": "string",
+                  "isOptional": false,
+                  "defaultValue": null
+                },
+                {
+                  "name": "input",
+                  "typeAsString": "SteffBeckers.CRM.Companies.CompanyUpdateInputDto, SteffBeckers.CRM.Application.Contracts",
+                  "type": "SteffBeckers.CRM.Companies.CompanyUpdateInputDto",
+                  "typeSimple": "SteffBeckers.CRM.Companies.CompanyUpdateInputDto",
+                  "isOptional": false,
+                  "defaultValue": null
+                }
+              ],
+              "parameters": [
+                {
+                  "nameOnMethod": "id",
+                  "name": "id",
+                  "jsonName": null,
+                  "type": "System.Guid",
+                  "typeSimple": "string",
+                  "isOptional": false,
+                  "defaultValue": null,
+                  "constraintTypes": [],
+                  "bindingSourceId": "Path",
+                  "descriptorName": ""
+                },
+                {
+                  "nameOnMethod": "input",
+                  "name": "input",
+                  "jsonName": null,
+                  "type": "SteffBeckers.CRM.Companies.CompanyUpdateInputDto",
+                  "typeSimple": "SteffBeckers.CRM.Companies.CompanyUpdateInputDto",
+                  "isOptional": false,
+                  "defaultValue": null,
+                  "constraintTypes": null,
+                  "bindingSourceId": "Body",
+                  "descriptorName": ""
+                }
+              ],
+              "returnValue": {
+                "type": "SteffBeckers.CRM.Companies.CompanyDto",
+                "typeSimple": "SteffBeckers.CRM.Companies.CompanyDto"
               },
               "allowAnonymous": null,
               "implementFrom": "SteffBeckers.CRM.Companies.ICompaniesAppService"
@@ -4279,6 +4415,63 @@
       "properties": [
         {
           "name": "Name",
+          "jsonName": null,
+          "type": "System.String",
+          "typeSimple": "string",
+          "isRequired": false,
+          "minLength": null,
+          "maxLength": null,
+          "minimum": null,
+          "maximum": null,
+          "regex": null
+        }
+      ]
+    },
+    "SteffBeckers.CRM.Companies.CompanyUpdateInputDto": {
+      "baseType": null,
+      "isEnum": false,
+      "enumNames": null,
+      "enumValues": null,
+      "genericArguments": null,
+      "properties": [
+        {
+          "name": "Name",
+          "jsonName": null,
+          "type": "System.String",
+          "typeSimple": "string",
+          "isRequired": true,
+          "minLength": null,
+          "maxLength": null,
+          "minimum": null,
+          "maximum": null,
+          "regex": null
+        },
+        {
+          "name": "PhoneNumber",
+          "jsonName": null,
+          "type": "System.String",
+          "typeSimple": "string",
+          "isRequired": false,
+          "minLength": null,
+          "maxLength": null,
+          "minimum": null,
+          "maximum": null,
+          "regex": null
+        },
+        {
+          "name": "Email",
+          "jsonName": null,
+          "type": "System.String",
+          "typeSimple": "string",
+          "isRequired": false,
+          "minLength": null,
+          "maxLength": null,
+          "minimum": null,
+          "maximum": null,
+          "regex": null
+        },
+        {
+          "name": "Website",
           "jsonName": null,
           "type": "System.String",
           "typeSimple": "string",

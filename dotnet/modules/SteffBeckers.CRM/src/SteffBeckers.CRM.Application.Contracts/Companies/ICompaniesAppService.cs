@@ -11,5 +11,9 @@ public interface ICompaniesAppService : IApplicationService
 
 	Task<CompanyDto> GetAsync(Guid id);
 
+	Task DeleteAsync(Guid id);
+
 	Task<CompanyDto> CreateAsync(CompanyCreateInputDto input);
+
+	Task<CompanyDto> UpdateAsync(Guid id, CompanyUpdateInputDto input);
 }

@@ -40,6 +40,12 @@ public class CompaniesAppService : CRMAppService, ICompaniesAppService
 		return await GetAsync(company.Id);
 	}
 
+	[Authorize(CRMPermissions.Companies.Delete)]
+	public async Task DeleteAsync(Guid id)
+	{
+		await _companyRepository.DeleteAsync(id);
+	}
+
 	[DisableEntityChangeTracking]
 	public async Task<CompanyDto> GetAsync(Guid id)
 	{
@@ -83,5 +89,22 @@ public class CompaniesAppService : CRMAppService, ICompaniesAppService
 			TotalCount = totalCount,
 			Items = await AsyncExecuter.ToListAsync(ObjectMapper.GetMapper().ProjectTo<CompanyListDto>(companyQueryable))
 		};
+	}
+
+	[Authorize(CRMPermissions.Companies.Update)]
+	public async Task<CompanyDto> UpdateAsync(Guid id, CompanyUpdateInputDto input)
+	{
+		Company company = await _companyRepository.GetAsync(id);
+
+		company.Name = input.Name;
+		company.Email = input.Email;
+		company.PhoneNumber = input.PhoneNumber;
+		company.Website = input.Website;
+
+		await _companyRepository.UpdateAsync(company);
+
+		await CurrentUnitOfWork!.SaveChangesAsync();
+
+		return await GetAsync(id);
 	}
 }

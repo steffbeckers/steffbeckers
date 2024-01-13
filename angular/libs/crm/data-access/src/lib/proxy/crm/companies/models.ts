@@ -21,3 +21,10 @@ export interface CompanyListDto extends EntityDto<string> {
 export interface CompanyListInputDto extends PagedAndSortedResultRequestDto {
   query?: string;
 }
+
+export interface CompanyUpdateInputDto {
+  name: string;
+  phoneNumber?: string;
+  email?: string;
+  website?: string;
+}

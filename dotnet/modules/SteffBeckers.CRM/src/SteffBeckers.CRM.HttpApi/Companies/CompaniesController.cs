@@ -25,6 +25,13 @@ public class CompaniesController : CRMController, ICompaniesAppService
 		return _companiesAppService.CreateAsync(input);
 	}
 
+	[HttpDelete]
+	[Route("{id}")]
+	public Task DeleteAsync(Guid id)
+	{
+		return _companiesAppService.DeleteAsync(id);
+	}
+
 	[HttpGet]
 	[Route("{id}")]
 	public Task<CompanyDto> GetAsync(Guid id)
@@ -36,5 +43,12 @@ public class CompaniesController : CRMController, ICompaniesAppService
 	public Task<PagedResultDto<CompanyListDto>> GetListAsync(CompanyListInputDto input)
 	{
 		return _companiesAppService.GetListAsync(input);
+	}
+
+	[HttpPut]
+	[Route("{id}")]
+	public Task<CompanyDto> UpdateAsync(Guid id, CompanyUpdateInputDto input)
+	{
+		return _companiesAppService.UpdateAsync(id, input);
 	}
 }

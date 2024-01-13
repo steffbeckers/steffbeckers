@@ -31,9 +31,9 @@ export const UpdateCompanyStore = signalStore(
   withEntityDetail<DetailedCompany, CompaniesService>(CompaniesService, {
     entityIdRouteParam: 'companyId',
   }),
-  withMethods((_, companiesService = inject(CompaniesService)) => ({
+  withMethods(({ entity }, companiesService = inject(CompaniesService)) => ({
     formOnSave: (value) =>
-      companiesService.create(value as CompanyCreateInputDto),
+      companiesService.update(entity().id, value as CompanyCreateInputDto),
   })),
   withForm<UpdateCompanyForm, CompanyDto>(),
   withComputed(({ entity, formErrorResponse, formResponse, savingForm }) => ({
