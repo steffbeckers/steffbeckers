@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, effect, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LocalizationModule as AbpLocalizationModule } from '@abp/ng.core';
 import {
@@ -11,6 +11,7 @@ import {
   CreateCompanyForm,
   CreateCompanyStore,
 } from '@steffbeckers/crm/companies/data-access';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   imports: [AbpLocalizationModule, CommonModule, ReactiveFormsModule],
@@ -30,7 +31,21 @@ export class CreateCompanyComponent {
     phoneNumber: new FormControl(''),
     website: new FormControl(''),
   });
+  router = inject(Router);
+  activatedRoute = inject(ActivatedRoute);
   store = inject(CreateCompanyStore);
   Validators = Validators;
   vm = this.store.vm();
+
+  constructor() {
+    // Redirect to company detail
+    effect(() => {
+      const companyDto = this.store.formResponse();
+      if (companyDto?.id) {
+        this.router.navigate(['..', companyDto.id], {
+          relativeTo: this.activatedRoute,
+        });
+      }
+    });
+  }
 }

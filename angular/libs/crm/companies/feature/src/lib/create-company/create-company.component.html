@@ -28,6 +28,7 @@
           type="text"
           formControlName="name"
           [placeholder]="'::Name' | abpLocalization"
+          autofocus
         />
         @if (formRef.submitted && control.hasError('required')) {
         <div style="color: red">{{ '::Required' | abpLocalization }}</div>
