@@ -1,4 +1,4 @@
-import { Component, effect, inject } from '@angular/core';
+import { Component, HostListener, effect, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { LocalizationModule as AbpLocalizationModule } from '@abp/ng.core';
@@ -28,5 +28,10 @@ export class CompanyDetailComponent {
         });
       }
     });
+  }
+
+  @HostListener('document:keyup.delete')
+  onDeleteKeyUp(): void {
+    this.store.delete();
   }
 }
