@@ -22,6 +22,7 @@ import { ActivatedRoute, Router } from '@angular/router';
   templateUrl: './update-company.component.html',
 })
 export class UpdateCompanyComponent {
+  activatedRoute = inject(ActivatedRoute);
   form = new FormGroup<CreateCompanyForm>({
     email: new FormControl(''),
     name: new FormControl('', {
@@ -32,7 +33,6 @@ export class UpdateCompanyComponent {
     website: new FormControl(''),
   });
   router = inject(Router);
-  activatedRoute = inject(ActivatedRoute);
   store = inject(UpdateCompanyStore);
   Validators = Validators;
   vm = this.store.vm();
