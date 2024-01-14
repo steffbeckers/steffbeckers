@@ -10,6 +10,14 @@ export class ContactsService {
   apiName = 'CRM';
   
 
+  delete = (id: string, config?: Partial<Rest.Config>) =>
+    this.restService.request<any, void>({
+      method: 'DELETE',
+      url: `/api/crm/contacts/${id}`,
+    },
+    { apiName: this.apiName,...config });
+  
+
   get = (id: string, config?: Partial<Rest.Config>) =>
     this.restService.request<any, ContactDto>({
       method: 'GET',

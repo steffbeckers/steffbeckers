@@ -21,6 +21,12 @@ public class ContactsAppService : CRMAppService, IContactsAppService
 		_contactRepository = contactRepository;
 	}
 
+	[Authorize(CRMPermissions.Contacts.Delete)]
+	public async Task DeleteAsync(Guid id)
+	{
+		await _contactRepository.DeleteAsync(id);
+	}
+
 	[DisableEntityChangeTracking]
 	public async Task<ContactDto> GetAsync(Guid id)
 	{

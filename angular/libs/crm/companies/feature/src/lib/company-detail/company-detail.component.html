@@ -8,7 +8,9 @@
   <h2>{{ 'CRM::Company' | abpLocalization }} {{ company.name }}</h2>
   <div style="display: flex; gap: 0.5rem; align-items: center">
     <button routerLink="update">{{ '::Update' | abpLocalization }}</button>
-    <button routerLink="delete">{{ '::Delete' | abpLocalization }}</button>
+    <button [disabled]="store.deleting()" (click)="store.delete()">
+      {{ '::Delete' | abpLocalization }}
+    </button>
   </div>
 </div>
 @if (company.email; as email) {

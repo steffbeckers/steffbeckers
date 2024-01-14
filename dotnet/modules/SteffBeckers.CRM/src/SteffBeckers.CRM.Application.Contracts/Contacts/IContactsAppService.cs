@@ -10,4 +10,6 @@ public interface IContactsAppService : IApplicationService
 	Task<PagedResultDto<ContactListDto>> GetListAsync(ContactListInputDto input);
 
 	Task<ContactDto> GetAsync(Guid id);
+
+	Task DeleteAsync(Guid id);
 }

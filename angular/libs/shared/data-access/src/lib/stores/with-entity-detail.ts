@@ -9,7 +9,7 @@ import {
   patchState,
   withHooks,
 } from '@ngrx/signals';
-import { setEntity, withEntities } from '@ngrx/signals/entities';
+import { removeEntity, setEntity, withEntities } from '@ngrx/signals/entities';
 import { Observable, map, switchMap } from 'rxjs';
 import { Entity } from './entity';
 import { ActivatedRoute } from '@angular/router';
@@ -20,6 +20,7 @@ import { PersistenceConfig, withPersistence } from './with-persistence';
 
 export interface EntityDataService {
   get(id: string): Observable<unknown>;
+  delete(id: string): Observable<void>;
 }
 
 export function withEntityDetail<
@@ -43,6 +44,7 @@ export function withEntityDetail<
 
   return signalStoreFeature(
     withState({
+      deleting: false,
       errorMessage: '',
       loading: false,
     }),
@@ -50,7 +52,7 @@ export function withEntityDetail<
     withPersistence(config.persistence.name, config.persistence.config),
     withComputed(
       (
-        { entityMap, errorMessage, loading },
+        { deleting, entityMap, errorMessage, loading },
         activatedRoute = inject(ActivatedRoute)
       ) => {
         const id = toSignal(
@@ -64,6 +66,7 @@ export function withEntityDetail<
           id,
           entity,
           vm: computed(() => ({
+            deleting,
             entity,
             errorMessage,
             loading,
@@ -88,6 +91,30 @@ export function withEntityDetail<
             finalize: () => patchState(store, { loading: false }),
           })
         );
+      },
+      delete: () => {
+        if (!confirm('Are you sure?')) {
+          return;
+        }
+
+        patchState(store, { deleting: true });
+
+        dataService
+          .delete(id())
+          .pipe(
+            tapResponse({
+              next: () => {
+                patchState(store, removeEntity(id()));
+                patchState(store, { errorMessage: '' });
+              },
+              error: (response: HttpErrorResponse) =>
+                patchState(store, {
+                  errorMessage: response.error.error.message,
+                }),
+              finalize: () => patchState(store, { deleting: false }),
+            })
+          )
+          .subscribe();
       },
     })),
     withHooks({

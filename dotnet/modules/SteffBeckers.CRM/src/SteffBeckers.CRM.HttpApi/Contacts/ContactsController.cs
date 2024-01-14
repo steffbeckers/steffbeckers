@@ -19,6 +19,13 @@ public class ContactsController : CRMController, IContactsAppService
 		_contactsAppService = contactsAppService;
 	}
 
+	[HttpDelete]
+	[Route("{id}")]
+	public Task DeleteAsync(Guid id)
+	{
+		return _contactsAppService.DeleteAsync(id);
+	}
+
 	[HttpGet]
 	[Route("{id}")]
 	public Task<ContactDto> GetAsync(Guid id)
