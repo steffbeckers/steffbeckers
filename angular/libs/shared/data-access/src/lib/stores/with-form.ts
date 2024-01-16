@@ -8,12 +8,13 @@ import {
   withMethods,
   withState,
 } from '@ngrx/signals';
-import { Observable, first } from 'rxjs';
+import { Observable, filter, first, tap } from 'rxjs';
 import { ErrorDto } from '../dtos/error';
 import { HttpErrorResponse } from '@angular/common/http';
-import { effect, inject } from '@angular/core';
+import { inject } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
+import { rxMethod } from '@ngrx/signals/rxjs-interop';
 
 export type ExtractFormControl<T> = {
   [K in keyof T]: T[K] extends FormControl<infer U> ? U : T[K];
@@ -36,7 +37,22 @@ export function withForm<TFormGroup, TFormResponse>() {
     }),
     withMethods(({ formOnSave, formValue, savingForm, ...store }) => ({
       connectForm: (form: FormGroup) => {
-        effect(() => form.patchValue(formValue()));
+        rxMethod<TFormValue>(($x) =>
+          $x.pipe(
+            takeUntilDestroyed(),
+            // TODO: Use other deep compare function?
+            filter((x) => JSON.stringify(form.value) !== JSON.stringify(x)),
+            tap((formValue) => form.patchValue(formValue))
+          )
+        )(formValue);
+
+        form.valueChanges
+          .pipe(
+            takeUntilDestroyed(),
+            // TODO: Use other deep compare function?
+            filter((x) => JSON.stringify(x) !== JSON.stringify(formValue()))
+          )
+          .subscribe((formValue) => patchState(store, { formValue }));
       },
       formOnSubmit: (event: SubmitEvent, form: FormGroup) => {
         event.preventDefault();

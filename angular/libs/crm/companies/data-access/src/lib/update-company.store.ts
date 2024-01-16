@@ -30,20 +30,27 @@ export interface UpdateCompanyForm {
 export const UpdateCompanyStore = signalStore(
   withEntityDetail<DetailedCompany, CompaniesService>(CompaniesService, {
     entityIdRouteParam: 'companyId',
+    persistence: {
+      name: 'sb-company-detail',
+    },
   }),
   withMethods(({ entity }, companiesService = inject(CompaniesService)) => ({
     formOnSave: (value) =>
       companiesService.update(entity().id, value as CompanyCreateInputDto),
   })),
   withForm<UpdateCompanyForm, CompanyDto>(),
-  withComputed(({ entity, formErrorResponse, formResponse, savingForm }) => ({
-    vm: computed(() => ({
-      entity,
-      formErrorResponse,
-      formResponse,
-      savingForm,
-    })),
-  })),
+  withComputed(
+    ({ entity, formErrorResponse, formResponse, formValue, savingForm }) => ({
+      vm: computed(() => ({
+        entity,
+        formErrorResponse,
+        formResponse,
+        // TODO: Remove
+        formValue,
+        savingForm,
+      })),
+    })
+  ),
   withPageTitle(() => ({
     localizationKey: '::CreateNewX',
     params: ['CRM::Company'],
