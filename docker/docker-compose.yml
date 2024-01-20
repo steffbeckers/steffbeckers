@@ -51,6 +51,7 @@ services:
           ignore:
             - .angular/
             - .nx/
+            - dist/
             - node_modules/
         - action: rebuild
           path: ../angular/package.json
