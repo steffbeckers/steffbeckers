@@ -26,14 +26,14 @@ services:
       dockerfile: ../angular/Dockerfile
     develop:
       watch:
-        # TODO
-        # - action: sync
-        #   path: ../angular
-        #   target: /app
-        #   ignore:
-        #     - ../angular/node_modules/
         - action: rebuild
           path: ../angular/package.json
+        - action: rebuild
+          path: ../angular/nx.json
+        - action: rebuild
+          path: ../angular/tsconfig.base.json
+        - action: rebuild
+          path: ../angular/libs/shared
     container_name: steffbeckers_angular-workspace
     command: tail -F /dev/null
   crm:
@@ -49,10 +49,17 @@ services:
           path: ../angular
           target: /app
           ignore:
-            - node_modules/
+            - .angular/
             - .nx/
+            - node_modules/
         - action: rebuild
           path: ../angular/package.json
+        - action: rebuild
+          path: ../angular/nx.json
+        - action: rebuild
+          path: ../angular/tsconfig.base.json
+        - action: rebuild
+          path: ../angular/libs/shared
     container_name: steffbeckers_crm
     command: yarn nx serve crm
     restart: always
