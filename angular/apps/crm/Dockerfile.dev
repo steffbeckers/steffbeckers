@@ -1,0 +1,6 @@
+FROM steffbeckers/angular-workspace
+
+WORKDIR /app
+
+COPY apps/crm/ apps/crm/
+COPY libs/crm/ libs/crm/

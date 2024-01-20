@@ -1,3 +1,5 @@
+name: steffbeckers
+
 services:
   nginx:
     image: nginx
@@ -17,12 +19,47 @@ services:
       - ./nginx/ssl/ssl.conf:/etc/nginx/ssl.conf:ro
     networks:
       - steffbeckers
+  angular-workspace:
+    image: steffbeckers/angular-workspace
+    build:
+      context: ../angular
+      dockerfile: ../angular/Dockerfile
+    develop:
+      watch:
+        - action: sync
+          path: ../angular
+          target: /app
+          ignore:
+            - ../angular/node_modules/
+        - action: rebuild
+          path: ../angular/package.json
+    container_name: steffbeckers_angular-workspace
+    command: tail -F /dev/null
+  crm:
+    image: steffbeckers/crm
+    depends_on:
+      - angular-workspace
+    build:
+      context: ../angular
+      dockerfile: ../angular/apps/crm/Dockerfile.dev
+    develop:
+      watch:
+        - action: sync
+          path: ../angular
+          target: /app
+          ignore:
+            - ../angular/node_modules/
+        - action: rebuild
+          path: ../angular/package.json
+    container_name: steffbeckers_crm
+    command: yarn nx serve crm
+    restart: always
+    networks:
+      - steffbeckers
   redis:
     image: redis
     container_name: steffbeckers_redis
     restart: always
-    ports:
-      - 6379:6379
     networks:
       - steffbeckers
   redis-commander:
@@ -32,8 +69,6 @@ services:
     restart: always
     environment:
       - REDIS_HOSTS=local:redis:6379
-    ports:
-      - 8081:8081
     networks:
       - steffbeckers
   rabbitmq:
@@ -43,9 +78,6 @@ services:
     environment:
       - RABBITMQ_DEFAULT_USER=steff
       - RABBITMQ_DEFAULT_PASS=Pqdky8ozQBww7tqyi!hM
-    ports:
-      - 5672:5672
-      - 15672:15672
     networks:
       - steffbeckers
   mailhog:
@@ -53,10 +85,7 @@ services:
     container_name: steffbeckers_mailhog
     restart: always
     logging:
-      driver: "none"
-    ports:
-      - 1025:1025
-      - 8025:8025
+      driver: none
     networks:
       - steffbeckers
 
