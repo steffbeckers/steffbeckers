@@ -26,11 +26,12 @@ services:
       dockerfile: ../angular/Dockerfile
     develop:
       watch:
-        - action: sync
-          path: ../angular
-          target: /app
-          ignore:
-            - ../angular/node_modules/
+        # TODO
+        # - action: sync
+        #   path: ../angular
+        #   target: /app
+        #   ignore:
+        #     - ../angular/node_modules/
         - action: rebuild
           path: ../angular/package.json
     container_name: steffbeckers_angular-workspace
@@ -48,7 +49,8 @@ services:
           path: ../angular
           target: /app
           ignore:
-            - ../angular/node_modules/
+            - node_modules/
+            - .nx/
         - action: rebuild
           path: ../angular/package.json
     container_name: steffbeckers_crm
