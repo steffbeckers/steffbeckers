@@ -1,8 +1,15 @@
 # build stage
-FROM steffbeckers/angular-workspace as build-stage
+FROM node:lts as build-stage
 
 WORKDIR /app
 
+COPY package*.json .
+
+RUN npm install
+
+COPY nx.json nx.json
+COPY tsconfig.base.json tsconfig.base.json
+COPY libs/shared/ libs/shared/
 COPY apps/crm/ apps/crm/
 COPY libs/crm/ libs/crm/
 

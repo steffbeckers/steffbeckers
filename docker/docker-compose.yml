@@ -19,27 +19,8 @@ services:
       - ./nginx/var/www/html:/var/www/html
     networks:
       - steffbeckers
-  angular-workspace:
-    image: steffbeckers/angular-workspace
-    build:
-      context: ../angular
-      dockerfile: ../angular/Dockerfile
-    develop:
-      watch:
-        - action: rebuild
-          path: ../angular/package.json
-        - action: rebuild
-          path: ../angular/nx.json
-        - action: rebuild
-          path: ../angular/tsconfig.base.json
-        - action: rebuild
-          path: ../angular/libs/shared
-    container_name: steffbeckers_angular-workspace
-    command: tail -F /dev/null
   crm:
     image: steffbeckers/crm
-    depends_on:
-      - angular-workspace
     build:
       context: ../angular
       dockerfile: ../angular/apps/crm/Dockerfile.dev
@@ -59,8 +40,6 @@ services:
           path: ../angular/nx.json
         - action: rebuild
           path: ../angular/tsconfig.base.json
-        - action: rebuild
-          path: ../angular/libs/shared
     container_name: steffbeckers_crm
     command: yarn nx serve crm
     restart: always
