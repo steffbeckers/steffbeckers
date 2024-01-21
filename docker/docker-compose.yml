@@ -5,8 +5,19 @@ services:
     image: steffbeckers/api
     build:
       context: ../dotnet
-      dockerfile: ../dotnet/
+      dockerfile: ../dotnet/src/SteffBeckers.HttpApi.Host/Dockerfile.dev
+    develop:
+      watch:
+        - action: sync
+          path: ../dotnet
+          target: /app
+          ignore:
+            - node_modules/
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://*:80
     container_name: steffbeckers_api
+    command: dotnet watch run --project src/src/SteffBeckers.HttpApi.Host/SteffBeckers.HttpApi.Host.csproj
     restart: always
     networks:
       - steffbeckers
