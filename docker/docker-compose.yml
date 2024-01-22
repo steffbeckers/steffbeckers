@@ -20,7 +20,7 @@ services:
       - ConnectionStrings__CRM=Server=mssql;Database=SteffBeckers;User Id=sa;Password=Pass@word;TrustServerCertificate=True
       - ConnectionStrings__Default=Server=mssql;Database=SteffBeckers;User Id=sa;Password=Pass@word;TrustServerCertificate=True
     container_name: steffbeckers_api
-    command: dotnet watch run --project src/SteffBeckers.HttpApi.Host/SteffBeckers.HttpApi.Host.csproj --urls http://*:80
+    command: dotnet watch run --project src/SteffBeckers.HttpApi.Host/SteffBeckers.HttpApi.Host.csproj --urls http://*:8080
     restart: always
     networks:
       - steffbeckers
