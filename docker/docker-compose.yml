@@ -2,6 +2,8 @@ name: steffbeckers
 
 services:
   api:
+    depends_on:
+      - db-migrator
     image: steffbeckers/api
     build:
       context: ../dotnet
@@ -15,9 +17,10 @@ services:
             - node_modules/
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
-      - ASPNETCORE_URLS=http://*:80
+      - ConnectionStrings__CRM=Server=mssql;Database=SteffBeckers;User Id=sa;Password=Pass@word;TrustServerCertificate=True
+      - ConnectionStrings__Default=Server=mssql;Database=SteffBeckers;User Id=sa;Password=Pass@word;TrustServerCertificate=True
     container_name: steffbeckers_api
-    command: dotnet watch run --project src/SteffBeckers.HttpApi.Host/SteffBeckers.HttpApi.Host.csproj
+    command: dotnet watch run --project src/SteffBeckers.HttpApi.Host/SteffBeckers.HttpApi.Host.csproj --urls http://*:80
     restart: always
     networks:
       - steffbeckers
@@ -47,12 +50,39 @@ services:
     restart: always
     networks:
       - steffbeckers
+  db-migrator:
+    depends_on:
+      - mssql
+    image: steffbeckers/db-migrator
+    build:
+      context: ../dotnet
+      dockerfile: ../dotnet/src/SteffBeckers.DbMigrator/Dockerfile.dev
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ConnectionStrings__CRM=Server=mssql;Database=SteffBeckers;User Id=sa;Password=Pass@word;TrustServerCertificate=True
+      - ConnectionStrings__Default=Server=mssql;Database=SteffBeckers;User Id=sa;Password=Pass@word;TrustServerCertificate=True
+    container_name: steffbeckers_db-migrator
+    command: dotnet run --project src/SteffBeckers.DbMigrator/SteffBeckers.DbMigrator.csproj
+    restart: "no"
+    networks:
+      - steffbeckers
   mailhog:
     image: mailhog/mailhog
     container_name: steffbeckers_mailhog
     restart: always
     logging:
       driver: none
+    networks:
+      - steffbeckers
+  mssql:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    container_name: steffbeckers_mssql
+    restart: always
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=Pass@word
+    volumes:
+      - ./mssql/var/opt/mssql/data:/var/opt/mssql/data
     networks:
       - steffbeckers
   nginx:
