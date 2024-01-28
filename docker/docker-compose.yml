@@ -56,7 +56,7 @@ services:
       context: ../dotnet
       dockerfile: ../dotnet/src/SteffBeckers.DbMigrator/Dockerfile.dev
     environment:
-      - ASPNETCORE_ENVIRONMENT=Development
+      - DOTNET_ENVIRONMENT=Development
     container_name: steffbeckers_db-migrator
     command: dotnet run --project src/SteffBeckers.DbMigrator/SteffBeckers.DbMigrator.csproj
     restart: "no"
