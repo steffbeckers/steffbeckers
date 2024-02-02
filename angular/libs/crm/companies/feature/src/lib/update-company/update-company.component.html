@@ -105,20 +105,3 @@
     </div>
   </div>
 </form>
-
-@if (vm.formValue()) {
-<div>Form value:</div>
-<pre>
-  {{ vm.formValue() | json }}
-</pre>
-} @if (vm.formResponse()) {
-<div>Form response:</div>
-<pre>
-  {{ vm.formResponse() | json }}
-</pre>
-} @else if (vm.formErrorResponse()) {
-<div>Form error response:</div>
-<pre>
-  {{ vm.formErrorResponse() | json }}
-</pre>
-}

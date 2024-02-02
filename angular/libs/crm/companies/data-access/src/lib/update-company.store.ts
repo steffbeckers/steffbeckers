@@ -39,18 +39,13 @@ export const UpdateCompanyStore = signalStore(
       companiesService.update(entity().id, value as CompanyCreateInputDto),
   })),
   withForm<UpdateCompanyForm, CompanyDto>(),
-  withComputed(
-    ({ entity, formErrorResponse, formResponse, formValue, savingForm }) => ({
-      vm: computed(() => ({
-        entity,
-        formErrorResponse,
-        formResponse,
-        // TODO: Remove
-        formValue,
-        savingForm,
-      })),
-    })
-  ),
+  withComputed(({ entity, formErrorResponse, savingForm }) => ({
+    vm: computed(() => ({
+      entity,
+      formErrorResponse,
+      savingForm,
+    })),
+  })),
   withPageTitle(() => ({
     localizationKey: '::CreateNewX',
     params: ['CRM::Company'],
