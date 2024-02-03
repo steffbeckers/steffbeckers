@@ -1,17 +1,8 @@
-import { Component, effect, inject } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LocalizationModule as AbpLocalizationModule } from '@abp/ng.core';
-import {
-  FormControl,
-  FormGroup,
-  ReactiveFormsModule,
-  Validators,
-} from '@angular/forms';
-import {
-  CreateCompanyForm,
-  UpdateCompanyStore,
-} from '@steffbeckers/crm/companies/data-access';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ReactiveFormsModule, Validators } from '@angular/forms';
+import { UpdateCompanyStore } from '@steffbeckers/crm/companies/data-access';
 
 @Component({
   imports: [AbpLocalizationModule, CommonModule, ReactiveFormsModule],
@@ -22,32 +13,8 @@ import { ActivatedRoute, Router } from '@angular/router';
   templateUrl: './update-company.component.html',
 })
 export class UpdateCompanyComponent {
-  activatedRoute = inject(ActivatedRoute);
-  form = new FormGroup<CreateCompanyForm>({
-    email: new FormControl(''),
-    name: new FormControl('', {
-      nonNullable: true,
-      validators: [Validators.required],
-    }),
-    phoneNumber: new FormControl(''),
-    website: new FormControl(''),
-  });
-  router = inject(Router);
   store = inject(UpdateCompanyStore);
-  Validators = Validators;
   vm = this.store.vm();
-
-  constructor() {
-    this.store.connectForm(this.form);
-
-    // Redirect to company detail
-    effect(() => {
-      const companyDto = this.store.formResponse();
-      if (companyDto?.id) {
-        this.router.navigate(['..'], {
-          relativeTo: this.activatedRoute,
-        });
-      }
-    });
-  }
+  form = this.store.form;
+  Validators = Validators;
 }

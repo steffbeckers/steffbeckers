@@ -1,5 +1,5 @@
 import { computed, effect, inject } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import {
   patchState,
   signalStore,
@@ -19,6 +19,7 @@ import {
   withPageTitle,
 } from '@steffbeckers/shared/data-access';
 import { DetailedCompany } from './company.model';
+import { ActivatedRoute, Router } from '@angular/router';
 
 export interface UpdateCompanyForm {
   name: FormControl<string>;
@@ -27,7 +28,7 @@ export interface UpdateCompanyForm {
   website: FormControl<string | null>;
 }
 
-export const UpdateCompanyStore = signalStore(
+export class UpdateCompanyStore extends signalStore(
   withEntityDetail<DetailedCompany, CompaniesService>(CompaniesService, {
     entityIdRouteParam: 'companyId',
     persistence: {
@@ -46,12 +47,17 @@ export const UpdateCompanyStore = signalStore(
       savingForm,
     })),
   })),
-  withPageTitle(() => ({
-    localizationKey: '::CreateNewX',
-    params: ['CRM::Company'],
+  withPageTitle(({ entity }) => ({
+    localizationKey: '::UpdateXY',
+    params: ['CRM::Company', entity().name],
   })),
   withHooks({
-    onInit: ({ entity, ...store }) => {
+    onInit: (
+      { entity, formResponse, ...store },
+      router = inject(Router),
+      activatedRoute = inject(ActivatedRoute)
+    ) => {
+      // Fill entity in form
       effect(
         () => {
           patchState(store, {
@@ -60,6 +66,32 @@ export const UpdateCompanyStore = signalStore(
         },
         { allowSignalWrites: true }
       );
+
+      // Redirect to company detail
+      effect(() => {
+        const companyDto = formResponse();
+        if (companyDto?.id) {
+          router.navigate(['..'], {
+            relativeTo: activatedRoute,
+          });
+        }
+      });
     },
   })
-);
+) {
+  form = new FormGroup<UpdateCompanyForm>({
+    email: new FormControl(''),
+    name: new FormControl('', {
+      nonNullable: true,
+      validators: [Validators.required],
+    }),
+    phoneNumber: new FormControl(''),
+    website: new FormControl(''),
+  });
+
+  constructor() {
+    super();
+
+    this.connectForm(this.form);
+  }
+}
