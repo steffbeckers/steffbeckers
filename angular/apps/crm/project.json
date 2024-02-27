@@ -45,7 +45,7 @@
         "outputPath": "dist/apps/crm",
         "polyfills": ["zone.js"],
         "scripts": [],
-        "styles": ["apps/crm/src/styles.scss"],
+        "styles": ["apps/crm/src/reset.scss", "apps/crm/src/styles.scss"],
         "tsConfig": "apps/crm/tsconfig.app.json"
       },
       "outputs": ["{options.outputPath}"]
