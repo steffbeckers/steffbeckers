@@ -8,7 +8,6 @@ import { DetailedContact } from './contact.model';
 
 export const ContactDetailStore = signalStore(
   withEntityDetail<DetailedContact, ContactsService>(ContactsService, {
-    entityIdRouteParam: 'contactId',
     persistence: {
       name: 'sb-contact-detail',
     },

@@ -1,4 +1,9 @@
-import { Component, effect, inject } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  effect,
+  inject,
+} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LocalizationModule as AbpLocalizationModule } from '@abp/ng.core';
 import {
@@ -14,6 +19,7 @@ import {
 import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
+  changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [AbpLocalizationModule, CommonModule, ReactiveFormsModule],
   providers: [CreateCompanyStore],
   selector: 'sb-create-company',

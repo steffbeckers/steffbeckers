@@ -8,7 +8,6 @@ import { DetailedCompany } from './company.model';
 
 export const CompanyDetailStore = signalStore(
   withEntityDetail<DetailedCompany, CompaniesService>(CompaniesService, {
-    entityIdRouteParam: 'companyId',
     persistence: {
       name: 'sb-company-detail',
     },

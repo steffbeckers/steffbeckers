@@ -11,11 +11,11 @@
   <ItemGroup>
     <ProjectReference Include="..\..\src\SteffBeckers.EntityFrameworkCore\SteffBeckers.EntityFrameworkCore.csproj" />
     <ProjectReference Include="..\SteffBeckers.Application.Tests\SteffBeckers.Application.Tests.csproj" />
-    <PackageReference Include="Volo.Abp.EntityFrameworkCore.Sqlite" Version="8.0.2" />
+    <PackageReference Include="Volo.Abp.EntityFrameworkCore.Sqlite" Version="8.0.4" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.8.0" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.9.0" />
   </ItemGroup>
 
 </Project>

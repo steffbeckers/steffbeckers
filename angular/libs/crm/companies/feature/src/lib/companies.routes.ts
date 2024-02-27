@@ -9,14 +9,14 @@ export const companiesRoutes: Routes = [
       ),
   },
   {
-    path: ':companyId/update',
+    path: ':id/update',
     loadComponent: () =>
       import('./update-company/update-company.component').then(
         (m) => m.UpdateCompanyComponent
       ),
   },
   {
-    path: ':companyId',
+    path: ':id',
     loadComponent: () =>
       import('./company-detail/company-detail.component').then(
         (m) => m.CompanyDetailComponent

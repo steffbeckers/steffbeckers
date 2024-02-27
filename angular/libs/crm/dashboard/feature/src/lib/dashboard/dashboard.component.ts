@@ -1,4 +1,9 @@
-import { Component, OnInit, inject } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  OnInit,
+  inject,
+} from '@angular/core';
 import {
   LocalizationModule as AbpLocalizationModule,
   LocalizationService as AbpLocalizationService,
@@ -6,6 +11,7 @@ import {
 import { PageTitleService } from '@steffbeckers/shared/utils/page-title';
 
 @Component({
+  changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [AbpLocalizationModule],
   selector: 'sb-dashboard',
   standalone: true,

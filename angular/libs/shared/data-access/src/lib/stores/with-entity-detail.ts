@@ -29,7 +29,7 @@ export function withEntityDetail<
 >(
   dataServiceType: Type<TDataService>,
   config: {
-    entityIdRouteParam: string;
+    entityIdRouteParam?: string;
     getOnInit?: boolean;
     persistence?: {
       name?: string;
@@ -57,7 +57,10 @@ export function withEntityDetail<
       ) => {
         const id = toSignal(
           activatedRoute.paramMap.pipe(
-            map((paramMap) => paramMap.get(config.entityIdRouteParam) ?? '')
+            map(
+              (paramMap) =>
+                paramMap.get(config.entityIdRouteParam ?? 'id') ?? ''
+            )
           )
         ) as Signal<string>;
         const entity = computed(() => entityMap()[id()] ?? {});

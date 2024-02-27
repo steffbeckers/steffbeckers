@@ -30,7 +30,6 @@ export interface UpdateCompanyForm {
 
 export class UpdateCompanyStore extends signalStore(
   withEntityDetail<DetailedCompany, CompaniesService>(CompaniesService, {
-    entityIdRouteParam: 'companyId',
     persistence: {
       name: 'sb-company-detail',
     },

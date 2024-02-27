@@ -1,10 +1,11 @@
-import { Component, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LocalizationModule as AbpLocalizationModule } from '@abp/ng.core';
 import { ReactiveFormsModule, Validators } from '@angular/forms';
 import { UpdateCompanyStore } from '@steffbeckers/crm/companies/data-access';
 
 @Component({
+  changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [AbpLocalizationModule, CommonModule, ReactiveFormsModule],
   providers: [UpdateCompanyStore],
   selector: 'sb-update-company',

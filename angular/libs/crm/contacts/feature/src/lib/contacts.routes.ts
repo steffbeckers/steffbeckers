@@ -2,7 +2,7 @@ import { Routes } from '@angular/router';
 
 export const contactsRoutes: Routes = [
   {
-    path: ':contactId',
+    path: ':id',
     loadComponent: () =>
       import('./contact-detail/contact-detail.component').then(
         (m) => m.ContactDetailComponent

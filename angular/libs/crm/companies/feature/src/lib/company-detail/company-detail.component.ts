@@ -1,4 +1,10 @@
-import { Component, HostListener, effect, inject } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  HostListener,
+  effect,
+  inject,
+} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { LocalizationModule as AbpLocalizationModule } from '@abp/ng.core';
@@ -6,6 +12,7 @@ import { FormsModule } from '@angular/forms';
 import { CompanyDetailStore } from '@steffbeckers/crm/companies/data-access';
 
 @Component({
+  changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [AbpLocalizationModule, CommonModule, FormsModule, RouterLink],
   providers: [CompanyDetailStore],
   selector: 'sb-company-detail',
