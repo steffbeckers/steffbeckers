@@ -4,6 +4,8 @@ services:
   api:
     depends_on:
       - db-migrator
+      - rabbitmq
+      - redis
     image: steffbeckers/api
     build:
       context: ../dotnet
@@ -82,6 +84,9 @@ services:
     networks:
       - steffbeckers
   nginx:
+    depends_on:
+      - api
+      - crm
     image: nginx
     container_name: steffbeckers_nginx
     restart: always
@@ -115,6 +120,8 @@ services:
     networks:
       - steffbeckers
   redis-commander:
+    depends_on:
+      - redis
     image: rediscommander/redis-commander
     container_name: steffbeckers_redis-commander
     hostname: redis-commander
