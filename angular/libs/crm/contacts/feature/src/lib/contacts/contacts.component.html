@@ -23,7 +23,7 @@
 } @if (vm.entities().length > 0) {
 <ul>
   @for (contact of vm.entities(); track contact.id) {
-  <li [routerLink]="contact.id">
+  <li [routerLink]="contact.id" class="cursor-pointer">
     {{ contact.firstName }} {{ contact.lastName }}
   </li>
   }

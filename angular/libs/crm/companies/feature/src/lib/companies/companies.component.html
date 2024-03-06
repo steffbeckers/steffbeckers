@@ -26,7 +26,7 @@
 } @if (vm.entities().length > 0) {
 <ul>
   @for (company of vm.entities(); track company.id) {
-  <li [routerLink]="company.id">{{ company.name }}</li>
+  <li [routerLink]="company.id" class="cursor-pointer">{{ company.name }}</li>
   }
 </ul>
 } @else if (vm.query()) {
