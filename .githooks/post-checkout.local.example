@@ -1,0 +1,16 @@
+#!/bin/bash
+
+# Update connection strings on branch checkout
+branchName=$(git symbolic-ref --short HEAD)
+featureName=$(basename "$branchName" | cut -d"-" -f1)
+databaseName="SteffBeckers-${featureName}"
+
+appsettingsDevelopmentDbMigrator="dotnet/src/SteffBeckers.DbMigrator/appsettings.Development.json"
+if [ -f $appsettingsDevelopmentDbMigrator ]; then
+  sed -i "s/Database=.*;/Database=$databaseName;/" $appsettingsDevelopmentDbMigrator
+fi
+
+appsettingsDevelopmentHttpApiHost="dotnet/src/SteffBeckers.HttpApi.Host/appsettings.Development.json"
+if [ -f $appsettingsDevelopmentHttpApiHost ]; then
+  sed -i "s/Database=.*;/Database=$databaseName;/" $appsettingsDevelopmentHttpApiHost
+fi
