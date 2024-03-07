@@ -6,7 +6,7 @@ services:
       - db-migrator
       - rabbitmq
       - redis
-    image: steffbeckers/api:${TAG}
+    image: steffbeckers/monorepo:dotnet-api-${TAG}
     build:
       context: ../dotnet
       dockerfile: ../dotnet/src/SteffBeckers.HttpApi.Host/Dockerfile.dev
@@ -25,7 +25,7 @@ services:
     networks:
       - steffbeckers
   crm:
-    image: steffbeckers/crm:${TAG}
+    image: steffbeckers/monorepo:angular-crm-${TAG}
     build:
       context: ../angular
       dockerfile: ../angular/apps/crm/Dockerfile.dev
@@ -53,7 +53,7 @@ services:
   db-migrator:
     depends_on:
       - mssql
-    image: steffbeckers/db-migrator:${TAG}
+    image: steffbeckers/monorepo:dotnet-db-migrator-${TAG}
     build:
       context: ../dotnet
       dockerfile: ../dotnet/src/SteffBeckers.DbMigrator/Dockerfile.dev
