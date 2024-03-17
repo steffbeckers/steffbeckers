@@ -1,69 +1,6 @@
 name: steffbeckers
 
 services:
-  api:
-    depends_on:
-      - db-migrator
-      - rabbitmq
-      - redis
-    image: steffbeckers/monorepo:dotnet-api-${TAG}
-    build:
-      context: ../dotnet
-      dockerfile: ../dotnet/src/SteffBeckers.HttpApi.Host/Dockerfile.dev
-    develop:
-      watch:
-        - action: sync
-          path: ../dotnet
-          target: /app
-          ignore:
-            - node_modules/
-    environment:
-      - ASPNETCORE_ENVIRONMENT=Development
-    container_name: steffbeckers_api
-    command: dotnet watch run --project src/SteffBeckers.HttpApi.Host/SteffBeckers.HttpApi.Host.csproj --urls http://*:8080
-    restart: always
-    networks:
-      - steffbeckers
-  crm:
-    image: steffbeckers/monorepo:angular-crm-${TAG}
-    build:
-      context: ../angular
-      dockerfile: ../angular/apps/crm/Dockerfile.dev
-    develop:
-      watch:
-        - action: sync
-          path: ../angular
-          target: /app
-          ignore:
-            - .angular/
-            - .nx/
-            - dist/
-            - node_modules/
-        - action: rebuild
-          path: ../angular/package.json
-        - action: rebuild
-          path: ../angular/nx.json
-        - action: rebuild
-          path: ../angular/tsconfig.base.json
-    container_name: steffbeckers_crm
-    command: yarn nx serve crm
-    restart: always
-    networks:
-      - steffbeckers
-  db-migrator:
-    depends_on:
-      - mssql
-    image: steffbeckers/monorepo:dotnet-db-migrator-${TAG}
-    build:
-      context: ../dotnet
-      dockerfile: ../dotnet/src/SteffBeckers.DbMigrator/Dockerfile.dev
-    environment:
-      - DOTNET_ENVIRONMENT=Development
-    container_name: steffbeckers_db-migrator
-    command: dotnet run --project src/SteffBeckers.DbMigrator/SteffBeckers.DbMigrator.csproj
-    restart: "no"
-    networks:
-      - steffbeckers
   mailhog:
     image: mailhog/mailhog
     container_name: steffbeckers_mailhog
@@ -72,21 +9,7 @@ services:
       driver: none
     networks:
       - steffbeckers
-  mssql:
-    image: mcr.microsoft.com/mssql/server:2022-latest
-    container_name: steffbeckers_mssql
-    restart: always
-    environment:
-      - ACCEPT_EULA=Y
-      - SA_PASSWORD=Pass@word
-    volumes:
-      - ./mssql/var/opt/mssql/data:/var/opt/mssql/data
-    networks:
-      - steffbeckers
   nginx:
-    depends_on:
-      - api
-      - crm
     image: nginx
     container_name: steffbeckers_nginx
     restart: always
