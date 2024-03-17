@@ -10,10 +10,17 @@ import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { LocalizationModule as AbpLocalizationModule } from '@abp/ng.core';
 import { FormsModule } from '@angular/forms';
 import { CompanyDetailStore } from '@steffbeckers/crm/companies/data-access';
+import { ButtonComponent } from '@steffbeckers/shared/ui/components';
 
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [AbpLocalizationModule, CommonModule, FormsModule, RouterLink],
+  imports: [
+    AbpLocalizationModule,
+    ButtonComponent,
+    CommonModule,
+    FormsModule,
+    RouterLink,
+  ],
   providers: [CompanyDetailStore],
   selector: 'sb-company-detail',
   standalone: true,

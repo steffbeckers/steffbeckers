@@ -17,10 +17,16 @@ import {
   CreateCompanyStore,
 } from '@steffbeckers/crm/companies/data-access';
 import { ActivatedRoute, Router } from '@angular/router';
+import { ButtonComponent } from '@steffbeckers/shared/ui/components';
 
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [AbpLocalizationModule, CommonModule, ReactiveFormsModule],
+  imports: [
+    AbpLocalizationModule,
+    ButtonComponent,
+    CommonModule,
+    ReactiveFormsModule,
+  ],
   providers: [CreateCompanyStore],
   selector: 'sb-create-company',
   standalone: true,

@@ -96,9 +96,9 @@
       </div>
     </ng-container>
     <div style="display: flex; gap: 0.5rem">
-      <button type="submit" [disabled]="store.savingForm()">
+      <sb-button type="submit" [disabled]="store.savingForm()">
         {{ '::Save' | abpLocalization }}
-      </button>
+      </sb-button>
       @if (vm.savingForm()) {
       <div>Saving...</div>
       }

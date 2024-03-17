@@ -30,6 +30,12 @@
       "@steffbeckers/shared/data-access": [
         "libs/shared/data-access/src/index.ts"
       ],
+      "@steffbeckers/shared/ui/components": [
+        "libs/shared/ui/components/src/index.ts"
+      ],
+      "@steffbeckers/shared/utils/colors": [
+        "libs/shared/utils/colors/src/index.ts"
+      ],
       "@steffbeckers/shared/utils/page-title": [
         "libs/shared/utils/page-title/src/index.ts"
       ],

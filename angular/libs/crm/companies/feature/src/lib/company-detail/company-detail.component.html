@@ -5,12 +5,16 @@
 <!-- TODO: Is this a best practice? Or do we need to use the signal in all other places as well? -->
 @if (vm.entity(); as company) {
 <div style="display: flex; gap: 1rem; align-items: center">
-  <h2 class="page-title text-xl">{{ 'CRM::Company' | abpLocalization }} {{ company.name }}</h2>
+  <h2 class="page-title text-xl">
+    {{ 'CRM::Company' | abpLocalization }} {{ company.name }}
+  </h2>
   <div style="display: flex; gap: 0.5rem; align-items: center">
-    <button routerLink="update">{{ '::Update' | abpLocalization }}</button>
-    <button [disabled]="store.deleting()" (click)="store.delete()">
+    <sb-button routerLink="update">{{
+      '::Update' | abpLocalization
+    }}</sb-button>
+    <sb-button [disabled]="store.deleting()" (click)="store.delete()">
       {{ '::Delete' | abpLocalization }}
-    </button>
+    </sb-button>
   </div>
 </div>
 @if (company.email; as email) {
