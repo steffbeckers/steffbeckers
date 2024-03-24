@@ -11,11 +11,11 @@
 @if (contact.email; as email) {
 <div>
   {{ 'CRM::Email' | abpLocalization }}:
-  <a [href]="'mailto:' + contact.email">{{ email }}</a>
+  <a class="link" [href]="'mailto:' + contact.email">{{ email }}</a>
 </div>
 } @if (contact.phoneNumber; as phoneNumber) {
 <div>
   {{ 'CRM::PhoneNumber' | abpLocalization }}:
-  <a [href]="'tel:' + phoneNumber">{{ phoneNumber }}</a>
+  <a class="link" [href]="'tel:' + phoneNumber">{{ phoneNumber }}</a>
 </div>
 } }
