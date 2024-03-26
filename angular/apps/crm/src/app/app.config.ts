@@ -9,6 +9,9 @@ import {
 import { AbpOAuthModule } from '@abp/ng.oauth';
 import { appRoutes } from './app.routes';
 import { providePageTitleConfig } from '@steffbeckers/shared/utils/page-title';
+import { en_US, provideNzI18n } from 'ng-zorro-antd/i18n';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { provideHttpClient } from '@angular/common/http';
 
 let localeMap = {} as { [key: string]: string };
 
@@ -65,9 +68,12 @@ export const appConfig: ApplicationConfig = {
       }),
       AbpOAuthModule.forRoot()
     ),
+    provideAnimationsAsync(),
+    provideHttpClient(),
     provideRouter(appRoutes),
     providePageTitleConfig({
       prefix: 'CRM - ',
     }),
+    provideNzI18n(en_US),
   ],
 };

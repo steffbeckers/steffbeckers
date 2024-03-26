@@ -38,14 +38,27 @@
       "defaultConfiguration": "production",
       "executor": "@angular-devkit/build-angular:application",
       "options": {
-        "assets": ["apps/crm/src/favicon.ico", "apps/crm/src/assets"],
+        "assets": [
+          "apps/crm/src/favicon.ico",
+          "apps/crm/src/assets",
+          {
+            "glob": "**/*",
+            "input": "./node_modules/@ant-design/icons-angular/src/inline-svg/",
+            "output": "/assets/"
+          }
+        ],
         "browser": "apps/crm/src/main.ts",
         "index": "apps/crm/src/index.html",
         "inlineStyleLanguage": "scss",
         "outputPath": "dist/apps/crm",
         "polyfills": ["zone.js"],
         "scripts": [],
-        "styles": ["apps/crm/src/styles.scss"],
+        "styles": [
+          "apps/crm/src/reset.scss",
+          "apps/crm/src/tailwind.scss",
+          "apps/crm/src/theme.less",
+          "apps/crm/src/styles.scss"
+        ],
         "tsConfig": "apps/crm/tsconfig.app.json"
       },
       "outputs": ["{options.outputPath}"]

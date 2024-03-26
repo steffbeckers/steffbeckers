@@ -1,15 +1,23 @@
 import { Component, input } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Colors } from '@steffbeckers/shared/utils/colors';
+import { NzButtonModule } from 'ng-zorro-antd/button';
+
+export type ButtonType = 'button' | 'submit' | 'reset';
+export type ButtonVariant = 'default' | 'primary' | 'dashed' | 'link' | 'text';
+export type ButtonSize = 'default' | 'small' | 'large';
 
 @Component({
-  imports: [CommonModule],
+  imports: [CommonModule, NzButtonModule],
   selector: 'sb-button',
   standalone: true,
   styleUrl: './button.component.scss',
   templateUrl: './button.component.html',
 })
 export class ButtonComponent {
-  color = input<Colors>('primary');
+  danger = input<boolean>();
   disabled = input<boolean>();
+  loading = input<boolean>();
+  variant = input<ButtonVariant>('default');
+  type = input<ButtonType>('button');
+  size = input<ButtonSize>('default');
 }
