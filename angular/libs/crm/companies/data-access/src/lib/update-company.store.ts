@@ -28,7 +28,7 @@ export interface UpdateCompanyForm {
   website: FormControl<string | null>;
 }
 
-export class UpdateCompanyStore extends signalStore(
+export const UpdateCompanyStore = signalStore(
   withEntityDetail<DetailedCompany, CompaniesService>(CompaniesService, {
     persistence: {
       name: 'sb-company-detail',
@@ -77,20 +77,4 @@ export class UpdateCompanyStore extends signalStore(
       });
     },
   })
-) {
-  form = new FormGroup<UpdateCompanyForm>({
-    email: new FormControl(''),
-    name: new FormControl('', {
-      nonNullable: true,
-      validators: [Validators.required],
-    }),
-    phoneNumber: new FormControl(''),
-    website: new FormControl(''),
-  });
-
-  constructor() {
-    super();
-
-    this.connectForm(this.form);
-  }
-}
+);

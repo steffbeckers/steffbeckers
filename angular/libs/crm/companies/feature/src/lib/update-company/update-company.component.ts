@@ -1,8 +1,16 @@
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LocalizationModule as AbpLocalizationModule } from '@abp/ng.core';
-import { ReactiveFormsModule, Validators } from '@angular/forms';
-import { UpdateCompanyStore } from '@steffbeckers/crm/companies/data-access';
+import {
+  FormControl,
+  FormGroup,
+  ReactiveFormsModule,
+  Validators,
+} from '@angular/forms';
+import {
+  UpdateCompanyForm,
+  UpdateCompanyStore,
+} from '@steffbeckers/crm/companies/data-access';
 import { ButtonComponent } from '@steffbeckers/shared/ui/components';
 
 @Component({
@@ -22,6 +30,18 @@ import { ButtonComponent } from '@steffbeckers/shared/ui/components';
 export class UpdateCompanyComponent {
   store = inject(UpdateCompanyStore);
   vm = this.store.vm();
-  form = this.store.form;
+  form = new FormGroup<UpdateCompanyForm>({
+    email: new FormControl(''),
+    name: new FormControl('', {
+      nonNullable: true,
+      validators: [Validators.required],
+    }),
+    phoneNumber: new FormControl(''),
+    website: new FormControl(''),
+  });
   Validators = Validators;
+
+  constructor() {
+    this.store.connectForm(this.form);
+  }
 }
