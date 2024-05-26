@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using SteffBeckers.CRM.Companies;
+using SteffBeckers.CRM.Contacts;
 using Volo.Abp.Data;
 using Volo.Abp.EntityFrameworkCore;
 
@@ -9,6 +10,8 @@ namespace SteffBeckers.CRM.EntityFrameworkCore;
 public class CRMDbContext : AbpDbContext<CRMDbContext>, ICRMDbContext
 {
 	public DbSet<Company> Companies { get; set; }
+
+	public DbSet<Contact> Contacts { get; set; }
 
 
 	public CRMDbContext(DbContextOptions<CRMDbContext> options)

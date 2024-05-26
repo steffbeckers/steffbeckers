@@ -1,0 +1,24 @@
+@if (variant() == 'link') {
+<a
+  nz-button
+  [disabled]="disabled()"
+  [nzDanger]="danger()"
+  [nzLoading]="loading()"
+  [nzSize]="size()"
+  [nzType]="variant()"
+>
+  <ng-content></ng-content>
+</a>
+} @else {
+<button
+  nz-button
+  [disabled]="disabled()"
+  [nzDanger]="danger()"
+  [nzLoading]="loading()"
+  [nzSize]="size()"
+  [nzType]="variant()"
+  [type]="type()"
+>
+  <ng-content></ng-content>
+</button>
+}

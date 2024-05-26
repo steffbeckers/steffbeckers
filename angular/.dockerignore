@@ -1,0 +1,6 @@
+**/.vscode
+**/Dockerfile*
+**/node_modules
+/.angular
+/.nx
+/dist

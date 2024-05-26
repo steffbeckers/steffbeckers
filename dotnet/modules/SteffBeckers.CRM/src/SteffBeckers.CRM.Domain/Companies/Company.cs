@@ -29,7 +29,7 @@ public class Company : FullAuditedAggregateRoot<Guid>, IMultiTenant
 		get => name;
 		set
 		{
-			Check.NotNullOrEmpty(name, nameof(Name), CompanyConsts.NameMaxLength);
+			Check.NotNullOrEmpty(value, nameof(Name), CompanyConsts.NameMaxLength);
 			name = value;
 		}
 	}

@@ -11,6 +11,7 @@ using OpenIddict.Server.AspNetCore;
 using OpenIddict.Validation.AspNetCore;
 using SteffBeckers.EntityFrameworkCore;
 using SteffBeckers.MultiTenancy;
+using Swashbuckle.AspNetCore.SwaggerGen;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -57,6 +58,20 @@ public class SteffBeckersHttpApiHostModule : AbpModule
 				options.UseLocalServer();
 				options.UseAspNetCore();
 			});
+		});
+	}
+
+	public override void PostConfigureServices(ServiceConfigurationContext context)
+	{
+		PostConfigure<SwaggerGenOptions>(options =>
+		{
+			OpenApiSecurityScheme? oauth2SecurityScheme = options.SwaggerGeneratorOptions.SecuritySchemes["oauth2"];
+
+			if (oauth2SecurityScheme != null)
+			{
+				oauth2SecurityScheme.Flows.AuthorizationCode.AuthorizationUrl = new Uri($"/connect/authorize", UriKind.Relative);
+				oauth2SecurityScheme.Flows.AuthorizationCode.TokenUrl = new Uri($"/connect/token", UriKind.Relative);
+			}
 		});
 	}
 

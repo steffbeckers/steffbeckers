@@ -3,8 +3,10 @@
     "Texts": {
         "Companies": "Bedrijven",
         "Company": "Bedrijf",
-        "Contacts": "Contactpersonen",
+        "CompanyDetailPageTitle": "Bedrijf {0}",
         "Contact": "Contactpersoon",
+        "ContactDetailPageTitle": "Contactpersoon {0}",
+        "Contacts": "Contactpersonen",
         "Email": "E-mail",
         "PhoneNumber": "Telefoonnummer",
         "Website": "Website"

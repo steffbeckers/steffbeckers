@@ -3,21 +3,37 @@
 }
 
 <!-- TODO: Is this a best practice? Or do we need to use the signal in all other places as well? -->
-@if (vm.company(); as company) {
-<h2>{{ 'CRM::Company' | abpLocalization }} {{ company.name }}</h2>
+@if (vm.entity(); as company) {
+<div style="display: flex; gap: 1rem; align-items: center">
+  <h2 class="page-title text-xl">
+    {{ 'CRM::Company' | abpLocalization }} {{ company.name }}
+  </h2>
+  <div style="display: flex; gap: 0.5rem; align-items: center">
+    <sb-button routerLink="update" variant="primary">{{
+      '::Update' | abpLocalization
+    }}</sb-button>
+    <sb-button
+      [disabled]="store.deleting()"
+      [danger]="true"
+      (click)="store.delete()"
+    >
+      {{ '::Delete' | abpLocalization }}
+    </sb-button>
+  </div>
+</div>
 @if (company.email; as email) {
 <div>
   {{ 'CRM::Email' | abpLocalization }}:
-  <a [href]="'mailto:' + company.email">{{ email }}</a>
+  <a class="link" [href]="'mailto:' + company.email">{{ email }}</a>
 </div>
 } @if (company.phoneNumber; as phoneNumber) {
 <div>
   {{ 'CRM::PhoneNumber' | abpLocalization }}:
-  <a [href]="'tel:' + phoneNumber">{{ phoneNumber }}</a>
+  <a class="link" [href]="'tel:' + phoneNumber">{{ phoneNumber }}</a>
 </div>
 } @if (company.website; as website) {
 <div>
   {{ 'CRM::Website' | abpLocalization }}:
-  <a [href]="website" target="_blank">{{ website }}</a>
+  <a class="link" [href]="website" target="_blank">{{ website }}</a>
 </div>
 } }

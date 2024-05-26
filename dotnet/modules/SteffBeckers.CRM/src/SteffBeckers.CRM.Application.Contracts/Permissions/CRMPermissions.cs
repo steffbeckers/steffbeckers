@@ -18,4 +18,12 @@ public class CRMPermissions
 		public const string Delete = Default + $".{nameof(Delete)}";
 		public const string Update = Default + $".{nameof(Update)}";
 	}
+
+	public static class Contacts
+	{
+		public const string Create = Default + $".{nameof(Create)}";
+		public const string Default = GroupName + $".{nameof(Contacts)}";
+		public const string Delete = Default + $".{nameof(Delete)}";
+		public const string Update = Default + $".{nameof(Update)}";
+	}
 }
