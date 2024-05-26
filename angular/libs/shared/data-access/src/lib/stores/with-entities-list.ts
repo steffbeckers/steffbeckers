@@ -14,10 +14,6 @@ import {
 import { setAllEntities, withEntities } from '@ngrx/signals/entities';
 import { rxMethod } from '@ngrx/signals/rxjs-interop';
 import {
-  PersistenceConfig,
-  withPersistence,
-} from '@steffbeckers/shared/data-access';
-import {
   Observable,
   debounceTime,
   distinctUntilChanged,
@@ -26,6 +22,7 @@ import {
   switchMap,
 } from 'rxjs';
 import { Entity } from './entity';
+import { PersistenceConfig, withPersistence } from './with-persistence';
 
 export interface EntityListInputDto {
   maxResultCount: number;
