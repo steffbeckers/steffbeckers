@@ -5,7 +5,7 @@ EXPOSE 80
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS dependencies
 ENV PATH="${PATH}:/root/.dotnet/tools"
 RUN dotnet tool install -g dotnet-subset --version 0.3.2 \
- && dotnet tool install -g Volo.Abp.Cli --version 8.0.2 \
+ && dotnet tool install -g Volo.Abp.Cli --version 8.1.3 \
  && curl -fsSL https://deb.nodesource.com/setup_lts.x | bash - \
  && apt-get install nodejs -y \
  && npm install -g yarn;
