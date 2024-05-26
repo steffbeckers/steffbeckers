@@ -16,6 +16,9 @@
       "@steffbeckers/crm/companies/feature": [
         "libs/crm/companies/feature/src/index.ts"
       ],
+      "@steffbeckers/crm/contacts/data-access": [
+        "libs/crm/contacts/data-access/src/index.ts"
+      ],
       "@steffbeckers/crm/contacts/feature": [
         "libs/crm/contacts/feature/src/index.ts"
       ],
@@ -27,8 +30,14 @@
       "@steffbeckers/shared/data-access": [
         "libs/shared/data-access/src/index.ts"
       ],
-      "@steffbeckers/shared/utils/ngrx-signals": [
-        "libs/shared/utils/ngrx-signals/src/index.ts"
+      "@steffbeckers/shared/ui/components": [
+        "libs/shared/ui/components/src/index.ts"
+      ],
+      "@steffbeckers/shared/utils/colors": [
+        "libs/shared/utils/colors/src/index.ts"
+      ],
+      "@steffbeckers/shared/utils/page-title": [
+        "libs/shared/utils/page-title/src/index.ts"
       ],
       "@steffbeckers/shared/utils/testing": [
         "libs/shared/utils/testing/src/index.ts"

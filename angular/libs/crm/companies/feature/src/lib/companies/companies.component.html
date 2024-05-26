@@ -1,5 +1,10 @@
-<h2>{{ 'CRM::Companies' | abpLocalization }}</h2>
-<div class="query-fields">
+<div style="display: flex; gap: 1rem; align-items: center">
+  <h2 class="page-title text-xl">{{ 'CRM::Companies' | abpLocalization }}</h2>
+  <sb-button routerLink="create" variant="primary">{{
+    '::Create' | abpLocalization
+  }}</sb-button>
+</div>
+<div style="display: flex; gap: 0.5rem">
   <input
     type="text"
     [placeholder]="'::Search' | abpLocalization"
@@ -20,10 +25,10 @@
 </div>
 @if (vm.errorMessage()) {
 <p>Error: {{ vm.errorMessage() }}</p>
-} @if (vm.companies().length > 0) {
+} @if (vm.entities().length > 0) {
 <ul>
-  @for (company of vm.companies(); track company.id) {
-  <li [routerLink]="company.id">{{ company.name }}</li>
+  @for (company of vm.entities(); track company.id) {
+  <li [routerLink]="company.id" class="cursor-pointer">{{ company.name }}</li>
   }
 </ul>
 } @else if (vm.query()) {

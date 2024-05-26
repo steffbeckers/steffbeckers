@@ -56,7 +56,7 @@
       "cache": true,
       "inputs": ["default", "^production"]
     },
-    "lint": {
+    "@nx/eslint:lint": {
       "cache": true,
       "inputs": [
         "default",

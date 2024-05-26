@@ -22,6 +22,19 @@ public class CRMPermissionDefinitionProvider : PermissionDefinitionProvider
 		companiesPermission.AddChild(
 			CRMPermissions.Companies.Delete,
 			L($"Permission:{nameof(CRMPermissions.Companies.Delete)}"));
+
+		PermissionDefinition contactsPermission = crmGroup.AddPermission(
+			CRMPermissions.Contacts.Default,
+			L($"Permission:{nameof(CRMPermissions.Contacts)}"));
+		contactsPermission.AddChild(
+			CRMPermissions.Contacts.Create,
+			L($"Permission:{nameof(CRMPermissions.Contacts.Create)}"));
+		contactsPermission.AddChild(
+			CRMPermissions.Contacts.Update,
+			L($"Permission:{nameof(CRMPermissions.Contacts.Update)}"));
+		contactsPermission.AddChild(
+			CRMPermissions.Contacts.Delete,
+			L($"Permission:{nameof(CRMPermissions.Contacts.Delete)}"));
 	}
 
 	private static LocalizableString L(string name)
