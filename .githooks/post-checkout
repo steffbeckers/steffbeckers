@@ -1,6 +1,0 @@
-#!/bin/bash
-
-localHook='./.githooks/post-checkout.local'
-if [ -f $localHook ]; then
-  bash $localHook
-fi
