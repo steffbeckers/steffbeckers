@@ -1,6 +1,6 @@
 import { Environment as AbpEnvironment } from '@abp/ng.core';
 
-const origin = 'https://crm.steffbeckers.local';
+const origin = 'https://crm.steffbeckers.localhost';
 
 export const environment = {
   production: false,
@@ -9,9 +9,9 @@ export const environment = {
     name: 'CRM',
   },
   oAuthConfig: {
-    issuer: 'https://crm.steffbeckers.local/',
+    issuer: 'https://steffbeckers.localhost/',
     redirectUri: origin,
-    clientId: 'SteffBeckers_App',
+    clientId: 'SteffBeckers_CRM',
     responseType: 'code',
     scope: 'offline_access openid profile email phone roles SteffBeckers',
     requireHttps: true,

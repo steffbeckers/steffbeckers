@@ -38,15 +38,7 @@
       "defaultConfiguration": "production",
       "executor": "@angular-devkit/build-angular:application",
       "options": {
-        "assets": [
-          "apps/crm/src/favicon.ico",
-          "apps/crm/src/assets",
-          {
-            "glob": "**/*",
-            "input": "./node_modules/@ant-design/icons-angular/src/inline-svg/",
-            "output": "/assets/"
-          }
-        ],
+        "assets": ["apps/crm/src/favicon.ico", "apps/crm/src/assets"],
         "browser": "apps/crm/src/main.ts",
         "index": "apps/crm/src/index.html",
         "inlineStyleLanguage": "scss",
@@ -56,7 +48,6 @@
         "styles": [
           "apps/crm/src/reset.scss",
           "apps/crm/src/tailwind.scss",
-          "apps/crm/src/theme.less",
           "apps/crm/src/styles.scss"
         ],
         "tsConfig": "apps/crm/tsconfig.app.json"
@@ -76,7 +67,6 @@
     "serve": {
       "configurations": {
         "development": {
-          "allowedHosts": ["crm.steffbeckers.local"],
           "buildTarget": "crm:build:development",
           "host": "0.0.0.0"
         },

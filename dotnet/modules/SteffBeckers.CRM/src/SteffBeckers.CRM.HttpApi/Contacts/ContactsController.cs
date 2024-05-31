@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Asp.Versioning;
+using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Threading.Tasks;
 using Volo.Abp;
@@ -12,30 +13,30 @@ namespace SteffBeckers.CRM.Contacts;
 [Route("api/crm/contacts")]
 public class ContactsController : CRMController, IContactsAppService
 {
-	private readonly IContactsAppService _contactsAppService;
+    private readonly IContactsAppService _contactsAppService;
 
-	public ContactsController(IContactsAppService contactsAppService)
-	{
-		_contactsAppService = contactsAppService;
-	}
+    public ContactsController(IContactsAppService contactsAppService)
+    {
+        _contactsAppService = contactsAppService;
+    }
 
-	[HttpDelete]
-	[Route("{id}")]
-	public Task DeleteAsync(Guid id)
-	{
-		return _contactsAppService.DeleteAsync(id);
-	}
+    [HttpDelete]
+    [Route("{id}")]
+    public Task DeleteAsync(Guid id)
+    {
+        return _contactsAppService.DeleteAsync(id);
+    }
 
-	[HttpGet]
-	[Route("{id}")]
-	public Task<ContactDto> GetAsync(Guid id)
-	{
-		return _contactsAppService.GetAsync(id);
-	}
+    [HttpGet]
+    [Route("{id}")]
+    public Task<ContactDto> GetAsync(Guid id)
+    {
+        return _contactsAppService.GetAsync(id);
+    }
 
-	[HttpGet]
-	public Task<PagedResultDto<ContactListDto>> GetListAsync(ContactListInputDto input)
-	{
-		return _contactsAppService.GetListAsync(input);
-	}
+    [HttpGet]
+    public Task<PagedResultDto<ContactListDto>> GetListAsync(ContactListInputDto input)
+    {
+        return _contactsAppService.GetListAsync(input);
+    }
 }

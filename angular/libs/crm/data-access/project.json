@@ -10,7 +10,7 @@
       "executor": "nx:run-commands",
       "options": {
         "commands": [
-          "nx generate @abp/ng.schematics:proxy-add crm --target=crm-data-access --url=https://crm.steffbeckers.local --no-interactive"
+          "nx generate @abp/ng.schematics:proxy-add crm --target=crm-data-access --url=https://crm.steffbeckers.localhost --no-interactive"
         ],
         "parallel": false
       }
