@@ -1,6 +1,0 @@
-#!/bin/bash
-
-localHook='./.githooks/post-commit.local'
-if [ -f $localHook ]; then
-  bash $localHook
-fi

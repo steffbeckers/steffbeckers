@@ -8,31 +8,39 @@ import { Injectable } from '@angular/core';
 })
 export class ContactsService {
   apiName = 'CRM';
-  
 
   delete = (id: string, config?: Partial<Rest.Config>) =>
-    this.restService.request<any, void>({
-      method: 'DELETE',
-      url: `/api/crm/contacts/${id}`,
-    },
-    { apiName: this.apiName,...config });
-  
+    this.restService.request<any, void>(
+      {
+        method: 'DELETE',
+        url: `/api/crm/contacts/${id}`,
+      },
+      { apiName: this.apiName, ...config }
+    );
 
   get = (id: string, config?: Partial<Rest.Config>) =>
-    this.restService.request<any, ContactDto>({
-      method: 'GET',
-      url: `/api/crm/contacts/${id}`,
-    },
-    { apiName: this.apiName,...config });
-  
+    this.restService.request<any, ContactDto>(
+      {
+        method: 'GET',
+        url: `/api/crm/contacts/${id}`,
+      },
+      { apiName: this.apiName, ...config }
+    );
 
   getList = (input: ContactListInputDto, config?: Partial<Rest.Config>) =>
-    this.restService.request<any, PagedResultDto<ContactListDto>>({
-      method: 'GET',
-      url: '/api/crm/contacts',
-      params: { query: input.query, sorting: input.sorting, skipCount: input.skipCount, maxResultCount: input.maxResultCount },
-    },
-    { apiName: this.apiName,...config });
+    this.restService.request<any, PagedResultDto<ContactListDto>>(
+      {
+        method: 'GET',
+        url: '/api/crm/contacts',
+        params: {
+          query: input.query,
+          sorting: input.sorting,
+          skipCount: input.skipCount,
+          maxResultCount: input.maxResultCount,
+        },
+      },
+      { apiName: this.apiName, ...config }
+    );
 
   constructor(private restService: RestService) {}
 }

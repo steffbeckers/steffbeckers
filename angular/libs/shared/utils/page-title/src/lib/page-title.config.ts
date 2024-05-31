@@ -8,7 +8,7 @@ export const PAGE_TITLE_CONFIG = new InjectionToken<PageTitleConfig>(
   'PageTitleConfig'
 );
 
-export const providePageTitleConfig = (config: PageTitleConfig): Provider => ({
+export const providePageTitleConfig = (config?: PageTitleConfig): Provider => ({
   provide: PAGE_TITLE_CONFIG,
   useValue: config,
 });

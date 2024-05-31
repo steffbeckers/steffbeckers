@@ -8,6 +8,6 @@ export class PageTitleService {
   private config = inject(PAGE_TITLE_CONFIG);
 
   setTitle(newTitle: string): void {
-    this.title.setTitle(`${this.config.prefix ?? ''}${newTitle}`);
+    this.title.setTitle(`${this.config?.prefix ?? ''}${newTitle}`);
   }
 }

@@ -1,0 +1,422 @@
+[
+  {
+    "day": 1,
+    "dayOfWeek": "Mon",
+    "homeTeam": "ZUMA_A",
+    "awayTeam": "BYE_1",
+    "week": 1
+  },
+  {
+    "day": 1,
+    "dayOfWeek": "Mon",
+    "homeTeam": "BYE_2",
+    "awayTeam": "ZUMA_B",
+    "week": 1
+  },
+  {
+    "day": 2,
+    "dayOfWeek": "Tue",
+    "homeTeam": "NRG_A",
+    "awayTeam": "NRG_C",
+    "week": 1
+  },
+  {
+    "day": 2,
+    "dayOfWeek": "Tue",
+    "homeTeam": "HAPPY_SNOOKER_B",
+    "awayTeam": "HAPPY_SNOOKER_A",
+    "week": 1
+  },
+  {
+    "day": 3,
+    "dayOfWeek": "Wed",
+    "homeTeam": "HAPPY_SNOOKER_C",
+    "awayTeam": "NRG_B",
+    "week": 1
+  },
+  {
+    "day": 3,
+    "dayOfWeek": "Wed",
+    "homeTeam": "ZUMA_C",
+    "awayTeam": "NRG_D",
+    "week": 1
+  },
+  {
+    "day": 8,
+    "dayOfWeek": "Mon",
+    "homeTeam": "BYE_1",
+    "awayTeam": "ZUMA_A",
+    "week": 2
+  },
+  {
+    "day": 8,
+    "dayOfWeek": "Mon",
+    "homeTeam": "BYE_2",
+    "awayTeam": "HAPPY_SNOOKER_B",
+    "week": 2
+  },
+  {
+    "day": 9,
+    "dayOfWeek": "Tue",
+    "homeTeam": "NRG_D",
+    "awayTeam": "ZUMA_C",
+    "week": 2
+  },
+  {
+    "day": 9,
+    "dayOfWeek": "Tue",
+    "homeTeam": "ZUMA_B",
+    "awayTeam": "NRG_A",
+    "week": 2
+  },
+  {
+    "day": 10,
+    "dayOfWeek": "Wed",
+    "homeTeam": "HAPPY_SNOOKER_C",
+    "awayTeam": "HAPPY_SNOOKER_A",
+    "week": 2
+  },
+  {
+    "day": 11,
+    "dayOfWeek": "Thu",
+    "homeTeam": "NRG_C",
+    "awayTeam": "NRG_B",
+    "week": 2
+  },
+  {
+    "day": 15,
+    "dayOfWeek": "Mon",
+    "homeTeam": "BYE_2",
+    "awayTeam": "HAPPY_SNOOKER_A",
+    "week": 3
+  },
+  {
+    "day": 16,
+    "dayOfWeek": "Tue",
+    "homeTeam": "ZUMA_B",
+    "awayTeam": "NRG_C",
+    "week": 3
+  },
+  {
+    "day": 17,
+    "dayOfWeek": "Wed",
+    "homeTeam": "NRG_B",
+    "awayTeam": "NRG_A",
+    "week": 3
+  },
+  {
+    "day": 17,
+    "dayOfWeek": "Wed",
+    "homeTeam": "HAPPY_SNOOKER_C",
+    "awayTeam": "HAPPY_SNOOKER_B",
+    "week": 3
+  },
+  {
+    "day": 23,
+    "dayOfWeek": "Tue",
+    "homeTeam": "NRG_A",
+    "awayTeam": "HAPPY_SNOOKER_A",
+    "week": 4
+  },
+  {
+    "day": 23,
+    "dayOfWeek": "Tue",
+    "homeTeam": "HAPPY_SNOOKER_B",
+    "awayTeam": "NRG_C",
+    "week": 4
+  },
+  {
+    "day": 24,
+    "dayOfWeek": "Wed",
+    "homeTeam": "NRG_B",
+    "awayTeam": "BYE_2",
+    "week": 4
+  },
+  {
+    "day": 24,
+    "dayOfWeek": "Wed",
+    "homeTeam": "HAPPY_SNOOKER_C",
+    "awayTeam": "ZUMA_B",
+    "week": 4
+  },
+  {
+    "day": 29,
+    "dayOfWeek": "Mon",
+    "homeTeam": "BYE_2",
+    "awayTeam": "NRG_A",
+    "week": 5
+  },
+  {
+    "day": 30,
+    "dayOfWeek": "Tue",
+    "homeTeam": "ZUMA_B",
+    "awayTeam": "HAPPY_SNOOKER_A",
+    "week": 5
+  },
+  {
+    "day": 31,
+    "dayOfWeek": "Wed",
+    "homeTeam": "NRG_B",
+    "awayTeam": "HAPPY_SNOOKER_B",
+    "week": 5
+  },
+  {
+    "day": 31,
+    "dayOfWeek": "Wed",
+    "homeTeam": "HAPPY_SNOOKER_C",
+    "awayTeam": "NRG_C",
+    "week": 5
+  },
+  {
+    "day": 37,
+    "dayOfWeek": "Tue",
+    "homeTeam": "HAPPY_SNOOKER_B",
+    "awayTeam": "NRG_A",
+    "week": 6
+  },
+  {
+    "day": 38,
+    "dayOfWeek": "Wed",
+    "homeTeam": "NRG_B",
+    "awayTeam": "ZUMA_B",
+    "week": 6
+  },
+  {
+    "day": 38,
+    "dayOfWeek": "Wed",
+    "homeTeam": "HAPPY_SNOOKER_C",
+    "awayTeam": "BYE_2",
+    "week": 6
+  },
+  {
+    "day": 39,
+    "dayOfWeek": "Thu",
+    "homeTeam": "NRG_C",
+    "awayTeam": "HAPPY_SNOOKER_A",
+    "week": 6
+  },
+  {
+    "day": 44,
+    "dayOfWeek": "Tue",
+    "homeTeam": "ZUMA_B",
+    "awayTeam": "HAPPY_SNOOKER_B",
+    "week": 7
+  },
+  {
+    "day": 45,
+    "dayOfWeek": "Wed",
+    "homeTeam": "NRG_B",
+    "awayTeam": "HAPPY_SNOOKER_A",
+    "week": 7
+  },
+  {
+    "day": 45,
+    "dayOfWeek": "Wed",
+    "homeTeam": "HAPPY_SNOOKER_C",
+    "awayTeam": "NRG_A",
+    "week": 7
+  },
+  {
+    "day": 46,
+    "dayOfWeek": "Thu",
+    "homeTeam": "NRG_C",
+    "awayTeam": "BYE_2",
+    "week": 7
+  },
+  {
+    "day": 50,
+    "dayOfWeek": "Mon",
+    "homeTeam": "HAPPY_SNOOKER_A",
+    "awayTeam": "HAPPY_SNOOKER_B",
+    "week": 8
+  },
+  {
+    "day": 51,
+    "dayOfWeek": "Tue",
+    "homeTeam": "ZUMA_B",
+    "awayTeam": "BYE_2",
+    "week": 8
+  },
+  {
+    "day": 52,
+    "dayOfWeek": "Wed",
+    "homeTeam": "NRG_B",
+    "awayTeam": "HAPPY_SNOOKER_C",
+    "week": 8
+  },
+  {
+    "day": 53,
+    "dayOfWeek": "Thu",
+    "homeTeam": "NRG_C",
+    "awayTeam": "NRG_A",
+    "week": 8
+  },
+  {
+    "day": 57,
+    "dayOfWeek": "Mon",
+    "homeTeam": "HAPPY_SNOOKER_A",
+    "awayTeam": "HAPPY_SNOOKER_C",
+    "week": 9
+  },
+  {
+    "day": 58,
+    "dayOfWeek": "Tue",
+    "homeTeam": "NRG_A",
+    "awayTeam": "ZUMA_B",
+    "week": 9
+  },
+  {
+    "day": 58,
+    "dayOfWeek": "Tue",
+    "homeTeam": "HAPPY_SNOOKER_B",
+    "awayTeam": "BYE_2",
+    "week": 9
+  },
+  {
+    "day": 59,
+    "dayOfWeek": "Wed",
+    "homeTeam": "NRG_B",
+    "awayTeam": "NRG_C",
+    "week": 9
+  },
+  {
+    "day": 64,
+    "dayOfWeek": "Mon",
+    "homeTeam": "HAPPY_SNOOKER_A",
+    "awayTeam": "BYE_2",
+    "week": 10
+  },
+  {
+    "day": 65,
+    "dayOfWeek": "Tue",
+    "homeTeam": "NRG_A",
+    "awayTeam": "NRG_B",
+    "week": 10
+  },
+  {
+    "day": 65,
+    "dayOfWeek": "Tue",
+    "homeTeam": "HAPPY_SNOOKER_B",
+    "awayTeam": "HAPPY_SNOOKER_C",
+    "week": 10
+  },
+  {
+    "day": 67,
+    "dayOfWeek": "Thu",
+    "homeTeam": "NRG_C",
+    "awayTeam": "ZUMA_B",
+    "week": 10
+  },
+  {
+    "day": 71,
+    "dayOfWeek": "Mon",
+    "homeTeam": "HAPPY_SNOOKER_A",
+    "awayTeam": "NRG_A",
+    "week": 11
+  },
+  {
+    "day": 71,
+    "dayOfWeek": "Mon",
+    "homeTeam": "BYE_2",
+    "awayTeam": "NRG_B",
+    "week": 11
+  },
+  {
+    "day": 72,
+    "dayOfWeek": "Tue",
+    "homeTeam": "ZUMA_B",
+    "awayTeam": "HAPPY_SNOOKER_C",
+    "week": 11
+  },
+  {
+    "day": 74,
+    "dayOfWeek": "Thu",
+    "homeTeam": "NRG_C",
+    "awayTeam": "HAPPY_SNOOKER_B",
+    "week": 11
+  },
+  {
+    "day": 78,
+    "dayOfWeek": "Mon",
+    "homeTeam": "HAPPY_SNOOKER_A",
+    "awayTeam": "ZUMA_B",
+    "week": 12
+  },
+  {
+    "day": 79,
+    "dayOfWeek": "Tue",
+    "homeTeam": "NRG_A",
+    "awayTeam": "BYE_2",
+    "week": 12
+  },
+  {
+    "day": 79,
+    "dayOfWeek": "Tue",
+    "homeTeam": "HAPPY_SNOOKER_B",
+    "awayTeam": "NRG_B",
+    "week": 12
+  },
+  {
+    "day": 81,
+    "dayOfWeek": "Thu",
+    "homeTeam": "NRG_C",
+    "awayTeam": "HAPPY_SNOOKER_C",
+    "week": 12
+  },
+  {
+    "day": 85,
+    "dayOfWeek": "Mon",
+    "homeTeam": "HAPPY_SNOOKER_A",
+    "awayTeam": "NRG_C",
+    "week": 13
+  },
+  {
+    "day": 85,
+    "dayOfWeek": "Mon",
+    "homeTeam": "BYE_2",
+    "awayTeam": "HAPPY_SNOOKER_C",
+    "week": 13
+  },
+  {
+    "day": 86,
+    "dayOfWeek": "Tue",
+    "homeTeam": "NRG_A",
+    "awayTeam": "HAPPY_SNOOKER_B",
+    "week": 13
+  },
+  {
+    "day": 86,
+    "dayOfWeek": "Tue",
+    "homeTeam": "ZUMA_B",
+    "awayTeam": "NRG_B",
+    "week": 13
+  },
+  {
+    "day": 92,
+    "dayOfWeek": "Mon",
+    "homeTeam": "HAPPY_SNOOKER_A",
+    "awayTeam": "NRG_B",
+    "week": 14
+  },
+  {
+    "day": 92,
+    "dayOfWeek": "Mon",
+    "homeTeam": "BYE_2",
+    "awayTeam": "NRG_C",
+    "week": 14
+  },
+  {
+    "day": 93,
+    "dayOfWeek": "Tue",
+    "homeTeam": "NRG_A",
+    "awayTeam": "HAPPY_SNOOKER_C",
+    "week": 14
+  },
+  {
+    "day": 93,
+    "dayOfWeek": "Tue",
+    "homeTeam": "HAPPY_SNOOKER_B",
+    "awayTeam": "ZUMA_B",
+    "week": 14
+  }
+]
