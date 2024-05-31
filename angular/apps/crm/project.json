@@ -68,7 +68,7 @@
       "configurations": {
         "development": {
           "buildTarget": "crm:build:development",
-          "host": "0.0.0.0"
+          "port": 4200
         },
         "production": {
           "buildTarget": "crm:build:production"

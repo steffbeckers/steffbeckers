@@ -9,14 +9,10 @@
     {{ 'CRM::Company' | abpLocalization }} {{ company.name }}
   </h2>
   <div style="display: flex; gap: 0.5rem; align-items: center">
-    <sb-button routerLink="update" variant="primary">{{
+    <sb-button routerLink="update">{{
       '::Update' | abpLocalization
     }}</sb-button>
-    <sb-button
-      [disabled]="store.deleting()"
-      [danger]="true"
-      (click)="store.delete()"
-    >
+    <sb-button [disabled]="store.deleting()" (click)="store.delete()">
       {{ '::Delete' | abpLocalization }}
     </sb-button>
   </div>
