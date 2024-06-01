@@ -4,9 +4,8 @@ on:
   push:
     branches:
       - main
-    # TODO: Uncomment
-    # paths:
-    #   - angular/**
+    paths:
+      - angular/**
   pull_request:
     paths:
       - angular/**
