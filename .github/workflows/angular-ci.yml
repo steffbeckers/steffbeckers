@@ -13,16 +13,18 @@ permissions:
 jobs:
   main:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: angular
     steps:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
-      - run: cd angular
       - run: npx nx-cloud start-ci-run --distribute-on="5 linux-medium-js" --stop-agents-after="build"
       - uses: actions/setup-node@v3
         with:
-          node-version: 20
           cache: npm
+          node-version: 20
       - run: npm ci
       - uses: nrwl/nx-set-shas@v4
       - run: npx nx-cloud record -- npx nx affected -t lint test build
