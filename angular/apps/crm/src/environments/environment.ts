@@ -9,7 +9,8 @@ export const environment = {
     name: 'CRM',
   },
   oAuthConfig: {
-    issuer: 'https://steffbeckers.localhost/',
+    // TODO: Changing issuer to https://steffbeckers.localhost/ triggers login redirect loop
+    issuer: 'https://crm.steffbeckers.localhost/',
     redirectUri: origin,
     clientId: 'SteffBeckers_CRM',
     responseType: 'code',

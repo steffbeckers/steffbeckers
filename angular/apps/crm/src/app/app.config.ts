@@ -1,6 +1,20 @@
-import { ApplicationConfig, importProvidersFrom } from '@angular/core';
+import {
+  APP_INITIALIZER,
+  ApplicationConfig,
+  Injector,
+  ModuleWithProviders,
+  NgModule,
+  Provider,
+  importProvidersFrom,
+} from '@angular/core';
 import { provideRouter } from '@angular/router';
-import { CoreModule as AbpCoreModule, differentLocales } from '@abp/ng.core';
+import {
+  ABP,
+  CoreModule as AbpCoreModule,
+  COOKIE_LANGUAGE_KEY,
+  SessionStateService,
+  differentLocales,
+} from '@abp/ng.core';
 import { environment } from '../environments/environment';
 import {
   RegisterLocaleData,
@@ -11,6 +25,50 @@ import { appRoutes } from './app.routes';
 import { providePageTitleConfig } from '@steffbeckers/shared/utils/page-title';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { provideHttpClient } from '@angular/common/http';
+import { DOCUMENT } from '@angular/common';
+
+export function setLanguageToCookie(injector: Injector) {
+  return () => {
+    const sessionState = injector.get(SessionStateService);
+    const document = injector.get(DOCUMENT);
+    const cookieLanguageKey = injector.get(COOKIE_LANGUAGE_KEY);
+
+    sessionState.getLanguage$().subscribe((language) => {
+      if (!language) {
+        language = navigator.languages
+          ? navigator.languages[0]
+          : navigator.language;
+      }
+
+      const cookieValue = encodeURIComponent(`c=${language}|uic=${language}`);
+      document.cookie = `${cookieLanguageKey}=${cookieValue};path=/`;
+    });
+  };
+}
+
+export const CookieLanguageProvider: Provider = {
+  provide: APP_INITIALIZER,
+  useFactory: setLanguageToCookie,
+  deps: [Injector],
+  multi: true,
+};
+
+@NgModule()
+export class AbpModule {
+  static forRoot(options: ABP.Root): ModuleWithProviders<AbpModule> {
+    const abpCoreModule = AbpCoreModule.forRoot(options);
+    const abpOAuthModule = AbpOAuthModule.forRoot();
+
+    abpCoreModule.providers?.push(abpOAuthModule.providers as Provider[]);
+
+    // Replace the CookieLanguageProvider from ABP
+    if (abpCoreModule.providers) {
+      abpCoreModule.providers[1] = CookieLanguageProvider;
+    }
+
+    return abpCoreModule;
+  }
+}
 
 let localeMap = {} as { [key: string]: string };
 
@@ -61,11 +119,10 @@ export function registerLocale(
 export const appConfig: ApplicationConfig = {
   providers: [
     importProvidersFrom(
-      AbpCoreModule.forRoot({
+      AbpModule.forRoot({
         environment,
         registerLocaleFn: registerLocale(),
-      }),
-      AbpOAuthModule.forRoot()
+      })
     ),
     provideAnimationsAsync(),
     provideHttpClient(),
