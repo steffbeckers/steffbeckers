@@ -4,15 +4,12 @@ on:
   push:
     branches:
       - main
-    # TODO
+      /
     # paths:
     #   - angular/**
   pull_request:
     paths:
       - angular/**
-
-env:
-  NX_WORKSPACE_ROOT_PATH: angular/
 
 permissions:
   actions: read
@@ -21,6 +18,9 @@ permissions:
 jobs:
   main:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: angular
     steps:
       - uses: actions/checkout@v4
         with:
