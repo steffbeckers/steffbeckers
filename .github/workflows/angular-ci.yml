@@ -4,7 +4,11 @@ on:
   push:
     branches:
       - main
+    paths:
+      - angular/**
   pull_request:
+    paths:
+      - angular/**
 
 permissions:
   actions: read
