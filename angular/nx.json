@@ -2,20 +2,20 @@
   "$schema": "./node_modules/nx/schemas/nx-schema.json",
   "generators": {
     "@nx/angular:application": {
-      "style": "scss",
+      "e2eTestRunner": "playwright",
       "linter": "eslint",
-      "unitTestRunner": "jest",
-      "e2eTestRunner": "playwright"
+      "style": "scss",
+      "unitTestRunner": "jest"
     },
     "@nx/angular:component": {
       "style": "scss"
     },
     "@nx/angular:library": {
       "linter": "eslint",
-      "unitTestRunner": "jest",
       "prefix": "sb",
       "skipModule": true,
-      "standalone": false
+      "standalone": false,
+      "unitTestRunner": "jest"
     }
   },
   "namedInputs": {
@@ -34,6 +34,15 @@
   },
   "nxCloudAccessToken": "NmM0NmY1Y2YtZmRmYS00MWE1LTkxNGItOWQzNGEzMTMyMjU5fHJlYWQtd3JpdGU=",
   "targetDefaults": {
+    "@nx/eslint:lint": {
+      "cache": true,
+      "inputs": [
+        "default",
+        "{workspaceRoot}/.eslintrc.json",
+        "{workspaceRoot}/.eslintignore",
+        "{workspaceRoot}/eslint.config.js"
+      ]
+    },
     "@nx/jest:jest": {
       "cache": true,
       "configurations": {
@@ -55,15 +64,6 @@
     "e2e": {
       "cache": true,
       "inputs": ["default", "^production"]
-    },
-    "@nx/eslint:lint": {
-      "cache": true,
-      "inputs": [
-        "default",
-        "{workspaceRoot}/.eslintrc.json",
-        "{workspaceRoot}/.eslintignore",
-        "{workspaceRoot}/eslint.config.js"
-      ]
     }
   }
 }
