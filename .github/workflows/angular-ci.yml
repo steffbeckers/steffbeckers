@@ -32,4 +32,6 @@ jobs:
           cache-dependency-path: "**/package-lock.json"
       - run: npm ci
       - uses: nrwl/nx-set-shas@v4
-      - run: npx nx-cloud record -- npx nx affected -t lint test build
+      # TODO: Prepend with npx nx-cloud record
+      # - run: npx nx-cloud record -- npx nx affected -t lint test build
+      - run: npx nx affected -t lint test build
