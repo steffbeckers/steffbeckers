@@ -1,3 +1,0 @@
-int: n;
-
-output "\(n)";

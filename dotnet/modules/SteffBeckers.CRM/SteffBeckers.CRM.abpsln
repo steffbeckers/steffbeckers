@@ -1,7 +1,0 @@
-{
-  "modules": {
-    "SteffBeckers.CRM": {
-      "path": "SteffBeckers.CRM.abpmdl"
-    }
-  }
-}
