@@ -1,11 +1,14 @@
 {
-  "name": "content-wind-template",
+  "name": "@steffbeckers/website",
   "private": true,
   "scripts": {
     "dev": "nuxi dev",
     "build": "nuxi build",
     "generate": "nuxi generate",
     "preview": "nuxi preview"
+  },
+  "dependencies": {
+    "remark-unwrap-images": "^4.0.0"
   },
   "devDependencies": {
     "content-wind": "latest",
