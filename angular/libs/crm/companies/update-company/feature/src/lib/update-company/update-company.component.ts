@@ -10,7 +10,7 @@ import {
 import {
   UpdateCompanyForm,
   UpdateCompanyStore,
-} from '@steffbeckers/crm/companies/data-access';
+} from '@steffbeckers/crm/companies/update-company/data-access';
 import { ButtonComponent } from '@steffbeckers/shared/ui/components';
 
 @Component({

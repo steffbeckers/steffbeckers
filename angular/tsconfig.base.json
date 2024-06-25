@@ -10,11 +10,29 @@
     "module": "esnext",
     "moduleResolution": "node",
     "paths": {
+      "@steffbeckers/crm/companies/company-detail/data-access": [
+        "libs/crm/companies/company-detail/data-access/src/index.ts"
+      ],
+      "@steffbeckers/crm/companies/company-detail/feature": [
+        "libs/crm/companies/company-detail/feature/src/index.ts"
+      ],
+      "@steffbeckers/crm/companies/create-company/data-access": [
+        "libs/crm/companies/create-company/data-access/src/index.ts"
+      ],
+      "@steffbeckers/crm/companies/create-company/feature": [
+        "libs/crm/companies/create-company/feature/src/index.ts"
+      ],
       "@steffbeckers/crm/companies/data-access": [
         "libs/crm/companies/data-access/src/index.ts"
       ],
       "@steffbeckers/crm/companies/feature": [
         "libs/crm/companies/feature/src/index.ts"
+      ],
+      "@steffbeckers/crm/companies/update-company/data-access": [
+        "libs/crm/companies/update-company/data-access/src/index.ts"
+      ],
+      "@steffbeckers/crm/companies/update-company/feature": [
+        "libs/crm/companies/update-company/feature/src/index.ts"
       ],
       "@steffbeckers/crm/contacts/data-access": [
         "libs/crm/contacts/data-access/src/index.ts"

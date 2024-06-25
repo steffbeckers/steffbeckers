@@ -1,0 +1,20 @@
+{
+  "$schema": "../../../../../node_modules/nx/schemas/project-schema.json",
+  "name": "crm-companies-create-company-data-access",
+  "prefix": "sb",
+  "projectType": "library",
+  "sourceRoot": "libs/crm/companies/create-company/data-access/src",
+  "tags": [],
+  "targets": {
+    "lint": {
+      "executor": "@nx/eslint:lint"
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "options": {
+        "jestConfig": "libs/crm/companies/create-company/data-access/jest.config.ts"
+      },
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"]
+    }
+  }
+}

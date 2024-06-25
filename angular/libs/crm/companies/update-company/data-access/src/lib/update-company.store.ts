@@ -1,5 +1,5 @@
 import { computed, effect, inject } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormControl } from '@angular/forms';
 import {
   patchState,
   signalStore,
@@ -18,7 +18,7 @@ import {
   withForm,
   withPageTitle,
 } from '@steffbeckers/shared/data-access';
-import { DetailedCompany } from './company.model';
+import { DetailedCompany } from '../../../../data-access/src/lib/company.model';
 import { ActivatedRoute, Router } from '@angular/router';
 
 export interface UpdateCompanyForm {

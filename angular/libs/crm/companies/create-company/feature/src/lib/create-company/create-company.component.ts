@@ -15,7 +15,7 @@ import {
 import {
   CreateCompanyForm,
   CreateCompanyStore,
-} from '@steffbeckers/crm/companies/data-access';
+} from '@steffbeckers/crm/companies/create-company/data-access';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ButtonComponent } from '@steffbeckers/shared/ui/components';
 

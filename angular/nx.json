@@ -12,10 +12,10 @@
     },
     "@nx/angular:library": {
       "linter": "eslint",
+      "unitTestRunner": "jest",
       "prefix": "sb",
       "skipModule": true,
-      "standalone": false,
-      "unitTestRunner": "jest"
+      "standalone": false
     }
   },
   "namedInputs": {

@@ -4,7 +4,7 @@ import {
   withEntityDetail,
   withPageTitle,
 } from '@steffbeckers/shared/data-access';
-import { DetailedCompany } from './company.model';
+import { DetailedCompany } from '../../../../data-access/src/lib/company.model';
 
 export const CompanyDetailStore = signalStore(
   withEntityDetail<DetailedCompany, CompaniesService>(CompaniesService, {

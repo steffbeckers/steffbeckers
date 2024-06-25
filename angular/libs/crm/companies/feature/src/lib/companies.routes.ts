@@ -4,21 +4,21 @@ export const companiesRoutes: Routes = [
   {
     path: 'create',
     loadComponent: () =>
-      import('./create-company/create-company.component').then(
+      import('@steffbeckers/crm/companies/create-company/feature').then(
         (m) => m.CreateCompanyComponent
       ),
   },
   {
     path: ':id/update',
     loadComponent: () =>
-      import('./update-company/update-company.component').then(
+      import('@steffbeckers/crm/companies/update-company/feature').then(
         (m) => m.UpdateCompanyComponent
       ),
   },
   {
     path: ':id',
     loadComponent: () =>
-      import('./company-detail/company-detail.component').then(
+      import('@steffbeckers/crm/companies/company-detail/feature').then(
         (m) => m.CompanyDetailComponent
       ),
   },
