@@ -13,9 +13,7 @@
     <template #default="{ list }">
       <NuxtLink v-for="article in list" :key="article._path" :to="article._path">
         <h2 class="my-2">{{ article.title }}</h2>
-        <h3>
-          {{ formatDate(article.date) }}
-        </h3>
+        <h4>{{ formatDate(article.date) }}</h4>
         <p>{{ article.description }}</p>
       </NuxtLink>
     </template>

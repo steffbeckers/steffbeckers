@@ -13,4 +13,4 @@ draft: true
 
 This is a test post
 
-![Image](/blog/test/20240624_164405.png)
+![Image](/blog/test/images/20240624_164405.png)
