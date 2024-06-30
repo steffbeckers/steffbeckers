@@ -3,16 +3,36 @@
     "title": "",
     "items": [
         {
-            "date_modified": "2024-06-30T15:11:30.598Z"
+            "date_modified": "2024-06-30T18:25:46.301Z"
         },
         {
-            "date_modified": "2024-06-30T15:11:30.598Z"
+            "title": "Nginx/Apache SSL Certificates with Let's Encrypt",
+            "summary": "Certbot is a free, open source software tool for automatically using Let’s Encrypt certificates on manually-administrated websites to enable HTTPS.",
+            "date_modified": "2021-01-27T19:24:00.000Z"
+        },
+        {
+            "title": "Chocolatey, the package manager for Windows",
+            "summary": "Chocolatey has the largest online registry of Windows packages. Chocolatey packages encapsulate everything required to manage a particular piece of software into one deployment artifact by wrapping installers, executables, zips, and/or scripts into a compiled package file.",
+            "date_modified": "2021-01-11T18:56:00.000Z"
+        },
+        {
+            "title": "IIS Express 10 localhost SSL certificate reset",
+            "summary": "Tutorial on how to reset your localhost SSL certificate for IIS Express 10.",
+            "date_modified": "2021-03-26T20:48:00.000Z"
+        },
+        {
+            "date_modified": "2024-06-30T18:25:46.303Z"
         },
         {
             "url": "https://steffbeckers.eu/blog/test",
             "title": "Test",
             "summary": "This is a test post",
             "date_modified": "2024-06-30T14:21:00.000Z"
+        },
+        {
+            "title": "IIS SSL Certificates with Let's Encrypt",
+            "summary": "win-acme is a ACMEv2 client for Windows that aims to be very simple to start with, but powerful enough to grow into almost every scenario.",
+            "date_modified": "2021-01-25T20:38:00.000Z"
         }
     ]
 }
