@@ -1,0 +1,1 @@
+import{d as t,V as s,c as o,e as n,F as a,f as e}from"./Dl-C46Sl.js";const r=e("h1",null,"Blog",-1),c=e("p",{class:"text-primary-400 font-bold"},"Tutorials, scripts and other useful notes",-1),d=t({__name:"Blog",setup(l){return s(),(_,p)=>(o(),n(a,null,[r,c],64))}});export{d as default};
