@@ -4,12 +4,12 @@
         <title></title>
         <link>undefined</link>
         <description>undefined</description>
-        <lastBuildDate>Sun, 30 Jun 2024 18:25:46 GMT</lastBuildDate>
+        <lastBuildDate>Sun, 30 Jun 2024 18:28:39 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <ttl>360</ttl>
         <item>
-            <pubDate>Sun, 30 Jun 2024 18:25:46 GMT</pubDate>
+            <pubDate>Sun, 30 Jun 2024 18:28:39 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Nginx/Apache SSL Certificates with Let's Encrypt]]></title>
@@ -27,7 +27,7 @@
             <description><![CDATA[Tutorial on how to reset your localhost SSL certificate for IIS Express 10.]]></description>
         </item>
         <item>
-            <pubDate>Sun, 30 Jun 2024 18:25:46 GMT</pubDate>
+            <pubDate>Sun, 30 Jun 2024 18:28:39 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Test]]></title>
