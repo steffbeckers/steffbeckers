@@ -3,15 +3,16 @@
     "title": "",
     "items": [
         {
-            "date_modified": "2024-06-30T13:11:13.636Z"
+            "date_modified": "2024-06-30T15:11:30.598Z"
         },
         {
-            "date_modified": "2024-06-30T13:11:13.636Z"
+            "date_modified": "2024-06-30T15:11:30.598Z"
         },
         {
+            "url": "https://steffbeckers.eu/blog/test",
             "title": "Test",
             "summary": "This is a test post",
-            "date_modified": "2024-06-30T13:11:13.638Z"
+            "date_modified": "2024-06-30T14:21:00.000Z"
         }
     ]
 }

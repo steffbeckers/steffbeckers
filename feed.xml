@@ -4,19 +4,21 @@
         <title></title>
         <link>undefined</link>
         <description>undefined</description>
-        <lastBuildDate>Sun, 30 Jun 2024 13:11:13 GMT</lastBuildDate>
+        <lastBuildDate>Sun, 30 Jun 2024 15:11:30 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <ttl>360</ttl>
         <item>
-            <pubDate>Sun, 30 Jun 2024 13:11:13 GMT</pubDate>
+            <pubDate>Sun, 30 Jun 2024 15:11:30 GMT</pubDate>
         </item>
         <item>
-            <pubDate>Sun, 30 Jun 2024 13:11:13 GMT</pubDate>
+            <pubDate>Sun, 30 Jun 2024 15:11:30 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Test]]></title>
-            <pubDate>Sun, 30 Jun 2024 13:11:13 GMT</pubDate>
+            <link>https://steffbeckers.eu/blog/test</link>
+            <guid>https://steffbeckers.eu/blog/test</guid>
+            <pubDate>Sun, 30 Jun 2024 14:21:00 GMT</pubDate>
             <description><![CDATA[This is a test post]]></description>
         </item>
     </channel>
