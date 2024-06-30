@@ -4,6 +4,8 @@ head:
   description: This is a test post
 title: Test
 description: This is a test post
+link: https://steffbeckers.eu/blog/test
+date: "2024-06-30T14:21:00Z"
 draft: true
 ---
 
