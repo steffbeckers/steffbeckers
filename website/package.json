@@ -11,7 +11,9 @@
     "remark-unwrap-images": "^4.0.0"
   },
   "devDependencies": {
+    "@nuxtjs/sitemap": "^5.0.0",
     "content-wind": "latest",
-    "nuxt": "latest"
+    "nuxt": "latest",
+    "nuxt-feedme": "^1.0.0"
   }
 }
