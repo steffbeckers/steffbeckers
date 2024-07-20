@@ -9,10 +9,6 @@ const appConfig = useAppConfig();
       <!-- Logo -->
       <div class="flex items-center gap-3">
         <img class="flex-shrink-0" src="/images/icon_32px_w.png" />
-        <div class="flex flex-col leading-none">
-          <div class="font-bold">STEFF</div>
-          <div class="tracking-wide">BECKERS</div>
-        </div>
       </div>
       <!-- Navigation -->
       <div class="flex items-center gap-6 text-gray-700 dark:text-gray-200">
