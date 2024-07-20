@@ -4,18 +4,27 @@ const appConfig = useAppConfig();
 </script>
 
 <template>
-  <div class="flex justify-between max-w-3xl px-4 py-4 mx-auto sm:px-8">
-    <!-- Navigation -->
-    <div class="text-gray-700 dark:text-gray-200">
-      <NuxtLink
-        v-for="link of navigation"
-        :key="link._path"
-        :to="link._path"
-        active-class="font-bold"
-        class="mr-6"
-      >
-        {{ link.title }}
-      </NuxtLink>
+  <div class="flex items-center justify-between max-w-3xl px-4 py-4 mx-auto sm:px-8">
+    <div class="flex gap-8">
+      <!-- Logo -->
+      <div class="flex items-center gap-3">
+        <img class="flex-shrink-0" src="/images/icon_32px_w.png" />
+        <div class="flex flex-col leading-none">
+          <div class="font-bold">STEFF</div>
+          <div class="tracking-wide">BECKERS</div>
+        </div>
+      </div>
+      <!-- Navigation -->
+      <div class="flex items-center gap-6 text-gray-700 dark:text-gray-200">
+        <NuxtLink
+          v-for="link of navigation"
+          :key="link._path"
+          :to="link._path"
+          active-class="font-bold"
+        >
+          {{ link.title }}
+        </NuxtLink>
+      </div>
     </div>
     <!-- Social icons & Color Mode -->
     <div class="space-x-3 transition text-gray-500">
