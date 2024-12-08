@@ -8,6 +8,7 @@
     "preview": "nuxi preview"
   },
   "dependencies": {
+    "date-fns": "^4.1.0",
     "remark-unwrap-images": "^4.0.0"
   },
   "devDependencies": {
