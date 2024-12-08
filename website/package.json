@@ -13,7 +13,7 @@
   "devDependencies": {
     "@nuxtjs/sitemap": "^5.0.0",
     "content-wind": "latest",
-    "nuxt": "latest",
+    "nuxt": "^3.14.1592",
     "nuxt-feedme": "^1.0.0"
   }
 }
