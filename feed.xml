@@ -4,12 +4,16 @@
         <title></title>
         <link>undefined</link>
         <description>undefined</description>
-        <lastBuildDate>Sun, 30 Jun 2024 18:28:39 GMT</lastBuildDate>
+        <lastBuildDate>Sun, 08 Dec 2024 19:52:26 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <ttl>360</ttl>
         <item>
-            <pubDate>Sun, 30 Jun 2024 18:28:39 GMT</pubDate>
+            <pubDate>Sun, 08 Dec 2024 19:52:26 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Experience]]></title>
+            <pubDate>Sun, 08 Dec 2024 19:52:26 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Nginx/Apache SSL Certificates with Let's Encrypt]]></title>
@@ -27,19 +31,16 @@
             <description><![CDATA[Tutorial on how to reset your localhost SSL certificate for IIS Express 10.]]></description>
         </item>
         <item>
-            <pubDate>Sun, 30 Jun 2024 18:28:39 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[Test]]></title>
-            <link>https://steffbeckers.eu/blog/test</link>
-            <guid>https://steffbeckers.eu/blog/test</guid>
-            <pubDate>Sun, 30 Jun 2024 14:21:00 GMT</pubDate>
-            <description><![CDATA[This is a test post]]></description>
+            <pubDate>Sun, 08 Dec 2024 19:52:26 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[IIS SSL Certificates with Let's Encrypt]]></title>
             <pubDate>Mon, 25 Jan 2021 20:38:00 GMT</pubDate>
             <description><![CDATA[win-acme is a ACMEv2 client for Windows that aims to be very simple to start with, but powerful enough to grow into almost every scenario.]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Get in touch]]></title>
+            <pubDate>Sun, 08 Dec 2024 19:52:26 GMT</pubDate>
         </item>
     </channel>
 </rss>

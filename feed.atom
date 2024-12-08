@@ -2,13 +2,19 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id/>
     <title/>
-    <updated>2024-06-30T18:28:39.171Z</updated>
+    <updated>2024-12-08T19:52:26.224Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <entry>
         <title type="html"><![CDATA[]]></title>
         <id/>
         <link/>
-        <updated>2024-06-30T18:28:39.166Z</updated>
+        <updated>2024-12-08T19:52:26.219Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Experience]]></title>
+        <id/>
+        <link/>
+        <updated>2024-12-08T19:52:26.220Z</updated>
     </entry>
     <entry>
         <title type="html"><![CDATA[Nginx/Apache SSL Certificates with Let's Encrypt]]></title>
@@ -35,14 +41,7 @@
         <title type="html"><![CDATA[]]></title>
         <id/>
         <link/>
-        <updated>2024-06-30T18:28:39.168Z</updated>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Test]]></title>
-        <id>https://steffbeckers.eu/blog/test</id>
-        <link href="https://steffbeckers.eu/blog/test"/>
-        <updated>2024-06-30T14:21:00.000Z</updated>
-        <summary type="html"><![CDATA[This is a test post]]></summary>
+        <updated>2024-12-08T19:52:26.223Z</updated>
     </entry>
     <entry>
         <title type="html"><![CDATA[IIS SSL Certificates with Let's Encrypt]]></title>
@@ -50,5 +49,11 @@
         <link/>
         <updated>2021-01-25T20:38:00.000Z</updated>
         <summary type="html"><![CDATA[win-acme is a ACMEv2 client for Windows that aims to be very simple to start with, but powerful enough to grow into almost every scenario.]]></summary>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Get in touch]]></title>
+        <id/>
+        <link/>
+        <updated>2024-12-08T19:52:26.224Z</updated>
     </entry>
 </feed>

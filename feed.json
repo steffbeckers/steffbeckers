@@ -3,7 +3,11 @@
     "title": "",
     "items": [
         {
-            "date_modified": "2024-06-30T18:28:39.167Z"
+            "date_modified": "2024-12-08T19:52:26.220Z"
+        },
+        {
+            "title": "Experience",
+            "date_modified": "2024-12-08T19:52:26.220Z"
         },
         {
             "title": "Nginx/Apache SSL Certificates with Let's Encrypt",
@@ -21,18 +25,16 @@
             "date_modified": "2021-03-26T20:48:00.000Z"
         },
         {
-            "date_modified": "2024-06-30T18:28:39.169Z"
-        },
-        {
-            "url": "https://steffbeckers.eu/blog/test",
-            "title": "Test",
-            "summary": "This is a test post",
-            "date_modified": "2024-06-30T14:21:00.000Z"
+            "date_modified": "2024-12-08T19:52:26.224Z"
         },
         {
             "title": "IIS SSL Certificates with Let's Encrypt",
             "summary": "win-acme is a ACMEv2 client for Windows that aims to be very simple to start with, but powerful enough to grow into almost every scenario.",
             "date_modified": "2021-01-25T20:38:00.000Z"
+        },
+        {
+            "title": "Get in touch",
+            "date_modified": "2024-12-08T19:52:26.224Z"
         }
     ]
 }
