@@ -1,6 +1,5 @@
 <script setup lang="ts">
 const { navigation } = useContent();
-const appConfig = useAppConfig();
 </script>
 
 <template>
@@ -16,33 +15,30 @@ const appConfig = useAppConfig();
       </div>
     </div>
     <!-- Navigation -->
-    <div class="flex items-center gap-4 text-gray-700 dark:text-gray-200">
+    <div class="flex items-center gap-4 text-gray-700 dark:text-gray-100">
       <NuxtLink
         v-for="link of navigation"
         :key="link._path"
         :to="link._path"
         active-class="font-bold"
-        class="nav-item"
+        class="nav-item hover:text-primary-400"
       >
         {{ link.title }}
       </NuxtLink>
     </div>
-    <!-- Social icons & Color Mode -->
-    <div class="space-x-3 transition text-gray-500">
-      <a
-        v-if="appConfig.socials?.github"
-        :href="`https://github.com/${appConfig.socials?.github}`"
-        title="GitHub"
-        class="dark:text-gray-100 hover:text-gray-700 dark:hover:text-gray-300"
-        ><Icon name="fa-brands:github" class="w-5 h-5"
-      /></a>
-      <ColorModeSwitch class="dark:text-gray-100 hover:text-gray-700 dark:hover:text-gray-300" />
+    <!-- Social icons & Color mode -->
+    <div class="space-x-3 transition dark:text-gray-100">
+      <a href="https://github.com/steffbeckers" title="GitHub" class="hover:text-primary-400">
+        <Icon name="fa-brands:github" class="w-5 h-5" />
+      </a>
+      <ColorModeSwitch class="hover:text-primary-400" />
     </div>
   </div>
 </template>
 
 <style lang="postcss" scoped>
 .nav-item {
+  transition: color 0.2s ease;
   transition: font-weight 0.2s ease;
 }
 </style>

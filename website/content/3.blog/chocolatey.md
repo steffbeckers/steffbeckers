@@ -6,6 +6,8 @@ date: "2021-01-11T18:56:00Z"
 tags: ["dev", "windows", "tools", "powershell"]
 ---
 
+# Chocolatey, the package manager for Windows
+
 Chocolatey has the largest online registry of Windows packages. Chocolatey packages encapsulate everything required to manage a particular piece of software into one deployment artifact by wrapping installers, executables, zips, and/or scripts into a compiled package file.
 
 https://chocolatey.org/

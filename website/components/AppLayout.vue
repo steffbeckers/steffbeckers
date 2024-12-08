@@ -13,6 +13,6 @@ const { cover } = useAppConfig();
 
 <style lang="postcss">
 body {
-  @apply bg-gray-50 text-black dark:bg-gray-900 dark:text-white overflow-y-scroll;
+  @apply bg-gray-50 text-gray-700 dark:bg-gray-900 dark:text-gray-100 overflow-y-scroll;
 }
 </style>

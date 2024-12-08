@@ -1,6 +1,6 @@
 <template>
   <a href="/blog.xml" target="_blank" rel="noopener noreferrer">
-    <Icon name="ri:rss-line" size="24px" style="float: right"></Icon>
+    <Icon name="ri:rss-line" size="40px" style="float: right"></Icon>
   </a>
   <h1>Blog</h1>
   <p class="text-primary-400 font-bold">Tutorials, scripts and other useful notes</p>
