@@ -11,10 +11,11 @@
     }"
   >
     <template #default="{ list }">
-      <NuxtLink v-for="article in list" :key="article._path" :to="article._path">
-        <h2 class="my-2">{{ article.title }}</h2>
+      <NuxtLink v-for="(article, index) in list" :key="article._path" :to="article._path">
+        <h2 class="mt-0">{{ article.title }}</h2>
         <h4>{{ formatDate(article.date) }}</h4>
         <p>{{ article.description }}</p>
+        <hr v-if="index !== list.length - 1" />
       </NuxtLink>
     </template>
     <template #not-found>

@@ -1,6 +1,7 @@
 export default defineNuxtConfig({
   content: {
     markdown: {
+      anchorLinks: false,
       remarkPlugins: ["remark-unwrap-images"],
     },
   },
