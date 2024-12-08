@@ -3,15 +3,12 @@ const { cover } = useAppConfig();
 </script>
 
 <template>
-  <div class="sm:pb-6">
-    <Html lang="en" />
-    <Meta property="og:image" :content="cover" />
-    <Meta name="twitter:card" content="summary_large_image" />
-    <NuxtLoadingIndicator />
-    <AppNavbar />
-    <slot />
-    <AppFooter />
-  </div>
+  <Html lang="en" />
+  <Meta property="og:image" :content="cover" />
+  <NuxtLoadingIndicator />
+  <AppNavbar />
+  <slot />
+  <AppFooter />
 </template>
 
 <style lang="postcss">

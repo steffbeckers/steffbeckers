@@ -4,46 +4,36 @@ const appConfig = useAppConfig();
 </script>
 
 <template>
-  <div class="flex items-center justify-between max-w-3xl px-4 py-4 mx-auto sm:px-8">
-    <div class="flex gap-8">
-      <!-- Logo -->
-      <div class="flex items-center gap-3">
-        <img class="flex-shrink-0" src="/images/icon_32px_w.png" />
+  <div class="flex items-center justify-between gap-8 max-w-4xl py-4 mx-auto px-4">
+    <!-- Profile -->
+    <div class="flex gap-4 align-center">
+      <div>
+        <img class="rounded-full shadow-md" src="/images/steff.jpg" width="40" height="40" />
       </div>
-      <!-- Navigation -->
-      <div class="flex items-center gap-6 text-gray-700 dark:text-gray-200">
-        <NuxtLink
-          v-for="link of navigation"
-          :key="link._path"
-          :to="link._path"
-          active-class="font-bold"
-        >
-          {{ link.title }}
-        </NuxtLink>
+      <div class="flex flex-col leading-none">
+        <div class="font-bold" style="font-size: 1.4rem">STEFF</div>
+        <div>BECKERS</div>
       </div>
+    </div>
+    <!-- Navigation -->
+    <div class="flex items-center gap-4 text-gray-700 dark:text-gray-200">
+      <NuxtLink
+        v-for="link of navigation"
+        :key="link._path"
+        :to="link._path"
+        active-class="font-bold"
+      >
+        {{ link.title }}
+      </NuxtLink>
     </div>
     <!-- Social icons & Color Mode -->
     <div class="space-x-3 transition text-gray-500">
-      <a
-        v-if="appConfig.socials?.twitter"
-        :href="`https://twitter.com/${appConfig.socials?.twitter}`"
-        title="Twitter"
-        class="dark:text-gray-100 hover:text-gray-700 dark:hover:text-gray-300"
-        ><Icon name="fa-brands:twitter" class="w-5 h-5"
-      /></a>
       <a
         v-if="appConfig.socials?.github"
         :href="`https://github.com/${appConfig.socials?.github}`"
         title="GitHub"
         class="dark:text-gray-100 hover:text-gray-700 dark:hover:text-gray-300"
         ><Icon name="fa-brands:github" class="w-5 h-5"
-      /></a>
-      <a
-        v-if="appConfig.socials?.mastodon"
-        :href="`https://elk.zone/${appConfig.socials?.mastodon}`"
-        title="Mastodon"
-        class="dark:text-gray-100 hover:text-gray-700 dark:hover:text-gray-300"
-        ><Icon name="fa-brands:mastodon" class="w-5 h-5"
       /></a>
       <ColorModeSwitch class="dark:text-gray-100 hover:text-gray-700 dark:hover:text-gray-300" />
     </div>
