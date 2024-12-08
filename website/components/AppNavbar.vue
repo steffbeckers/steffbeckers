@@ -22,6 +22,7 @@ const appConfig = useAppConfig();
         :key="link._path"
         :to="link._path"
         active-class="font-bold"
+        class="nav-item"
       >
         {{ link.title }}
       </NuxtLink>
@@ -39,3 +40,9 @@ const appConfig = useAppConfig();
     </div>
   </div>
 </template>
+
+<style lang="postcss" scoped>
+.nav-item {
+  transition: font-weight 0.2s ease;
+}
+</style>
