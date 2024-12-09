@@ -1,5 +1,5 @@
 <script setup>
-import { intervalToDuration } from "date-fns";
+import { addMonths, intervalToDuration, startOfDay, startOfToday } from "date-fns";
 
 const props = defineProps({
   start: {
@@ -12,8 +12,8 @@ const props = defineProps({
 });
 
 const duration = intervalToDuration({
-  start: new Date(props.start),
-  end: props.end ? new Date(props.end) : new Date(),
+  start: addMonths(startOfDay(props.start), -1),
+  end: props.end ? startOfDay(props.end) : startOfToday(),
 });
 </script>
 
