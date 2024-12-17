@@ -1,3 +1,6 @@
+import fs from "fs";
+import path from "path";
+
 export default defineNuxtConfig({
   compatibilityDate: "2024-12-15",
   content: {
@@ -46,7 +49,37 @@ export default defineNuxtConfig({
       },
     },
   },
+  hooks: {
+    "build:before"() {
+      const lastUpdatedOn = new Date().toISOString();
+
+      // Read existing .env content
+      const envPath = path.resolve(process.cwd(), ".env");
+      let envContent = "";
+      if (fs.existsSync(envPath)) {
+        envContent = fs.readFileSync(envPath, "utf8");
+      }
+
+      // Replace or append lastUpdatedOn
+      const lastUpdateOnKey = "LAST_UPDATED_ON";
+      const newContent = envContent
+        .split("\n")
+        .filter((line) => !line.startsWith(`${lastUpdateOnKey}=`))
+        .concat(`${lastUpdateOnKey}=${lastUpdatedOn}`)
+        .join("\n");
+
+      // Write updated content back to .env
+      fs.writeFileSync(envPath, newContent, "utf-8");
+
+      console.log(`Set ${lastUpdateOnKey}=${lastUpdatedOn} in .env`);
+    },
+  },
   modules: ["@nuxtjs/sitemap", "nuxt-feedme"],
+  runtimeConfig: {
+    public: {
+      lastUpdatedOn: process.env.LAST_UPDATED_ON,
+    },
+  },
   site: {
     url: "https://steffbeckers.eu",
   },
