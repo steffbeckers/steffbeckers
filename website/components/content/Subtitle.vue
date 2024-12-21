@@ -1,6 +1,6 @@
 <template>
   <h4 class="subtitle">
-    <slot />
+    <ContentSlot :use="$slots.default" unwrap="p" />
   </h4>
 </template>
 
