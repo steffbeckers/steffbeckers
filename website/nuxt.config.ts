@@ -54,6 +54,25 @@ export default defineNuxtConfig({
       console.log("process.env.LAST_UPDATED_ON", process.env.LAST_UPDATED_ON);
     },
   },
+  mdc: {
+    highlight: {
+      langs: [
+        "bash",
+        "css",
+        "html",
+        "js",
+        "json",
+        "jsx",
+        "md",
+        "mdc",
+        "powershell",
+        "ts",
+        "tsx",
+        "vue",
+        "yaml",
+      ],
+    },
+  },
   modules: ["@nuxtjs/sitemap", "nuxt-feedme"],
   runtimeConfig: {
     public: {

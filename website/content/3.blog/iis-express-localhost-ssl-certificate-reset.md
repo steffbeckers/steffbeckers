@@ -1,7 +1,10 @@
 ---
 title: IIS Express 10 localhost SSL certificate reset
 description: Tutorial on how to reset your localhost SSL certificate for IIS Express 10.
-keywords: Tutorial, how to, reset, IIS, Express, HTTPS, SSL, Certificate, .NET, API, Visual Studio, VS, Steff, Beckers, Blog
+head:
+  meta:
+    - name: keywords
+      content: Tutorial, how to, reset, IIS, Express, HTTPS, SSL, Certificate, .NET, API, Visual Studio, VS, Steff, Beckers, Blog
 date: "2021-03-26T20:48:00Z"
 tags: ["dev", "tutorial", "dotnet", "visual-studio", "iis-express", "ssl"]
 ---
