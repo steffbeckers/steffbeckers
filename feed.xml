@@ -4,16 +4,19 @@
         <title></title>
         <link>undefined</link>
         <description>undefined</description>
-        <lastBuildDate>Sun, 22 Dec 2024 19:46:59 GMT</lastBuildDate>
+        <lastBuildDate>Sun, 22 Dec 2024 20:04:15 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <ttl>360</ttl>
         <item>
-            <pubDate>Sun, 22 Dec 2024 19:46:59 GMT</pubDate>
+            <title><![CDATA[Steff Beckers]]></title>
+            <pubDate>Sun, 22 Dec 2024 20:04:15 GMT</pubDate>
+            <description><![CDATA[I'm a passionate developer with a strong focus on web development and DevOps. I thrive on learning and working with the latest technologies and frameworks to continuously grow my expertise. I enjoy collaborating as part of a team in an agile environment, where I can contribute to building impactful solutions. I'm detail-oriented, committed to getting things right, and understand that even the smallest details can make a big difference.]]></description>
         </item>
         <item>
-            <title><![CDATA[Experience]]></title>
-            <pubDate>Sun, 22 Dec 2024 19:46:59 GMT</pubDate>
+            <title><![CDATA[Experience - Steff Beckers]]></title>
+            <pubDate>Sun, 22 Dec 2024 20:04:15 GMT</pubDate>
+            <description><![CDATA[My work experience, acquired certificates and education. I'm a passionate developer with a strong focus on web development and DevOps. I thrive on learning and working with the latest technologies and frameworks to continuously grow my expertise. I enjoy collaborating as part of a team in an agile environment, where I can contribute to building impactful solutions. I'm detail-oriented, committed to getting things right, and understand that even the smallest details can make a big difference.]]></description>
         </item>
         <item>
             <title><![CDATA[Nginx/Apache SSL Certificates with Let's Encrypt]]></title>
@@ -31,7 +34,9 @@
             <description><![CDATA[Tutorial on how to reset your localhost SSL certificate for IIS Express 10.]]></description>
         </item>
         <item>
-            <pubDate>Sun, 22 Dec 2024 19:46:59 GMT</pubDate>
+            <title><![CDATA[Blog - Steff Beckers]]></title>
+            <pubDate>Sun, 22 Dec 2024 20:04:15 GMT</pubDate>
+            <description><![CDATA[Tutorials, scripts and other useful notes. I'm a passionate developer with a strong focus on web development and DevOps. I thrive on learning and working with the latest technologies and frameworks to continuously grow my expertise. I enjoy collaborating as part of a team in an agile environment, where I can contribute to building impactful solutions. I'm detail-oriented, committed to getting things right, and understand that even the smallest details can make a big difference.]]></description>
         </item>
         <item>
             <title><![CDATA[IIS SSL Certificates with Let's Encrypt]]></title>
@@ -39,8 +44,9 @@
             <description><![CDATA[win-acme is a ACMEv2 client for Windows that aims to be very simple to start with, but powerful enough to grow into almost every scenario.]]></description>
         </item>
         <item>
-            <title><![CDATA[Get in touch]]></title>
-            <pubDate>Sun, 22 Dec 2024 19:46:59 GMT</pubDate>
+            <title><![CDATA[Contact - Steff Beckers]]></title>
+            <pubDate>Sun, 22 Dec 2024 20:04:15 GMT</pubDate>
+            <description><![CDATA[Get in touch with Steff. I'm a passionate developer with a strong focus on web development and DevOps. I thrive on learning and working with the latest technologies and frameworks to continuously grow my expertise. I enjoy collaborating as part of a team in an agile environment, where I can contribute to building impactful solutions. I'm detail-oriented, committed to getting things right, and understand that even the smallest details can make a big difference.]]></description>
         </item>
     </channel>
 </rss>
