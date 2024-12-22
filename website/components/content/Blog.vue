@@ -13,7 +13,10 @@
     <template #default="{ list }">
       <NuxtLink v-for="(article, index) in list" :key="article._path" :to="article._path">
         <h2 class="mt-0">{{ article.title }}</h2>
-        <h4>{{ formatDate(article.date) }}</h4>
+        <h4>
+          {{ formatDate(article.date) }} | {{ article.readingTime.text }} |
+          <DisqusCount style="text-transform: lowercase" :identifier="article._path" />
+        </h4>
         <p>{{ article.description }}</p>
         <hr v-if="index !== list.length - 1" />
       </NuxtLink>

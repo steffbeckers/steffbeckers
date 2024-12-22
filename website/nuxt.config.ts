@@ -5,8 +5,11 @@ export default defineNuxtConfig({
   content: {
     markdown: {
       anchorLinks: false,
-      remarkPlugins: ["remark-unwrap-images"],
+      remarkPlugins: ["remark-reading-time", "remark-unwrap-images"],
     },
+  },
+  disqus: {
+    shortname: "steffbeckers",
   },
   extends: "content-wind",
   feedme: {
@@ -73,7 +76,7 @@ export default defineNuxtConfig({
       ],
     },
   },
-  modules: ["@nuxtjs/sitemap", "nuxt-feedme"],
+  modules: ["@nuxtjs/sitemap", "nuxt-disqus", "nuxt-feedme"],
   runtimeConfig: {
     public: {
       lastUpdatedOn: process.env.LAST_UPDATED_ON ?? now,

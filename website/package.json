@@ -9,12 +9,14 @@
   },
   "dependencies": {
     "date-fns": "^4.1.0",
+    "remark-reading-time": "^2.0.1",
     "remark-unwrap-images": "^4.0.0"
   },
   "devDependencies": {
     "@nuxtjs/sitemap": "^5.0.0",
     "content-wind": "latest",
     "nuxt": "^3.14.1592",
+    "nuxt-disqus": "1.1.1",
     "nuxt-feedme": "^1.0.0"
   }
 }
