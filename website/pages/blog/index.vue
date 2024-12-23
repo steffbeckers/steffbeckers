@@ -12,16 +12,34 @@ useHead({
     },
   ],
 });
+
+const searchTerm = ref("");
 </script>
 
 <template>
   <NuxtLayout>
-    <a href="/blog.xml" target="_blank" rel="noopener noreferrer">
-      <Icon name="ri:rss-line" size="40px" style="float: right"></Icon>
-    </a>
+    <div class="hidden sm:flex sm:float-right gap-4">
+      <input
+        class="appearance-none border rounded w-full py-2 px-3 text-gray-900 dark:text-white dark:bg-gray-900 dark:border-black leading-tight focus:outline-none focus:shadow-outline"
+        v-model="searchTerm"
+        placeholder="Search"
+      />
+      <a href="/blog.xml" target="_blank" rel="noopener noreferrer">
+        <Icon name="ri:rss-line" size="40px"></Icon>
+      </a>
+    </div>
     <h1>Blog</h1>
     <p class="text-primary-400 font-bold">Tutorials, scripts and other useful notes</p>
-    <!-- TODO: Include search functionality -->
+    <div class="flex gap-4 my-6 sm:hidden">
+      <input
+        class="appearance-none border rounded w-full py-2 px-3 text-gray-900 dark:text-white dark:bg-gray-900 dark:border-black leading-tight focus:outline-none focus:shadow-outline"
+        v-model="searchTerm"
+        placeholder="Search"
+      />
+      <a href="/blog.xml" target="_blank" rel="noopener noreferrer">
+        <Icon name="ri:rss-line" size="40px"></Icon>
+      </a>
+    </div>
     <ContentList
       :query="{
         path: '/blog/',

@@ -3,6 +3,9 @@ const now = new Date().toISOString();
 export default defineNuxtConfig({
   compatibilityDate: "2024-12-15",
   content: {
+    experimental: {
+      search: {},
+    },
     markdown: {
       anchorLinks: {
         depth: 3,
