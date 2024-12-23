@@ -40,6 +40,7 @@ const searchTerm = ref("");
         <Icon name="ri:rss-line" size="40px"></Icon>
       </a>
     </div>
+    <!-- TODO: Search is not working -->
     <ContentList
       :query="{
         path: '/blog/',
