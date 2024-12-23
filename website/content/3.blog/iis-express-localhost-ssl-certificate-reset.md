@@ -9,10 +9,6 @@ date: "2021-03-26T20:48:00Z"
 tags: ["dev", "tutorial", "dotnet", "visual-studio", "iis-express", "ssl"]
 ---
 
-# IIS Express 10 localhost SSL certificate reset
-
-Tutorial on how to reset your localhost SSL certificate for IIS Express 10.
-
 ## Source code
 
 Quick test .NET Web API project to test the problem, fix the issue and check if it's working again.

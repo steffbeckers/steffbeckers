@@ -9,10 +9,6 @@ date: "2021-01-25T20:38:00Z"
 tags: ["ops", "lets-encrypt", "ssl", "windows", "tools"]
 ---
 
-# IIS SSL Certificates with Let's Encrypt
-
-win-acme is a ACMEv2 client for Windows that aims to be very simple to start with, but powerful enough to grow into almost every scenario.
-
 https://www.win-acme.com/
 
 ## Installation
