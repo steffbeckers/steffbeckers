@@ -17,6 +17,7 @@
     "content-wind": "latest",
     "nuxt": "^3.14.1592",
     "nuxt-disqus": "1.1.1",
-    "nuxt-feedme": "^1.0.0"
+    "nuxt-feedme": "^1.0.0",
+    "nuxt-gtag": "3.0.2"
   }
 }

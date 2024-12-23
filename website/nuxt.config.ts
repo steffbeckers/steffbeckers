@@ -53,6 +53,9 @@ export default defineNuxtConfig({
       },
     },
   },
+  gtag: {
+    id: "G-SD81308FFY",
+  },
   hooks: {
     "build:before"() {
       process.env.LAST_UPDATED_ON = now;
@@ -78,7 +81,7 @@ export default defineNuxtConfig({
       ],
     },
   },
-  modules: ["@nuxtjs/sitemap", "nuxt-disqus", "nuxt-feedme"],
+  modules: ["@nuxtjs/sitemap", "nuxt-disqus", "nuxt-feedme", "nuxt-gtag"],
   runtimeConfig: {
     public: {
       lastUpdatedOn: process.env.LAST_UPDATED_ON ?? now,
