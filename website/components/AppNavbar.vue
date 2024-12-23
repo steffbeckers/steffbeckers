@@ -17,6 +17,7 @@ const { navigation } = useContent();
     </div>
     <!-- Navigation -->
     <div class="flex items-center gap-4 text-gray-700 dark:text-gray-100">
+      <!-- TODO: active-class is not working on /blog/* routes -->
       <NuxtLink
         v-for="link of navigation"
         :key="link._path"
