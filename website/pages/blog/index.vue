@@ -47,18 +47,18 @@ const searchTerm = ref("");
       }"
     >
       <template #default="{ list }">
-        <NuxtLink v-for="(article, index) in list" :key="article._path" :to="article._path">
-          <h2 class="mt-0">{{ article.title }}</h2>
+        <NuxtLink v-for="(post, index) in list" :key="post._path" :to="post._path">
+          <h2 class="mt-0">{{ post.title }}</h2>
           <h4>
-            {{ formatDate(article.date) }} | {{ article.readingTime.text }} |
-            <DisqusCount style="text-transform: lowercase" :identifier="article._path" />
+            {{ formatDate(post.date) }} | {{ post.readingTime.text }} |
+            <DisqusCount style="text-transform: lowercase" :identifier="post._path" />
           </h4>
-          <p>{{ article.description }}</p>
+          <p>{{ post.description }}</p>
           <hr v-if="index !== list.length - 1" />
         </NuxtLink>
       </template>
       <template #not-found>
-        <p>No articles found.</p>
+        <p>No posts found.</p>
       </template>
     </ContentList>
   </NuxtLayout>
