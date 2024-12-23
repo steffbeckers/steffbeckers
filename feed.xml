@@ -4,19 +4,29 @@
         <title></title>
         <link>undefined</link>
         <description>undefined</description>
-        <lastBuildDate>Mon, 23 Dec 2024 08:29:54 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 23 Dec 2024 11:12:38 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <ttl>360</ttl>
         <item>
             <title><![CDATA[Steff Beckers]]></title>
-            <pubDate>Mon, 23 Dec 2024 08:29:54 GMT</pubDate>
+            <pubDate>Mon, 23 Dec 2024 11:12:38 GMT</pubDate>
             <description><![CDATA[I'm a passionate developer with a strong focus on web development and DevOps. I thrive on learning and working with the latest technologies and frameworks to continuously grow my expertise. I enjoy collaborating as part of a team in an agile environment, where I can contribute to building impactful solutions. I'm detail-oriented, committed to getting things right, and understand that even the smallest details can make a big difference.]]></description>
         </item>
         <item>
             <title><![CDATA[Experience - Steff Beckers]]></title>
-            <pubDate>Mon, 23 Dec 2024 08:29:54 GMT</pubDate>
+            <pubDate>Mon, 23 Dec 2024 11:12:38 GMT</pubDate>
             <description><![CDATA[My work experience, acquired certificates and education.]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Blog - Steff Beckers]]></title>
+            <pubDate>Mon, 23 Dec 2024 11:12:38 GMT</pubDate>
+            <description><![CDATA[Tutorials, scripts and other useful notes.]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Contact - Steff Beckers]]></title>
+            <pubDate>Mon, 23 Dec 2024 11:12:38 GMT</pubDate>
+            <description><![CDATA[Get in touch with Steff.]]></description>
         </item>
         <item>
             <title><![CDATA[Nginx/Apache SSL Certificates with Let's Encrypt]]></title>
@@ -34,19 +44,9 @@
             <description><![CDATA[Tutorial on how to reset your localhost SSL certificate for IIS Express 10.]]></description>
         </item>
         <item>
-            <title><![CDATA[Blog - Steff Beckers]]></title>
-            <pubDate>Mon, 23 Dec 2024 08:29:54 GMT</pubDate>
-            <description><![CDATA[Tutorials, scripts and other useful notes.]]></description>
-        </item>
-        <item>
             <title><![CDATA[IIS SSL Certificates with Let's Encrypt]]></title>
             <pubDate>Mon, 25 Jan 2021 20:38:00 GMT</pubDate>
             <description><![CDATA[win-acme is a ACMEv2 client for Windows that aims to be very simple to start with, but powerful enough to grow into almost every scenario.]]></description>
-        </item>
-        <item>
-            <title><![CDATA[Contact - Steff Beckers]]></title>
-            <pubDate>Mon, 23 Dec 2024 08:29:54 GMT</pubDate>
-            <description><![CDATA[Get in touch with Steff.]]></description>
         </item>
     </channel>
 </rss>

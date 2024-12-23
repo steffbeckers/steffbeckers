@@ -5,12 +5,22 @@
         {
             "title": "Steff Beckers",
             "summary": "I'm a passionate developer with a strong focus on web development and DevOps. I thrive on learning and working with the latest technologies and frameworks to continuously grow my expertise. I enjoy collaborating as part of a team in an agile environment, where I can contribute to building impactful solutions. I'm detail-oriented, committed to getting things right, and understand that even the smallest details can make a big difference.",
-            "date_modified": "2024-12-23T08:29:54.415Z"
+            "date_modified": "2024-12-23T11:12:38.529Z"
         },
         {
             "title": "Experience - Steff Beckers",
             "summary": "My work experience, acquired certificates and education.",
-            "date_modified": "2024-12-23T08:29:54.416Z"
+            "date_modified": "2024-12-23T11:12:38.529Z"
+        },
+        {
+            "title": "Blog - Steff Beckers",
+            "summary": "Tutorials, scripts and other useful notes.",
+            "date_modified": "2024-12-23T11:12:38.530Z"
+        },
+        {
+            "title": "Contact - Steff Beckers",
+            "summary": "Get in touch with Steff.",
+            "date_modified": "2024-12-23T11:12:38.530Z"
         },
         {
             "title": "Nginx/Apache SSL Certificates with Let's Encrypt",
@@ -28,19 +38,9 @@
             "date_modified": "2021-03-26T20:48:00.000Z"
         },
         {
-            "title": "Blog - Steff Beckers",
-            "summary": "Tutorials, scripts and other useful notes.",
-            "date_modified": "2024-12-23T08:29:54.419Z"
-        },
-        {
             "title": "IIS SSL Certificates with Let's Encrypt",
             "summary": "win-acme is a ACMEv2 client for Windows that aims to be very simple to start with, but powerful enough to grow into almost every scenario.",
             "date_modified": "2021-01-25T20:38:00.000Z"
-        },
-        {
-            "title": "Contact - Steff Beckers",
-            "summary": "Get in touch with Steff.",
-            "date_modified": "2024-12-23T08:29:54.419Z"
         }
     ]
 }
