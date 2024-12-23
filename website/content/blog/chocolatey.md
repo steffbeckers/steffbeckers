@@ -9,8 +9,6 @@ date: "2021-01-11T18:56:00Z"
 tags: ["dev", "windows", "tools", "powershell"]
 ---
 
-https://chocolatey.org/
-
 ## Installation
 
 https://chocolatey.org/install

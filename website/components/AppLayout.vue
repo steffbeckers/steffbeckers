@@ -15,4 +15,10 @@ const { cover } = useAppConfig();
 body {
   @apply bg-gray-50 text-gray-700 dark:bg-gray-900 dark:text-gray-100 overflow-y-scroll;
 }
+
+h2 {
+  > a {
+    font-weight: inherit !important;
+  }
+}
 </style>

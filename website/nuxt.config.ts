@@ -4,7 +4,9 @@ export default defineNuxtConfig({
   compatibilityDate: "2024-12-15",
   content: {
     markdown: {
-      anchorLinks: false,
+      anchorLinks: {
+        depth: 3,
+      },
       remarkPlugins: ["remark-reading-time", "remark-unwrap-images"],
     },
   },

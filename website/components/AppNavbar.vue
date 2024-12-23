@@ -1,5 +1,6 @@
 <script setup lang="ts">
 const { navigation } = useContent();
+const route = await useRoute();
 </script>
 
 <template>
@@ -22,8 +23,11 @@ const { navigation } = useContent();
         v-for="link of navigation"
         :key="link._path"
         :to="link._path"
-        active-class="font-bold"
         class="nav-item hover:text-primary-400"
+        :class="{
+          'font-bold':
+            route.path === link._path || (route.path.startsWith(link._path) && link._path !== '/'),
+        }"
       >
         {{ link.title }}
       </NuxtLink>

@@ -9,8 +9,6 @@ date: "2021-01-27T19:24:00Z"
 tags: ["ops", "lets-encrypt", "ssl", "linux", "tools"]
 ---
 
-https://certbot.eff.org/
-
 ## Installation
 
 https://certbot.eff.org/instructions
