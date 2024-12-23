@@ -1,1 +1,0 @@
-import{P as e,u as o,G as t,H as a,I as p,E as n,c as u}from"./Cr9-542f.js";const _={__name:"DisqusCount",props:{...e.props,shortname:{type:String,default:()=>{var s,r;return(r=(s=o())==null?void 0:s.$disqusOptions)==null?void 0:r.shortname}}},setup(s){const r=s;return(c,i)=>(u(),t(n(e),a(p(r)),null,16))}};export{_};
