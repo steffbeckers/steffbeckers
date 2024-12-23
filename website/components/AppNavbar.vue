@@ -3,6 +3,7 @@ const { navigation } = useContent();
 </script>
 
 <template>
+  <!-- TODO: Responsive layout -->
   <div class="flex items-center justify-between gap-8 max-w-4xl py-4 mx-auto px-4">
     <!-- Profile -->
     <div class="flex gap-4 align-center">
