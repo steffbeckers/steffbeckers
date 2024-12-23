@@ -44,6 +44,7 @@ const searchTerm = ref("");
       :query="{
         path: '/blog/',
         sort: [{ date: -1 }],
+        where: searchTerm ? [{ title: { $icontains: searchTerm } }] : [],
       }"
     >
       <template #default="{ list }">
