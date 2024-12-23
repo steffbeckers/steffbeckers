@@ -10,6 +10,26 @@ export default defineNuxtConfig({
       remarkPlugins: ["remark-reading-time", "remark-unwrap-images"],
     },
   },
+  cookieControl: {
+    cookies: {
+      optional: [
+        {
+          name: "Google Analytics",
+          id: "google-analytics",
+          targetCookieIds: ["_ga", "_gid", "_gat", "_gac_"],
+        },
+      ],
+      necessary: [],
+    },
+    locales: ["en"],
+    localeTexts: {
+      en: {
+        bannerDescription:
+          "I use third-party cookies so that I can better understand how my website is used.",
+        manageCookies: "Manage",
+      },
+    },
+  },
   disqus: {
     shortname: "steffbeckers",
   },
@@ -55,6 +75,19 @@ export default defineNuxtConfig({
   },
   gtag: {
     id: "G-SD81308FFY",
+    initCommands: [
+      [
+        "consent",
+        "default",
+        {
+          ad_user_data: "denied",
+          ad_personalization: "denied",
+          ad_storage: "denied",
+          analytics_storage: "denied",
+          wait_for_update: 500,
+        },
+      ],
+    ],
   },
   hooks: {
     "build:before"() {
@@ -81,7 +114,13 @@ export default defineNuxtConfig({
       ],
     },
   },
-  modules: ["@nuxtjs/sitemap", "nuxt-disqus", "nuxt-feedme", "nuxt-gtag"],
+  modules: [
+    "@dargmuesli/nuxt-cookie-control",
+    "@nuxtjs/sitemap",
+    "nuxt-disqus",
+    "nuxt-feedme",
+    "nuxt-gtag",
+  ],
   runtimeConfig: {
     public: {
       lastUpdatedOn: process.env.LAST_UPDATED_ON ?? now,

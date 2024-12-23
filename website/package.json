@@ -13,6 +13,7 @@
     "remark-unwrap-images": "^4.0.0"
   },
   "devDependencies": {
+    "@dargmuesli/nuxt-cookie-control": "8.4.19",
     "@nuxtjs/sitemap": "7.0.0",
     "content-wind": "latest",
     "nuxt": "^3.14.1592",
