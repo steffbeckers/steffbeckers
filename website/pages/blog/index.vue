@@ -13,12 +13,17 @@ useHead({
   ],
 });
 
-const searchTerm = ref("");
+// TODO: Implement search
+// const searchTerm = ref("");
 </script>
 
 <template>
   <NuxtLayout>
-    <div class="hidden sm:flex sm:float-right gap-4">
+    <a class="float-right" href="/blog.xml" target="_blank" rel="noopener noreferrer">
+      <Icon name="ri:rss-line" size="40px"></Icon>
+    </a>
+    <!-- TODO: Implement search -->
+    <!-- <div class="hidden sm:flex sm:float-right gap-4">
       <input
         class="appearance-none border rounded w-full py-2 px-3 text-gray-900 dark:text-white dark:bg-gray-900 dark:border-black leading-tight focus:outline-none focus:shadow-outline"
         v-model="searchTerm"
@@ -27,10 +32,11 @@ const searchTerm = ref("");
       <a href="/blog.xml" target="_blank" rel="noopener noreferrer">
         <Icon name="ri:rss-line" size="40px"></Icon>
       </a>
-    </div>
+    </div> -->
     <h1>Blog</h1>
     <p class="text-primary-400 font-bold">Tutorials, scripts and other useful notes</p>
-    <div class="flex gap-4 my-6 sm:hidden">
+    <!-- TODO: Implement search -->
+    <!-- <div class="flex gap-4 my-6 sm:hidden">
       <input
         class="appearance-none border rounded w-full py-2 px-3 text-gray-900 dark:text-white dark:bg-gray-900 dark:border-black leading-tight focus:outline-none focus:shadow-outline"
         v-model="searchTerm"
@@ -39,13 +45,13 @@ const searchTerm = ref("");
       <a href="/blog.xml" target="_blank" rel="noopener noreferrer">
         <Icon name="ri:rss-line" size="40px"></Icon>
       </a>
-    </div>
-    <!-- TODO: Search is not working -->
+    </div> -->
     <ContentList
       :query="{
         path: '/blog/',
         sort: [{ date: -1 }],
-        where: searchTerm ? [{ title: { $icontains: searchTerm } }] : [],
+        // TODO: Implement search
+        // where: searchTerm ? [{ title: { $icontains: searchTerm } }] : [],
       }"
     >
       <template #default="{ list }">
