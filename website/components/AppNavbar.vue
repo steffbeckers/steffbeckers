@@ -4,10 +4,9 @@ const route = await useRoute();
 </script>
 
 <template>
-  <!-- TODO: Responsive layout -->
-  <div class="flex items-center justify-between gap-8 max-w-4xl py-4 mx-auto px-4">
+  <div class="flex items-center justify-between flex-wrap gap-4 max-w-4xl py-4 mx-auto px-4">
     <!-- Profile -->
-    <div class="flex gap-4 align-center">
+    <div class="flex-shrink-0 flex gap-4 align-center">
       <div>
         <img class="rounded-full shadow-md" src="/images/steff.jpg" width="40" height="40" />
       </div>
@@ -18,7 +17,6 @@ const route = await useRoute();
     </div>
     <!-- Navigation -->
     <div class="flex items-center gap-4 text-gray-700 dark:text-gray-100">
-      <!-- TODO: active-class is not working on /blog/* routes -->
       <NuxtLink
         v-for="link of navigation"
         :key="link._path"
@@ -33,7 +31,7 @@ const route = await useRoute();
       </NuxtLink>
     </div>
     <!-- Social icons & Color mode -->
-    <div class="space-x-3 transition dark:text-gray-100">
+    <div class="flex-shrink-0 space-x-3 transition dark:text-gray-100">
       <a href="https://github.com/steffbeckers" title="GitHub" class="hover:text-primary-400">
         <Icon name="fa-brands:github" class="w-5 h-5" />
       </a>
