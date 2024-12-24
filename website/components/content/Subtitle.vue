@@ -6,6 +6,6 @@
 
 <style lang="postcss">
 .subtitle {
-  @apply font-bold text-primary-400;
+  @apply font-bold font-mono text-primary-400;
 }
 </style>

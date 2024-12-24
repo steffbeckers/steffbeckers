@@ -73,6 +73,11 @@ export default defineNuxtConfig({
       },
     },
   },
+  googleFonts: {
+    families: {
+      Inter: "400..700",
+    },
+  },
   gtag: {
     id: "G-SD81308FFY",
     initCommands: [
@@ -116,6 +121,7 @@ export default defineNuxtConfig({
   },
   modules: [
     "@dargmuesli/nuxt-cookie-control",
+    "@nuxtjs/google-fonts",
     "@nuxtjs/sitemap",
     "nuxt-disqus",
     "nuxt-feedme",
@@ -128,5 +134,16 @@ export default defineNuxtConfig({
   },
   site: {
     url: "https://steffbeckers.eu",
+  },
+  tailwindcss: {
+    config: {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ["Inter", "sans-serif"],
+          },
+        },
+      },
+    },
   },
 });

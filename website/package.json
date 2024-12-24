@@ -14,6 +14,7 @@
   },
   "devDependencies": {
     "@dargmuesli/nuxt-cookie-control": "8.4.19",
+    "@nuxtjs/google-fonts": "3.2.0",
     "@nuxtjs/sitemap": "7.0.0",
     "content-wind": "latest",
     "nuxt": "^3.14.1592",

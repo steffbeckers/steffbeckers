@@ -34,7 +34,7 @@ useHead({
       </a>
     </div> -->
     <h1>Blog</h1>
-    <p class="text-primary-400 font-bold">Tutorials, scripts and other useful notes</p>
+    <subtitle>Tutorials, scripts and other useful notes</subtitle>
     <!-- TODO: Implement search -->
     <!-- <div class="flex gap-4 my-6 sm:hidden">
       <input
