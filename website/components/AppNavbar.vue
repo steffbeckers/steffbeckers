@@ -6,15 +6,17 @@ const route = await useRoute();
 <template>
   <div class="flex items-center justify-between flex-wrap gap-4 max-w-4xl py-4 mx-auto px-4">
     <!-- Profile -->
-    <div class="flex-shrink-0 flex gap-4 align-center">
-      <div>
-        <img class="rounded-full shadow-md" src="/images/steff.jpg" width="40" height="40" />
+    <NuxtLink to="/">
+      <div class="flex-shrink-0 flex gap-4 align-center">
+        <div>
+          <img class="rounded-full shadow-md" src="/images/steff.jpg" width="40" height="40" />
+        </div>
+        <div class="flex flex-col leading-none">
+          <div class="font-bold" style="font-size: 1.4rem">STEFF</div>
+          <div>BECKERS</div>
+        </div>
       </div>
-      <div class="flex flex-col leading-none">
-        <div class="font-bold" style="font-size: 1.4rem">STEFF</div>
-        <div>BECKERS</div>
-      </div>
-    </div>
+    </NuxtLink>
     <!-- Navigation -->
     <div class="flex items-center gap-4 text-gray-700 dark:text-gray-100">
       <NuxtLink
