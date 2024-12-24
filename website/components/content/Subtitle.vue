@@ -4,7 +4,7 @@
   </h4>
 </template>
 
-<style lang="postcss">
+<style lang="postcss" scoped>
 .subtitle {
   @apply font-bold font-mono text-primary-400;
 }
