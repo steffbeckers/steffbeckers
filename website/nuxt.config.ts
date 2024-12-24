@@ -75,6 +75,7 @@ export default defineNuxtConfig({
   },
   googleFonts: {
     families: {
+      "Fira Code": "400..700",
       Inter: "400..700",
     },
   },
@@ -140,6 +141,7 @@ export default defineNuxtConfig({
       theme: {
         extend: {
           fontFamily: {
+            mono: ["Fira Code", "monospace"],
             sans: ["Inter", "sans-serif"],
           },
         },
