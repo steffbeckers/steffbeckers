@@ -21,10 +21,21 @@ onMounted(() => {
     <div class="page">
       <div class="flex flex-col h-full justify-between" style="gap: 6mm">
         <div class="flex" style="gap: 6mm">
-          <aside class="w-1/3 flex flex-col gap-4">
-            <section class="logo flex flex-col gap-4 items-center">
-              <img class="rounded-full shadow-md w-3/5" src="/images/steff.jpg" />
-              <h1>STEFF <span class="font-normal">BECKERS</span></h1>
+          <aside class="w-1/3 flex flex-col gap-8">
+            <section class="logo flex gap-4 items-center">
+              <img class="rounded-full shadow-md" src="/images/steff.jpg" width="60" height="60" />
+              <div class="flex flex-col text-2xl leading-none">
+                <div class="text-3xl font-bold">
+                  <div class="flex justify-between">
+                    <div>S</div>
+                    <div>T</div>
+                    <div>E</div>
+                    <div>F</div>
+                    <div>F</div>
+                  </div>
+                </div>
+                <div>BECKERS</div>
+              </div>
             </section>
             <section class="get-in-touch flex flex-col gap-2">
               <header>
@@ -141,22 +152,23 @@ onMounted(() => {
               </ul>
             </section>
           </aside>
-          <main class="w-2/3 flex flex-col gap-4">
+          <main class="w-2/3 flex flex-col gap-8">
             <section class="intro">
               <header>
                 <h2>Hi! I'm Steff</h2>
                 <h4 class="subtitle">Full-stack .NET & Angular developer | DevOps enthusiast</h4>
               </header>
               <p>
-                I'm a passionate developer with a strong focus on web development and DevOps. I
-                thrive on learning and working with the latest technologies and frameworks to
+                I'm a passionate developer with a strong focus on
+                <strong>web development</strong> and <strong>DevOps</strong>. I thrive on learning
+                and working with the <strong>latest technologies and frameworks</strong> to
                 continuously grow my expertise.
               </p>
               <p>
-                I enjoy collaborating as part of a team in an agile environment, where I can
-                contribute to building impactful solutions. I'm detail-oriented, committed to
-                getting things right, and understand that even the smallest details can make a big
-                difference.
+                I enjoy collaborating as part of a team in an <strong>agile</strong> environment,
+                where I can contribute to building impactful solutions. I'm detail-oriented,
+                committed to <strong>getting things right</strong>, and understand that even the
+                smallest details can make a big difference.
               </p>
             </section>
             <section class="work-experience flex flex-col gap-2">
@@ -167,8 +179,13 @@ onMounted(() => {
               <div class="flex flex-col gap-2">
                 <div>
                   <header>
-                    <h3>Software Developer @ Fuzed</h3>
-                    <h4>Nov 2023 - Present</h4>
+                    <div class="flex items-center justify-between">
+                      <div class="flex flex-col">
+                        <h3>Software Developer @ Fuzed</h3>
+                        <h4>Nov 2023 - Present</h4>
+                      </div>
+                      <img src="/images/logos/fuzed-logo-black.svg" width="100" />
+                    </div>
                   </header>
                   <p>
                     At <strong>Fuzed</strong> (previously known as <strong>Codefined</strong>), I
@@ -178,8 +195,13 @@ onMounted(() => {
                 </div>
                 <div>
                   <header>
-                    <h3>Software Developer @ Codefined</h3>
-                    <h4>May 2021 - Oct 2023 (2 years, 6 months)</h4>
+                    <div class="flex items-center justify-between">
+                      <div class="flex flex-col">
+                        <h3>Software Developer @ Codefined</h3>
+                        <h4>May 2021 - Oct 2023 (2 years, 6 months)</h4>
+                      </div>
+                      <img src="/images/logos/codefined-logo-black.svg" width="150" />
+                    </div>
                   </header>
                   <p>
                     At <strong>Codefined</strong>, I specialized in developing custom
@@ -189,8 +211,13 @@ onMounted(() => {
                 </div>
                 <div>
                   <header>
-                    <h3>Analyst Developer @ aariXa</h3>
-                    <h4>July 2017 - April 2021 (3 years, 10 months)</h4>
+                    <div class="flex items-center justify-between">
+                      <div class="flex flex-col">
+                        <h3>Analyst Developer @ aariXa</h3>
+                        <h4>July 2017 - April 2021 (3 years, 10 months)</h4>
+                      </div>
+                      <img src="/images/logos/aarixa-logo-blue.png" width="80" />
+                    </div>
                   </header>
                   <p>
                     At <strong>aariXa</strong>, I worked extensively with a versatile tech stack,
@@ -202,8 +229,16 @@ onMounted(() => {
                 </div>
                 <div>
                   <header>
-                    <h3>Dynamics 365 CRM Developer @ Bridgestone</h3>
-                    <h4>October 2016 - June 2017 (9 months)</h4>
+                    <div class="flex items-center justify-between">
+                      <div class="flex flex-col">
+                        <h3>Dynamics 365 CRM Developer @ Bridgestone</h3>
+                        <h4>October 2016 - June 2017 (9 months)</h4>
+                      </div>
+                      <div class="flex gap-2 items-center">
+                        <img src="/images/logos/ctg-logo.gif" width="30" />
+                        <img src="/images/logos/bridgestone-mark-black.png" width="30" />
+                      </div>
+                    </div>
                   </header>
                   <p>
                     As a consultant at <strong>CTG</strong>, I contributed to a project for
@@ -265,7 +300,7 @@ html.cv {
   }
 
   h1 {
-    @apply font-bold text-2xl;
+    @apply font-bold text-3xl;
   }
 
   h2 {
