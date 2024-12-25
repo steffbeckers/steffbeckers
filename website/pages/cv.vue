@@ -178,14 +178,14 @@ onMounted(() => {
               </header>
               <div class="flex flex-col gap-2">
                 <div>
-                  <header>
-                    <div class="flex items-center justify-between">
-                      <div class="flex flex-col">
-                        <h3>Software Developer @ Fuzed</h3>
-                        <h4>Nov 2023 - Present</h4>
-                      </div>
-                      <img src="/images/logos/fuzed-logo-black.svg" width="100" />
+                  <header class="flex items-center justify-between">
+                    <div class="flex flex-col">
+                      <h3>Software Developer @ <a href="https://fuzed.app">Fuzed</a></h3>
+                      <h4>Nov 2023 - Present</h4>
                     </div>
+                    <a href="https://fuzed.app">
+                      <img src="/images/logos/fuzed-logo-black.svg" width="100" />
+                    </a>
                   </header>
                   <p>
                     At <strong>Fuzed</strong> (previously known as <strong>Codefined</strong>), I
@@ -194,14 +194,14 @@ onMounted(() => {
                   </p>
                 </div>
                 <div>
-                  <header>
-                    <div class="flex items-center justify-between">
-                      <div class="flex flex-col">
-                        <h3>Software Developer @ Codefined</h3>
-                        <h4>May 2021 - Oct 2023 (2 years, 6 months)</h4>
-                      </div>
-                      <img src="/images/logos/codefined-logo-black.svg" width="150" />
+                  <header class="flex items-center justify-between">
+                    <div class="flex flex-col">
+                      <h3>Software Developer @ <a href="https://codefined.be">Codefined</a></h3>
+                      <h4>May 2021 - Oct 2023 (2 years, 6 months)</h4>
                     </div>
+                    <a href="https://codefined.be">
+                      <img src="/images/logos/codefined-logo-black.svg" width="150" />
+                    </a>
                   </header>
                   <p>
                     At <strong>Codefined</strong>, I specialized in developing custom
@@ -210,14 +210,14 @@ onMounted(() => {
                   </p>
                 </div>
                 <div>
-                  <header>
-                    <div class="flex items-center justify-between">
-                      <div class="flex flex-col">
-                        <h3>Analyst Developer @ aariXa</h3>
-                        <h4>July 2017 - April 2021 (3 years, 10 months)</h4>
-                      </div>
-                      <img src="/images/logos/aarixa-logo-blue.png" width="80" />
+                  <header class="flex items-center justify-between">
+                    <div class="flex flex-col">
+                      <h3>Analyst Developer @ <a href="https://www.aarixa.be">aariXa</a></h3>
+                      <h4>July 2017 - April 2021 (3 years, 10 months)</h4>
                     </div>
+                    <a href="https://www.aarixa.be">
+                      <img src="/images/logos/aarixa-logo-blue.png" width="80" />
+                    </a>
                   </header>
                   <p>
                     At <strong>aariXa</strong>, I worked extensively with a versatile tech stack,
@@ -228,16 +228,21 @@ onMounted(() => {
                   </p>
                 </div>
                 <div>
-                  <header>
-                    <div class="flex items-center justify-between">
-                      <div class="flex flex-col">
-                        <h3>Dynamics 365 CRM Developer @ Bridgestone</h3>
-                        <h4>October 2016 - June 2017 (9 months)</h4>
-                      </div>
-                      <div class="flex gap-2 items-center">
+                  <header class="flex items-center justify-between">
+                    <div class="flex flex-col">
+                      <h3>
+                        Dynamics 365 CRM Developer @
+                        <a href="https://www.bridgestone.eu/">Bridgestone</a>
+                      </h3>
+                      <h4>October 2016 - June 2017 (9 months)</h4>
+                    </div>
+                    <div class="flex gap-2 items-center">
+                      <a href="https://be.ctg.com/">
                         <img src="/images/logos/ctg-logo.gif" width="30" />
+                      </a>
+                      <a href="https://www.bridgestone.eu/">
                         <img src="/images/logos/bridgestone-mark-black.png" width="30" />
-                      </div>
+                      </a>
                     </div>
                   </header>
                   <p>
@@ -255,10 +260,18 @@ onMounted(() => {
               </header>
               <div class="flex flex-col gap-2">
                 <div>
-                  <h3>
-                    Professional Bachelor's Degree in Applied Computer Science @ Hogeschool PXL
-                  </h3>
-                  <h4>September 2013 - June 2016 (2 years, 10 months)</h4>
+                  <header class="flex items-center justify-between">
+                    <div class="flex flex-col">
+                      <h3>
+                        Professional Bachelor's Degree in Applied Computer Science @
+                        <a href="https://www.pxl.be/digital">Hogeschool PXL</a>
+                      </h3>
+                      <h4>September 2013 - June 2016 (2 years, 10 months)</h4>
+                    </div>
+                    <a href="https://www.pxl.be/digital">
+                      <img src="/images/logos/pxl-it-logo-black.png" width="100" />
+                    </a>
+                  </header>
                   <p>Application Development (Web & Mobile)</p>
                 </div>
               </div>
@@ -267,8 +280,11 @@ onMounted(() => {
         </div>
         <footer class="text-sm text-center">
           Last updated on <strong>{{ formatDate(runtimeConfig.public.lastUpdatedOn) }}</strong
-          >. For more information and <strong>latest version</strong>, visit my website:
-          <strong>steffbeckers.eu</strong>
+          >. For more information and
+          <a href="https://steffbeckers.eu/downloads/CV_Steff_Beckers.pdf"
+            ><strong>latest version</strong></a
+          >, visit my website:
+          <a href="https://steffbeckers.eu"><strong>steffbeckers.eu</strong></a>
         </footer>
       </div>
     </div>
