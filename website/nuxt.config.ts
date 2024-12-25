@@ -128,6 +128,11 @@ export default defineNuxtConfig({
     "nuxt-feedme",
     "nuxt-gtag",
   ],
+  routeRules: {
+    "/cv": {
+      ssr: false,
+    },
+  },
   runtimeConfig: {
     public: {
       lastUpdatedOn: process.env.LAST_UPDATED_ON ?? now,
