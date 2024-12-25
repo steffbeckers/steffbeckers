@@ -58,7 +58,7 @@ useHead({
         <NuxtLink v-for="(post, index) in list" :key="post._path" :to="post._path">
           <h2 class="mt-0">{{ post.title }}</h2>
           <h4>
-            {{ formatDate(post.date) }} | {{ post.readingTime.text }} |
+            {{ formatDateTime(post.date) }} | {{ post.readingTime.text }} |
             <DisqusCount style="text-transform: lowercase" :identifier="post._path" />
           </h4>
           <p>{{ post.description }}</p>
