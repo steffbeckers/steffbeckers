@@ -108,6 +108,38 @@ onMounted(() => {
                 </a>
               </div>
             </section>
+            <section class="languages flex flex-col gap-2">
+              <header>
+                <h2>Languages</h2>
+              </header>
+              <div class="flex gap-8">
+                <div class="flex flex-col">
+                  <h4 class="subtitle">Dutch</h4>
+                  <div class="text-sm">Native</div>
+                </div>
+                <div class="flex flex-col">
+                  <h4 class="subtitle">English</h4>
+                  <div class="text-sm">Fluent</div>
+                </div>
+                <div class="flex flex-col">
+                  <h4 class="subtitle">French</h4>
+                  <div class="text-sm">Basics</div>
+                </div>
+              </div>
+            </section>
+            <section class="hobbies-and-interests flex flex-col gap-2">
+              <header>
+                <h2>Hobbies & interests</h2>
+              </header>
+              <ul class="text-sm list-disc list-inside">
+                <li>Own development projects</li>
+                <li>Learning new technologies</li>
+                <li>Member of snooker club</li>
+                <li>Multiplayer games</li>
+                <li>Listening to music</li>
+                <li>Brain trainers</li>
+              </ul>
+            </section>
           </aside>
           <main class="w-2/3 flex flex-col gap-4">
             <section class="intro">
@@ -250,21 +282,6 @@ html.cv {
     &.subtitle {
       @apply font-mono text-primary-400;
     }
-  }
-
-  /* TODO: Remove */
-  aside {
-    border: 1px solid red;
-  }
-
-  /* TODO: Remove */
-  main {
-    border: 1px solid blue;
-  }
-
-  footer {
-    /* TODO: Remove */
-    border: 1px solid green;
   }
 }
 </style>
