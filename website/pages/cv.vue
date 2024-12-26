@@ -20,12 +20,12 @@ onMounted(() => {
   <NuxtLayout>
     <div class="page">
       <div class="flex flex-col h-full justify-between" style="gap: 6mm">
-        <div class="flex" style="gap: 6mm">
-          <aside class="w-1/3 flex flex-col gap-8">
+        <div class="flex" style="gap: 8mm">
+          <aside class="w-1/3 flex flex-col gap-6">
             <section class="logo flex gap-4 items-center">
-              <img class="rounded-full shadow-md" src="/images/steff.jpg" width="60" height="60" />
-              <div class="flex flex-col text-2xl leading-none">
-                <div class="text-3xl font-bold">
+              <img class="rounded-full shadow-md" src="/images/steff.jpg" width="72" height="72" />
+              <div class="flex flex-col text-3xl leading-none">
+                <div class="text-4xl font-bold">
                   <div class="flex justify-between">
                     <div>S</div>
                     <div>T</div>
@@ -41,13 +41,26 @@ onMounted(() => {
               <header>
                 <h2>Get in touch</h2>
               </header>
-              <div class="flex flex-col gap-2">
+              <div class="personal-info flex flex-col gap-2">
                 <header>
                   <h3>Personal info</h3>
                 </header>
                 <div class="flex flex-col">
                   <h4 class="subtitle">Name</h4>
                   <div class="text-sm">Steff Beckers</div>
+                </div>
+                <div class="relative flex flex-col">
+                  <h4 class="subtitle">Address</h4>
+                  <a class="text-sm" href="https://goo.gl/maps/KyGduB3qTaBZVPR46">
+                    3945 Tessenderlo-Ham <br />
+                    Belgium
+                  </a>
+                  <img
+                    class="absolute"
+                    style="top: 36px; right: 0px"
+                    src="/cv/images/tessenderlo-ham.png"
+                    width="80"
+                  />
                 </div>
                 <div class="flex flex-col">
                   <h4 class="subtitle">Phone</h4>
@@ -61,15 +74,8 @@ onMounted(() => {
                   <h4 class="subtitle">Website</h4>
                   <a class="text-sm" href="https://steffbeckers.eu">steffbeckers.eu</a>
                 </div>
-                <div class="flex flex-col">
-                  <h4 class="subtitle">Address</h4>
-                  <a class="text-sm" href="https://goo.gl/maps/KyGduB3qTaBZVPR46">
-                    3945 Tessenderlo-Ham <br />
-                    Belgium
-                  </a>
-                </div>
               </div>
-              <div class="flex flex-col gap-2">
+              <div class="social-media flex flex-col gap-2">
                 <header>
                   <h3>Social media</h3>
                 </header>
@@ -123,7 +129,7 @@ onMounted(() => {
               <header>
                 <h2>Languages</h2>
               </header>
-              <div class="flex gap-8">
+              <div class="flex justify-between">
                 <div class="flex flex-col">
                   <h4 class="subtitle">Dutch</h4>
                   <div class="text-sm">Native</div>
@@ -142,7 +148,7 @@ onMounted(() => {
               <header>
                 <h2>Hobbies & interests</h2>
               </header>
-              <ul class="text-sm list-disc list-inside">
+              <ul class="text-sm list-disc list-inside marker:text-primary-400">
                 <li>Own development projects</li>
                 <li>Learning new technologies</li>
                 <li>Member of snooker club</li>
@@ -152,7 +158,7 @@ onMounted(() => {
               </ul>
             </section>
           </aside>
-          <main class="w-2/3 flex flex-col gap-8">
+          <main class="w-2/3 flex flex-col gap-6">
             <section class="intro">
               <header>
                 <h2>Hi! I'm Steff</h2>
@@ -184,7 +190,7 @@ onMounted(() => {
                       <h4>Nov 2023 - Present</h4>
                     </div>
                     <a href="https://fuzed.app">
-                      <img src="/images/logos/fuzed-logo-black.svg" width="100" />
+                      <img src="/images/logos/fuzed-logo-black.svg" width="90" />
                     </a>
                   </header>
                   <p>
@@ -269,7 +275,7 @@ onMounted(() => {
                       <h4>September 2013 - June 2016 (2 years, 10 months)</h4>
                     </div>
                     <a href="https://www.pxl.be/digital">
-                      <img src="/images/logos/pxl-it-logo-black.png" width="100" />
+                      <img src="/images/logos/pxl-it-logo-black.png" width="90" />
                     </a>
                   </header>
                   <p>Application Development (Web & Mobile)</p>
