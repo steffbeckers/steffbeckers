@@ -367,7 +367,7 @@ html.cv {
     @apply font-medium text-xs;
 
     &.subtitle {
-      @apply font-mono text-primary-400;
+      @apply font-semibold font-mono text-primary-400;
     }
   }
 
