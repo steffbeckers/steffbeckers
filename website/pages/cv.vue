@@ -202,7 +202,7 @@ onMounted(() => {
               <div class="flex flex-col gap-2">
                 <div>
                   <header class="flex items-center justify-between">
-                    <div class="flex flex-col">
+                    <div class="flex flex-col gap-1">
                       <a href="https://steffbeckers.eu/experience#software-developer-fuzed">
                         <h3>Software Developer @ Fuzed</h3>
                       </a>
@@ -220,11 +220,11 @@ onMounted(() => {
                 </div>
                 <div>
                   <header class="flex items-center justify-between">
-                    <div class="flex flex-col">
+                    <div class="flex flex-col gap-1">
                       <a href="https://steffbeckers.eu/experience#software-developer-codefined">
                         <h3>Software Developer @ Codefined</h3>
                       </a>
-                      <h4>May 2021 - Oct 2023 (2 years, 6 months)</h4>
+                      <h4>May 2021 - Oct 2023</h4>
                     </div>
                     <a href="https://codefined.be">
                       <img src="/images/logos/codefined-logo-black.svg" width="150" />
@@ -238,11 +238,11 @@ onMounted(() => {
                 </div>
                 <div>
                   <header class="flex items-center justify-between">
-                    <div class="flex flex-col">
+                    <div class="flex flex-col gap-1">
                       <a href="https://steffbeckers.eu/experience#analyst-developer-aarixa">
                         <h3>Analyst Developer @ aariXa</h3>
                       </a>
-                      <h4>July 2017 - April 2021 (3 years, 10 months)</h4>
+                      <h4>July 2017 - April 2021</h4>
                     </div>
                     <a href="https://www.aarixa.be">
                       <img src="/images/logos/aarixa-logo-blue.png" width="80" />
@@ -258,13 +258,13 @@ onMounted(() => {
                 </div>
                 <div>
                   <header class="flex items-center justify-between">
-                    <div class="flex flex-col">
+                    <div class="flex flex-col gap-1">
                       <a
                         href="https://steffbeckers.eu/experience#dynamics-365-crm-developer-bridgestone"
                       >
                         <h3>Dynamics 365 CRM Developer @ Bridgestone</h3>
                       </a>
-                      <h4>October 2016 - June 2017 (9 months)</h4>
+                      <h4>October 2016 - June 2017</h4>
                     </div>
                     <div class="flex gap-2 items-center">
                       <a href="https://be.ctg.com/">
@@ -293,7 +293,7 @@ onMounted(() => {
               <div class="flex flex-col gap-2">
                 <div>
                   <header class="flex items-center justify-between">
-                    <div class="flex flex-col">
+                    <div class="flex flex-col gap-1">
                       <a
                         href="https://steffbeckers.eu/experience#professional-bachelors-degree-in-applied-computer-science"
                       >
@@ -302,7 +302,7 @@ onMounted(() => {
                           PXL
                         </h3>
                       </a>
-                      <h4>September 2013 - June 2016 (2 years, 10 months)</h4>
+                      <h4>September 2013 - June 2016</h4>
                     </div>
                     <a href="https://www.pxl.be/digital">
                       <img src="/images/logos/pxl-it-logo-black.png" width="90" />
@@ -364,11 +364,15 @@ html.cv {
   }
 
   h4 {
-    @apply font-semibold text-xs;
+    @apply font-medium text-xs;
 
     &.subtitle {
       @apply font-mono text-primary-400;
     }
+  }
+
+  strong {
+    @apply font-semibold;
   }
 }
 </style>
