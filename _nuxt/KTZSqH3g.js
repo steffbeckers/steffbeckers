@@ -1,0 +1,1 @@
+import{r as t}from"./gjKw7Ctn.js";import{k as o,c as r,e as n}from"./CdcvZpGJ.js";import"./CxYJgpPD.js";const s={},c={class:"subtitle"};function _(e,a){return r(),n("h4",c,[t(e.$slots,"default",{unwrap:"p"},void 0,!0)])}const l=o(s,[["render",_],["__scopeId","data-v-eb95c7f9"]]);export{l as default};
