@@ -22,107 +22,120 @@ onMounted(() => {
       <div class="flex flex-col h-full justify-between" style="gap: 6mm">
         <div class="flex" style="gap: 8mm">
           <aside class="w-1/3 flex flex-col gap-6">
-            <section class="logo flex gap-4 items-center">
-              <img class="rounded-full shadow-md" src="/images/steff.jpg" width="72" height="72" />
-              <div class="flex flex-col text-3xl leading-none">
-                <div class="text-4xl font-bold">
-                  <div class="flex justify-between">
-                    <div>S</div>
-                    <div>T</div>
-                    <div>E</div>
-                    <div>F</div>
-                    <div>F</div>
+            <a href="https://steffbeckers.eu">
+              <section class="logo flex gap-4 items-center">
+                <img
+                  class="rounded-full shadow-md"
+                  src="/images/steff.jpg"
+                  width="72"
+                  height="72"
+                />
+                <div class="flex flex-col text-3xl leading-none">
+                  <div class="text-4xl font-bold">
+                    <div class="flex justify-between">
+                      <div>S</div>
+                      <div>T</div>
+                      <div>E</div>
+                      <div>F</div>
+                      <div>F</div>
+                    </div>
                   </div>
+                  <div>BECKERS</div>
                 </div>
-                <div>BECKERS</div>
-              </div>
-            </section>
+              </section>
+            </a>
             <section class="get-in-touch flex flex-col gap-2">
               <header>
-                <h2>Get in touch</h2>
+                <a href="https://steffbeckers.eu/contact">
+                  <h2>Get in touch</h2>
+                </a>
               </header>
-              <div class="personal-info flex flex-col gap-2">
-                <header>
-                  <h3>Personal info</h3>
-                </header>
-                <div class="flex flex-col">
-                  <h4 class="subtitle">Name</h4>
-                  <div class="text-sm">Steff Beckers</div>
+              <div class="flex flex-col gap-3">
+                <div class="personal-info flex flex-col gap-2">
+                  <header>
+                    <h3>Personal info</h3>
+                  </header>
+                  <div class="flex flex-col">
+                    <h4 class="subtitle">Name</h4>
+                    <div class="text-sm">Steff Beckers</div>
+                  </div>
+                  <div class="relative flex flex-col">
+                    <h4 class="subtitle">Address</h4>
+                    <a class="text-sm" href="https://goo.gl/maps/KyGduB3qTaBZVPR46">
+                      3945 Tessenderlo-Ham <br />
+                      Belgium
+                    </a>
+                    <a href="https://goo.gl/maps/KyGduB3qTaBZVPR46">
+                      <img
+                        class="absolute"
+                        style="top: 36px; right: 0px"
+                        src="/cv/images/tessenderlo-ham.png"
+                        width="80"
+                      />
+                    </a>
+                  </div>
+                  <div class="flex flex-col">
+                    <h4 class="subtitle">Phone</h4>
+                    <a class="text-sm" href="tel:+32499765192">+32 499 765 192</a>
+                  </div>
+                  <div class="flex flex-col">
+                    <h4 class="subtitle">Email</h4>
+                    <a class="text-sm" href="mailto:steff@steffbeckers.eu">steff@steffbeckers.eu</a>
+                  </div>
+                  <div class="flex flex-col">
+                    <h4 class="subtitle">Website</h4>
+                    <a class="text-sm" href="https://steffbeckers.eu">steffbeckers.eu</a>
+                  </div>
                 </div>
-                <div class="relative flex flex-col">
-                  <h4 class="subtitle">Address</h4>
-                  <a class="text-sm" href="https://goo.gl/maps/KyGduB3qTaBZVPR46">
-                    3945 Tessenderlo-Ham <br />
-                    Belgium
+                <div class="social-media flex flex-col gap-2">
+                  <header>
+                    <h3>Social media</h3>
+                  </header>
+                  <a
+                    class="flex gap-2 items-center"
+                    href="https://linkedin.com/in/steffbeckers"
+                    title="LinkedIn"
+                  >
+                    <Icon name="fa-brands:linkedin" class="w-5 h-5" />
+                    <div class="flex flex-col">
+                      <h4 class="subtitle">LinkedIn</h4>
+                      <div class="text-sm">linkedin.com/in/steffbeckers</div>
+                    </div>
                   </a>
-                  <img
-                    class="absolute"
-                    style="top: 36px; right: 0px"
-                    src="/cv/images/tessenderlo-ham.png"
-                    width="80"
-                  />
+                  <a
+                    class="flex gap-2 items-center"
+                    href="https://github.com/steffbeckers"
+                    title="GitHub"
+                  >
+                    <Icon name="fa-brands:github" class="w-5 h-5" />
+                    <div class="flex flex-col">
+                      <h4 class="subtitle">GitHub</h4>
+                      <div class="text-sm">github.com/steffbeckers</div>
+                    </div>
+                  </a>
+                  <a
+                    class="flex gap-2 items-center"
+                    href="https://facebook.com/steffbeckers"
+                    title="Facebook"
+                  >
+                    <Icon name="fa-brands:facebook" class="w-5 h-5" />
+                    <div class="flex flex-col">
+                      <h4 class="subtitle">Facebook</h4>
+                      <div class="text-sm">facebook.com/steffbeckers</div>
+                    </div>
+                  </a>
+                  <a
+                    class="flex gap-2 items-center"
+                    href="https://wa.me/32499765192"
+                    title="WhatsApp"
+                  >
+                    <Icon name="fa-brands:whatsapp" class="w-5 h-5" />
+                    <div class="flex flex-col">
+                      <h4 class="subtitle">WhatsApp</h4>
+                      <div class="text-sm">+32 499 765 192</div>
+                    </div>
+                  </a>
                 </div>
-                <div class="flex flex-col">
-                  <h4 class="subtitle">Phone</h4>
-                  <a class="text-sm" href="tel:+32499765192">+32 499 765 192</a>
-                </div>
-                <div class="flex flex-col">
-                  <h4 class="subtitle">Email</h4>
-                  <a class="text-sm" href="mailto:steff@steffbeckers.eu">steff@steffbeckers.eu</a>
-                </div>
-                <div class="flex flex-col">
-                  <h4 class="subtitle">Website</h4>
-                  <a class="text-sm" href="https://steffbeckers.eu">steffbeckers.eu</a>
-                </div>
-              </div>
-              <div class="social-media flex flex-col gap-2">
-                <header>
-                  <h3>Social media</h3>
-                </header>
-                <a
-                  class="flex gap-2 items-center"
-                  href="https://linkedin.com/in/steffbeckers"
-                  title="LinkedIn"
-                >
-                  <Icon name="fa-brands:linkedin" class="w-5 h-5" />
-                  <div class="flex flex-col">
-                    <h4 class="subtitle">LinkedIn</h4>
-                    <div class="text-sm">linkedin.com/in/steffbeckers</div>
-                  </div>
-                </a>
-                <a
-                  class="flex gap-2 items-center"
-                  href="https://github.com/steffbeckers"
-                  title="GitHub"
-                >
-                  <Icon name="fa-brands:github" class="w-5 h-5" />
-                  <div class="flex flex-col">
-                    <h4 class="subtitle">GitHub</h4>
-                    <div class="text-sm">github.com/steffbeckers</div>
-                  </div>
-                </a>
-                <a
-                  class="flex gap-2 items-center"
-                  href="https://facebook.com/steffbeckers"
-                  title="Facebook"
-                >
-                  <Icon name="fa-brands:facebook" class="w-5 h-5" />
-                  <div class="flex flex-col">
-                    <h4 class="subtitle">Facebook</h4>
-                    <div class="text-sm">facebook.com/steffbeckers</div>
-                  </div>
-                </a>
-                <a
-                  class="flex gap-2 items-center"
-                  href="https://wa.me/32499765192"
-                  title="WhatsApp"
-                >
-                  <Icon name="fa-brands:whatsapp" class="w-5 h-5" />
-                  <div class="flex flex-col">
-                    <h4 class="subtitle">WhatsApp</h4>
-                    <div class="text-sm">+32 499 765 192</div>
-                  </div>
-                </a>
               </div>
             </section>
             <section class="languages flex flex-col gap-2">
@@ -161,7 +174,9 @@ onMounted(() => {
           <main class="w-2/3 flex flex-col gap-6">
             <section class="intro">
               <header>
-                <h2>Hi! I'm Steff</h2>
+                <a href="https://steffbeckers.eu">
+                  <h2>Hi! I'm Steff</h2>
+                </a>
                 <h4 class="subtitle">Full-stack .NET & Angular developer | DevOps enthusiast</h4>
               </header>
               <p>
@@ -179,14 +194,18 @@ onMounted(() => {
             </section>
             <section class="work-experience flex flex-col gap-2">
               <header>
-                <h2>Work experience</h2>
+                <a href="https://steffbeckers.eu/experience">
+                  <h2>Work experience</h2>
+                </a>
                 <h4 class="subtitle">Many lines of code and coffee</h4>
               </header>
               <div class="flex flex-col gap-2">
                 <div>
                   <header class="flex items-center justify-between">
                     <div class="flex flex-col">
-                      <h3>Software Developer @ <a href="https://fuzed.app">Fuzed</a></h3>
+                      <a href="https://steffbeckers.eu/experience#software-developer-fuzed">
+                        <h3>Software Developer @ Fuzed</h3>
+                      </a>
                       <h4>Nov 2023 - Present</h4>
                     </div>
                     <a href="https://fuzed.app">
@@ -202,7 +221,9 @@ onMounted(() => {
                 <div>
                   <header class="flex items-center justify-between">
                     <div class="flex flex-col">
-                      <h3>Software Developer @ <a href="https://codefined.be">Codefined</a></h3>
+                      <a href="https://steffbeckers.eu/experience#software-developer-codefined">
+                        <h3>Software Developer @ Codefined</h3>
+                      </a>
                       <h4>May 2021 - Oct 2023 (2 years, 6 months)</h4>
                     </div>
                     <a href="https://codefined.be">
@@ -218,7 +239,9 @@ onMounted(() => {
                 <div>
                   <header class="flex items-center justify-between">
                     <div class="flex flex-col">
-                      <h3>Analyst Developer @ <a href="https://www.aarixa.be">aariXa</a></h3>
+                      <a href="https://steffbeckers.eu/experience#analyst-developer-aarixa">
+                        <h3>Analyst Developer @ aariXa</h3>
+                      </a>
                       <h4>July 2017 - April 2021 (3 years, 10 months)</h4>
                     </div>
                     <a href="https://www.aarixa.be">
@@ -236,10 +259,11 @@ onMounted(() => {
                 <div>
                   <header class="flex items-center justify-between">
                     <div class="flex flex-col">
-                      <h3>
-                        Dynamics 365 CRM Developer @
-                        <a href="https://www.bridgestone.eu/">Bridgestone</a>
-                      </h3>
+                      <a
+                        href="https://steffbeckers.eu/experience#dynamics-365-crm-developer-bridgestone"
+                      >
+                        <h3>Dynamics 365 CRM Developer @ Bridgestone</h3>
+                      </a>
                       <h4>October 2016 - June 2017 (9 months)</h4>
                     </div>
                     <div class="flex gap-2 items-center">
@@ -261,17 +285,23 @@ onMounted(() => {
             </section>
             <section class="education flex flex-col gap-2">
               <header>
-                <h2>Education</h2>
+                <a href="https://steffbeckers.eu/experience">
+                  <h2>Education</h2>
+                </a>
                 <h4 class="subtitle">Hours of learning new technologies</h4>
               </header>
               <div class="flex flex-col gap-2">
                 <div>
                   <header class="flex items-center justify-between">
                     <div class="flex flex-col">
-                      <h3>
-                        Professional Bachelor's Degree in Applied Computer Science @
-                        <a href="https://www.pxl.be/digital">Hogeschool PXL</a>
-                      </h3>
+                      <a
+                        href="https://steffbeckers.eu/experience#professional-bachelors-degree-in-applied-computer-science"
+                      >
+                        <h3>
+                          Professional Bachelor's Degree in Applied Computer Science @ Hogeschool
+                          PXL
+                        </h3>
+                      </a>
                       <h4>September 2013 - June 2016 (2 years, 10 months)</h4>
                     </div>
                     <a href="https://www.pxl.be/digital">
