@@ -14,7 +14,6 @@ import { PageTitleService } from '@steffbeckers/shared/utils/page-title';
   changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [AbpLocalizationModule],
   selector: 'sb-dashboard',
-  standalone: true,
   styleUrl: './dashboard.component.scss',
   templateUrl: './dashboard.component.html',
 })

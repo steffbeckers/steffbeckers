@@ -6,13 +6,12 @@ import { FormsModule } from '@angular/forms';
 import { RouterLink } from '@angular/router';
 
 @Component({
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [AbpLocalizationModule, CommonModule, FormsModule, RouterLink],
-  providers: [ContactsStore],
-  selector: 'sb-contacts',
-  standalone: true,
-  styleUrl: './contacts.component.scss',
-  templateUrl: './contacts.component.html',
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    imports: [AbpLocalizationModule, CommonModule, FormsModule, RouterLink],
+    providers: [ContactsStore],
+    selector: 'sb-contacts',
+    styleUrl: './contacts.component.scss',
+    templateUrl: './contacts.component.html'
 })
 export class ContactsComponent {
   store = inject(ContactsStore);

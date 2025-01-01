@@ -6,7 +6,6 @@ import { RouterLink } from '@angular/router';
   changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [AbpLocalizationModule, RouterLink],
   selector: 'sb-navbar',
-  standalone: true,
   styleUrl: './navbar.component.scss',
   templateUrl: './navbar.component.html',
 })

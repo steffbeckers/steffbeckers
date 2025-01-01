@@ -23,7 +23,6 @@ import { ButtonComponent } from '@steffbeckers/shared/ui/components';
   ],
   providers: [CompanyDetailStore],
   selector: 'sb-company-detail',
-  standalone: true,
   styleUrl: './company-detail.component.scss',
   templateUrl: './company-detail.component.html',
 })

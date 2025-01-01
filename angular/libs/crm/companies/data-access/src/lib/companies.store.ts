@@ -1,7 +1,4 @@
-import {
-  withEntitiesList,
-  withPageTitle,
-} from '@steffbeckers/shared/data-access';
+import { withEntitiesList } from '@steffbeckers/shared/data-access';
 import { Company } from './company.model';
 import { signalStore } from '@ngrx/signals';
 import { CompaniesService } from '@steffbeckers/crm/data-access';
@@ -11,8 +8,8 @@ export const CompaniesStore = signalStore(
     persistence: {
       name: 'sb-companies',
     },
-  }),
-  withPageTitle(() => ({
-    localizationKey: 'CRM::Companies',
-  }))
+  })
+  // withPageTitle(() => ({
+  //   localizationKey: 'CRM::Companies',
+  // }))
 );
