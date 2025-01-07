@@ -2,34 +2,34 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id/>
     <title/>
-    <updated>2025-01-03T13:11:23.419Z</updated>
+    <updated>2025-01-07T20:51:59.725Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <entry>
         <title type="html"><![CDATA[Steff Beckers]]></title>
         <id/>
         <link/>
-        <updated>2025-01-03T13:11:23.414Z</updated>
+        <updated>2025-01-07T20:51:59.720Z</updated>
         <summary type="html"><![CDATA[I'm a passionate developer with a strong focus on web development and DevOps. I thrive on learning and working with the latest technologies and frameworks to continuously grow my expertise. I enjoy collaborating as part of a team in an agile environment, where I can contribute to building impactful solutions. I'm detail-oriented, committed to getting things right, and understand that even the smallest details can make a big difference.]]></summary>
     </entry>
     <entry>
         <title type="html"><![CDATA[Experience - Steff Beckers]]></title>
         <id/>
         <link/>
-        <updated>2025-01-03T13:11:23.415Z</updated>
+        <updated>2025-01-07T20:51:59.721Z</updated>
         <summary type="html"><![CDATA[My work experience, acquired certificates and education.]]></summary>
     </entry>
     <entry>
         <title type="html"><![CDATA[Blog - Steff Beckers]]></title>
         <id/>
         <link/>
-        <updated>2025-01-03T13:11:23.416Z</updated>
+        <updated>2025-01-07T20:51:59.722Z</updated>
         <summary type="html"><![CDATA[Tutorials, scripts and other useful notes.]]></summary>
     </entry>
     <entry>
         <title type="html"><![CDATA[Contact - Steff Beckers]]></title>
         <id/>
         <link/>
-        <updated>2025-01-03T13:11:23.416Z</updated>
+        <updated>2025-01-07T20:51:59.722Z</updated>
         <summary type="html"><![CDATA[Get in touch with Steff.]]></summary>
     </entry>
     <entry>
