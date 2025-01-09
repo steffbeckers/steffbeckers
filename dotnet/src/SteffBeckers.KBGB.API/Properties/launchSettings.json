@@ -1,0 +1,9 @@
+{
+  "profiles": {
+    "SteffBeckers.KBGB.API": {
+      "commandName": "Project",
+      "commandLineArgs": "--port 7258",
+      "launchBrowser": false
+    }
+  }
+}
