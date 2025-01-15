@@ -7,18 +7,18 @@ import { FormsModule } from '@angular/forms';
 import { RouterLink } from '@angular/router';
 
 @Component({
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    imports: [
-        AbpLocalizationModule,
-        ButtonComponent,
-        CommonModule,
-        FormsModule,
-        RouterLink,
-    ],
-    providers: [CompaniesStore],
-    selector: 'sb-companies',
-    styleUrl: './companies.component.scss',
-    templateUrl: './companies.component.html'
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  imports: [
+    AbpLocalizationModule,
+    ButtonComponent,
+    CommonModule,
+    FormsModule,
+    RouterLink,
+  ],
+  providers: [CompaniesStore],
+  selector: 'sb-companies',
+  styleUrl: './companies.component.scss',
+  templateUrl: './companies.component.html',
 })
 export class CompaniesComponent {
   store = inject(CompaniesStore);

@@ -4,6 +4,7 @@ import {
   HostListener,
   effect,
   inject,
+  input,
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
@@ -31,6 +32,7 @@ export class CompanyDetailComponent {
   router = inject(Router);
   store = inject(CompanyDetailStore);
   vm = this.store.vm();
+  id = input.required<string>();
 
   constructor() {
     // Redirect to companies

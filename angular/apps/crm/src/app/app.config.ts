@@ -1,5 +1,5 @@
 import { ApplicationConfig } from '@angular/core';
-import { provideRouter } from '@angular/router';
+import { provideRouter, withComponentInputBinding } from '@angular/router';
 import { differentLocales, provideAbpCore, withOptions } from '@abp/ng.core';
 import { environment } from '../environments/environment';
 import {
@@ -69,7 +69,7 @@ export const appConfig: ApplicationConfig = {
     provideAbpOAuth(),
     provideAnimationsAsync(),
     provideHttpClient(),
-    provideRouter(appRoutes),
+    provideRouter(appRoutes, withComponentInputBinding()),
     providePageTitleConfig({
       prefix: 'CRM - ',
     }),

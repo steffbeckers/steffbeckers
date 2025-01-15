@@ -1,1 +1,26 @@
 <p>update-company works!</p>
+{{ id() }}
+{{ store.company.value() | json }}
+
+<form [formGroup]="store.form">
+  <div class="flex flex-col gap-4">
+    <div class="flex flex-col">
+      <label class="text-sm" for="name">Name</label>
+      <input id="name" type="text" formControlName="name" />
+    </div>
+    <div class="flex flex-col">
+      <label class="text-sm" for="phoneNumber">Phone number</label>
+      <input id="phoneNumber" type="text" formControlName="phoneNumber" />
+    </div>
+    <div class="flex flex-col">
+      <label class="text-sm" for="email">Email</label>
+      <input id="email" type="text" formControlName="email" />
+    </div>
+    <div class="flex flex-col">
+      <label class="text-sm" for="website">Website</label>
+      <input id="website" type="text" formControlName="website" />
+    </div>
+  </div>
+</form>
+
+{{ store.form.value | json }}
