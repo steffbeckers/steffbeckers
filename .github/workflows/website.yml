@@ -1,4 +1,4 @@
-name: Website
+name: website
 run-name: studio nuxt build
 
 on:
