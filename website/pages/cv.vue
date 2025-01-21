@@ -3,6 +3,7 @@ const runtimeConfig = useRuntimeConfig();
 
 definePageMeta({
   layout: "none",
+  title: "CV",
 });
 
 useHead({
