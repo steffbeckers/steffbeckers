@@ -3,24 +3,23 @@
     "title": "",
     "items": [
         {
-            "title": "Steff Beckers",
             "summary": "I'm a passionate developer with a strong focus on web development and DevOps. I thrive on learning and working with the latest technologies and frameworks to continuously grow my expertise. I enjoy collaborating as part of a team in an agile environment, where I can contribute to building impactful solutions. I'm detail-oriented, committed to getting things right, and understand that even the smallest details can make a big difference.",
-            "date_modified": "2025-01-16T07:36:55.492Z"
+            "date_modified": "2025-01-21T21:19:25.973Z"
         },
         {
-            "title": "Experience - Steff Beckers",
+            "title": "Experience",
             "summary": "My work experience, acquired certificates and education.",
-            "date_modified": "2025-01-16T07:36:55.493Z"
+            "date_modified": "2025-01-21T21:19:25.974Z"
         },
         {
-            "title": "Blog - Steff Beckers",
+            "title": "Blog",
             "summary": "Tutorials, scripts and other useful notes.",
-            "date_modified": "2025-01-16T07:36:55.493Z"
+            "date_modified": "2025-01-21T21:19:25.974Z"
         },
         {
-            "title": "Contact - Steff Beckers",
+            "title": "Contact",
             "summary": "Get in touch with Steff.",
-            "date_modified": "2025-01-16T07:36:55.494Z"
+            "date_modified": "2025-01-21T21:19:25.975Z"
         },
         {
             "title": "Nginx/Apache SSL Certificates with Let's Encrypt",

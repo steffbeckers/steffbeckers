@@ -1,1 +1,0 @@
-import{ao as n,ap as p,u as t,ae as i}from"./B-wXZ27u.js";const a=n({}),s=n({socials:{twitter:"",github:"",mastodon:""},nuxtIcon:{aliases:{"dark-mode":"ph:moon-bold","light-mode":"ph:sun-bold"}}}),e={nuxt:{}},f=p(a,s,e);function c(){const o=t();return o._appConfig||(o._appConfig=i(f)),o._appConfig}export{c as u};
