@@ -1,6 +1,8 @@
 <script setup lang="ts">
 const document = await useContent();
 const route = await useRoute();
+
+defineOgImageComponent();
 </script>
 
 <template>

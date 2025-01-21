@@ -123,7 +123,7 @@ export default defineNuxtConfig({
   modules: [
     "@dargmuesli/nuxt-cookie-control",
     "@nuxtjs/google-fonts",
-    "@nuxtjs/sitemap",
+    "@nuxtjs/seo",
     "nuxt-disqus",
     "nuxt-feedme",
     "nuxt-gtag",
@@ -139,6 +139,8 @@ export default defineNuxtConfig({
     },
   },
   site: {
+    defaultLocale: "en",
+    name: "Steff Beckers",
     url: "https://steffbeckers.eu",
   },
   tailwindcss: {
