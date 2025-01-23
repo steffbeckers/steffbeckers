@@ -18,10 +18,14 @@ import { ReactiveFormsModule } from '@angular/forms';
   templateUrl: './update-company.component.html',
 })
 export class UpdateCompanyComponent implements OnInit {
-  store = inject(UpdateCompanyStore);
+  #store = inject(UpdateCompanyStore);
+  
+  company = this.#store.company;
+  form = this.#store.form;
   id = input.required<string>();
+  save = this.#store.save;
 
   ngOnInit(): void {
-    this.store.setId(this.id());
+    this.#store.setId(this.id());
   }
 }

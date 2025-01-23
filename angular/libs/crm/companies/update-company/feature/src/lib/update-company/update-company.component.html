@@ -1,8 +1,8 @@
 <p>update-company works!</p>
 {{ id() }}
-{{ store.company.value() | json }}
+{{ company.value() | json }}
 
-<form [formGroup]="store.form">
+<form [formGroup]="form" (ngSubmit)="save()">
   <div class="flex flex-col gap-4">
     <div class="flex flex-col">
       <label class="text-sm" for="name">Name</label>
@@ -20,7 +20,8 @@
       <label class="text-sm" for="website">Website</label>
       <input id="website" type="text" formControlName="website" />
     </div>
+    <button type="submit">Save</button>
   </div>
 </form>
 
-{{ store.form.value | json }}
+{{ form.value | json }}
