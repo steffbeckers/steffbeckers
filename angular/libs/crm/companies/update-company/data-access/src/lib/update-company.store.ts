@@ -71,7 +71,10 @@ export const UpdateCompanyStore = signalStore(
     onInit() {
       effect(() => {
         const companyData = company.value();
-        if (!companyData) return;
+
+        if (!form.pristine || !companyData) {
+          return;
+        }
 
         form.patchValue({
           name: companyData.name,
