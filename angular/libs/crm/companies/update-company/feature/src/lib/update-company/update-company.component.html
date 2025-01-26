@@ -1,6 +1,6 @@
-<p>update-company works!</p>
-{{ id() }}
-{{ company.value() | json }}
+<h2 class="page-title text-xl">
+  {{ '::UpdateXY' | abpLocalization: [('CRM::Company' | abpLocalization | lowercase), company()?.name ?? ''] }}
+</h2>
 
 <form [formGroup]="form" (ngSubmit)="save()">
   <div class="flex flex-col gap-4">
@@ -24,4 +24,12 @@
   </div>
 </form>
 
+<pre>
+Company:
+{{ company() | json }}
+</pre>
+
+<pre>
+Form:
 {{ form.value | json }}
+</pre>

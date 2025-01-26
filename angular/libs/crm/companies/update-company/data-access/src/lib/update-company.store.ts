@@ -48,7 +48,7 @@ interface CompanyData {
 
 export const UpdateCompanyStore = signalStore(
   withForm<CompanyForm, CompanyData>(
-    (fb: FormBuilder) => fb.group({
+    fb => fb.group({
       name: ['', Validators.required],
       phoneNumber: '',
       email: '',

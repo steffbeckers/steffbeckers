@@ -5,13 +5,17 @@ import {
   input,
   OnInit,
 } from '@angular/core';
+import { LocalizationModule as AbpLocalizationModule } from '@abp/ng.core';
 import { CommonModule } from '@angular/common';
 import { UpdateCompanyStore } from '@steffbeckers/crm/companies/update-company/data-access';
 import { ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [CommonModule, ReactiveFormsModule],
+  imports: [
+    AbpLocalizationModule,
+    CommonModule,
+    ReactiveFormsModule],
   providers: [UpdateCompanyStore],
   selector: 'sb-update-company',
   styleUrl: './update-company.component.scss',
@@ -20,7 +24,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 export class UpdateCompanyComponent implements OnInit {
   #store = inject(UpdateCompanyStore);
   
-  company = this.#store.company;
+  company = this.#store.company.value;
   form = this.#store.form;
   id = input.required<string>();
   save = this.#store.save;
