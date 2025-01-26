@@ -10,18 +10,19 @@ const route = await useRoute();
       <Logo />
     </NuxtLink>
     <!-- Navigation -->
-    <div class="flex items-center gap-4 text-gray-700 dark:text-gray-100">
+    <div class="flex flex-wrap justify-evenly items-center gap-4 text-gray-700 dark:text-gray-100">
       <NuxtLink
         v-for="link of navigation"
         :key="link._path"
         :to="link._path"
-        class="nav-item hover:text-primary-400"
+        class="nav-item hover:text-primary-400 transition-all duration-300 text-center"
         :class="{
-          'font-bold':
+          'font-bold text-primary-400':
             route.path === link._path || (route.path.startsWith(link._path) && link._path !== '/'),
         }"
       >
-        {{ link.title }}
+        <div>{{ link.title }}</div>
+        <div class="h-0 font-bold invisible">{{ link.title }}</div>
       </NuxtLink>
     </div>
     <!-- Social icons & Color mode -->
