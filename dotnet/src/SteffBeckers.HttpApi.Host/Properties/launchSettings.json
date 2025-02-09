@@ -1,11 +1,22 @@
 {
-    "profiles": {
-        "SteffBeckers.HttpApi.Host": {
-            "commandName": "Project",
-            "applicationUrl": "http://localhost:5000",
-            "environmentVariables": {
-                "ASPNETCORE_ENVIRONMENT": "Development"
-            }
-        }
+  "profiles": {
+    "SteffBeckers.HttpApi.Host": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "applicationUrl": "http://localhost:5000"
+    },
+    "Container (Dockerfile)": {
+      "commandName": "Docker",
+      "launchUrl": "{Scheme}://{ServiceHost}:{ServicePort}",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "ASPNETCORE_HTTP_PORTS": "5000"
+      },
+      "publishAllPorts": true,
+      "useSSL": false,
+      "httpPort": 5000
     }
+  }
 }
