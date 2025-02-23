@@ -1,6 +1,6 @@
 {
-    "intermediate-solutions": false,
+    "intermediate-solutions": true,
     "output-objective": true,
     "parallel": 16,
-    "solver": "com.google.ortools.sat@9.8.3296"
+    "solver": "cp-sat@9.11.4210"
 }
