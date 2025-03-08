@@ -12,7 +12,8 @@
     "start": "strapi start",
     "strapi": "strapi",
     "upgrade": "npx @strapi/upgrade latest",
-    "upgrade:dry": "npx @strapi/upgrade latest --dry"
+    "upgrade:dry": "npx @strapi/upgrade latest --dry",
+    "watch:link": "npx chokidar-cli 'D:/steffbeckers/strapi-image-gallery/dist/**' -c 'yalc update'"
   },
   "dependencies": {
     "@strapi/plugin-cloud": "5.11.0",
@@ -22,6 +23,7 @@
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-router-dom": "^6.0.0",
+    "strapi-image-gallery": "link:.yalc/strapi-image-gallery",
     "styled-components": "^6.0.0"
   },
   "devDependencies": {
@@ -36,5 +38,6 @@
   },
   "strapi": {
     "uuid": "2309bd84-deb6-46f1-8dc6-52a2fa736c23"
-  }
+  },
+  "packageManager": "yarn@4.7.0"
 }
