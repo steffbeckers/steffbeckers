@@ -25,6 +25,10 @@
         }
       },
       "maxLength": 100
+    },
+    "images": {
+      "type": "customField",
+      "customField": "plugin::strapi-image-gallery.input-field"
     }
   }
 }
