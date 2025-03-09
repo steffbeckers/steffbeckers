@@ -12,6 +12,12 @@ npm run develop
 yarn develop
 ```
 
+#### Link @steffbeckers/strapi-image-gallery locally
+
+```
+yarn dlx yalc add --link @steffbeckers/strapi-image-gallery && yarn
+```
+
 ### `start`
 
 Start your Strapi application with autoReload disabled. [Learn more](https://docs.strapi.io/dev-docs/cli#strapi-start)

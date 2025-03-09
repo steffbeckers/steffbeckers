@@ -13,13 +13,15 @@
     "strapi": "strapi",
     "upgrade": "npx @strapi/upgrade latest",
     "upgrade:dry": "npx @strapi/upgrade latest --dry",
-    "link": "yarn dlx yalc add --link strapi-image-gallery && yarn",
     "watch:link": "npx chokidar-cli 'D:/steffbeckers/strapi-image-gallery/dist/**' -c 'yalc update'"
   },
   "dependencies": {
-    "@steffbeckers/strapi-image-gallery": "^0.0.4",
+    "@dnd-kit/core": "^6.3.1",
+    "@dnd-kit/sortable": "^10.0.0",
+    "@steffbeckers/strapi-image-gallery": "link:.yalc/@steffbeckers/strapi-image-gallery",
     "@strapi/plugin-cloud": "5.11.0",
     "@strapi/plugin-users-permissions": "5.11.0",
+    "@strapi/sdk-plugin": "^5.3.2",
     "@strapi/strapi": "5.11.0",
     "better-sqlite3": "11.3.0",
     "react": "^18.0.0",
