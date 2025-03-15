@@ -1,44 +1,55 @@
 using System.IO;
 using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Extensions.DependencyInjection;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.HttpOverrides;
+using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using MyCompany.MyProject.EntityFrameworkCore;
 using MyCompany.MyProject.Localization;
 using MyCompany.MyProject.MultiTenancy;
+using MyCompany.MyProject.Permissions;
 using MyCompany.MyProject.Web.Menus;
+using MyCompany.MyProject.Web.HealthChecks;
 using Microsoft.OpenApi.Models;
-using OpenIddict.Validation.AspNetCore;
 using Volo.Abp;
-using Volo.Abp.Account.Web;
+using Volo.Abp.Studio;
 using Volo.Abp.AspNetCore.Mvc;
 using Volo.Abp.AspNetCore.Mvc.Localization;
 using Volo.Abp.AspNetCore.Mvc.UI;
 using Volo.Abp.AspNetCore.Mvc.UI.Bootstrap;
-using Volo.Abp.AspNetCore.Mvc.UI.Bundling;
-using Volo.Abp.AspNetCore.Mvc.UI.MultiTenancy;
+using Volo.Abp.AspNetCore.Mvc.UI.Theme.Shared;
 using Volo.Abp.AspNetCore.Mvc.UI.Theme.LeptonXLite;
 using Volo.Abp.AspNetCore.Mvc.UI.Theme.LeptonXLite.Bundling;
-using Volo.Abp.AspNetCore.Mvc.UI.Theme.Shared;
-using Volo.Abp.AspNetCore.Serilog;
 using Volo.Abp.Autofac;
 using Volo.Abp.AutoMapper;
-using Volo.Abp.FeatureManagement;
-using Volo.Abp.Identity.Web;
-using Volo.Abp.Localization;
 using Volo.Abp.Modularity;
+using Volo.Abp.PermissionManagement;
 using Volo.Abp.PermissionManagement.Web;
-using Volo.Abp.Security.Claims;
-using Volo.Abp.SettingManagement.Web;
-using Volo.Abp.Swashbuckle;
-using Volo.Abp.TenantManagement.Web;
-using Volo.Abp.OpenIddict;
 using Volo.Abp.UI.Navigation.Urls;
 using Volo.Abp.UI;
 using Volo.Abp.UI.Navigation;
 using Volo.Abp.VirtualFileSystem;
+using Volo.Abp.Identity.Web;
+using Volo.Abp.FeatureManagement;
+using OpenIddict.Server.AspNetCore;
+using OpenIddict.Validation.AspNetCore;
+using Volo.Abp.TenantManagement.Web;
+using System;
+using System.Security.Cryptography.X509Certificates;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Extensions.DependencyInjection;
+using Volo.Abp.Account.Web;
+using Volo.Abp.AspNetCore.Mvc.UI.Bundling;
+using Volo.Abp.AspNetCore.Mvc.UI.Theme.Shared.Toolbars;
+using Volo.Abp.AspNetCore.Serilog;
+using Volo.Abp.Identity;
+using Volo.Abp.Swashbuckle;
+using Volo.Abp.OpenIddict;
+using Volo.Abp.Security.Claims;
+using Volo.Abp.SettingManagement.Web;
+using Volo.Abp.Studio.Client.AspNetCore;
 
 namespace MyCompany.MyProject.Web;
 
@@ -47,14 +58,15 @@ namespace MyCompany.MyProject.Web;
     typeof(MyProjectApplicationModule),
     typeof(MyProjectEntityFrameworkCoreModule),
     typeof(AbpAutofacModule),
+    typeof(AbpStudioClientAspNetCoreModule),
     typeof(AbpIdentityWebModule),
-    typeof(AbpSettingManagementWebModule),
-    typeof(AbpAccountWebOpenIddictModule),
     typeof(AbpAspNetCoreMvcUiLeptonXLiteThemeModule),
+    typeof(AbpAccountWebOpenIddictModule),
     typeof(AbpTenantManagementWebModule),
-    typeof(AbpAspNetCoreSerilogModule),
-    typeof(AbpSwashbuckleModule)
-    )]
+    typeof(AbpFeatureManagementWebModule),
+    typeof(AbpSwashbuckleModule),
+    typeof(AbpAspNetCoreSerilogModule)
+)]
 public class MyProjectWebModule : AbpModule
 {
     public override void PreConfigureServices(ServiceConfigurationContext context)
@@ -93,7 +105,8 @@ public class MyProjectWebModule : AbpModule
 
             PreConfigure<OpenIddictServerBuilder>(serverBuilder =>
             {
-                serverBuilder.AddProductionEncryptionAndSigningCertificate("openiddict.pfx", "119737cb-8fb5-46c4-9648-705e464aad26");
+                serverBuilder.AddProductionEncryptionAndSigningCertificate("openiddict.pfx", configuration["AuthServer:CertificatePassPhrase"]!);
+                serverBuilder.SetIssuer(new Uri(configuration["AuthServer:Authority"]!));
             });
         }
     }
@@ -103,22 +116,59 @@ public class MyProjectWebModule : AbpModule
         var hostingEnvironment = context.Services.GetHostingEnvironment();
         var configuration = context.Services.GetConfiguration();
 
-        ConfigureAuthentication(context);
-        ConfigureUrls(configuration);
+        if (!configuration.GetValue<bool>("App:DisablePII"))
+        {
+            Microsoft.IdentityModel.Logging.IdentityModelEventSource.ShowPII = true;
+            Microsoft.IdentityModel.Logging.IdentityModelEventSource.LogCompleteSecurityArtifact = true;
+        }
+
+        if (!configuration.GetValue<bool>("AuthServer:RequireHttpsMetadata"))
+        {
+            Configure<OpenIddictServerAspNetCoreOptions>(options =>
+            {
+                options.DisableTransportSecurityRequirement = true;
+            });
+            
+            Configure<ForwardedHeadersOptions>(options =>
+            {
+                options.ForwardedHeaders = ForwardedHeaders.XForwardedProto;
+            });
+        }
+
         ConfigureBundles();
+        ConfigureUrls(configuration);
+        ConfigureHealthChecks(context);
+        ConfigureAuthentication(context);
         ConfigureAutoMapper();
         ConfigureVirtualFileSystem(hostingEnvironment);
         ConfigureNavigationServices();
         ConfigureAutoApiControllers();
         ConfigureSwaggerServices(context.Services);
+
+        Configure<PermissionManagementOptions>(options =>
+        {
+            options.IsDynamicPermissionStoreEnabled = true;
+        });
     }
 
-    private void ConfigureAuthentication(ServiceConfigurationContext context)
+
+    private void ConfigureHealthChecks(ServiceConfigurationContext context)
     {
-        context.Services.ForwardIdentityAuthenticationForBearer(OpenIddictValidationAspNetCoreDefaults.AuthenticationScheme);
-        context.Services.Configure<AbpClaimsPrincipalFactoryOptions>(options =>
+        context.Services.AddMyProjectHealthChecks();
+    }
+
+    private void ConfigureBundles()
+    {
+        Configure<AbpBundlingOptions>(options =>
         {
-            options.IsDynamicClaimsEnabled = true;
+            options.StyleBundles.Configure(
+                LeptonXLiteThemeBundles.Styles.Global,
+                bundle =>
+                {
+                    bundle.AddFiles("/global-scripts.js");
+                    bundle.AddFiles("/global-styles.css");
+                }
+            );
         });
     }
 
@@ -130,17 +180,12 @@ public class MyProjectWebModule : AbpModule
         });
     }
 
-    private void ConfigureBundles()
+    private void ConfigureAuthentication(ServiceConfigurationContext context)
     {
-        Configure<AbpBundlingOptions>(options =>
+        context.Services.ForwardIdentityAuthenticationForBearer(OpenIddictValidationAspNetCoreDefaults.AuthenticationScheme);
+        context.Services.Configure<AbpClaimsPrincipalFactoryOptions>(options =>
         {
-            options.StyleBundles.Configure(
-                LeptonXLiteThemeBundles.Styles.Global,
-                bundle =>
-                {
-                    bundle.AddFiles("/global-styles.css");
-                }
-            );
+            options.IsDynamicClaimsEnabled = true;
         });
     }
 
@@ -154,17 +199,20 @@ public class MyProjectWebModule : AbpModule
 
     private void ConfigureVirtualFileSystem(IWebHostEnvironment hostingEnvironment)
     {
-        if (hostingEnvironment.IsDevelopment())
+        Configure<AbpVirtualFileSystemOptions>(options =>
         {
-            Configure<AbpVirtualFileSystemOptions>(options =>
+            options.FileSets.AddEmbedded<MyProjectWebModule>();
+
+            if (hostingEnvironment.IsDevelopment())
             {
-                options.FileSets.ReplaceEmbeddedByPhysical<MyProjectDomainSharedModule>(Path.Combine(hostingEnvironment.ContentRootPath, $"..{Path.DirectorySeparatorChar}MyCompany.MyProject.Domain.Shared"));
-                options.FileSets.ReplaceEmbeddedByPhysical<MyProjectDomainModule>(Path.Combine(hostingEnvironment.ContentRootPath, $"..{Path.DirectorySeparatorChar}MyCompany.MyProject.Domain"));
-                options.FileSets.ReplaceEmbeddedByPhysical<MyProjectApplicationContractsModule>(Path.Combine(hostingEnvironment.ContentRootPath, $"..{Path.DirectorySeparatorChar}MyCompany.MyProject.Application.Contracts"));
-                options.FileSets.ReplaceEmbeddedByPhysical<MyProjectApplicationModule>(Path.Combine(hostingEnvironment.ContentRootPath, $"..{Path.DirectorySeparatorChar}MyCompany.MyProject.Application"));
+                options.FileSets.ReplaceEmbeddedByPhysical<MyProjectDomainSharedModule>(Path.Combine(hostingEnvironment.ContentRootPath, string.Format("..{0}MyCompany.MyProject.Domain.Shared", Path.DirectorySeparatorChar)));
+                options.FileSets.ReplaceEmbeddedByPhysical<MyProjectDomainModule>(Path.Combine(hostingEnvironment.ContentRootPath, string.Format("..{0}MyCompany.MyProject.Domain", Path.DirectorySeparatorChar)));
+                options.FileSets.ReplaceEmbeddedByPhysical<MyProjectApplicationContractsModule>(Path.Combine(hostingEnvironment.ContentRootPath, string.Format("..{0}MyCompany.MyProject.Application.Contracts", Path.DirectorySeparatorChar)));
+                options.FileSets.ReplaceEmbeddedByPhysical<MyProjectApplicationModule>(Path.Combine(hostingEnvironment.ContentRootPath, string.Format("..{0}MyCompany.MyProject.Application", Path.DirectorySeparatorChar)));
+                options.FileSets.ReplaceEmbeddedByPhysical<MyProjectHttpApiModule>(Path.Combine(hostingEnvironment.ContentRootPath, string.Format("..{0}..{0}src{0}MyCompany.MyProject.HttpApi", Path.DirectorySeparatorChar)));
                 options.FileSets.ReplaceEmbeddedByPhysical<MyProjectWebModule>(hostingEnvironment.ContentRootPath);
-            });
-        }
+            }
+        });
     }
 
     private void ConfigureNavigationServices()
@@ -172,6 +220,11 @@ public class MyProjectWebModule : AbpModule
         Configure<AbpNavigationOptions>(options =>
         {
             options.MenuContributors.Add(new MyProjectMenuContributor());
+        });
+
+        Configure<AbpToolbarOptions>(options =>
+        {
+            options.Contributors.Add(new MyProjectToolbarContributor());
         });
     }
 
@@ -195,10 +248,13 @@ public class MyProjectWebModule : AbpModule
         );
     }
 
+
     public override void OnApplicationInitialization(ApplicationInitializationContext context)
     {
         var app = context.GetApplicationBuilder();
         var env = context.GetEnvironment();
+
+        app.UseForwardedHeaders();
 
         if (env.IsDevelopment())
         {
@@ -210,11 +266,14 @@ public class MyProjectWebModule : AbpModule
         if (!env.IsDevelopment())
         {
             app.UseErrorPage();
+            app.UseHsts();
         }
 
         app.UseCorrelationId();
-        app.UseStaticFiles();
+        app.MapAbpStaticAssets();
+        app.UseAbpStudioLink();
         app.UseRouting();
+        app.UseAbpSecurityHeaders();
         app.UseAuthentication();
         app.UseAbpOpenIddictValidation();
 
@@ -226,13 +285,11 @@ public class MyProjectWebModule : AbpModule
         app.UseUnitOfWork();
         app.UseDynamicClaims();
         app.UseAuthorization();
-
         app.UseSwagger();
         app.UseAbpSwaggerUI(options =>
         {
             options.SwaggerEndpoint("/swagger/v1/swagger.json", "MyProject API");
         });
-
         app.UseAuditing();
         app.UseAbpSerilogEnrichers();
         app.UseConfiguredEndpoints();

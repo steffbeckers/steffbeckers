@@ -8,7 +8,7 @@ namespace MyCompany.MyProject.DbMigrator;
     typeof(AbpAutofacModule),
     typeof(MyProjectEntityFrameworkCoreModule),
     typeof(MyProjectApplicationContractsModule)
-    )]
+)]
 public class MyProjectDbMigratorModule : AbpModule
 {
 }

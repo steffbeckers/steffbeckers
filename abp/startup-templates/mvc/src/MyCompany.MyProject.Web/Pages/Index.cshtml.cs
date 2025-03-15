@@ -1,9 +1,8 @@
-﻿namespace MyCompany.MyProject.Web.Pages;
+using Microsoft.AspNetCore.Mvc;
+
+namespace MyCompany.MyProject.Web.Pages;
 
 public class IndexModel : MyProjectPageModel
 {
-    public void OnGet()
-    {
 
-    }
 }

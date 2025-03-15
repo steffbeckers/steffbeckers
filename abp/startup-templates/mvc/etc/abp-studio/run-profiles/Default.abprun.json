@@ -1,0 +1,15 @@
+﻿{
+  "applications": {
+    "MyCompany.MyProject.Web": {
+      "type": "dotnet-project",
+      "launchUrl": "https://localhost:44354",
+      "path": "../../../src/MyCompany.MyProject.Web/MyCompany.MyProject.Web.csproj",
+      "kubernetesService": ".*-web$",
+      "healthCheckEndpoint": "/health-status",
+      "healthUiEndpoint": "/health-ui",
+      "execution": {
+        "order": 2
+      }
+    }
+  }
+}

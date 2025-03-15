@@ -1,20 +1,17 @@
 using System.Collections.Generic;
 using System.Globalization;
-using Localization.Resources.AbpUi;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Localization;
 using Microsoft.AspNetCore.Mvc.ApplicationParts;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using MyCompany.MyProject.EntityFrameworkCore;
-using MyCompany.MyProject.Localization;
 using MyCompany.MyProject.Web;
 using MyCompany.MyProject.Web.Menus;
 using Volo.Abp.AspNetCore.TestBase;
-using Volo.Abp.Localization;
 using Volo.Abp.Modularity;
 using Volo.Abp.OpenIddict;
 using Volo.Abp.UI.Navigation;
-using Volo.Abp.Validation.Localization;
 
 namespace MyCompany.MyProject;
 
@@ -28,6 +25,11 @@ public class MyProjectWebTestModule : AbpModule
 {
     public override void PreConfigureServices(ServiceConfigurationContext context)
     {
+        var builder = new ConfigurationBuilder();
+        builder.AddJsonFile("appsettings.json", false);
+        builder.AddJsonFile("appsettings.secrets.json", true);
+        context.Services.ReplaceConfiguration(builder.Build());
+
         context.Services.PreConfigure<IMvcBuilder>(builder =>
         {
             builder.PartManager.ApplicationParts.Add(new CompiledRazorAssemblyPart(typeof(MyProjectWebModule).Assembly));
@@ -54,16 +56,6 @@ public class MyProjectWebTestModule : AbpModule
             options.DefaultRequestCulture = new RequestCulture("en");
             options.SupportedCultures = cultures;
             options.SupportedUICultures = cultures;
-        });
-
-        services.Configure<AbpLocalizationOptions>(options =>
-        {
-            options.Resources
-                .Get<MyProjectResource>()
-                .AddBaseTypes(
-                    typeof(AbpValidationResource),
-                    typeof(AbpUiResource)
-                );
         });
     }
 

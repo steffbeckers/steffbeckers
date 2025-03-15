@@ -17,7 +17,7 @@ namespace MyCompany.MyProject.EntityFrameworkCore;
     typeof(MyProjectApplicationTestModule),
     typeof(MyProjectEntityFrameworkCoreModule),
     typeof(AbpEntityFrameworkCoreSqliteModule)
-    )]
+)]
 public class MyProjectEntityFrameworkCoreTestModule : AbpModule
 {
     private SqliteConnection? _sqliteConnection;
@@ -37,6 +37,7 @@ public class MyProjectEntityFrameworkCoreTestModule : AbpModule
         context.Services.AddAlwaysDisableUnitOfWorkTransaction();
 
         ConfigureInMemorySqlite(context.Services);
+
     }
 
     private void ConfigureInMemorySqlite(IServiceCollection services)
