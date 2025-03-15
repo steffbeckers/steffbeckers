@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using MyCompany.MyProject.Localization;
+﻿using MyCompany.MyProject.Localization;
 using Volo.Abp.Application.Services;
 
 namespace MyCompany.MyProject;

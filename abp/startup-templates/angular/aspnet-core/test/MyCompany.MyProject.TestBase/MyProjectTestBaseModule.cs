@@ -14,7 +14,7 @@ namespace MyCompany.MyProject;
     typeof(AbpTestBaseModule),
     typeof(AbpAuthorizationModule),
     typeof(AbpBackgroundJobsAbstractionsModule)
-    )]
+)]
 public class MyProjectTestBaseModule : AbpModule
 {
     public override void ConfigureServices(ServiceConfigurationContext context)

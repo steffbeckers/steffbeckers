@@ -1,24 +1,24 @@
 ﻿using Localization.Resources.AbpUi;
 using MyCompany.MyProject.Localization;
 using Volo.Abp.Account;
+using Volo.Abp.SettingManagement;
 using Volo.Abp.FeatureManagement;
 using Volo.Abp.Identity;
-using Volo.Abp.Localization;
 using Volo.Abp.Modularity;
 using Volo.Abp.PermissionManagement.HttpApi;
-using Volo.Abp.SettingManagement;
+using Volo.Abp.Localization;
 using Volo.Abp.TenantManagement;
 
 namespace MyCompany.MyProject;
 
-[DependsOn(
+ [DependsOn(
     typeof(MyProjectApplicationContractsModule),
+    typeof(AbpPermissionManagementHttpApiModule),
+    typeof(AbpSettingManagementHttpApiModule),
     typeof(AbpAccountHttpApiModule),
     typeof(AbpIdentityHttpApiModule),
-    typeof(AbpPermissionManagementHttpApiModule),
     typeof(AbpTenantManagementHttpApiModule),
-    typeof(AbpFeatureManagementHttpApiModule),
-    typeof(AbpSettingManagementHttpApiModule)
+    typeof(AbpFeatureManagementHttpApiModule)
     )]
 public class MyProjectHttpApiModule : AbpModule
 {

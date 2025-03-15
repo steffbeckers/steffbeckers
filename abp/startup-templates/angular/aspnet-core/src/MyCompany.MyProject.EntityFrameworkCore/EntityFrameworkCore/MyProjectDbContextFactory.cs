@@ -12,13 +12,13 @@ public class MyProjectDbContextFactory : IDesignTimeDbContextFactory<MyProjectDb
 {
     public MyProjectDbContext CreateDbContext(string[] args)
     {
-        MyProjectEfCoreEntityExtensionMappings.Configure();
-
         var configuration = BuildConfiguration();
+        
+        MyProjectEfCoreEntityExtensionMappings.Configure();
 
         var builder = new DbContextOptionsBuilder<MyProjectDbContext>()
             .UseSqlServer(configuration.GetConnectionString("Default"));
-
+        
         return new MyProjectDbContext(builder.Options);
     }
 

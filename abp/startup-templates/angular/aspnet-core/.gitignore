@@ -248,12 +248,17 @@ paket-files/
 .fake/
 
 # JetBrains Rider
-.idea/
+**/.idea/
 *.sln.iml
+
+# ABP Studio
+**/.abpstudio/
 
 # MyProject
 src/MyCompany.MyProject.Web/Logs/*
 src/MyCompany.MyProject.Web.Host/Logs/*
+src/MyCompany.MyProject.Web.Public/Logs/*
+src/MyCompany.MyProject.Web.Public.Host/Logs/*
 src/MyCompany.MyProject.AuthServer/Logs/*
 src/MyCompany.MyProject.HttpApi.Host/Logs/*
 src/MyCompany.MyProject.HttpApi.Host/Logs/*
@@ -263,3 +268,7 @@ src/MyCompany.MyProject.Blazor.Server.Tiered/Logs/*
 
 # Use abp install-libs to restore.
 **/wwwroot/libs/*
+
+# IdentityServer temp files
+tempkey.rsa
+tempkey.jwk
