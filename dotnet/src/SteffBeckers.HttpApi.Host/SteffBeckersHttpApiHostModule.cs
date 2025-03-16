@@ -10,6 +10,7 @@ using Microsoft.OpenApi.Models;
 using OpenIddict.Server.AspNetCore;
 using OpenIddict.Validation.AspNetCore;
 using SteffBeckers.EntityFrameworkCore;
+using SteffBeckers.Marten;
 using SteffBeckers.MultiTenancy;
 using Swashbuckle.AspNetCore.SwaggerGen;
 using System;
@@ -41,6 +42,7 @@ namespace SteffBeckers;
     typeof(AbpAspNetCoreMultiTenancyModule),
     typeof(SteffBeckersApplicationModule),
     typeof(SteffBeckersEntityFrameworkCoreModule),
+    typeof(SteffBeckersMartenModule),
     typeof(AbpAspNetCoreMvcUiLeptonXLiteThemeModule),
     typeof(AbpAccountWebOpenIddictModule),
     typeof(AbpAspNetCoreSerilogModule),

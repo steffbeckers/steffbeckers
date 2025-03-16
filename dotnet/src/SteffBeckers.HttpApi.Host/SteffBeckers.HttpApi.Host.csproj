@@ -16,6 +16,7 @@
 		<ProjectReference Include="..\SteffBeckers.Application\SteffBeckers.Application.csproj" />
 		<ProjectReference Include="..\SteffBeckers.EntityFrameworkCore\SteffBeckers.EntityFrameworkCore.csproj" />
 		<ProjectReference Include="..\SteffBeckers.HttpApi\SteffBeckers.HttpApi.csproj" />
+		<ProjectReference Include="..\SteffBeckers.Marten\SteffBeckers.Marten.csproj" />
 	</ItemGroup>
 
 	<ItemGroup>
