@@ -1,0 +1,111 @@
+{
+  "folders": {
+    "items": {
+      "src": {},
+      "test": {},
+      "host": {}
+    }
+  },
+  "packages": {
+    "SteffBeckers.Inventory.Domain.Shared": {
+      "path": "src/SteffBeckers.Inventory.Domain.Shared/SteffBeckers.Inventory.Domain.Shared.abppkg",
+      "folder": "src"
+    },
+    "SteffBeckers.Inventory.Domain": {
+      "path": "src/SteffBeckers.Inventory.Domain/SteffBeckers.Inventory.Domain.abppkg",
+      "folder": "src"
+    },
+    "SteffBeckers.Inventory.Application.Contracts": {
+      "path": "src/SteffBeckers.Inventory.Application.Contracts/SteffBeckers.Inventory.Application.Contracts.abppkg",
+      "folder": "src"
+    },
+    "SteffBeckers.Inventory.Application": {
+      "path": "src/SteffBeckers.Inventory.Application/SteffBeckers.Inventory.Application.abppkg",
+      "folder": "src"
+    },
+    "SteffBeckers.Inventory.EntityFrameworkCore": {
+      "path": "src/SteffBeckers.Inventory.EntityFrameworkCore/SteffBeckers.Inventory.EntityFrameworkCore.abppkg",
+      "folder": "src"
+    },
+    "SteffBeckers.Inventory.MongoDB": {
+      "path": "src/SteffBeckers.Inventory.MongoDB/SteffBeckers.Inventory.MongoDB.abppkg",
+      "folder": "src"
+    },
+    "SteffBeckers.Inventory.HttpApi": {
+      "path": "src/SteffBeckers.Inventory.HttpApi/SteffBeckers.Inventory.HttpApi.abppkg",
+      "folder": "src"
+    },
+    "SteffBeckers.Inventory.HttpApi.Client": {
+      "path": "src/SteffBeckers.Inventory.HttpApi.Client/SteffBeckers.Inventory.HttpApi.Client.abppkg",
+      "folder": "src"
+    },
+    "SteffBeckers.Inventory.TestBase": {
+      "path": "test/SteffBeckers.Inventory.TestBase/SteffBeckers.Inventory.TestBase.abppkg",
+      "folder": "test"
+    },
+    "SteffBeckers.Inventory.EntityFrameworkCore.Tests": {
+      "path": "test/SteffBeckers.Inventory.EntityFrameworkCore.Tests/SteffBeckers.Inventory.EntityFrameworkCore.Tests.abppkg",
+      "folder": "test"
+    },
+    "SteffBeckers.Inventory.MongoDB.Tests": {
+      "path": "test/SteffBeckers.Inventory.MongoDB.Tests/SteffBeckers.Inventory.MongoDB.Tests.abppkg",
+      "folder": "test"
+    },
+    "SteffBeckers.Inventory.Domain.Tests": {
+      "path": "test/SteffBeckers.Inventory.Domain.Tests/SteffBeckers.Inventory.Domain.Tests.abppkg",
+      "folder": "test"
+    },
+    "SteffBeckers.Inventory.Application.Tests": {
+      "path": "test/SteffBeckers.Inventory.Application.Tests/SteffBeckers.Inventory.Application.Tests.abppkg",
+      "folder": "test"
+    },
+    "SteffBeckers.Inventory.HttpApi.Host": {
+      "path": "host/SteffBeckers.Inventory.HttpApi.Host/SteffBeckers.Inventory.HttpApi.Host.abppkg",
+      "folder": "host"
+    },
+    "SteffBeckers.Inventory.Web": {
+      "path": "src/SteffBeckers.Inventory.Web/SteffBeckers.Inventory.Web.abppkg",
+      "folder": "src"
+    },
+    "SteffBeckers.Inventory.HttpApi.Client.ConsoleTestApp": {
+      "path": "test/SteffBeckers.Inventory.HttpApi.Client.ConsoleTestApp/SteffBeckers.Inventory.HttpApi.Client.ConsoleTestApp.abppkg",
+      "folder": "test"
+    },
+    "SteffBeckers.Inventory.Web.Host": {
+      "path": "host/SteffBeckers.Inventory.Web.Host/SteffBeckers.Inventory.Web.Host.abppkg",
+      "folder": "host"
+    },
+    "SteffBeckers.Inventory.AuthServer": {
+      "path": "host/SteffBeckers.Inventory.AuthServer/SteffBeckers.Inventory.AuthServer.abppkg",
+      "folder": "host"
+    },
+    "SteffBeckers.Inventory.Host.Shared": {
+      "path": "host/SteffBeckers.Inventory.Host.Shared/SteffBeckers.Inventory.Host.Shared.abppkg",
+      "folder": "host"
+    },
+    "SteffBeckers.Inventory.Web.Unified": {
+      "path": "host/SteffBeckers.Inventory.Web.Unified/SteffBeckers.Inventory.Web.Unified.abppkg",
+      "folder": "host"
+    },
+    "SteffBeckers.Inventory.Blazor": {
+      "path": "src/SteffBeckers.Inventory.Blazor/SteffBeckers.Inventory.Blazor.abppkg",
+      "folder": "src"
+    },
+    "SteffBeckers.Inventory.Blazor.Host": {
+      "path": "host/SteffBeckers.Inventory.Blazor.Host/SteffBeckers.Inventory.Blazor.Host.abppkg",
+      "folder": "host"
+    },
+    "SteffBeckers.Inventory.Blazor.Server": {
+      "path": "src/SteffBeckers.Inventory.Blazor.Server/SteffBeckers.Inventory.Blazor.Server.abppkg",
+      "folder": "src"
+    },
+    "SteffBeckers.Inventory.Blazor.WebAssembly": {
+      "path": "src/SteffBeckers.Inventory.Blazor.WebAssembly/SteffBeckers.Inventory.Blazor.WebAssembly.abppkg",
+      "folder": "src"
+    },
+    "SteffBeckers.Inventory.Blazor.Server.Host": {
+      "path": "host/SteffBeckers.Inventory.Blazor.Server.Host/SteffBeckers.Inventory.Blazor.Server.Host.abppkg",
+      "folder": "host"
+    }
+  }
+}

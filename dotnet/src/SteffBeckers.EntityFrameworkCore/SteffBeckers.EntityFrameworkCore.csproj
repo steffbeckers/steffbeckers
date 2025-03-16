@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <Import Project="..\..\common.props" />
 
@@ -22,7 +22,7 @@
     <PackageReference Include="Volo.Abp.FeatureManagement.EntityFrameworkCore" Version="8.1.3" />
     <PackageReference Include="Volo.Abp.OpenIddict.EntityFrameworkCore" Version="8.1.3" />
     <ProjectReference Include="..\..\modules\SteffBeckers.CRM\src\SteffBeckers.CRM.EntityFrameworkCore\SteffBeckers.CRM.EntityFrameworkCore.csproj" />
-  </ItemGroup>
+  <ProjectReference Include="..\..\modules\SteffBeckers.Inventory\src\SteffBeckers.Inventory.EntityFrameworkCore\SteffBeckers.Inventory.EntityFrameworkCore.csproj" /></ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.6">

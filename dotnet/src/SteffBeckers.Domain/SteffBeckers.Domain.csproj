@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <Import Project="..\..\common.props" />
 
@@ -10,7 +10,8 @@
 
   <ItemGroup>
     <ProjectReference Include="..\SteffBeckers.Domain.Shared\SteffBeckers.Domain.Shared.csproj" />
-  <ProjectReference Include="..\..\modules\SteffBeckers.CRM\src\SteffBeckers.CRM.Domain\SteffBeckers.CRM.Domain.csproj" /></ItemGroup>
+  <ProjectReference Include="..\..\modules\SteffBeckers.CRM\src\SteffBeckers.CRM.Domain\SteffBeckers.CRM.Domain.csproj" />
+  <ProjectReference Include="..\..\modules\SteffBeckers.Inventory\src\SteffBeckers.Inventory.Domain\SteffBeckers.Inventory.Domain.csproj" /></ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Volo.Abp.Emailing" Version="8.1.3" />

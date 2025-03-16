@@ -13,6 +13,7 @@ using Volo.Abp.TenantManagement;
 using Volo.Abp.Validation.Localization;
 using Volo.Abp.VirtualFileSystem;
 using SteffBeckers.CRM;
+using SteffBeckers.Inventory;
 
 namespace SteffBeckers;
 
@@ -27,6 +28,7 @@ namespace SteffBeckers;
     typeof(AbpTenantManagementDomainSharedModule)    
     )]
 [DependsOn(typeof(CRMDomainSharedModule))]
+    [DependsOn(typeof(InventoryDomainSharedModule))]
     public class SteffBeckersDomainSharedModule : AbpModule
 {
     public override void PreConfigureServices(ServiceConfigurationContext context)

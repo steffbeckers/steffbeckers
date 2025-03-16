@@ -9,6 +9,7 @@ using Volo.Abp.PermissionManagement.HttpApi;
 using Volo.Abp.SettingManagement;
 using Volo.Abp.TenantManagement;
 using SteffBeckers.CRM;
+using SteffBeckers.Inventory;
 
 namespace SteffBeckers;
 
@@ -22,6 +23,7 @@ namespace SteffBeckers;
     typeof(AbpSettingManagementHttpApiModule)
     )]
 [DependsOn(typeof(CRMHttpApiModule))]
+    [DependsOn(typeof(InventoryHttpApiModule))]
     public class SteffBeckersHttpApiModule : AbpModule
 {
     public override void ConfigureServices(ServiceConfigurationContext context)

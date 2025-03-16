@@ -1,0 +1,7 @@
+{
+  "modules": {
+    "SteffBeckers.Inventory": {
+      "path": "SteffBeckers.Inventory.abpmdl"
+    }
+  }
+}

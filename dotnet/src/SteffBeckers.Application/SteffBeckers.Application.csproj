@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <Import Project="..\..\common.props" />
 
@@ -11,7 +11,8 @@
   <ItemGroup>
     <ProjectReference Include="..\SteffBeckers.Domain\SteffBeckers.Domain.csproj" />
     <ProjectReference Include="..\SteffBeckers.Application.Contracts\SteffBeckers.Application.Contracts.csproj" />
-  <ProjectReference Include="..\..\modules\SteffBeckers.CRM\src\SteffBeckers.CRM.Application\SteffBeckers.CRM.Application.csproj" /></ItemGroup>
+  <ProjectReference Include="..\..\modules\SteffBeckers.CRM\src\SteffBeckers.CRM.Application\SteffBeckers.CRM.Application.csproj" />
+  <ProjectReference Include="..\..\modules\SteffBeckers.Inventory\src\SteffBeckers.Inventory.Application\SteffBeckers.Inventory.Application.csproj" /></ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Volo.Abp.Account.Application" Version="8.1.3" />

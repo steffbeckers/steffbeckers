@@ -13,6 +13,7 @@ using Volo.Abp.PermissionManagement.EntityFrameworkCore;
 using Volo.Abp.SettingManagement.EntityFrameworkCore;
 using Volo.Abp.TenantManagement.EntityFrameworkCore;
 using SteffBeckers.CRM.EntityFrameworkCore;
+using SteffBeckers.Inventory.EntityFrameworkCore;
 
 namespace SteffBeckers.EntityFrameworkCore;
 
@@ -29,6 +30,7 @@ namespace SteffBeckers.EntityFrameworkCore;
     typeof(AbpFeatureManagementEntityFrameworkCoreModule)
     )]
 [DependsOn(typeof(CRMEntityFrameworkCoreModule))]
+    [DependsOn(typeof(InventoryEntityFrameworkCoreModule))]
     public class SteffBeckersEntityFrameworkCoreModule : AbpModule
 {
     public override void PreConfigureServices(ServiceConfigurationContext context)

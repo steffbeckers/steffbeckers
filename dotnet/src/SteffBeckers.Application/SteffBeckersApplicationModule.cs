@@ -7,6 +7,7 @@ using Volo.Abp.PermissionManagement;
 using Volo.Abp.SettingManagement;
 using Volo.Abp.TenantManagement;
 using SteffBeckers.CRM;
+using SteffBeckers.Inventory;
 
 namespace SteffBeckers;
 
@@ -21,6 +22,7 @@ namespace SteffBeckers;
     typeof(AbpSettingManagementApplicationModule)
     )]
 [DependsOn(typeof(CRMApplicationModule))]
+    [DependsOn(typeof(InventoryApplicationModule))]
     public class SteffBeckersApplicationModule : AbpModule
 {
     public override void ConfigureServices(ServiceConfigurationContext context)

@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <Import Project="..\..\common.props" />
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <RootNamespace>SteffBeckers.Inventory</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.8.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\SteffBeckers.Inventory.Domain\SteffBeckers.Inventory.Domain.csproj" />
+    <ProjectReference Include="..\SteffBeckers.Inventory.TestBase\SteffBeckers.Inventory.TestBase.csproj" />
+  </ItemGroup>
+
+
+</Project>

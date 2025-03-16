@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <Import Project="..\..\common.props" />
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <RootNamespace>SteffBeckers.Inventory</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.8.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Proxies" Version="8.0.0" />
+    <ProjectReference Include="..\..\src\SteffBeckers.Inventory.EntityFrameworkCore\SteffBeckers.Inventory.EntityFrameworkCore.csproj" />
+    <ProjectReference Include="..\SteffBeckers.Inventory.Application.Tests\SteffBeckers.Inventory.Application.Tests.csproj" />
+    <PackageReference Include="Volo.Abp.EntityFrameworkCore.Sqlite" Version="8.1.3" />
+
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="EntityFrameworkCore\Applications\" />
+    <Folder Include="EntityFrameworkCore\Domains\" />
+  </ItemGroup>
+
+</Project>

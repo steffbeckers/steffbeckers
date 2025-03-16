@@ -15,6 +15,7 @@ using Volo.Abp.PermissionManagement.Identity;
 using Volo.Abp.PermissionManagement.OpenIddict;
 using Volo.Abp.SettingManagement;
 using Volo.Abp.TenantManagement;
+using SteffBeckers.Inventory;
 
 namespace SteffBeckers;
 
@@ -32,7 +33,8 @@ namespace SteffBeckers;
 	typeof(AbpEmailingModule)
 )]
 [DependsOn(typeof(CRMDomainModule))]
-public class SteffBeckersDomainModule : AbpModule
+[DependsOn(typeof(InventoryDomainModule))]
+    public class SteffBeckersDomainModule : AbpModule
 {
 	public override void ConfigureServices(ServiceConfigurationContext context)
 	{

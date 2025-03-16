@@ -8,6 +8,7 @@ using Volo.Abp.TenantManagement;
 using Volo.Abp.SettingManagement;
 using Volo.Abp.VirtualFileSystem;
 using SteffBeckers.CRM;
+using SteffBeckers.Inventory;
 
 namespace SteffBeckers;
 
@@ -21,6 +22,7 @@ namespace SteffBeckers;
     typeof(AbpSettingManagementHttpApiClientModule)
 )]
 [DependsOn(typeof(CRMHttpApiClientModule))]
+    [DependsOn(typeof(InventoryHttpApiClientModule))]
     public class SteffBeckersHttpApiClientModule : AbpModule
 {
     public const string RemoteServiceName = "Default";
