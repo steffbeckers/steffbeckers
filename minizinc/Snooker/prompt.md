@@ -1,31 +1,160 @@
-Create a MiniZinc model to generate a schedule for an interclub snooker league with 6 teams, playing a double round-robin tournament (each team plays every other team twice). Each team has a home venue.
+# Prompt engineering
 
-**Data:**
+Help me create a great prompt related to creating a MiniZinc model to generate a schedule for an interclub snooker league. Ask me questions about things which might need to be taken into account and create a new prompt for actually creating the model.
 
-- Number of teams: 6
-- Number of rounds: 10 (calculated as N*(N-1) / 2 * 2, where N is teams, after rounding up)
-- `venue[team]`: An array indicating the home venue of each team (e.g., `venue[1] = "The Snooker Shack"`, `venue[2] = "Cue Masters"`, etc.). Represent Venues as a number so that the model doesn't need to handle Strings. The output can be mapped to a Venue name later on.
-- `availability[venue, round]`: A boolean array indicating whether a venue is available in a given round. `true` means available, `false` means unavailable. (e.g., `availability[1, 3] = false` means Venue 1 is not available in Round 3).
+What do you think of the following prompt so far:
 
-**Variables:**
+{ prompt }
 
-- `game[round, match]`: A 2D array. Each element `game[r, m]` represents a game in round `r` and match number `m`. It will have a tuple (team1, team2) which specifies which team is home and which is away. team1 must always be lower than team2 to be valid.
-- `home[round, match]`: Specifies which team in the match is at home and which is away. Values of this int are either team1 or team2
+# Prompt
 
-**Constraints:**
+Create a MiniZinc model to generate a balanced schedule for an interclub snooker league with the following info:
 
-- Each team plays exactly one game in each round.
-- Each team plays every other team exactly twice (double round-robin).
-- A team cannot play itself.
-- In each game represented by `game[r, m]`, one team is playing at their home venue.
-- No team should have two consecutive home games or two consecutive away games if possible.
-- A game can only be scheduled at a venue if that venue is available in that round (using the `availability` data).
+Data:
 
-**Objective:**
+- Season
+  - Starts in the beginning of September and ends around the end of April.
+  - Break of 2 weeks around holidays (Christmas/New Year)
+- Clubs
+  - Biljart Lounge
+    - Specific days: Monday, Tuesday, Wednesday
+    - Table count: 3
+  - Buckingham
+    - Specific days: Monday, Tuesday, Wednesday, Thursday
+    - Table count: 6
+  - De Kreeft
+    - Specific days: Monday, Tuesday, Wednesday, Thursday, Saturday
+    - Table count: 6
+  - De Maxx
+    - Specific days: Monday, Tuesday, Wednesday, Thursday
+    - Table count: 4
+  - Happy Snooker
+    - Specific days: Monday, Tuesday, Wednesday, Thursday, Saturday
+    - Table count: 5
+  - NRG
+    - Specific days: Tuesday, Wednesday, Thursday, Saturday
+    - Table count: 2
+  - Re-Spot
+    - Specific days: Monday, Tuesday, Wednesday, Thursday, Saturday
+    - Table count: 6
+  - Riley Inn
+    - Specific days: Monday, Tuesday, Wednesday, Thursday
+    - Table count: 8
+  - Snooker Sports
+    - Specific days: Monday, Tuesday, Wednesday, Thursday
+    - Table count: 2
+  - Zuma
+    - Specific days: Monday, Tuesday, Wednesday, Thursday
+    - Table count: 6
+- Divisions
+  - Honorary
+    - Specific days: Monday, Tuesday, Wednesday, Thursday
+  - 1st
+    - Specific days: Monday, Tuesday, Wednesday, Thursday
+  - 2nd
+    - Specific days: Monday, Tuesday, Wednesday, Thursday
+  - 3rd
+    - Specific days: Monday, Tuesday, Wednesday, Thursday
+  - 4th
+    - Specific days: Monday, Tuesday, Wednesday, Thursday
+  - 5th
+    - Specific days: Monday, Tuesday, Wednesday, Thursday
+  - Saturday
+    - Specific days: Saturday
+- Extra division info
+  - In case a division has an odd number of teams, a bye week for one team per round should be introduced
+- Teams per club
+  - Biljart Lounge
+    - A (Honorary)
+      - Preferred match day: Tuesday
+    - B (1st)
+      - Preferred match day: Tuesday
+    - C (1st)
+      - Preferred match day: Wednesday
+    - D (4th)
+      - Preferred match day: Thursday
+    - ... 7 more ...
+  - Buckingham
+    - A (Honorary)
+    - B (Honorary)
+    - C (1st)
+    - D (1st)
+    - E (1st)
+    - F (2th)
+    - ... 10 more ...
+  - De Kreeft
+    - A..G
+  - ...
+- Matches
+  - A single match between 2 teams is played in 1 evening.
+  - A match is played on at least 2 tables, these tables should be reserved for the entire match duration.
+- Around 16 teams in each division.
 
-- Minimize the number of instances where a team has two consecutive home games or two consecutive away games.
-- Prioritize venues that have fewer changes from week to week (i.e., try to keep games at the same venue if possible).
+Constraints:
 
-**Output:**
+- Each team plays every other team of the same division twice (double round-robin).
+  - 2nd round starts after holiday break, same sequence of opponents (home and away team change).
+- Each team plays maximum 1 match per week.
+- Matches are played at the home team's club.
+- Matches are scheduled on specific days based on the home team's club and division.
+- Avoid scheduling multiple matches at the same club on the same match day if the number of tables is insufficient.
+- Teams should not play more than 3 consecutive home or away matches.
+- No matches on blackout dates (holidays, events, etc.).
 
-- Print the `game` array, showing the schedule round by round. For each game, indicate the venue. Format: "Round r, Match m: Team A vs. Team B at Venue X"
+Optimizations:
+
+- Each match should be scheduled as early as possible.
+- Matches between teams in the same division of the same club should be played in the beginning of each round.
+- Teams have a preferred match day when they play at their own club. (soft constraint)
+- Balance home & away matches throughout the season.
+
+Example output format:
+
+```json
+[
+  ...
+  {
+    "day": 2,
+    "dayOfWeek": "Tue",
+    "homeTeam": "NRG_A",
+    "awayTeam": "NRG_C",
+    "week": 1
+  },
+  {
+    "day": 2,
+    "dayOfWeek": "Tue",
+    "homeTeam": "ZUMA_B",
+    "awayTeam": "HAPPY_SNOOKER_B",
+    "week": 1
+  },
+  {
+    "day": 3,
+    "dayOfWeek": "Wed",
+    "homeTeam": "HAPPY_SNOOKER_C",
+    "awayTeam": "NRG_B",
+    "week": 1
+  },
+  {
+    "day": 3,
+    "dayOfWeek": "Wed",
+    "homeTeam": "ZUMA_C",
+    "awayTeam": "NRG_D",
+    "week": 1
+  },
+  {
+    "day": 9,
+    "dayOfWeek": "Tue",
+    "homeTeam": "ZUMA_B",
+    "awayTeam": "NRG_A",
+    "week": 2
+  },
+  {
+    "day": 10,
+    "dayOfWeek": "Wed",
+    "homeTeam": "HAPPY_SNOOKER_C",
+    "awayTeam": "HAPPY_SNOOKER_B",
+    "week": 2
+  }
+  ...
+]
+```

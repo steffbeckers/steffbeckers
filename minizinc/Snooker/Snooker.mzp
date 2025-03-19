@@ -1,11 +1,13 @@
 {
     "openFiles": [
         "Interclub.mzn",
-        "Notes.mzn"
+        "Interclub_Claude_3.7_Sonnet.mzn"
     ],
-    "openTab": 0,
+    "openTab": 1,
     "projectFiles": [
+        "Claude_3.7_Sonnet.mzn",
         "Interclub.mzn",
+        "Interclub_Claude_3.7_Sonnet.mzn",
         "Notes.mzn",
         "Snooker.mpc"
     ],
