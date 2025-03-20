@@ -1,4 +1,6 @@
-﻿using Marten;
+﻿using System;
+using System.Linq;
+using Marten;
 using System.Threading.Tasks;
 
 namespace SteffBeckers.Inventory.Fridge;
@@ -12,17 +14,65 @@ public class FridgeAppService : InventoryAppService, IFridgeAppService
         _store = store;
     }
 
-    public async Task AddItemAsync(string item)
+    public async Task<FridgeDto?> GetAsync(Guid id)
     {
         await using IDocumentSession session = _store.LightweightSession();
+        
+        var fridge = await session.Events.AggregateStreamAsync<Fridge>(id);
 
-        // TODO
-        //session.Events.StartStream(Guid.Parse("8e7272fb-99a3-4e23-9d5b-12aa575cd389"), );
+        if (fridge == null)
+        {
+            return null;
+        }
 
-        await session.SaveChangesAsync();
+        return new FridgeDto()
+        {
+            Id = fridge.Id,
+            Name = fridge.Name,
+            Items = fridge.Items.Select(x => new ItemDto()
+            {
+                Name = x.Name,
+                Quantity = x.Quantity
+            }).ToList()
+        };
     }
 
-    public async Task TakeItemAsync(string item)
+    public async Task AddItemAsync(Guid id, string name, decimal quantity)
     {
+        await using IDocumentSession session = _store.LightweightSession();
+        session.Events.Append(id, new ItemAdded()
+        {
+            FridgeId = id,
+            Name = name,
+            Quantity = quantity
+        });
+        await session.SaveChangesAsync();
+    }
+    
+    public async Task<Guid> CreateAsync(string name)
+    {
+        Guid id = Guid.NewGuid();
+        
+        await using IDocumentSession session = _store.LightweightSession();
+        session.Events.StartStream(id, new FridgeCreated()
+        {
+            FridgeId = id,
+            Name = name
+        });
+        await session.SaveChangesAsync();
+
+        return id;
+    }
+
+    public async Task TakeItemAsync(Guid id, string name, decimal quantity)
+    {
+        await using IDocumentSession session = _store.LightweightSession();
+        session.Events.Append(id, new ItemTaken()
+        {
+            FridgeId = id,
+            Name = name,
+            Quantity = quantity
+        });
+        await session.SaveChangesAsync();
     }
 }

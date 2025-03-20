@@ -1,4 +1,5 @@
-﻿using Asp.Versioning;
+﻿using System;
+using Asp.Versioning;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 using Volo.Abp;
@@ -19,14 +20,29 @@ public class FridgeController : InventoryController, IFridgeAppService
     }
 
     [HttpPost]
-    public Task AddItemAsync(string item)
+    public Task<Guid> CreateAsync(string name)
     {
-        return _fridgeAppService.AddItemAsync(item);
+        return _fridgeAppService.CreateAsync(name);
+    }
+
+    [HttpGet]
+    [Route("{id}")]
+    public Task<FridgeDto?> GetAsync(Guid id)
+    {
+        return _fridgeAppService.GetAsync(id);
+    }
+
+    [HttpPost]
+    [Route("{id}/items")]
+    public Task AddItemAsync(Guid id, string name, decimal quantity)
+    {
+        return _fridgeAppService.AddItemAsync(id, name, quantity);
     }
 
     [HttpDelete]
-    public Task TakeItemAsync(string item)
+    [Route("{id}/items")]
+    public Task TakeItemAsync(Guid id, string name, decimal quantity)
     {
-        return _fridgeAppService.TakeItemAsync(item);
+        return _fridgeAppService.TakeItemAsync(id, name, quantity);
     }
 }
