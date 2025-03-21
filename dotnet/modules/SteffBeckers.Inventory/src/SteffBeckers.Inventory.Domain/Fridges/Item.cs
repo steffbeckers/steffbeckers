@@ -1,6 +1,6 @@
-namespace SteffBeckers.Inventory.Fridge;
+namespace SteffBeckers.Inventory.Fridges;
 
-public class ItemDto
+public class Item
 {
     public string Name { get; set; } = null!;
 

@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace SteffBeckers.Inventory.Fridge;
+namespace SteffBeckers.Inventory.Fridges;
 
 public class FridgeDto
 {
