@@ -1,13 +1,16 @@
 {
     "openFiles": [
         "Interclub.mzn",
-        "Interclub_Claude_3.7_Sonnet.mzn"
+        "Interclub_Claude_3.7_Sonnet.mzn",
+        "Interclub_Gemini_2.5_Pro.mzn",
+        "Interclub_Claude_3.7_Sonnet_Reasoning.mzn"
     ],
-    "openTab": 1,
+    "openTab": 3,
     "projectFiles": [
-        "Claude_3.7_Sonnet.mzn",
         "Interclub.mzn",
         "Interclub_Claude_3.7_Sonnet.mzn",
+        "Interclub_Claude_3.7_Sonnet_Reasoning.mzn",
+        "Interclub_Gemini_2.5_Pro.mzn",
         "Notes.mzn",
         "Snooker.mpc"
     ],
