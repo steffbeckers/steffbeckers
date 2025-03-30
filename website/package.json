@@ -8,22 +8,20 @@
     "preview": "nuxi preview"
   },
   "dependencies": {
-    "date-fns": "^4.1.0",
-    "remark-reading-time": "^2.0.1",
-    "remark-unwrap-images": "^4.0.0"
+    "date-fns": "^4.0.0",
+    "rehype-unwrap-images": "^1.0.0",
+    "remark-reading-time": "^2.0.0"
   },
   "devDependencies": {
-    "@dargmuesli/nuxt-cookie-control": "^8.4.19",
-    "@nuxtjs/google-fonts": "^3.2.0",
-    "@nuxtjs/seo": "^2.1.0",
+    "@dargmuesli/nuxt-cookie-control": "^8.0.0",
+    "@nuxtjs/google-fonts": "^3.0.0",
+    "@nuxtjs/i18n": "^9.0.0",
+    "@nuxtjs/seo": "^3.0.0",
     "content-wind": "latest",
-    "nuxt": "^3.15.2",
-    "nuxt-disqus": "^1.1.1",
+    "nuxt": "^3.0.0",
+    "nuxt-disqus": "^1.0.0",
     "nuxt-feedme": "^1.0.0",
-    "nuxt-gtag": "^3.0.2",
-    "puppeteer": "^23.11.1"
-  },
-  "overrides": {
-    "nuxt-og-image": "^4.1.2"
+    "nuxt-gtag": "^3.0.0",
+    "puppeteer": "^24.0.0"
   }
 }

@@ -7,7 +7,8 @@ export default defineNuxtConfig({
       anchorLinks: {
         depth: 3,
       },
-      remarkPlugins: ["remark-reading-time", "remark-unwrap-images"],
+      rehypePlugins: ["rehype-unwrap-images"],
+      remarkPlugins: ["remark-reading-time"],
     },
   },
   cookieControl: {
@@ -101,6 +102,11 @@ export default defineNuxtConfig({
       console.log("process.env.LAST_UPDATED_ON", process.env.LAST_UPDATED_ON);
     },
   },
+  i18n: {
+    defaultLocale: "en",
+    locales: ["en", "nl"],
+    strategy: "prefix_except_default",
+  },
   mdc: {
     highlight: {
       langs: [
@@ -123,6 +129,7 @@ export default defineNuxtConfig({
   modules: [
     "@dargmuesli/nuxt-cookie-control",
     "@nuxtjs/google-fonts",
+    "@nuxtjs/i18n",
     "@nuxtjs/seo",
     "nuxt-disqus",
     "nuxt-feedme",
