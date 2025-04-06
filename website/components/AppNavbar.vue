@@ -11,19 +11,27 @@ const { locale } = useI18n();
       <Logo />
     </NuxtLinkLocale>
     <!-- Navigation -->
+    <!-- TODO: Active link is not working anymore -->
     <div class="flex flex-wrap justify-evenly items-center gap-4 text-gray-700 dark:text-gray-100">
-      <NuxtLinkLocale
-        v-for="link of navigation"
-        :key="link._path"
-        :to="link._path"
-        class="nav-item hover:text-primary-400 transition-all duration-300 text-center"
-        :class="{
-          'font-bold text-primary-400':
-            route.path === link._path || (route.path.startsWith(link._path) && link._path !== '/'),
-        }"
-      >
-        <div>{{ $t(link.title) }}</div>
-        <div class="h-0 font-bold invisible">{{ $t(link.title) }}</div>
+      <NuxtLinkLocale :to="{ path: '/' }" class="nav-item transition-all duration-300 text-center">
+        <div>{{ $t("Home") }}</div>
+        <div class="h-0 font-bold invisible">{{ $t("Home") }}</div>
+      </NuxtLinkLocale>
+      <NuxtLinkLocale to="experience" class="nav-item transition-all duration-300 text-center">
+        <div>{{ $t("Experience") }}</div>
+        <div class="h-0 font-bold invisible">{{ $t("Experience") }}</div>
+      </NuxtLinkLocale>
+      <NuxtLinkLocale to="blog" class="nav-item transition-all duration-300 text-center">
+        <div>{{ $t("Blog") }}</div>
+        <div class="h-0 font-bold invisible">{{ $t("Blog") }}</div>
+      </NuxtLinkLocale>
+      <NuxtLinkLocale to="tutoring" class="nav-item transition-all duration-300 text-center">
+        <div>{{ $t("Tutoring") }}</div>
+        <div class="h-0 font-bold invisible">{{ $t("Tutoring") }}</div>
+      </NuxtLinkLocale>
+      <NuxtLinkLocale to="contact" class="nav-item transition-all duration-300 text-center">
+        <div>{{ $t("Contact") }}</div>
+        <div class="h-0 font-bold invisible">{{ $t("Contact") }}</div>
       </NuxtLinkLocale>
     </div>
     <!-- Social icons & Color mode -->

@@ -104,7 +104,17 @@ export default defineNuxtConfig({
   },
   i18n: {
     defaultLocale: "en",
-    locales: ["en", "nl"],
+    lazy: true,
+    locales: [
+      {
+        code: "en",
+        file: "en.json",
+      },
+      {
+        code: "nl",
+        file: "nl.json",
+      },
+    ],
     strategy: "prefix_except_default",
   },
   mdc: {

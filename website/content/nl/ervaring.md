@@ -1,28 +1,27 @@
 ---
-title: Experience
-description: My work experience, acquired certificates and education.
+title: Ervaring
+description: Mijn werkervaring, behaalde certificaten en opleiding.
 head:
   meta:
     - name: keywords
-      content: Steff, Beckers, Developer, Personal website, Blog, Projects, Resume, CV, Work, Experience, Fuzed, Codefined, aariXa, CTG, Brigestone, PXL
-navigation:
-  title: Experience
+      content: Steff, Beckers, Developer, Personal website, Blog, Projects, Resume, CV, Work, Ervaring, Fuzed, Codefined, aariXa, CTG, Brigestone, PXL
 ---
 
-::button-link{ external href="/downloads/CV_Steff_Beckers.pdf" target="_blank" class="hidden sm:block font-semibold float-right" icon="fa-regular:file-code" }
+::button-link{ external href="/downloads/CV_Steff_Beckers.pdf" target="\_blank" class="hidden sm:block font-semibold float-right" icon="fa-regular:file-code" }
 Download CV
 ::
 
-# Work experience
+# Werkervaring
 
 ::subtitle
-Many lines of code and coffee
+Veel lijnen code en koffie
 ::
 
-::button-link{ external href="/downloads/CV_Steff_Beckers.pdf" target="_blank" class="block sm:hidden my-8 font-semibold" icon="fa-regular:file-code" }
+<!-- TODO: CV in nederlands -->
+
+::button-link{ external href="/downloads/CV_Steff_Beckers.pdf" target="\_blank" class="block sm:hidden my-8 font-semibold" icon="fa-regular:file-code" }
 Download CV
 ::
-
 
 ::div{ .mb-4 .sm:float-right }
 [
@@ -40,12 +39,12 @@ At **Fuzed** (previously known as **Codefined**), I contribute in developing an 
 With the rebranding, our focus shifted from custom software development to creating a comprehensive solution that streamlines production processes.
 
 - **Technology stack**
-  
+
   - Back-end: **.NET**, **ABP Framework**, **EF Core**, **SignalR**
   - Front-end: **Angular**, **Nx Monorepo**, **Bootstrap 5**, **NgRx**, **RxJS**, **Signals**
 
 - **Module development**
-  
+
   Built core modules like **CRM**, **Product management**, **Supply chain** (Purchase, Sales, Invoicing), **WMS** and **Translations**.
 
 - **Infrastructure**
@@ -53,7 +52,7 @@ With the rebranding, our focus shifted from custom software development to creat
   Utilized tools and technologies like **SQL Server**, **RabbitMQ**, **Redis**, **Kubernetes**, **Grafana**, and **SonarQube** to ensure a robust and scalable system.
 
 - **DevOps**
-  
+
   Managed **DevOps** tasks, including configuring and maintaining **CI/CD** pipelines using **Azure DevOps**. Actively worked with **Azure services** such as **Kubernetes services**, **SQL databases**, **Key vaults**, **Storage accounts**, and **Container registries**, while also managing the **Kubernetes dev cluster** for development and testing purposes.
 
 By integrating modern technologies and industry-specific requirements, I help shape Fuzed into a comprehensive, industry-ready solution that simplifies complex production activities for the food industry.
@@ -77,7 +76,7 @@ Leveraging the **ABP Framework**, I delivered scalable, modular, and maintainabl
 
 <hr />
 
-::div{ .mb-4 .sm:float-right  }
+::div{ .mb-4 .sm:float-right }
 [
 ![aariXa Logo](/images/logos/aarixa-logo-blue.png){width=100 .my-0 .block .dark:hidden}
 ![aariXa Logo](/images/logos/aarixa-logo-white.png){width=100 .my-0 .hidden .dark:block}
@@ -91,15 +90,15 @@ Leveraging the **ABP Framework**, I delivered scalable, modular, and maintainabl
 At **aariXa**, I worked extensively with a versatile tech stack, including **Angular**, **.NET Core**, **MS SQL**, **Azure**, and **Windows Server**, combining modern frameworks and **Microsoft-centric technologies** to deliver innovative solutions.
 
 - **Cloud-Native application development**
-  
+
   Designed and implemented a **real-time**, **multi-tenant** web application hosted as microservices in **Docker** containers, leveraging modern cloud-native principles.
 
 - **CRM migration and customization**
- 
+
   Successfully migrated aariXa's legacy **Dynamics CRM 2011** to a bespoke **.NET-based CRM** system, incorporating custom business logic to meet evolving organizational needs.
 
 - **DevOps and system administration**
- 
+
   Enhanced infrastructure reliability by migrating applications to **containers** or **virtual machines**, while also monitoring and maintaining aariXa's internal systems.
 
 This diverse role allowed me to bridge development and operations, ensuring scalable, high-performing solutions for the organization.
@@ -123,11 +122,11 @@ This diverse role allowed me to bridge development and operations, ensuring scal
 As a consultant at **CTG**, I contributed to a project for **Bridgestone**, focusing on the customization and enhancement of their **Dynamics 365 CRM** system.
 
 - **CRM customization**
-  
+
   Developed tailored solutions by writing **C# plugins** to implement complex business logic, ensuring the CRM aligned with organizational workflows.
 
 - **Custom UI development**
-  
+
   Built advanced user interfaces and applications using **TypeScript**, **Knockout.js**, and other modern technologies to improve user experience and productivity.
 
 This role required a deep understanding of CRM systems, front-end development, and modern web technologies, enabling me to deliver impactful results in a fast-paced environment.

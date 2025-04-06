@@ -5,8 +5,6 @@ head:
   meta:
     - name: keywords
       content: Steff, Beckers, Developer, Personal website, Blog, Projects, Resume, CV, Contact
-navigation:
-  title: Contact
 ---
 
 # Get in touch

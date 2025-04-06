@@ -5,6 +5,4 @@ head:
   meta:
     - name: keywords
       content: Steff, Beckers, Development, DevOps, Scripts, Notes, Tutorials, Blog
-navigation:
-  title: Blog
 ---
