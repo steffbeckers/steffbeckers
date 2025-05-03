@@ -16,7 +16,11 @@ const { locale } = useI18n();
         <div>{{ $t("Home") }}</div>
         <div class="h-0 font-bold invisible">{{ $t("Home") }}</div>
       </NuxtLinkLocale>
-      <NuxtLinkLocale to="blog" class="nav-item">
+      <NuxtLinkLocale
+        to="blog"
+        class="nav-item"
+        :class="{ 'router-link-active': route.path.includes('/blog/') }"
+      >
         <div>{{ $t("Blog") }}</div>
         <div class="h-0 font-bold invisible">{{ $t("Blog") }}</div>
       </NuxtLinkLocale>

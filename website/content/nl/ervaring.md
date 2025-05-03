@@ -14,7 +14,7 @@ Download CV
 # Werkervaring
 
 ::subtitle{ :primary="true" }
-Vele regels code en kopjes koffie
+Vele regels code en tassen koffie
 ::
 
 ::button-link{ external href="/downloads/CV_Steff_Beckers.pdf" target="\_blank" class="block sm:hidden my-8 font-semibold" icon="fa-regular:file-code" }
