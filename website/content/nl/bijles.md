@@ -1,16 +1,16 @@
 ---
 title: Bijles
-description: Boek een bijles sessie met mij.
+description: Boek een bijles met mij.
 head:
   meta:
     - name: keywords
-      content: Steff, Beckers, Development, DevOps, Tutoring, Session, Tutor, Programming, Web development, Web, .NET, DevOps, Free, Intro meeting
+      content: Steff, Beckers, Development, DevOps, Bijles, Tutor, Programmeren, Webontwikkeling, Web, .NET, DevOps, Gratis, Kennismakingsgesprek, Kennismaking
 ---
 
 # Bijles
 
 ::subtitle{:primary="true"}
-Boek een bijles sessie met mij
+Boek een bijles met mij
 ::
 
 <div class="flex flex-col sm:flex-row gap-4 mb-4">
@@ -23,41 +23,41 @@ Boek een bijles sessie met mij
 
 </div>
 
-Are you ready to take your **development skills** to the next level? Whether you're just starting your journey or looking to sharpen your expertise, I'm here to help you **achieve your goals** with tailored, one-on-one tutoring sessions.
+Ben je klaar om je **ontwikkelvaardigheden** naar een hoger niveau te tillen? Of je nu net begint of je kennis wilt verdiepen, ik help je graag om je **doelen te bereiken** via één-op-één bijlessen op maat.
 
-## What I offer
+## Wat ik aanbied
 
-As a professional web developer with over 8 years of experience, I provide **personalized lessons** designed to help you master web development and programming. My tutoring sessions cover a wide range of topics, including:
+Als professionele web developer met meer dan 8 jaar ervaring bied ik **gepersonaliseerde lessen** aan om je te helpen webontwikkeling en programmeren onder de knie te krijgen. Mijn bijlessen behandelen een brede waaier aan onderwerpen, waaronder:
 
-- **Web development fundamentals**: HTML, CSS, and JavaScript
-- **Modern frameworks**: Angular, Vue, and more
-- **Backend development**: .NET backends, API integrations, databases, and server-side programming
-- **DevOps essentials**: CI/CD pipelines, containerization, and deployment strategies
+- **Basis webontwikkeling**: HTML, CSS en JavaScript
+- **Moderne frameworks**: Angular, Vue en meer
+- **Backend ontwikkeling**: .NET backends, API-integraties, databases en server-side programmeren
+- **DevOps essentials**: CI/CD pipelines, containerisatie en deploymentstrategieën
 
-## Session fee
+## Tarief
 
-My tutoring sessions are available for **€25 per hour**, providing high-quality, personalized guidance at an affordable rate.
+Mijn bijlessen zijn beschikbaar voor **€25 per uur** en bieden persoonlijke, kwalitatieve begeleiding aan een betaalbaar tarief.
 
-## How it works
+## Hoe het werkt
 
-- **Intro meeting**
+- **Kennismakingsgesprek**
 
-  Book a **free introductory meeting** to discuss your goals, challenges, and expectations.
+  Boek een **gratis kennismakingsgesprek** om je doelen, uitdagingen en verwachtingen te bespreken.
 
-- **Customized learning plan**
+- **Gepersonaliseerd leerplan**
 
-  I design lessons specifically for **your level** and learning style.
+  Ik werk een lesplan uit dat is afgestemd op **jouw niveau** en leerstijl.
 
-- **Interactive sessions**
+- **Interactieve sessies**
 
-  **Learn by doing**, with hands-on coding exercises and real-world examples.
+  **Leren door te doen**, met praktische code-oefeningen en voorbeelden uit de echte wereld.
 
-## Who can benefit?
+## Voor wie?
 
-My tutoring sessions are perfect for:
+Mijn bijlessen zijn ideaal voor:
 
-- **Beginners** who want to build a strong foundation in web development.
-- **Students** seeking help with programming assignments or projects.
-- **Professionals** looking to transition into a development career or expand their skill set.
+- **Beginners** die een stevige basis willen leggen in webontwikkeling
+- **Studenten** die hulp nodig hebben bij programmeeropdrachten of projecten
+- **Professionals** die willen overstappen naar een IT-carrière of hun vaardigheden willen uitbreiden
 
-Let's work together to **unlock your potential** and achieve your programming/IT goals!
+Laten we samen werken aan jouw groei als developer en je **volledige potentieel** benutten!

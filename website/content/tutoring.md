@@ -7,7 +7,6 @@ head:
       content: Steff, Beckers, Development, DevOps, Tutoring, Session, Tutor, Programming, Web development, Web, .NET, DevOps, Free, Intro meeting
 ---
 
-
 # Tutoring
 
 ::subtitle{:primary="true"}
