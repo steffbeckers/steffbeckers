@@ -34,7 +34,7 @@ watch(
 <template>
   <Html lang="en" />
   <Meta property="og:image" :content="cover" />
-  <NuxtLoadingIndicator />
+  <NuxtLoadingIndicator color="rgb(52 211 153)" />
   <AppNavbar />
   <div
     class="max-w-4xl px-4 py-8 m-auto bg-white sm:px-8 sm:shadow dark:bg-gray-800 ring-1 ring-gray-200 dark:ring-gray-700 md:rounded-lg"
