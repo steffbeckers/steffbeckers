@@ -11,7 +11,7 @@ head:
 
 # Hallo! Ik ben Steff
 
-::subtitle{:primary="true"}
+::subtitle{ :primary="true" }
 Full-stack .NET & Angular ontwikkelaar | DevOps enthousiasteling
 ::
 

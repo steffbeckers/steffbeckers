@@ -11,7 +11,7 @@ head:
 
 # Hi! I'm Steff
 
-::subtitle{:primary="true"}
+::subtitle{ :primary="true" }
 Full-stack .NET & Angular developer | DevOps enthusiast
 ::
 

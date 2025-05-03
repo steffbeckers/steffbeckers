@@ -19,11 +19,13 @@ const duration = intervalToDuration({
 
 <template>
   <span class="not-prose">
-    <span v-if="duration.years >= 1">
-      {{ duration.years }} year{{ duration.years > 1 ? "s" : "" }},
+    <span v-if="duration.years === 1">{{ duration.years }} {{ $t("Year").toLowerCase() }}, </span>
+    <span v-else-if="duration.years > 1"
+      >{{ duration.years }} {{ $t("Years").toLowerCase() }},
     </span>
-    <span v-if="duration.months >= 1">
-      {{ duration.months }} month{{ duration.months > 1 ? "s" : "" }}
-    </span>
+    <span v-if="duration.months === 1">{{ duration.months }} {{ $t("Month").toLowerCase() }}</span>
+    <span v-else-if="duration.months > 1"
+      >{{ duration.months }} {{ $t("Months").toLowerCase() }}</span
+    >
   </span>
 </template>

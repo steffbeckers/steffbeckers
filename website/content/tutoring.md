@@ -9,7 +9,7 @@ head:
 
 # Tutoring
 
-::subtitle{:primary="true"}
+::subtitle{ :primary="true" }
 Book a tutoring session with me
 ::
 

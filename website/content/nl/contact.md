@@ -9,7 +9,7 @@ head:
 
 # Kom in contact
 
-::subtitle{:primary="true"}
+::subtitle{ :primary="true" }
 Voeg me toe op [LinkedIn](https://linkedin.com/in/steffbeckers), volg me op [GitHub](https://github.com/steffbeckers) of neem contact met me op via [telefoon](tel:+32499765192) of [e-mail](mailto:steff@steffbeckers.eu).
 ::
 

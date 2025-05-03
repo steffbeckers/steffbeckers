@@ -4,7 +4,7 @@ description: Mijn werkervaring, behaalde certificaten en opleiding.
 head:
   meta:
     - name: keywords
-      content: Steff, Beckers, Developer, Personal website, Blog, Projects, Resume, CV, Work, Ervaring, Fuzed, Codefined, aariXa, CTG, Brigestone, PXL
+      content: Steff, Beckers, Ontwikkelaar, Persoonlijke website, Blog, Projecten, CV, Werkervaring, Fuzed, Codefined, aariXa, CTG, Bridgestone, PXL
 ---
 
 ::button-link{ external href="/downloads/CV_Steff_Beckers.pdf" target="\_blank" class="hidden sm:block font-semibold float-right" icon="fa-regular:file-code" }
@@ -13,11 +13,9 @@ Download CV
 
 # Werkervaring
 
-::subtitle{:primary="true"}
-Veel lijnen code en koffie
+::subtitle{ :primary="true" }
+Vele regels code en kopjes koffie
 ::
-
-<!-- TODO: CV in nederlands -->
 
 ::button-link{ external href="/downloads/CV_Steff_Beckers.pdf" target="\_blank" class="block sm:hidden my-8 font-semibold" icon="fa-regular:file-code" }
 Download CV
@@ -33,85 +31,85 @@ Download CV
 ## Software Developer
 
 ::subtitle
-Fuzed | Nov 2023 - Present (:duration{ start="2023-11" })
+Fuzed | november 2023 - heden (:duration{ start="2023-11" })
 ::
 
-At **Fuzed** (previously known as **Codefined**), I contribute in developing an innovative, **cloud-based ERP** system tailored for the **food production industry**.
+Bij **Fuzed** (voorheen **Codefined**) help ik bij de ontwikkeling van een innovatief, **cloudgebaseerd ERP-systeem** voor de **voedingsindustrie**.
 
-With the rebranding, our focus shifted from custom software development to creating a comprehensive solution that streamlines production processes.
+Met de rebranding verschoof de focus van maatwerksoftware naar een totaaloplossing die productieprocessen stroomlijnt.
 
-- **Technology stack**
+- **Technologiestack**
 
   - Back-end: **.NET**, **ABP Framework**, **EF Core**, **SignalR**
   - Front-end: **Angular**, **Nx monorepo**, **Bootstrap 5**, **NgRx**, **RxJS**, **Signals**
 
-- **Module development**
+- **Moduleontwikkeling**
 
-  Built core modules like **CRM**, **Product management**, **Supply chain** (Purchase, Sales, Distribution, Invoicing), **WMS** and **Translations**. We've also built an external B2B portal.
+  Kernmodules zoals **CRM**, **Productbeheer**, **Supply Chain** (Aankoop, Verkoop, Distributie, Facturatie), **WMS** en **Vertalingen** gebouwd. We hebben ook een extern B2B-portaal ontwikkeld.
 
-- **Infrastructure**
+- **Infrastructuur**
 
-  Utilized tools and technologies like **SQL Server**, **Azure Storage**, **RabbitMQ**, **Redis**, **Kubernetes**, **Grafana**, and **SonarQube** to ensure a robust and scalable system.
+  Ingezet op tools en technologieën zoals **SQL Server**, **Azure Storage**, **RabbitMQ**, **Redis**, **Kubernetes**, **Grafana** en **SonarQube** voor een schaalbaar en robuust systeem.
 
-- **Integrations**
+- **Integraties**
 
-  Integrated with 3rd party apps like **Exact Online**, **Transus** (EDI) and **Dokapi** (Peppol).
+  Koppelingen gemaakt met externe systemen zoals **Exact Online**, **Transus** (EDI) en **Dokapi** (Peppol).
 
 - **DevOps**
 
-  Managed **DevOps** tasks, including configuring and maintaining **CI/CD** pipelines using **Azure DevOps**. Actively worked with **Azure services** such as **Kubernetes services**, **SQL databases**, **Key vaults**, **Storage accounts**, and **Container registries**, while also managing the **Kubernetes dev cluster** for development and testing purposes.
+  Beheer van **DevOps-taken**, zoals het configureren en onderhouden van **CI/CD pipelines** via **Azure DevOps**. Actieve inzet van **Azure services** (zoals Kubernetes services, SQL-databases, Key Vaults, Storage accounts en Container registries) en beheer van de **Kubernetes dev-cluster** voor ontwikkeling en testen.
 
-By integrating modern technologies and industry-specific requirements, I help shape Fuzed into a comprehensive, industry-ready solution that simplifies complex production activities for the food industry.
+Door moderne technologieën en sectorspecifieke noden te combineren, bouwen we aan een totaaloplossing die complexe productieactiviteiten vereenvoudigt.
 
 <hr />
 
 ::div{ .mb-4 .sm:float-right }
-[
-![Codefined Logo](/images/logos/codefined-logo-black.svg){ width=200 .my-0 .block .dark:hidden }
-![Codefined Logo](/images/logos/codefined-logo-white.svg){ width=200 .my-0 .hidden .dark:block }
-](https://codefined.be)
+[  
+![Codefined Logo](/images/logos/codefined-logo-black.svg){ width=200 .my-0 .block .dark:hidden }  
+![Codefined Logo](/images/logos/codefined-logo-white.svg){ width=200 .my-0 .hidden .dark:block }  
+](https://codefined.be)  
 ::
 
 ## Software Developer
 
 ::subtitle
-Codefined | May 2021 - Oct 2023 (:duration{ start="2021-05" end="2023-10" })
+Codefined | mei 2021 - oktober 2023 (:duration{ start="2021-05" end="2023-10" })
 ::
 
-At **Codefined**, I specialized in developing custom **.NET** and **Angular** web applications tailored to meet client-specific requirements.
+Bij **Codefined** specialiseerde ik me in het bouwen van op maat gemaakte **.NET**- en **Angular**-applicaties volgens de wensen van klanten.
 
-Leveraging the **ABP Framework**, I delivered scalable, modular, and maintainable solutions that streamlined business processes and enhanced user experiences. My role involved full-stack development, integrating robust back-end systems with dynamic, responsive front-end interfaces.
+Met behulp van het **ABP Framework** bouwde ik schaalbare, modulaire en onderhoudbare oplossingen die bedrijfsprocessen optimaliseerden en gebruikservaringen verbeterden. Mijn rol omvatte full-stack ontwikkeling met robuuste back-ends en dynamische front-ends.
 
 <hr />
 
 ::div{ .mb-4 .sm:float-right }
-[
-![aariXa Logo](/images/logos/aarixa-logo-blue.png){width=100 .my-0 .block .dark:hidden}
-![aariXa Logo](/images/logos/aarixa-logo-white.png){width=100 .my-0 .hidden .dark:block}
-](https://www.aarixa.be)
+[  
+![aariXa Logo](/images/logos/aarixa-logo-blue.png){width=100 .my-0 .block .dark:hidden}  
+![aariXa Logo](/images/logos/aarixa-logo-white.png){width=100 .my-0 .hidden .dark:block}  
+](https://www.aarixa.be)  
 ::
 
 ## Analyst Developer
 
 ::subtitle
-aariXa | July 2017 - April 2021 (:duration{ start="2017-07" end="2021-04" })
+aariXa | juli 2017 - april 2021 (:duration{ start="2017-07" end="2021-04" })
 ::
 
-At **aariXa**, I worked extensively with a versatile tech stack, including **Angular**, **.NET Core**, **MS SQL**, **Azure**, and **Windows Server**, combining modern frameworks and **Microsoft-centric technologies** to deliver innovative solutions.
+Bij **aariXa** werkte ik met een brede technologiestack waaronder **Angular**, **.NET Core**, **MS SQL**, **Azure** en **Windows Server**, waarbij ik moderne frameworks combineerde met **Microsoft-technologieën**.
 
-- **Cloud-Native application development**
+- **Cloud-native applicatieontwikkeling**
 
-  Designed and implemented a **real-time**, **multi-tenant** web application hosted as microservices in **Docker** containers, leveraging modern cloud-native principles.
+  Ontwerp en realisatie van een **real-time**, **multi-tenant** webapplicatie als microservices in **Docker-containers**, volgens cloud-native principes.
 
-- **CRM migration and customization**
+- **CRM-migratie en maatwerk**
 
-  Successfully migrated aariXa's legacy **Dynamics CRM 2011** to a bespoke **.NET-based CRM** system, incorporating custom business logic to meet evolving organizational needs.
+  Migratie van de oude **Dynamics CRM 2011** naar een eigen **.NET-gebaseerd CRM-systeem**, met aangepaste bedrijfslogica.
 
-- **DevOps and system administration**
+- **DevOps en systeembeheer**
 
-  Enhanced infrastructure reliability by migrating applications to **containers** or **virtual machines**, while also monitoring and maintaining aariXa's internal systems.
+  Verhoogde betrouwbaarheid door migratie naar containers of virtuele machines en onderhoud van interne systemen.
 
-This diverse role allowed me to bridge development and operations, ensuring scalable, high-performing solutions for the organization.
+Deze rol combineerde ontwikkeling en operations om schaalbare oplossingen te leveren.
 
 <hr />
 
@@ -128,27 +126,27 @@ This diverse role allowed me to bridge development and operations, ensuring scal
 ## Dynamics 365 CRM Developer
 
 ::subtitle
-Bridgestone | October 2016 - June 2017 (:duration{ start="2016-10" end="2017-06" })
+Bridgestone | oktober 2016 - juni 2017 (:duration{ start="2016-10" end="2017-06" })
 ::
 
-As a consultant at **CTG**, I contributed to a project for **Bridgestone**, focusing on the customization and enhancement of their **Dynamics 365 CRM** system.
+Als consultant bij **CTG** werkte ik voor **Bridgestone** aan de aanpassing en uitbreiding van hun **Dynamics 365 CRM**-systeem.
 
-- **CRM customization**
+- **CRM-maatwerk**
 
-  Developed tailored solutions by writing **C# plugins** to implement complex business logic, ensuring the CRM aligned with organizational workflows.
+  Ontwikkeling van aangepaste oplossingen via **C# plugins** om complexe bedrijfslogica te implementeren.
 
-- **Custom UI development**
+- **Maatwerk UI-ontwikkeling**
 
-  Built advanced user interfaces and applications using **TypeScript**, **Knockout.js**, and other modern technologies to improve user experience and productivity.
+  Geavanceerde interfaces gebouwd met **TypeScript**, **Knockout.js** en andere moderne technologieën ter verbetering van gebruikservaring en efficiëntie.
 
-This role required a deep understanding of CRM systems, front-end development, and modern web technologies, enabling me to deliver impactful results in a fast-paced environment.
+Deze functie vereiste een diepgaande kennis van CRM-systemen en moderne webtechnologieën.
 
 <hr />
 
-# Certification
+# Certificatie
 
-::subtitle{:primary="true"}
-Verification of knowledge and skills
+::subtitle{ :primary="true" }
+Bevestiging van kennis en vaardigheden
 ::
 
 ::div{ .mb-4 .sm:float-right }
@@ -158,15 +156,15 @@ Verification of knowledge and skills
 ## Microsoft Exam 70-483 - Programming in C#
 
 ::subtitle
-September 21st, 2018
+21 september 2018
 ::
 
 <hr />
 
-# Education
+# Opleiding
 
-::subtitle{:primary="true"}
-Hours of learning new technologies
+::subtitle{ :primary="true" }
+Uren leren over technologie
 ::
 
 ::div{ .mb-4 .sm:float-right }
@@ -176,10 +174,20 @@ Hours of learning new technologies
 ](https://www.pxl.be/digital)
 ::
 
-## Professional Bachelor's Degree in Applied Computer Science
+## Professionele Bachelor Toegepaste Informatica
 
 ::subtitle
-University College PXL - September 2013 - June 2016 (:duration{ start="2013-09" end="2016-06" })
+Hogeschool PXL - september 2013 - juni 2016 (:duration{ start="2013-09" end="2016-06" })
 ::
 
-Application Development (Web & Mobile)
+Applicatieontwikkeling (Web & Mobile)
+
+<hr />
+
+## Multimedia
+
+::subtitle
+THHI Tessenderlo - september 2011 - juni 2013 (:duration{ start="2011-09" end="2013-06" })
+::
+
+Middelbaar

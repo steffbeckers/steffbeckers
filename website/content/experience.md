@@ -13,7 +13,7 @@ Download CV
 
 # Work experience
 
-::subtitle{:primary="true"}
+::subtitle{ :primary="true" }
 Many lines of code and coffee
 ::
 
@@ -32,7 +32,7 @@ Download CV
 ## Software Developer
 
 ::subtitle
-Fuzed | Nov 2023 - Present (:duration{ start="2023-11" })
+Fuzed | November 2023 - Present (:duration{ start="2023-11" })
 ::
 
 At **Fuzed** (previously known as **Codefined**), I contribute in developing an innovative, **cloud-based ERP** system tailored for the **food production industry**.
@@ -74,7 +74,7 @@ By integrating modern technologies and industry-specific requirements, I help sh
 ## Software Developer
 
 ::subtitle
-Codefined | May 2021 - Oct 2023 (:duration{ start="2021-05" end="2023-10" })
+Codefined | May 2021 - October 2023 (:duration{ start="2021-05" end="2023-10" })
 ::
 
 At **Codefined**, I specialized in developing custom **.NET** and **Angular** web applications tailored to meet client-specific requirements.
@@ -146,7 +146,7 @@ This role required a deep understanding of CRM systems, front-end development, a
 
 # Certification
 
-::subtitle{:primary="true"}
+::subtitle{ :primary="true" }
 Verification of knowledge and skills
 ::
 
@@ -164,7 +164,7 @@ September 21st, 2018
 
 # Education
 
-::subtitle{:primary="true"}
+::subtitle{ :primary="true" }
 Hours of learning new technologies
 ::
 
@@ -175,10 +175,20 @@ Hours of learning new technologies
 ](https://www.pxl.be/digital)
 ::
 
-## Professional Bachelor's Degree in Applied Computer Science
+## Professional Bachelor, Applied Computer Science
 
 ::subtitle
 University College PXL - September 2013 - June 2016 (:duration{ start="2013-09" end="2016-06" })
 ::
 
 Application Development (Web & Mobile)
+
+<hr />
+
+## Multimedia
+
+::subtitle
+THHI Tessenderlo - september 2011 - juni 2013 (:duration{ start="2011-09" end="2013-06" })
+::
+
+High school
