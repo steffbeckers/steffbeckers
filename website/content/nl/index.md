@@ -10,7 +10,7 @@ head:
 
 # Hallo! Ik ben Steff
 
-::subtitle
+::subtitle{:primary="true"}
 Full-stack .NET & Angular developer | DevOps enthusiast
 ::
 

@@ -43,7 +43,7 @@ defineI18nRoute({
       </a>
     </div> -->
     <h1>{{ $t("Blog") }}</h1>
-    <subtitle>{{ $t("BlogSubtitle") }}</subtitle>
+    <subtitle :primary="true">{{ $t("BlogSubtitle") }}</subtitle>
     <!-- TODO: Implement search -->
     <!-- <div class="flex gap-4 my-6 sm:hidden">
       <input
@@ -68,10 +68,10 @@ defineI18nRoute({
           <NuxtLink :to="post._path">
             <article class="post">
               <h2 class="mt-0">{{ post.title }}</h2>
-              <h4 class="text-gray-500">
+              <subtitle>
                 {{ formatDateTime(post.date) }} | {{ post.readingTime.text }} |
                 <DisqusCount style="text-transform: lowercase" :identifier="post._path" />
-              </h4>
+              </subtitle>
               <p>{{ post.description }}</p>
             </article>
           </NuxtLink>

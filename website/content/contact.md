@@ -9,7 +9,7 @@ head:
 
 # Get in touch
 
-::subtitle
+::subtitle{:primary="true"}
 Add me on [LinkedIn](https://linkedin.com/in/steffbeckers), follow me on [GitHub](https://github.com/steffbeckers) or just contact me by [phone](tel:+32499765192) or [email](mailto:steff@steffbeckers.eu)
 ::
 

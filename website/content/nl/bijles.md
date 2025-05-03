@@ -9,7 +9,7 @@ head:
 
 # Bijles
 
-::subtitle
+::subtitle{:primary="true"}
 Boek een bijles sessie met mij
 ::
 

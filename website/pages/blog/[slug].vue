@@ -9,7 +9,7 @@ defineOgImageComponent();
   <NuxtLayout>
     <article>
       <h1>{{ document.page.value.title }}</h1>
-      <subtitle>
+      <subtitle :primary="true">
         {{ formatDateTime(document.page.value.date) }} |
         {{ document.page.value.readingTime.text }} |
         <DisqusCount style="text-transform: lowercase" :identifier="document.page.value._path" />

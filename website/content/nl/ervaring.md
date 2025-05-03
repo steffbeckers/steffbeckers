@@ -13,7 +13,7 @@ Download CV
 
 # Werkervaring
 
-::subtitle
+::subtitle{:primary="true"}
 Veel lijnen code en koffie
 ::
 
@@ -32,7 +32,9 @@ Download CV
 
 ## Software Developer @ Fuzed
 
-#### Nov 2023 - Present (:duration{ start="2023-11" })
+::subtitle
+Nov 2023 - Present (:duration{ start="2023-11" })
+::
 
 At **Fuzed** (previously known as **Codefined**), I contribute in developing an innovative, **cloud-based ERP** system tailored for the **food production industry**.
 
@@ -72,7 +74,9 @@ By integrating modern technologies and industry-specific requirements, I help sh
 
 ## Software Developer @ Codefined
 
-#### May 2021 - Oct 2023 (:duration{ start="2021-05" end="2023-10" })
+::subtitle
+May 2021 - Oct 2023 (:duration{ start="2021-05" end="2023-10" })
+::
 
 At **Codefined**, I specialized in developing custom **.NET** and **Angular** web applications tailored to meet client-specific requirements.
 
@@ -89,7 +93,9 @@ Leveraging the **ABP Framework**, I delivered scalable, modular, and maintainabl
 
 ## Analyst Developer @ aariXa
 
-#### July 2017 - April 2021 (:duration{ start="2017-07" end="2021-04" })
+::subtitle
+July 2017 - April 2021 (:duration{ start="2017-07" end="2021-04" })
+::
 
 At **aariXa**, I worked extensively with a versatile tech stack, including **Angular**, **.NET Core**, **MS SQL**, **Azure**, and **Windows Server**, combining modern frameworks and **Microsoft-centric technologies** to deliver innovative solutions.
 
@@ -121,7 +127,9 @@ This diverse role allowed me to bridge development and operations, ensuring scal
 
 ## Dynamics 365 CRM Developer @ Bridgestone
 
-#### October 2016 - June 2017 (:duration{ start="2016-10" end="2017-06" })
+::subtitle
+October 2016 - June 2017 (:duration{ start="2016-10" end="2017-06" })
+::
 
 As a consultant at **CTG**, I contributed to a project for **Bridgestone**, focusing on the customization and enhancement of their **Dynamics 365 CRM** system.
 
@@ -139,7 +147,7 @@ This role required a deep understanding of CRM systems, front-end development, a
 
 # Certification
 
-::subtitle
+::subtitle{:primary="true"}
 Verification of knowledge and skills
 ::
 
@@ -149,13 +157,15 @@ Verification of knowledge and skills
 
 ## Microsoft Exam 70-483 - Programming in C#
 
-#### September 21st, 2018
+::subtitle
+September 21st, 2018
+::
 
 <hr />
 
 # Education
 
-::subtitle
+::subtitle{:primary="true"}
 Hours of learning new technologies
 ::
 
@@ -168,6 +178,8 @@ Hours of learning new technologies
 
 ## Professional Bachelor's Degree in Applied Computer Science
 
-#### September 2013 - June 2016 (:duration{ start="2013-09" end="2016-06" })
+::subtitle
+September 2013 - June 2016 (:duration{ start="2013-09" end="2016-06" })
+::
 
 Application Development (Web & Mobile)
