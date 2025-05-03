@@ -1,6 +1,7 @@
 ---
 description: I'm a passionate developer with a strong focus on web development and DevOps. I thrive on learning and working with the latest technologies and frameworks to continuously grow my expertise. I enjoy collaborating as part of a team in an agile environment, where I can contribute to building impactful solutions. I'm detail-oriented, committed to getting things right, and understand that even the smallest details can make a big difference.
 head:
+  title:
   meta:
     - name: keywords
       content: Steff, Beckers, Developer, Personal website, Blog, Projects, Resume, CV, Home
@@ -11,7 +12,7 @@ head:
 # Hallo! Ik ben Steff
 
 ::subtitle{:primary="true"}
-Full-stack .NET & Angular developer | DevOps enthusiast
+Full-stack .NET & Angular ontwikkelaar | DevOps enthousiasteling
 ::
 
 Ik ben een gepassioneerde ontwikkelaar met een sterke focus op **web development** en **DevOps**. Ik haal energie uit leren en werken met de **nieuwste technologieën en frameworks** om mijn expertise voortdurend uit te breiden.

@@ -29,10 +29,10 @@ Download CV
 ](https://fuzed.app)
 ::
 
-## Software Developer @ Fuzed
+## Software Developer
 
 ::subtitle
-Nov 2023 - Present (:duration{ start="2023-11" })
+Fuzed | Nov 2023 - Present (:duration{ start="2023-11" })
 ::
 
 At **Fuzed** (previously known as **Codefined**), I contribute in developing an innovative, **cloud-based ERP** system tailored for the **food production industry**.
@@ -71,10 +71,10 @@ By integrating modern technologies and industry-specific requirements, I help sh
 ](https://codefined.be)
 ::
 
-## Software Developer @ Codefined
+## Software Developer
 
 ::subtitle
-May 2021 - Oct 2023 (:duration{ start="2021-05" end="2023-10" })
+Codefined | May 2021 - Oct 2023 (:duration{ start="2021-05" end="2023-10" })
 ::
 
 At **Codefined**, I specialized in developing custom **.NET** and **Angular** web applications tailored to meet client-specific requirements.
@@ -90,10 +90,10 @@ Leveraging the **ABP Framework**, I delivered scalable, modular, and maintainabl
 ](https://www.aarixa.be)
 ::
 
-## Analyst Developer @ aariXa
+## Analyst Developer
 
 ::subtitle
-July 2017 - April 2021 (:duration{ start="2017-07" end="2021-04" })
+aariXa | July 2017 - April 2021 (:duration{ start="2017-07" end="2021-04" })
 ::
 
 At **aariXa**, I worked extensively with a versatile tech stack, including **Angular**, **.NET Core**, **MS SQL**, **Azure**, and **Windows Server**, combining modern frameworks and **Microsoft-centric technologies** to deliver innovative solutions.
@@ -124,10 +124,10 @@ This diverse role allowed me to bridge development and operations, ensuring scal
 ](https://www.bridgestone.eu){ .flex .items-center }
 ::
 
-## Dynamics 365 CRM Developer @ Bridgestone
+## Dynamics 365 CRM Developer
 
 ::subtitle
-October 2016 - June 2017 (:duration{ start="2016-10" end="2017-06" })
+Bridgestone | October 2016 - June 2017 (:duration{ start="2016-10" end="2017-06" })
 ::
 
 As a consultant at **CTG**, I contributed to a project for **Bridgestone**, focusing on the customization and enhancement of their **Dynamics 365 CRM** system.
@@ -178,7 +178,7 @@ Hours of learning new technologies
 ## Professional Bachelor's Degree in Applied Computer Science
 
 ::subtitle
-September 2013 - June 2016 (:duration{ start="2013-09" end="2016-06" })
+University College PXL - September 2013 - June 2016 (:duration{ start="2013-09" end="2016-06" })
 ::
 
 Application Development (Web & Mobile)
