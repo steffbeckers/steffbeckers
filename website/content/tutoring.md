@@ -27,7 +27,7 @@ Are you ready to take your **development skills** to the next level? Whether you
 
 ## What I offer
 
-As a professional web developer with over 8 years of experience, I provide **personalized lessons** designed to help you master web development and programming. My tutoring sessions cover a wide range of topics, including:
+As a professional web developer with over :duration{ start="2016-10" :months="false" } of experience, I provide **personalized lessons** designed to help you master web development and programming. My tutoring sessions cover a wide range of topics, including:
 
 - **Web development fundamentals**: HTML, CSS, and JavaScript
 - **Modern frameworks**: Angular, Vue, and more

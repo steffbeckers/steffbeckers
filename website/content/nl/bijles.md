@@ -27,7 +27,7 @@ Ben je klaar om je **ontwikkelvaardigheden** naar een hoger niveau te tillen? Of
 
 ## Wat ik aanbied
 
-Als professionele web developer met meer dan 8 jaar ervaring bied ik **gepersonaliseerde lessen** aan om je te helpen webontwikkeling en programmeren onder de knie te krijgen. Mijn bijlessen behandelen een brede waaier aan onderwerpen, waaronder:
+Als professionele web developer met meer dan :duration{ start="2016-10" :months="false" :singular="true" } ervaring bied ik **gepersonaliseerde lessen** aan om je te helpen webontwikkeling en programmeren onder de knie te krijgen. Mijn bijlessen behandelen een brede waaier aan onderwerpen, waaronder:
 
 - **Basis webontwikkeling**: HTML, CSS en JavaScript
 - **Moderne frameworks**: Angular, Vue en meer
