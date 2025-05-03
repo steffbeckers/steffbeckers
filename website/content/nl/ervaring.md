@@ -53,7 +53,7 @@ Met de rebranding verschoof de focus van maatwerksoftware naar een totaaloplossi
 
 - **Integraties**
 
-  Koppelingen gemaakt met externe systemen zoals **Exact Online**, **Transus** (EDI) en **Dokapi** (Peppol).
+  Koppelingen gemaakt met externe systemen zoals **Exact Online**, **Checkin@work** (RSZ), **Transus** (EDI) en **Dokapi** (Peppol).
 
 - **DevOps**
 

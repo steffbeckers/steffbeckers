@@ -54,7 +54,7 @@ With the rebranding, our focus shifted from custom software development to creat
 
 - **Integrations**
 
-  Integrated with 3rd party apps like **Exact Online**, **Transus** (EDI) and **Dokapi** (Peppol).
+  Integrated with 3rd party apps like **Exact Online**, **Checkin@work** (NSSO), **Transus** (EDI) and **Dokapi** (Peppol).
 
 - **DevOps**
   
