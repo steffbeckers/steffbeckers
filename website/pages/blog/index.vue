@@ -1,16 +1,25 @@
 <script setup lang="ts">
+const { t } = useI18n();
+
 useHead({
   title: "Blog",
   meta: [
     {
       name: "description",
-      content: "Tutorials, scripts and other useful notes.",
+      content: t("BlogSubtitle"),
     },
     {
       name: "keywords",
-      content: "Steff, Beckers, Development, DevOps, Scripts, Notes, Tutorials, Blog",
+      content: t("BlogKeywords"),
     },
   ],
+});
+
+defineI18nRoute({
+  paths: {
+    en: "/blog",
+    nl: "/blog",
+  },
 });
 
 // TODO: Implement search
@@ -33,8 +42,8 @@ useHead({
         <Icon name="ri:rss-line" size="40px"></Icon>
       </a>
     </div> -->
-    <h1>Blog</h1>
-    <subtitle>Tutorials, scripts and other useful notes</subtitle>
+    <h1>{{ $t("Blog") }}</h1>
+    <subtitle>{{ $t("BlogSubtitle") }}</subtitle>
     <!-- TODO: Implement search -->
     <!-- <div class="flex gap-4 my-6 sm:hidden">
       <input
@@ -55,15 +64,19 @@ useHead({
       }"
     >
       <template #default="{ list }">
-        <NuxtLink v-for="(post, index) in list" :key="post._path" :to="post._path">
-          <h2 class="mt-0">{{ post.title }}</h2>
-          <h4>
-            {{ formatDateTime(post.date) }} | {{ post.readingTime.text }} |
-            <DisqusCount style="text-transform: lowercase" :identifier="post._path" />
-          </h4>
-          <p>{{ post.description }}</p>
+        <template v-for="(post, index) in list" :key="post._path">
+          <NuxtLink :to="post._path">
+            <article class="post">
+              <h2 class="mt-0">{{ post.title }}</h2>
+              <h4 class="text-gray-500">
+                {{ formatDateTime(post.date) }} | {{ post.readingTime.text }} |
+                <DisqusCount style="text-transform: lowercase" :identifier="post._path" />
+              </h4>
+              <p>{{ post.description }}</p>
+            </article>
+          </NuxtLink>
           <hr v-if="index !== list.length - 1" />
-        </NuxtLink>
+        </template>
       </template>
       <template #not-found>
         <p>No posts found.</p>
@@ -71,3 +84,15 @@ useHead({
     </ContentList>
   </NuxtLayout>
 </template>
+
+<style lang="postcss" scoped>
+article.post:hover {
+  > h2 {
+    @apply text-primary-400;
+  }
+
+  > p {
+    @apply text-white;
+  }
+}
+</style>

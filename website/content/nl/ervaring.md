@@ -41,15 +41,19 @@ With the rebranding, our focus shifted from custom software development to creat
 - **Technology stack**
 
   - Back-end: **.NET**, **ABP Framework**, **EF Core**, **SignalR**
-  - Front-end: **Angular**, **Nx Monorepo**, **Bootstrap 5**, **NgRx**, **RxJS**, **Signals**
+  - Front-end: **Angular**, **Nx monorepo**, **Bootstrap 5**, **NgRx**, **RxJS**, **Signals**
 
 - **Module development**
 
-  Built core modules like **CRM**, **Product management**, **Supply chain** (Purchase, Sales, Invoicing), **WMS** and **Translations**.
+  Built core modules like **CRM**, **Product management**, **Supply chain** (Purchase, Sales, Distribution, Invoicing), **WMS** and **Translations**. We've also built an external B2B portal.
 
 - **Infrastructure**
 
-  Utilized tools and technologies like **SQL Server**, **RabbitMQ**, **Redis**, **Kubernetes**, **Grafana**, and **SonarQube** to ensure a robust and scalable system.
+  Utilized tools and technologies like **SQL Server**, **Azure Storage**, **RabbitMQ**, **Redis**, **Kubernetes**, **Grafana**, and **SonarQube** to ensure a robust and scalable system.
+
+- **Integrations**
+
+  Integrated with 3rd party apps like **Exact Online**, **Transus** (EDI) and **Dokapi** (Peppol).
 
 - **DevOps**
 
