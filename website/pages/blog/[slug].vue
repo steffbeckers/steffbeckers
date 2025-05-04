@@ -1,6 +1,7 @@
 <script setup lang="ts">
 const document = await useContent();
 const route = await useRoute();
+const { locale } = useI18n();
 
 defineOgImageComponent();
 </script>
@@ -12,11 +13,11 @@ defineOgImageComponent();
       <subtitle :primary="true">
         {{ formatDateTime(document.page.value.date) }} |
         {{ document.page.value.readingTime.text }} |
-        <DisqusCount style="text-transform: lowercase" :identifier="document.page.value._path" />
+        <DisqusCount :identifier="document.page.value._path" /> {{ $t("Comments").toLowerCase() }}
       </subtitle>
       <p>{{ document.page.value.description }}</p>
       <aside class="flex-shrink-0" v-if="document.toc.value.links.length > 0">
-        <h2>Contents</h2>
+        <h2>{{ $t("Contents") }}</h2>
         <nav>
           <ul>
             <li v-for="link in document.toc.value.links" :key="link.id">
@@ -33,8 +34,8 @@ defineOgImageComponent();
       <ContentDoc :document="document" />
     </article>
     <section>
-      <h2>Leave a comment or question</h2>
-      <DisqusComments :identifier="route.path" />
+      <h2>{{ $t("LeaveACommentOrQuestion") }}</h2>
+      <DisqusComments :identifier="route.path" :language="locale" />
     </section>
   </NuxtLayout>
 </template>

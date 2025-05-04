@@ -4,13 +4,17 @@
   "BlogSubtitle": "Tutorials, scripts and other useful notes.",
   "BookAnIntroMeeting": "Book an intro meeting",
   "BookATutoringSession": "Book a tutoring session",
+  "Comments": "Comments",
   "Contact": "Contact",
   "Experience": "Experience",
   "Home": "Home",
   "LastUpdatedOn": "Last updated on",
   "Month": "Month",
   "Months": "Months",
+  "NoPostsFound": "No posts found.",
   "Tutoring": "Tutoring",
   "Year": "Year",
-  "Years": "Years"
+  "Years": "Years",
+  "Contents": "Contents",
+  "LeaveACommentOrQuestion": "Leave a comment or question"
 }

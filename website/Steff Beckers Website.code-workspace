@@ -3,10 +3,6 @@
     {
       "name": "Website",
       "path": "."
-    },
-    {
-      "name": "Root",
-      "path": ".."
     }
   ],
   "settings": {

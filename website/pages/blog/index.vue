@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const { t } = useI18n();
+const { fallbackLocale, locale, t } = useI18n();
 
 useHead({
   title: "Blog",
@@ -21,6 +21,8 @@ defineI18nRoute({
     nl: "/blog",
   },
 });
+
+const contentListPath = `/${locale.value !== fallbackLocale.value ? locale.value + "/" : ""}blog/`;
 
 // TODO: Implement search
 // const searchTerm = ref("");
@@ -57,7 +59,7 @@ defineI18nRoute({
     </div> -->
     <ContentList
       :query="{
-        path: '/blog/',
+        path: contentListPath,
         sort: [{ date: -1 }],
         // TODO: Implement search
         // where: searchTerm ? [{ title: { $icontains: searchTerm } }] : [],
@@ -70,7 +72,7 @@ defineI18nRoute({
               <h2 class="mt-0">{{ post.title }}</h2>
               <subtitle>
                 {{ formatDateTime(post.date) }} | {{ post.readingTime.text }} |
-                <DisqusCount style="text-transform: lowercase" :identifier="post._path" />
+                <DisqusCount :identifier="post._path" /> {{ $t("Comments").toLowerCase() }}
               </subtitle>
               <p>{{ post.description }}</p>
             </article>
@@ -79,7 +81,7 @@ defineI18nRoute({
         </template>
       </template>
       <template #not-found>
-        <p>No posts found.</p>
+        <p>{{ $t("NoPostsFound") }}</p>
       </template>
     </ContentList>
   </NuxtLayout>

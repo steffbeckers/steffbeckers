@@ -4,13 +4,17 @@
   "BlogSubtitle": "Tutorials, scripts en andere handige notities.",
   "BookAnIntroMeeting": "Boek een kennismakingsgesprek",
   "BookATutoringSession": "Boek een bijles sessie",
+  "Comments": "Reacties",
   "Contact": "Contact",
   "Experience": "Ervaring",
   "Home": "Home",
   "LastUpdatedOn": "Laatst aangepast op",
   "Month": "Maand",
   "Months": "Maanden",
+  "NoPostsFound": "Geen posts gevonden.",
   "Tutoring": "Bijles",
   "Year": "Jaar",
-  "Years": "Jaren"
+  "Years": "Jaren",
+  "Contents": "Inhoud",
+  "LeaveACommentOrQuestion": "Laat een reactie of vraag achter"
 }
