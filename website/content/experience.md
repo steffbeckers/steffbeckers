@@ -187,7 +187,7 @@ Application Development (Web & Mobile)
 
 ::div{ .mb-4 .sm:float-right }
 [
-![THHI Logo](/images/logos/thhi-logo-blue.svg){ width=120 .my-0 }
+![THHI Logo](/images/logos/thhi-logo.svg){ width=120 .my-0 }
 ](https://www.campusmax.be)
 ::
 
