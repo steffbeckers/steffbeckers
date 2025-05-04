@@ -12,7 +12,7 @@ defineOgImageComponent();
       <h1>{{ document.page.value.title }}</h1>
       <subtitle :primary="true">
         {{ formatDateTime(document.page.value.date) }} |
-        {{ document.page.value.readingTime.text }} |
+        {{ Math.ceil(document.page.value.readingTime.minutes) }} {{ $t("Minutes").toLowerCase() }} |
         <DisqusCount :identifier="document.page.value._path" /> {{ $t("Comments").toLowerCase() }}
       </subtitle>
       <p>{{ document.page.value.description }}</p>

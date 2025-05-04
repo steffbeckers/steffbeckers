@@ -6,15 +6,16 @@
   "BookATutoringSession": "Book a tutoring session",
   "Comments": "Comments",
   "Contact": "Contact",
+  "Contents": "Contents",
   "Experience": "Experience",
   "Home": "Home",
   "LastUpdatedOn": "Last updated on",
+  "LeaveACommentOrQuestion": "Leave a comment or question",
+  "Minutes": "Minutes",
   "Month": "Month",
   "Months": "Months",
   "NoPostsFound": "No posts found.",
   "Tutoring": "Tutoring",
   "Year": "Year",
-  "Years": "Years",
-  "Contents": "Contents",
-  "LeaveACommentOrQuestion": "Leave a comment or question"
+  "Years": "Years"
 }

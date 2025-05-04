@@ -71,8 +71,9 @@ const contentListPath = `/${locale.value !== fallbackLocale.value ? locale.value
             <article class="post">
               <h2 class="mt-0">{{ post.title }}</h2>
               <subtitle>
-                {{ formatDateTime(post.date) }} | {{ post.readingTime.text }} |
-                <DisqusCount :identifier="post._path" /> {{ $t("Comments").toLowerCase() }}
+                {{ formatDateTime(post.date) }} | {{ Math.ceil(post.readingTime.minutes) }}
+                {{ $t("Minutes").toLowerCase() }} | <DisqusCount :identifier="post._path" />
+                {{ $t("Comments").toLowerCase() }}
               </subtitle>
               <p class="mb-0">{{ post.description }}</p>
             </article>
