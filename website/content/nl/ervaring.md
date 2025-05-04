@@ -184,10 +184,16 @@ Applicatieontwikkeling (Web & Mobile)
 
 <hr />
 
+::div{ .mb-4 .sm:float-right }
+[
+![THHI Logo](/images/logos/thhi-logo-blue.svg){ width=120 .my-0 }
+](https://www.campusmax.be)
+::
+
 ## Multimedia
 
 ::subtitle
 THHI Tessenderlo - september 2011 - juni 2013 (:duration{ start="2011-09" end="2013-06" })
 ::
 
-Middelbaar
+Middelbare school

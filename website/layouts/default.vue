@@ -66,4 +66,8 @@ h2 {
     font-weight: inherit !important;
   }
 }
+
+main.prose > div[data-content-id] > :last-child {
+  margin-bottom: 0;
+}
 </style>

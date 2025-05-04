@@ -74,7 +74,7 @@ const contentListPath = `/${locale.value !== fallbackLocale.value ? locale.value
                 {{ formatDateTime(post.date) }} | {{ post.readingTime.text }} |
                 <DisqusCount :identifier="post._path" /> {{ $t("Comments").toLowerCase() }}
               </subtitle>
-              <p>{{ post.description }}</p>
+              <p class="mb-0">{{ post.description }}</p>
             </article>
           </NuxtLink>
           <hr v-if="index !== list.length - 1" />
