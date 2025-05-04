@@ -94,7 +94,7 @@ article.post:hover {
   }
 
   > p {
-    @apply text-white;
+    @apply text-black dark:text-white;
   }
 }
 </style>
