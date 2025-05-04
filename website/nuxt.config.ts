@@ -66,8 +66,43 @@ export default defineNuxtConfig({
               link: "https://steffbeckers.eu",
             },
             categories: ["Development", "DevOps"],
-            description: "Tutorials, scripts and other useful notes",
+            description: "Tutorials, scripts and other useful notes.",
             link: "https://steffbeckers.eu/blog",
+            title: "Steff Beckers Blog",
+          },
+        },
+      },
+      "/nl/blog.xml": {
+        content: true,
+        revisit: "6h",
+        item: {
+          query: {
+            limit: 100,
+            where: [
+              {
+                $and: [
+                  {
+                    _path: /^\/nl\/blog\/[^\/]+$/,
+                  },
+                  {
+                    _draft: false,
+                  },
+                ],
+              },
+            ],
+          },
+        },
+        type: "rss2",
+        feed: {
+          defaults: {
+            author: {
+              name: "Steff Beckers",
+              email: "steff@steffbeckers.eu",
+              link: "https://steffbeckers.eu",
+            },
+            categories: ["Development", "DevOps"],
+            description: "Handleidingen, scripts en andere handige notities.",
+            link: "https://steffbeckers.eu/nl/blog",
             title: "Steff Beckers Blog",
           },
         },

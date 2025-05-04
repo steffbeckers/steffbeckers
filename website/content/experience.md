@@ -178,7 +178,7 @@ Hours of learning new technologies
 ## Professional Bachelor, Applied Computer Science
 
 ::subtitle
-University College PXL - September 2013 - June 2016 (:duration{ start="2013-09" end="2016-06" })
+University College PXL | 2013 - 2016 (:duration{ start="2013-09" end="2016-08" })
 ::
 
 Application Development (Web & Mobile)
@@ -187,14 +187,14 @@ Application Development (Web & Mobile)
 
 ::div{ .mb-4 .sm:float-right }
 [
-![THHI Logo](/images/logos/thhi-logo.svg){ width=120 .my-0 }
+![THHI Logo](/images/logos/thhi-logo.svg){ width=140 .my-0 }
 ](https://www.campusmax.be)
 ::
 
 ## Multimedia
 
 ::subtitle
-THHI Tessenderlo - september 2011 - juni 2013 (:duration{ start="2011-09" end="2013-06" })
+THHI Tessenderlo | 2011 - 2013 (:duration{ start="2011-09" end="2013-08" })
 ::
 
 High school

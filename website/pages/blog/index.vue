@@ -23,6 +23,7 @@ defineI18nRoute({
 });
 
 const contentListPath = `/${locale.value !== fallbackLocale.value ? locale.value + "/" : ""}blog/`;
+const rssXMLPath = `/${locale.value !== fallbackLocale.value ? locale.value + "/" : ""}blog.xml`;
 
 // TODO: Implement search
 // const searchTerm = ref("");
@@ -30,7 +31,7 @@ const contentListPath = `/${locale.value !== fallbackLocale.value ? locale.value
 
 <template>
   <NuxtLayout>
-    <a class="float-right" href="/blog.xml" target="_blank" rel="noopener noreferrer">
+    <a class="float-right" :href="rssXMLPath" target="_blank" rel="noopener noreferrer">
       <Icon name="ri:rss-line" size="40px"></Icon>
     </a>
     <!-- TODO: Implement search -->

@@ -31,7 +31,7 @@ Download CV
 ## Software Developer
 
 ::subtitle
-Fuzed | november 2023 - heden (:duration{ start="2023-11" })
+Fuzed | november 2023 - Heden (:duration{ start="2023-11" })
 ::
 
 Bij **Fuzed** (voorheen **Codefined**) help ik bij de ontwikkeling van een innovatief, **cloudgebaseerd ERP-systeem** voor de **voedingsindustrie**.
@@ -174,10 +174,10 @@ Uren leren over technologie
 ](https://www.pxl.be/digital)
 ::
 
-## Professionele Bachelor Toegepaste Informatica
+## Professionele Bachelor, Toegepaste Informatica
 
 ::subtitle
-Hogeschool PXL - september 2013 - juni 2016 (:duration{ start="2013-09" end="2016-06" })
+Hogeschool PXL | 2013 - 2016 (:duration{ start="2013-09" end="2016-08" })
 ::
 
 Applicatieontwikkeling (Web & Mobile)
@@ -186,14 +186,14 @@ Applicatieontwikkeling (Web & Mobile)
 
 ::div{ .mb-4 .sm:float-right }
 [
-![THHI Logo](/images/logos/thhi-logo.svg){ width=120 .my-0 }
+![THHI Logo](/images/logos/thhi-logo.svg){ width=140 .my-0 }
 ](https://www.campusmax.be)
 ::
 
 ## Multimedia
 
 ::subtitle
-THHI Tessenderlo - september 2011 - juni 2013 (:duration{ start="2011-09" end="2013-06" })
+THHI Tessenderlo | 2011 - 2013 (:duration{ start="2011-09" end="2013-08" })
 ::
 
 Middelbare school
