@@ -48,23 +48,23 @@ onMounted(() => {
             <section class="get-in-touch flex flex-col gap-2">
               <header>
                 <a href="https://steffbeckers.eu/contact">
-                  <h2>Get in touch</h2>
+                  <h2>{{ $t("GetInTouch") }}</h2>
                 </a>
               </header>
               <div class="flex flex-col gap-3">
                 <div class="personal-info flex flex-col gap-2">
                   <header>
-                    <h3>Personal info</h3>
+                    <h3>{{ $t("PersonalInfo") }}</h3>
                   </header>
                   <div class="flex flex-col">
-                    <h4 class="subtitle">Name</h4>
+                    <h4 class="subtitle">{{ $t("Name") }}</h4>
                     <div class="text-sm">Steff Beckers</div>
                   </div>
                   <div class="relative flex flex-col">
-                    <h4 class="subtitle">Address</h4>
+                    <h4 class="subtitle">{{ $t("Address") }}</h4>
                     <a class="text-sm" href="https://goo.gl/maps/KyGduB3qTaBZVPR46">
-                      3945 Tessenderlo-Ham <br />
-                      Belgium
+                      3945 Tessenderlo-Ham<br />
+                      {{ $t("Belgium") }}
                     </a>
                     <a href="https://goo.gl/maps/KyGduB3qTaBZVPR46">
                       <img
@@ -76,21 +76,21 @@ onMounted(() => {
                     </a>
                   </div>
                   <div class="flex flex-col">
-                    <h4 class="subtitle">Phone</h4>
+                    <h4 class="subtitle">{{ $t("Phone") }}</h4>
                     <a class="text-sm" href="tel:+32499765192">+32 499 765 192</a>
                   </div>
                   <div class="flex flex-col">
-                    <h4 class="subtitle">Email</h4>
+                    <h4 class="subtitle">{{ $t("Email") }}</h4>
                     <a class="text-sm" href="mailto:steff@steffbeckers.eu">steff@steffbeckers.eu</a>
                   </div>
                   <div class="flex flex-col">
-                    <h4 class="subtitle">Website</h4>
+                    <h4 class="subtitle">{{ $t("Website") }}</h4>
                     <a class="text-sm" href="https://steffbeckers.eu">steffbeckers.eu</a>
                   </div>
                 </div>
                 <div class="social-media flex flex-col gap-2">
                   <header>
-                    <h3>Social media</h3>
+                    <h3>{{ $t("SocialMedia") }}</h3>
                   </header>
                   <a
                     class="flex gap-2 items-center"
@@ -141,32 +141,32 @@ onMounted(() => {
             </section>
             <section class="languages flex flex-col gap-2">
               <header>
-                <h2>Languages</h2>
+                <h2>{{ $t("Languages") }}</h2>
               </header>
               <div class="flex justify-between">
                 <div class="flex flex-col">
-                  <h4 class="subtitle">Dutch</h4>
-                  <div class="text-sm">Native</div>
+                  <h4 class="subtitle">{{ $t("Dutch") }}</h4>
+                  <div class="text-sm">{{ $t("Native") }}</div>
                 </div>
                 <div class="flex flex-col">
-                  <h4 class="subtitle">English</h4>
-                  <div class="text-sm">Fluent</div>
+                  <h4 class="subtitle">{{ $t("English") }}</h4>
+                  <div class="text-sm">{{ $t("Fluent") }}</div>
                 </div>
                 <div class="flex flex-col">
-                  <h4 class="subtitle">French</h4>
-                  <div class="text-sm">Basics</div>
+                  <h4 class="subtitle">{{ $t("French") }}</h4>
+                  <div class="text-sm">{{ $t("Basics") }}</div>
                 </div>
               </div>
             </section>
             <section class="hobbies-and-interests flex flex-col gap-2">
               <header>
-                <h2>Hobbies & interests</h2>
+                <h2>{{ $t("HobbiesAndInterests") }}</h2>
               </header>
               <ul class="text-sm list-disc list-inside marker:text-primary-400">
-                <li>Own development projects</li>
-                <li>Learning new technologies</li>
-                <li>Member of snooker club</li>
-                <li>Multiplayer games</li>
+                <li>{{ $t("OwnDevelopmentProjects") }}</li>
+                <li>{{ $t("LearningNewTechnologies") }}</li>
+                <li>{{ $t("MemberOfSnookerClub") }}</li>
+                <li>{{ $t("MultiplayerGames") }}</li>
                 <li>Listening to music</li>
                 <li>Brain trainers</li>
               </ul>
