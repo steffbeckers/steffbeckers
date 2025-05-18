@@ -167,8 +167,8 @@ onMounted(() => {
                 <li>{{ $t("LearningNewTechnologies") }}</li>
                 <li>{{ $t("MemberOfSnookerClub") }}</li>
                 <li>{{ $t("MultiplayerGames") }}</li>
-                <li>Listening to music</li>
-                <li>Brain trainers</li>
+                <li>{{ $t("ListeningToMusic") }}</li>
+                <li>{{ $t("BrainTrainers") }}</li>
               </ul>
             </section>
           </aside>
