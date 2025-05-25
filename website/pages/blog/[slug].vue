@@ -12,8 +12,13 @@ defineOgImageComponent();
       <h1>{{ document.page.value.title }}</h1>
       <subtitle :primary="true">
         {{ formatDateTime(document.page.value.date) }} |
-        {{ Math.ceil(document.page.value.readingTime.minutes) }} {{ $t("Minutes").toLowerCase() }} |
-        <DisqusCount :identifier="document.page.value._path" /> {{ $t("Comments").toLowerCase() }}
+        {{ Math.ceil(document.page.value.readingTime.minutes) }}
+        {{
+          Math.ceil(document.page.value.readingTime.minutes) === 1
+            ? $t("Minute").toLowerCase()
+            : $t("Minutes").toLowerCase()
+        }}
+        | <DisqusCount :identifier="document.page.value._path" /> {{ $t("Comments").toLowerCase() }}
       </subtitle>
       <p>{{ document.page.value.description }}</p>
       <aside class="flex-shrink-0" v-if="document.toc.value.links.length > 0">

@@ -73,7 +73,12 @@ const rssXMLPath = `/${locale.value !== fallbackLocale.value ? locale.value + "/
               <h2 class="mt-0">{{ post.title }}</h2>
               <subtitle>
                 {{ formatDateTime(post.date) }} | {{ Math.ceil(post.readingTime.minutes) }}
-                {{ $t("Minutes").toLowerCase() }} | <DisqusCount :identifier="post._path" />
+                {{
+                  Math.ceil(post.readingTime.minutes) === 1
+                    ? $t("Minute").toLowerCase()
+                    : $t("Minutes").toLowerCase()
+                }}
+                | <DisqusCount :identifier="post._path" />
                 {{ $t("Comments").toLowerCase() }}
               </subtitle>
               <p class="mb-0">{{ post.description }}</p>
