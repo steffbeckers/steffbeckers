@@ -13,7 +13,7 @@
     "remark-reading-time": "^2.0.0"
   },
   "devDependencies": {
-    "@dargmuesli/nuxt-cookie-control": "^8.0.0",
+    "@dargmuesli/nuxt-cookie-control": "^9.0.0",
     "@nuxtjs/google-fonts": "^3.0.0",
     "@nuxtjs/i18n": "^9.0.0",
     "@nuxtjs/seo": "^3.0.0",
