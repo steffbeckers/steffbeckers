@@ -40,7 +40,7 @@ Add me on [LinkedIn](https://linkedin.com/in/steffbeckers), follow me on [GitHub
             <strong>Phone</strong>
           </div>
           <div class="w-3/4">
-            <a class="hover:text-primary-400" href="tel:+32499765192" rel="noopener noreferrer">+32 499 765 192</a>
+            <a class="hover:text-primary-400" href="tel:+32499765192" rel="noopener noreferrer">+32 499 76 51 92</a>
           </div>
         </div>
         <div class="flex gap-4">
@@ -59,6 +59,25 @@ Add me on [LinkedIn](https://linkedin.com/in/steffbeckers), follow me on [GitHub
 
   </div>
   <div class="flex-1 flex flex-col gap-8">
+    <div class="flex-1 flex flex-col gap-2">
+      <h2 class="mt-0">Self-employed secondary activity</h2>
+      <div class="flex flex-col not-prose gap-2 max-w-sm">
+        <div class="flex gap-4">
+          <div class="w-1/2">
+            <strong>Company number</strong>
+          </div>
+          <div class="w-1/2">
+            <a class="hover:text-primary-400" href="https://kbopub.economie.fgov.be/kbopub/zoeknummerform.html?lang=en&nummer=1017520397">1017.520.397</a>
+          </div>
+        </div>
+        <div class="flex gap-4">
+          <div class="w-1/2">
+            <strong>IBAN</strong>
+          </div>
+          <div class="w-1/2">BE95 7390 2341 1858</div>
+        </div>
+      </div>
+    </div>
     <div class="flex-1 flex flex-col gap-2">
       <h2 class="mt-0">Social media</h2>
       <div class="flex flex-wrap gap-4">
@@ -86,25 +105,6 @@ Add me on [LinkedIn](https://linkedin.com/in/steffbeckers), follow me on [GitHub
           class="dark:text-gray-100">
           <Icon name="fa-brands:whatsapp" class="w-8 h-8 hover:text-primary-400"/>
         </a>
-      </div>
-    </div>
-    <div class="flex-1 flex flex-col gap-2">
-      <h2 class="mt-0">Self-employed secondary activity</h2>
-      <div class="flex flex-col not-prose gap-2 max-w-sm">
-        <div class="flex gap-4">
-          <div class="w-1/2">
-            <strong>Company number</strong>
-          </div>
-          <div class="w-1/2">
-            <a class="hover:text-primary-400" href="https://kbopub.economie.fgov.be/kbopub/zoeknummerform.html?lang=en&nummer=1017520397">1017.520.397</a>
-          </div>
-        </div>
-        <div class="flex gap-4">
-          <div class="w-1/2">
-            <strong>IBAN</strong>
-          </div>
-          <div class="w-1/2">BE95 7390 2341 1858</div>
-        </div>
       </div>
     </div>
   </div>

@@ -82,7 +82,7 @@ onMounted(() => {
                   </div>
                   <div class="flex flex-col">
                     <h4 class="subtitle">{{ $t("Phone") }}</h4>
-                    <a class="text-sm" href="tel:+32499765192">+32 499 765 192</a>
+                    <a class="text-sm" href="tel:+32499765192">+32 499 76 51 92</a>
                   </div>
                   <div class="flex flex-col">
                     <h4 class="subtitle">{{ $t("Email") }}</h4>
@@ -93,6 +93,20 @@ onMounted(() => {
                   <div class="flex flex-col">
                     <h4 class="subtitle">{{ $t("Website") }}</h4>
                     <a class="text-sm" :href="siteUrl + localePath('index')">steffbeckers.com</a>
+                  </div>
+                </div>
+                <div class="personal-info flex flex-col gap-2">
+                  <header>
+                    <h3>{{ $t("SelfEmployedSecondaryActivity") }}</h3>
+                  </header>
+                  <div class="flex flex-col">
+                    <h4 class="subtitle">{{ $t("CompanyNumber") }}</h4>
+                    <div class="text-sm">
+                      <a
+                        href="https://kbopub.economie.fgov.be/kbopub/zoeknummerform.html?lang=en&nummer=1017520397"
+                        >1017.520.397</a
+                      >
+                    </div>
                   </div>
                 </div>
                 <div class="social-media flex flex-col gap-2">
@@ -140,7 +154,7 @@ onMounted(() => {
                     <Icon name="fa-brands:whatsapp" class="w-5 h-5" />
                     <div class="flex flex-col">
                       <h4 class="subtitle">WhatsApp</h4>
-                      <div class="text-sm">+32 499 765 192</div>
+                      <div class="text-sm">+32 499 76 51 92</div>
                     </div>
                   </a>
                 </div>
@@ -170,9 +184,18 @@ onMounted(() => {
                 <h2>{{ $t("HobbiesAndInterests") }}</h2>
               </header>
               <ul class="text-sm list-disc list-inside marker:text-primary-400">
-                <li>{{ $t("OwnDevelopmentProjects") }}</li>
+                <li>
+                  <a href="https://github.com/steffbeckers">{{ $t("OwnDevelopmentProjects") }}</a>
+                </li>
+                <li>
+                  <a :href="siteUrl + localePath('tutoring')">
+                    {{ $t("Tutoring") }}
+                  </a>
+                </li>
                 <li>{{ $t("LearningNewTechnologies") }}</li>
-                <li>{{ $t("MemberOfSnookerClub") }}</li>
+                <li>
+                  <a href="https://www.play-er.be">{{ $t("MemberOfSnookerClub") }}</a>
+                </li>
                 <li>{{ $t("MultiplayerGames") }}</li>
                 <li>{{ $t("ListeningToMusic") }}</li>
                 <li>{{ $t("BrainTrainers") }}</li>
@@ -203,17 +226,15 @@ onMounted(() => {
                       <a :href="siteUrl + localePath('experience') + '#software-developer'">
                         <h3>Software Developer</h3>
                       </a>
-                      <h4>Fuzed | November 2023 - Present</h4>
+                      <h4 class="text-gray-500">
+                        Fuzed | {{ $t("November") }} 2023 - {{ $t("Present") }}
+                      </h4>
                     </div>
                     <a href="https://fuzed.app">
                       <img src="/images/logos/fuzed-logo-black.svg" width="90" />
                     </a>
                   </header>
-                  <p>
-                    At <strong>Fuzed</strong> (previously known as <strong>Codefined</strong>), I
-                    contribute in developing an innovative, <strong>cloud-based ERP</strong> system
-                    tailored for the <strong>food production industry</strong>.
-                  </p>
+                  <ContentDoc :path="localePrefix + '/cv/experience/fuzed'" :head="false" />
                 </div>
                 <div>
                   <header class="flex items-center justify-between">
@@ -222,17 +243,15 @@ onMounted(() => {
                       <a :href="siteUrl + localePath('experience') + '#software-developer-1'">
                         <h3>Software Developer</h3>
                       </a>
-                      <h4>Codefined | May 2021 - October 2023</h4>
+                      <h4 class="text-gray-500">
+                        Codefined | {{ $t("May") }} 2021 - {{ $t("October") }} 2023
+                      </h4>
                     </div>
                     <a href="https://codefined.be">
                       <img src="/images/logos/codefined-logo-black.svg" width="150" />
                     </a>
                   </header>
-                  <p>
-                    At <strong>Codefined</strong>, I specialized in developing custom
-                    <strong>.NET</strong> and <strong>Angular</strong>
-                    web applications tailored to meet client-specific requirements.
-                  </p>
+                  <ContentDoc :path="localePrefix + '/cv/experience/codefined'" :head="false" />
                 </div>
                 <div>
                   <header class="flex items-center justify-between">
@@ -240,19 +259,15 @@ onMounted(() => {
                       <a :href="siteUrl + localePath('experience') + '#analyst-developer'">
                         <h3>Analyst Developer</h3>
                       </a>
-                      <h4>aariXa | July 2017 - April 2021</h4>
+                      <h4 class="text-gray-500">
+                        aariXa | {{ $t("July") }} 2017 - {{ $t("April") }} 2021
+                      </h4>
                     </div>
                     <a href="https://www.aarixa.be">
                       <img src="/images/logos/aarixa-logo-blue.png" width="80" />
                     </a>
                   </header>
-                  <p>
-                    At <strong>aariXa</strong>, I worked extensively with a versatile tech stack,
-                    including <strong>Angular</strong>, <strong>.NET</strong>,
-                    <strong>MS SQL</strong>, <strong>Azure</strong>, and
-                    <strong>Windows Server</strong>, combining modern frameworks and
-                    <strong>Microsoft-centric technologies</strong> to deliver innovative solutions.
-                  </p>
+                  <ContentDoc :path="localePrefix + '/cv/experience/aarixa'" :head="false" />
                 </div>
                 <div>
                   <header class="flex items-center justify-between">
@@ -260,7 +275,9 @@ onMounted(() => {
                       <a :href="siteUrl + localePath('experience') + '#dynamics-365-crm-developer'">
                         <h3>Dynamics 365 CRM Developer</h3>
                       </a>
-                      <h4>Bridgestone | October 2016 - June 2017</h4>
+                      <h4 class="text-gray-500">
+                        Bridgestone | {{ $t("October") }} 2016 - {{ $t("June") }} 2017
+                      </h4>
                     </div>
                     <div class="flex gap-2 items-center">
                       <a href="https://be.ctg.com/">
@@ -271,20 +288,16 @@ onMounted(() => {
                       </a>
                     </div>
                   </header>
-                  <p>
-                    As a consultant at <strong>CTG</strong>, I contributed to a project for
-                    <strong>Bridgestone</strong>, focusing on the customization and enhancement of
-                    their <strong>Dynamics 365 CRM</strong> system.
-                  </p>
+                  <ContentDoc :path="localePrefix + '/cv/experience/bridgestone'" :head="false" />
                 </div>
               </div>
             </section>
             <section class="education flex flex-col gap-2">
               <header>
                 <a :href="siteUrl + localePath('experience')">
-                  <h2>Education</h2>
+                  <h2>{{ $t("Education") }}</h2>
                 </a>
-                <h4 class="subtitle">Hours of learning new technologies</h4>
+                <h4 class="subtitle">{{ $t("HoursOfLearningNewTechnologies") }}</h4>
               </header>
               <div class="flex flex-col gap-2">
                 <div>
@@ -298,29 +311,35 @@ onMounted(() => {
                           '#professional-bachelors-degree-in-applied-computer-science'
                         "
                       >
-                        <h3>
-                          Professional Bachelor's Degree in Applied Computer Science @ Hogeschool
-                          PXL
-                        </h3>
+                        <h3>{{ $t("ProfessionalBachelorsDegreeInAppliedComputerScience") }}</h3>
                       </a>
-                      <h4>September 2013 - June 2016</h4>
+                      <h4 class="text-gray-500">
+                        {{ $t("HogeschoolPXL") }} | {{ $t("September") }} 2013 -
+                        {{ $t("June") }} 2016
+                      </h4>
                     </div>
                     <a href="https://www.pxl.be/digital">
                       <img src="/images/logos/pxl-it-logo-black.png" width="90" />
                     </a>
                   </header>
-                  <p>Application Development (Web & Mobile)</p>
+                  <p>{{ $t("ApplicationDevelopmentWebAndMobile") }}</p>
                 </div>
               </div>
             </section>
           </main>
         </div>
         <footer class="text-sm text-center">
-          Last updated on <strong>{{ formatDate(runtimeConfig.public.lastUpdatedOn) }}</strong
-          >. For more information and
-          <a href="https://steffbeckers.com/downloads/CV_Steff_Beckers.pdf"
-            ><strong>latest version</strong></a
-          >, visit my website:
+          {{ $t("LastUpdatedOn") }}
+          <strong>{{ formatDate(runtimeConfig.public.lastUpdatedOn, locale + "-BE") }}</strong
+          >. {{ $t("ForMoreInformationAnd") }}
+          <a
+            :href="
+              'https://steffbeckers.com/downloads/CV_Steff_Beckers' +
+              (fallbackLocale != locale ? '_' + locale.toUpperCase() : '') +
+              '.pdf'
+            "
+            ><strong>{{ $t("LatestVersion").toLowerCase() }}</strong></a
+          >,<br />{{ $t("VisitMyWebsite").toLowerCase() }}:
           <a href="https://steffbeckers.com"><strong>steffbeckers.com</strong></a>
         </footer>
       </div>

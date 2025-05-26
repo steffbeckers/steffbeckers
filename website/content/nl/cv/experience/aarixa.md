@@ -1,0 +1,1 @@
+Bij **aariXa** werkte ik met een brede technologiestack waaronder **Angular**, **.NET Core**, **MS SQL**, **Azure** en **Windows Server**, waarbij ik moderne frameworks combineerde met **Microsoft-technologieën**.
