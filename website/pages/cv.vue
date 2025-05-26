@@ -334,13 +334,14 @@ onMounted(() => {
           >. {{ $t("ForMoreInformationAnd") }}
           <a
             :href="
-              'https://steffbeckers.com/downloads/CV_Steff_Beckers' +
+              siteUrl +
+              '/downloads/CV_Steff_Beckers' +
               (fallbackLocale != locale ? '_' + locale.toUpperCase() : '') +
               '.pdf'
             "
             ><strong>{{ $t("LatestVersion").toLowerCase() }}</strong></a
           >,<br />{{ $t("VisitMyWebsite").toLowerCase() }}:
-          <a href="https://steffbeckers.com"><strong>steffbeckers.com</strong></a>
+          <a :href="siteUrl + localePath('index')"><strong>steffbeckers.com</strong></a>
         </footer>
       </div>
     </div>
