@@ -184,6 +184,12 @@ export default defineNuxtConfig({
     "/cv": {
       ssr: false,
     },
+    "/nl/cv": {
+      ssr: false,
+    },
+    "/nl/sitemap.xml": {
+      ssr: false,
+    },
   },
   runtimeConfig: {
     public: {
