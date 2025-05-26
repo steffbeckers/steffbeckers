@@ -1,27 +1,27 @@
 ---
-title: Chocolatey, the package manager for Windows
-description: Chocolatey has the largest online registry of Windows packages. Chocolatey packages encapsulate everything required to manage a particular piece of software into one deployment artifact by wrapping installers, executables, zips, and/or scripts into a compiled package file.
+title: Chocolatey, de package manager voor Windows
+description: Chocolatey heeft het grootste online register van Windows-packages. Chocolatey-packages bevatten alles wat nodig is om een bepaald stuk software te beheren in één distributiebestand, door installatiescripts, uitvoerbare bestanden, zipbestanden en/of scripts te bundelen in een gecompileerd package.
 head:
   meta:
     - name: keywords
-      content: Chocolatey, DEV, Commands, PowerShell, Windows, Packages, Installers, Steff, Beckers, Blog
+      content: Chocolatey, DEV, Commando's, PowerShell, Windows, Packages, Installaties, Steff, Beckers, Blog
 date: "2021-01-11T18:56:00Z"
 tags: ["dev", "windows", "tools", "powershell"]
 ---
 
-## Installation
+## Installatie
 
 https://chocolatey.org/install
 
-## Useful commands
+## Nuttige commando's
 
-Check for outdated installed packages:
+Controleer op verouderde geïnstalleerde packages:
 
 ```powershell
 choco outdated
 ```
 
-Upgrade all installed packages at once:
+Upgrade alle geïnstalleerde packages in één keer:
 
 ```powershell
 choco upgrade all -y
@@ -31,7 +31,7 @@ choco upgrade all -y
 
 https://chocolatey.org/packages
 
-Steff's Chocolatey DEV-list:
+Steff's Chocolatey DEV-lijst:
 
 ```powershell
 choco install 7zip.install -y

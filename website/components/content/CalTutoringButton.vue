@@ -50,6 +50,6 @@ onMounted(() => {
     data-cal-config='{"layout":"month_view"}'
     icon="fa6-regular:calendar-days"
   >
-    Book a tutoring session
+    {{ $t("BookATutoringSession") }}
   </ButtonLink>
 </template>

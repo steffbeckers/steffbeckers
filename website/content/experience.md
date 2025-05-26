@@ -5,8 +5,6 @@ head:
   meta:
     - name: keywords
       content: Steff, Beckers, Developer, Personal website, Blog, Projects, Resume, CV, Work, Experience, Fuzed, Codefined, aariXa, CTG, Brigestone, PXL
-navigation:
-  title: Experience
 ---
 
 ::button-link{ external href="/downloads/CV_Steff_Beckers.pdf" target="_blank" class="hidden sm:block font-semibold float-right" icon="fa-regular:file-code" }
@@ -15,7 +13,7 @@ Download CV
 
 # Work experience
 
-::subtitle
+::subtitle{ :primary="true" }
 Many lines of code and coffee
 ::
 
@@ -31,9 +29,11 @@ Download CV
 ](https://fuzed.app)
 ::
 
-## Software Developer @ Fuzed
+## Software Developer
 
-#### Nov 2023 - Present (:duration{ start="2023-11" })
+::subtitle
+Fuzed | November 2023 - Present (:duration{ start="2023-11" })
+::
 
 At **Fuzed** (previously known as **Codefined**), I contribute in developing an innovative, **cloud-based ERP** system tailored for the **food production industry**.
 
@@ -42,15 +42,19 @@ With the rebranding, our focus shifted from custom software development to creat
 - **Technology stack**
   
   - Back-end: **.NET**, **ABP Framework**, **EF Core**, **SignalR**
-  - Front-end: **Angular**, **Nx Monorepo**, **Bootstrap 5**, **NgRx**, **RxJS**, **Signals**
+  - Front-end: **Angular**, **Nx monorepo**, **Bootstrap 5**, **NgRx**, **RxJS**, **Signals**
 
 - **Module development**
   
-  Built core modules like **CRM**, **Product management**, **Supply chain** (Purchase, Sales, Invoicing), **WMS** and **Translations**.
+  Built core modules like **CRM**, **Product management**, **Supply chain** (Purchase, Sales, Distribution, Invoicing), **WMS** and **Translations**. We've also built an external B2B portal.
 
 - **Infrastructure**
 
-  Utilized tools and technologies like **SQL Server**, **RabbitMQ**, **Redis**, **Kubernetes**, **Grafana**, and **SonarQube** to ensure a robust and scalable system.
+  Utilized tools and technologies like **SQL Server**, **Azure Storage**, **RabbitMQ**, **Redis**, **Kubernetes**, **Grafana**, and **SonarQube** to ensure a robust and scalable system.
+
+- **Integrations**
+
+  Integrated with 3rd party apps like **Exact Online**, **Checkin@work** (NSSO), **Transus** (EDI) and **Dokapi** (Peppol).
 
 - **DevOps**
   
@@ -67,9 +71,11 @@ By integrating modern technologies and industry-specific requirements, I help sh
 ](https://codefined.be)
 ::
 
-## Software Developer @ Codefined
+## Software Developer
 
-#### May 2021 - Oct 2023 (:duration{ start="2021-05" end="2023-10" })
+::subtitle
+Codefined | May 2021 - October 2023 (:duration{ start="2021-05" end="2023-10" })
+::
 
 At **Codefined**, I specialized in developing custom **.NET** and **Angular** web applications tailored to meet client-specific requirements.
 
@@ -84,9 +90,11 @@ Leveraging the **ABP Framework**, I delivered scalable, modular, and maintainabl
 ](https://www.aarixa.be)
 ::
 
-## Analyst Developer @ aariXa
+## Analyst Developer
 
-#### July 2017 - April 2021 (:duration{ start="2017-07" end="2021-04" })
+::subtitle
+aariXa | July 2017 - April 2021 (:duration{ start="2017-07" end="2021-04" })
+::
 
 At **aariXa**, I worked extensively with a versatile tech stack, including **Angular**, **.NET Core**, **MS SQL**, **Azure**, and **Windows Server**, combining modern frameworks and **Microsoft-centric technologies** to deliver innovative solutions.
 
@@ -116,9 +124,11 @@ This diverse role allowed me to bridge development and operations, ensuring scal
 ](https://www.bridgestone.eu){ .flex .items-center }
 ::
 
-## Dynamics 365 CRM Developer @ Bridgestone
+## Dynamics 365 CRM Developer
 
-#### October 2016 - June 2017 (:duration{ start="2016-10" end="2017-06" })
+::subtitle
+Bridgestone | October 2016 - June 2017 (:duration{ start="2016-10" end="2017-06" })
+::
 
 As a consultant at **CTG**, I contributed to a project for **Bridgestone**, focusing on the customization and enhancement of their **Dynamics 365 CRM** system.
 
@@ -136,7 +146,7 @@ This role required a deep understanding of CRM systems, front-end development, a
 
 # Certification
 
-::subtitle
+::subtitle{ :primary="true" }
 Verification of knowledge and skills
 ::
 
@@ -146,13 +156,15 @@ Verification of knowledge and skills
 
 ## Microsoft Exam 70-483 - Programming in C#
 
-#### September 21st, 2018
+::subtitle
+September 21st, 2018
+::
 
 <hr />
 
 # Education
 
-::subtitle
+::subtitle{ :primary="true" }
 Hours of learning new technologies
 ::
 
@@ -163,8 +175,26 @@ Hours of learning new technologies
 ](https://www.pxl.be/digital)
 ::
 
-## Professional Bachelor's Degree in Applied Computer Science
+## Professional Bachelor, Applied Computer Science
 
-#### September 2013 - June 2016 (:duration{ start="2013-09" end="2016-06" })
+::subtitle
+University College PXL | 2013 - 2016 (:duration{ start="2013-09" end="2016-08" })
+::
 
 Application Development (Web & Mobile)
+
+<hr />
+
+::div{ .mb-4 .sm:float-right }
+[
+![THHI Logo](/images/logos/thhi-logo.svg){ width=140 .my-0 }
+](https://www.campusmax.be)
+::
+
+## Multimedia
+
+::subtitle
+THHI Tessenderlo | 2011 - 2013 (:duration{ start="2011-09" end="2013-08" })
+::
+
+High school

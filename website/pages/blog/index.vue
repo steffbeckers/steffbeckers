@@ -1,17 +1,29 @@
 <script setup lang="ts">
+const { fallbackLocale, locale, t } = useI18n();
+
 useHead({
   title: "Blog",
   meta: [
     {
       name: "description",
-      content: "Tutorials, scripts and other useful notes.",
+      content: t("BlogSubtitle"),
     },
     {
       name: "keywords",
-      content: "Steff, Beckers, Development, DevOps, Scripts, Notes, Tutorials, Blog",
+      content: t("BlogKeywords"),
     },
   ],
 });
+
+defineI18nRoute({
+  paths: {
+    en: "/blog",
+    nl: "/blog",
+  },
+});
+
+const contentListPath = `/${locale.value !== fallbackLocale.value ? locale.value + "/" : ""}blog/`;
+const rssXMLPath = `/${locale.value !== fallbackLocale.value ? locale.value + "/" : ""}blog.xml`;
 
 // TODO: Implement search
 // const searchTerm = ref("");
@@ -19,7 +31,7 @@ useHead({
 
 <template>
   <NuxtLayout>
-    <a class="float-right" href="/blog.xml" target="_blank" rel="noopener noreferrer">
+    <a class="float-right" :href="rssXMLPath" target="_blank" rel="noopener noreferrer">
       <Icon name="ri:rss-line" size="40px"></Icon>
     </a>
     <!-- TODO: Implement search -->
@@ -33,8 +45,8 @@ useHead({
         <Icon name="ri:rss-line" size="40px"></Icon>
       </a>
     </div> -->
-    <h1>Blog</h1>
-    <subtitle>Tutorials, scripts and other useful notes</subtitle>
+    <h1>{{ $t("Blog") }}</h1>
+    <subtitle :primary="true">{{ $t("BlogSubtitle") }}</subtitle>
     <!-- TODO: Implement search -->
     <!-- <div class="flex gap-4 my-6 sm:hidden">
       <input
@@ -48,26 +60,48 @@ useHead({
     </div> -->
     <ContentList
       :query="{
-        path: '/blog/',
+        path: contentListPath,
         sort: [{ date: -1 }],
         // TODO: Implement search
         // where: searchTerm ? [{ title: { $icontains: searchTerm } }] : [],
       }"
     >
       <template #default="{ list }">
-        <NuxtLink v-for="(post, index) in list" :key="post._path" :to="post._path">
-          <h2 class="mt-0">{{ post.title }}</h2>
-          <h4>
-            {{ formatDateTime(post.date) }} | {{ post.readingTime.text }} |
-            <DisqusCount style="text-transform: lowercase" :identifier="post._path" />
-          </h4>
-          <p>{{ post.description }}</p>
+        <template v-for="(post, index) in list" :key="post._path">
+          <NuxtLink :to="post._path">
+            <article class="post">
+              <h2 class="mt-0">{{ post.title }}</h2>
+              <subtitle>
+                {{ formatDateTime(post.date) }} | {{ Math.ceil(post.readingTime.minutes) }}
+                {{
+                  Math.ceil(post.readingTime.minutes) === 1
+                    ? $t("Minute").toLowerCase()
+                    : $t("Minutes").toLowerCase()
+                }}
+                | <DisqusCount :identifier="post._path" />
+                {{ $t("Comments").toLowerCase() }}
+              </subtitle>
+              <p class="mb-0">{{ post.description }}</p>
+            </article>
+          </NuxtLink>
           <hr v-if="index !== list.length - 1" />
-        </NuxtLink>
+        </template>
       </template>
       <template #not-found>
-        <p>No posts found.</p>
+        <p>{{ $t("NoPostsFound") }}</p>
       </template>
     </ContentList>
   </NuxtLayout>
 </template>
+
+<style lang="postcss" scoped>
+article.post:hover {
+  > h2 {
+    @apply text-primary-400;
+  }
+
+  > p {
+    @apply text-black dark:text-white;
+  }
+}
+</style>

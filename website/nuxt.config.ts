@@ -7,7 +7,8 @@ export default defineNuxtConfig({
       anchorLinks: {
         depth: 3,
       },
-      remarkPlugins: ["remark-reading-time", "remark-unwrap-images"],
+      rehypePlugins: ["rehype-unwrap-images"],
+      remarkPlugins: ["remark-reading-time"],
     },
   },
   cookieControl: {
@@ -61,12 +62,47 @@ export default defineNuxtConfig({
           defaults: {
             author: {
               name: "Steff Beckers",
-              email: "steff@steffbeckers.eu",
-              link: "https://steffbeckers.eu",
+              email: "steff@steffbeckers.com",
+              link: "https://steffbeckers.com",
             },
             categories: ["Development", "DevOps"],
-            description: "Tutorials, scripts and other useful notes",
-            link: "https://steffbeckers.eu/blog",
+            description: "Tutorials, scripts and other useful notes.",
+            link: "https://steffbeckers.com/blog",
+            title: "Steff Beckers Blog",
+          },
+        },
+      },
+      "/nl/blog.xml": {
+        content: true,
+        revisit: "6h",
+        item: {
+          query: {
+            limit: 100,
+            where: [
+              {
+                $and: [
+                  {
+                    _path: /^\/nl\/blog\/[^\/]+$/,
+                  },
+                  {
+                    _draft: false,
+                  },
+                ],
+              },
+            ],
+          },
+        },
+        type: "rss2",
+        feed: {
+          defaults: {
+            author: {
+              name: "Steff Beckers",
+              email: "steff@steffbeckers.com",
+              link: "https://steffbeckers.com",
+            },
+            categories: ["Development", "DevOps"],
+            description: "Handleidingen, scripts en andere handige notities.",
+            link: "https://steffbeckers.com/nl/blog",
             title: "Steff Beckers Blog",
           },
         },
@@ -101,6 +137,21 @@ export default defineNuxtConfig({
       console.log("process.env.LAST_UPDATED_ON", process.env.LAST_UPDATED_ON);
     },
   },
+  i18n: {
+    defaultLocale: "en",
+    lazy: true,
+    locales: [
+      {
+        code: "en",
+        file: "en.json",
+      },
+      {
+        code: "nl",
+        file: "nl.json",
+      },
+    ],
+    strategy: "prefix_except_default",
+  },
   mdc: {
     highlight: {
       langs: [
@@ -123,6 +174,7 @@ export default defineNuxtConfig({
   modules: [
     "@dargmuesli/nuxt-cookie-control",
     "@nuxtjs/google-fonts",
+    "@nuxtjs/i18n",
     "@nuxtjs/seo",
     "nuxt-disqus",
     "nuxt-feedme",
@@ -136,12 +188,13 @@ export default defineNuxtConfig({
   runtimeConfig: {
     public: {
       lastUpdatedOn: process.env.LAST_UPDATED_ON ?? now,
+      siteUrl: "https://steffbeckers.com",
     },
   },
   site: {
     defaultLocale: "en",
     name: "Steff Beckers",
-    url: "https://steffbeckers.eu",
+    url: "https://steffbeckers.com",
   },
   tailwindcss: {
     config: {

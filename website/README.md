@@ -1,5 +1,5 @@
-# steffbeckers.eu
+# steffbeckers.com
 
 My personal portfolio website and blog.
 
-https://steffbeckers.eu
+https://steffbeckers.com

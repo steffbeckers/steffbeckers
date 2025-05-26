@@ -9,14 +9,44 @@ export default defineEventHandler(async (event) => {
     const page = await browser.newPage();
 
     // Navigate to the desired URL
-    const url = "http://localhost:3000/cv";
+    let url = "http://localhost:3000/cv";
     console.log(`Navigating to ${url}...`);
     await page.goto(url, {
       waitUntil: "networkidle0",
     });
 
     // Define the PDF output path
-    const pdfPath = "public/downloads/CV_Steff_Beckers.pdf";
+    let pdfPath = "public/downloads/CV_Steff_Beckers.pdf";
+
+    // Save the page as a PDF
+    console.log(`Saving page as PDF: ${pdfPath}`);
+    await page.pdf({
+      path: pdfPath,
+      format: "A4",
+      printBackground: true, // Include background graphics
+    });
+
+    console.log(`PDF saved successfully to ${pdfPath}`);
+
+    pdfPath = "public/downloads/CV_Steff_Beckers_EN.pdf";
+
+    console.log(`Saving page as PDF: ${pdfPath}`);
+    await page.pdf({
+      path: pdfPath,
+      format: "A4",
+      printBackground: true, // Include background graphics
+    });
+
+    console.log(`PDF saved successfully to ${pdfPath}`);
+
+    url = "http://localhost:3000/nl/cv";
+    console.log(`Navigating to ${url}...`);
+    await page.goto(url, {
+      waitUntil: "networkidle0",
+    });
+
+    // Define the PDF output path
+    pdfPath = "public/downloads/CV_Steff_Beckers_NL.pdf";
 
     // Save the page as a PDF
     console.log(`Saving page as PDF: ${pdfPath}`);

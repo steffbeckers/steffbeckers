@@ -1,4 +1,4 @@
-export default (dateString: string) =>
-  new Date(dateString).toLocaleString("en-BE", {
+export default (dateString: string, locale?: string) =>
+  new Date(dateString).toLocaleString(locale ?? "en-BE", {
     dateStyle: "short",
   });
