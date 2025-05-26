@@ -2,42 +2,14 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id/>
     <title/>
-    <updated>2025-01-26T15:04:39.473Z</updated>
+    <updated>2025-05-26T19:49:31.456Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
-    <entry>
-        <title type="html"><![CDATA[]]></title>
-        <id/>
-        <link/>
-        <updated>2025-01-26T15:04:39.468Z</updated>
-        <summary type="html"><![CDATA[I'm a passionate developer with a strong focus on web development and DevOps. I thrive on learning and working with the latest technologies and frameworks to continuously grow my expertise. I enjoy collaborating as part of a team in an agile environment, where I can contribute to building impactful solutions. I'm detail-oriented, committed to getting things right, and understand that even the smallest details can make a big difference.]]></summary>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Experience]]></title>
-        <id/>
-        <link/>
-        <updated>2025-01-26T15:04:39.468Z</updated>
-        <summary type="html"><![CDATA[My work experience, acquired certificates and education.]]></summary>
-    </entry>
     <entry>
         <title type="html"><![CDATA[Blog]]></title>
         <id/>
         <link/>
-        <updated>2025-01-26T15:04:39.469Z</updated>
+        <updated>2025-05-26T19:49:31.443Z</updated>
         <summary type="html"><![CDATA[Tutorials, scripts and other useful notes.]]></summary>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Tutoring]]></title>
-        <id/>
-        <link/>
-        <updated>2025-01-26T15:04:39.469Z</updated>
-        <summary type="html"><![CDATA[Book a tutoring session with me.]]></summary>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Contact]]></title>
-        <id/>
-        <link/>
-        <updated>2025-01-26T15:04:39.470Z</updated>
-        <summary type="html"><![CDATA[Get in touch with Steff.]]></summary>
     </entry>
     <entry>
         <title type="html"><![CDATA[Nginx/Apache SSL Certificates with Let's Encrypt]]></title>
@@ -66,5 +38,166 @@
         <link/>
         <updated>2021-01-25T20:38:00.000Z</updated>
         <summary type="html"><![CDATA[win-acme is a ACMEv2 client for Windows that aims to be very simple to start with, but powerful enough to grow into almost every scenario.]]></summary>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Contact]]></title>
+        <id/>
+        <link/>
+        <updated>2025-05-26T19:49:31.447Z</updated>
+        <summary type="html"><![CDATA[Get in touch with Steff.]]></summary>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Aarixa]]></title>
+        <id/>
+        <link/>
+        <updated>2025-05-26T19:49:31.448Z</updated>
+        <summary type="html"><![CDATA[At aariXa, I worked extensively with a versatile tech stack, including Angular, .NET Core, MS SQL, Azure, and Windows Server, combining modern frameworks and Microsoft-centric technologies to deliver innovative solutions.]]></summary>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Bridgestone]]></title>
+        <id/>
+        <link/>
+        <updated>2025-05-26T19:49:31.448Z</updated>
+        <summary type="html"><![CDATA[As a consultant at CTG, I contributed to a project for Bridgestone, focusing on the customization and enhancement of their Dynamics 365 CRM system.]]></summary>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Codefined]]></title>
+        <id/>
+        <link/>
+        <updated>2025-05-26T19:49:31.448Z</updated>
+        <summary type="html"><![CDATA[At Codefined, I specialized in developing custom .NET and Angular web applications tailored to meet client-specific requirements.]]></summary>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Fuzed]]></title>
+        <id/>
+        <link/>
+        <updated>2025-05-26T19:49:31.448Z</updated>
+        <summary type="html"><![CDATA[At Fuzed (previously known as Codefined), I contribute in developing an innovative, cloud-based ERP system tailored for the food production industry.]]></summary>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Intro]]></title>
+        <id/>
+        <link/>
+        <updated>2025-05-26T19:49:31.449Z</updated>
+        <summary type="html"><![CDATA[I'm a passionate developer with a strong focus on web development and DevOps. I thrive on learning and working with the latest technologies and frameworks to continuously grow my expertise.]]></summary>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Experience]]></title>
+        <id/>
+        <link/>
+        <updated>2025-05-26T19:49:31.449Z</updated>
+        <summary type="html"><![CDATA[My work experience, acquired certificates and education.]]></summary>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[]]></title>
+        <id/>
+        <link/>
+        <updated>2025-05-26T19:49:31.449Z</updated>
+        <summary type="html"><![CDATA[I'm a passionate developer with a strong focus on web development and DevOps. I thrive on learning and working with the latest technologies and frameworks to continuously grow my expertise. I enjoy collaborating as part of a team in an agile environment, where I can contribute to building impactful solutions. I'm detail-oriented, committed to getting things right, and understand that even the smallest details can make a big difference.]]></summary>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Bijles]]></title>
+        <id/>
+        <link/>
+        <updated>2025-05-26T19:49:31.450Z</updated>
+        <summary type="html"><![CDATA[Boek een bijles met mij.]]></summary>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Blog]]></title>
+        <id/>
+        <link/>
+        <updated>2025-05-26T19:49:31.450Z</updated>
+        <summary type="html"><![CDATA[Handleidingen, scripts en andere handige notities.]]></summary>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Nginx/Apache SSL-certificaten met Let's Encrypt]]></title>
+        <id/>
+        <link/>
+        <updated>2021-01-27T19:24:00.000Z</updated>
+        <summary type="html"><![CDATA[Certbot is een gratis, open source tool om automatisch Let's Encrypt-certificaten te gebruiken op handmatig beheerde websites om HTTPS te activeren.]]></summary>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Chocolatey, de package manager voor Windows]]></title>
+        <id/>
+        <link/>
+        <updated>2021-01-11T18:56:00.000Z</updated>
+        <summary type="html"><![CDATA[Chocolatey heeft het grootste online register van Windows-packages. Chocolatey-packages bevatten alles wat nodig is om een bepaald stuk software te beheren in één distributiebestand, door installatiescripts, uitvoerbare bestanden, zipbestanden en/of scripts te bundelen in een gecompileerd package.]]></summary>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[IIS Express 10 localhost SSL-certificaat resetten]]></title>
+        <id/>
+        <link/>
+        <updated>2021-03-26T20:48:00.000Z</updated>
+        <summary type="html"><![CDATA[Handleiding over hoe je je localhost SSL-certificaat voor IIS Express 10 opnieuw instelt.]]></summary>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[IIS SSL-certificaten met Let's Encrypt]]></title>
+        <id/>
+        <link/>
+        <updated>2021-01-25T20:38:00.000Z</updated>
+        <summary type="html"><![CDATA[win-acme is een ACMEv2-client voor Windows die eenvoudig te gebruiken is voor beginners, maar krachtig genoeg om mee te groeien in bijna elk scenario.]]></summary>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Contact]]></title>
+        <id/>
+        <link/>
+        <updated>2025-05-26T19:49:31.452Z</updated>
+        <summary type="html"><![CDATA[Kom in contact met Steff.]]></summary>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Aarixa]]></title>
+        <id/>
+        <link/>
+        <updated>2025-05-26T19:49:31.452Z</updated>
+        <summary type="html"><![CDATA[Bij aariXa werkte ik met een brede technologiestack waaronder Angular, .NET Core, MS SQL, Azure en Windows Server, waarbij ik moderne frameworks combineerde met Microsoft-technologieën.]]></summary>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Bridgestone]]></title>
+        <id/>
+        <link/>
+        <updated>2025-05-26T19:49:31.453Z</updated>
+        <summary type="html"><![CDATA[Als consultant bij CTG werkte ik voor Bridgestone aan de aanpassing en uitbreiding van hun Dynamics 365 CRM-systeem.]]></summary>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Codefined]]></title>
+        <id/>
+        <link/>
+        <updated>2025-05-26T19:49:31.453Z</updated>
+        <summary type="html"><![CDATA[Bij Codefined specialiseerde ik me in het bouwen van op maat gemaakte .NET- en Angular-applicaties volgens de wensen van klanten.]]></summary>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Fuzed]]></title>
+        <id/>
+        <link/>
+        <updated>2025-05-26T19:49:31.454Z</updated>
+        <summary type="html"><![CDATA[Bij Fuzed (voorheen Codefined) help ik bij de ontwikkeling van een innovatief, cloudgebaseerd ERP-systeem voor de voedingsindustrie.]]></summary>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Intro]]></title>
+        <id/>
+        <link/>
+        <updated>2025-05-26T19:49:31.454Z</updated>
+        <summary type="html"><![CDATA[Ik ben een gepassioneerde developer met een sterke focus op web development en DevOps. Ik haal energie uit leren en werken met de nieuwste technologieën en frameworks om mijn expertise voortdurend uit te breiden.]]></summary>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Ervaring]]></title>
+        <id/>
+        <link/>
+        <updated>2025-05-26T19:49:31.455Z</updated>
+        <summary type="html"><![CDATA[Mijn werkervaring, behaalde certificaten en opleiding.]]></summary>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[]]></title>
+        <id/>
+        <link/>
+        <updated>2025-05-26T19:49:31.455Z</updated>
+        <summary type="html"><![CDATA[I'm a passionate developer with a strong focus on web development and DevOps. I thrive on learning and working with the latest technologies and frameworks to continuously grow my expertise. I enjoy collaborating as part of a team in an agile environment, where I can contribute to building impactful solutions. I'm detail-oriented, committed to getting things right, and understand that even the smallest details can make a big difference.]]></summary>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Tutoring]]></title>
+        <id/>
+        <link/>
+        <updated>2025-05-26T19:49:31.455Z</updated>
+        <summary type="html"><![CDATA[Book a tutoring session with me.]]></summary>
     </entry>
 </feed>

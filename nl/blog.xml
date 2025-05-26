@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0">
+    <channel>
+        <title>Steff Beckers Blog</title>
+        <link>https://steffbeckers.com/nl/blog</link>
+        <description>Handleidingen, scripts en andere handige notities.</description>
+        <lastBuildDate>Mon, 26 May 2025 19:49:31 GMT</lastBuildDate>
+        <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
+        <generator>https://github.com/jpmonette/feed</generator>
+        <ttl>360</ttl>
+        <category>Development</category>
+        <category>DevOps</category>
+        <item>
+            <title><![CDATA[Nginx/Apache SSL-certificaten met Let's Encrypt]]></title>
+            <pubDate>Wed, 27 Jan 2021 19:24:00 GMT</pubDate>
+            <description><![CDATA[Certbot is een gratis, open source tool om automatisch Let's Encrypt-certificaten te gebruiken op handmatig beheerde websites om HTTPS te activeren.]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Chocolatey, de package manager voor Windows]]></title>
+            <pubDate>Mon, 11 Jan 2021 18:56:00 GMT</pubDate>
+            <description><![CDATA[Chocolatey heeft het grootste online register van Windows-packages. Chocolatey-packages bevatten alles wat nodig is om een bepaald stuk software te beheren in één distributiebestand, door installatiescripts, uitvoerbare bestanden, zipbestanden en/of scripts te bundelen in een gecompileerd package.]]></description>
+        </item>
+        <item>
+            <title><![CDATA[IIS Express 10 localhost SSL-certificaat resetten]]></title>
+            <pubDate>Fri, 26 Mar 2021 20:48:00 GMT</pubDate>
+            <description><![CDATA[Handleiding over hoe je je localhost SSL-certificaat voor IIS Express 10 opnieuw instelt.]]></description>
+        </item>
+        <item>
+            <title><![CDATA[IIS SSL-certificaten met Let's Encrypt]]></title>
+            <pubDate>Mon, 25 Jan 2021 20:38:00 GMT</pubDate>
+            <description><![CDATA[win-acme is een ACMEv2-client voor Windows die eenvoudig te gebruiken is voor beginners, maar krachtig genoeg om mee te groeien in bijna elk scenario.]]></description>
+        </item>
+    </channel>
+</rss>
