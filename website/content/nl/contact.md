@@ -10,7 +10,7 @@ head:
 # Kom in contact
 
 ::subtitle{ :primary="true" }
-Voeg me toe op [LinkedIn](https://linkedin.com/in/steffbeckers), volg me op [GitHub](https://github.com/steffbeckers) of neem contact met me op via [telefoon](tel:+32499765192) of [e-mail](mailto:steff@steffbeckers.eu).
+Voeg me toe op [LinkedIn](https://linkedin.com/in/steffbeckers), volg me op [GitHub](https://github.com/steffbeckers) of neem contact met me op via [telefoon](tel:+32499765192) of [e-mail](mailto:steff@steffbeckers.com).
 ::
 
 <div class="flex flex-col sm:flex-row gap-8">
@@ -48,7 +48,7 @@ Voeg me toe op [LinkedIn](https://linkedin.com/in/steffbeckers), volg me op [Git
             <strong>E-mail</strong>
           </div>
           <div class="w-3/4">
-            <a class="hover:text-primary-400" href="mailto:steff@steffbeckers.eu" rel="noopener noreferrer">steff@steffbeckers.eu</a>
+            <a class="hover:text-primary-400" href="mailto:steff@steffbeckers.com" rel="noopener noreferrer">steff@steffbeckers.com</a>
           </div>
         </div>
       </div>

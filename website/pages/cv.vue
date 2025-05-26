@@ -1,5 +1,10 @@
 <script setup lang="ts">
 const runtimeConfig = useRuntimeConfig();
+const { fallbackLocale, locale } = useI18n();
+const localePath = useLocalePath();
+
+const localePrefix = locale.value !== fallbackLocale.value ? "/" + locale.value : "";
+let siteUrl = runtimeConfig.public.siteUrl;
 
 definePageMeta({
   layout: "none",
@@ -23,7 +28,7 @@ onMounted(() => {
       <div class="flex flex-col h-full justify-between" style="gap: 6mm">
         <div class="flex" style="gap: 8mm">
           <aside class="w-1/3 flex flex-col gap-6">
-            <a href="https://steffbeckers.eu">
+            <a :href="siteUrl + localePath('index')">
               <section class="logo flex gap-4 items-center">
                 <img
                   class="rounded-full shadow-md"
@@ -47,7 +52,7 @@ onMounted(() => {
             </a>
             <section class="get-in-touch flex flex-col gap-2">
               <header>
-                <a href="https://steffbeckers.eu/contact">
+                <a :href="siteUrl + localePath('contact')">
                   <h2>{{ $t("GetInTouch") }}</h2>
                 </a>
               </header>
@@ -81,11 +86,13 @@ onMounted(() => {
                   </div>
                   <div class="flex flex-col">
                     <h4 class="subtitle">{{ $t("Email") }}</h4>
-                    <a class="text-sm" href="mailto:steff@steffbeckers.eu">steff@steffbeckers.eu</a>
+                    <a class="text-sm" href="mailto:steff@steffbeckers.com"
+                      >steff@steffbeckers.com</a
+                    >
                   </div>
                   <div class="flex flex-col">
                     <h4 class="subtitle">{{ $t("Website") }}</h4>
-                    <a class="text-sm" href="https://steffbeckers.eu">steffbeckers.eu</a>
+                    <a class="text-sm" :href="siteUrl + localePath('index')">steffbeckers.com</a>
                   </div>
                 </div>
                 <div class="social-media flex flex-col gap-2">
@@ -175,39 +182,28 @@ onMounted(() => {
           <main class="w-2/3 flex flex-col gap-6">
             <section class="intro">
               <header>
-                <a href="https://steffbeckers.eu">
-                  <h2>Hi! I'm Steff</h2>
+                <a :href="siteUrl + localePath('index')">
+                  <h2>{{ $t("HiImSteff") }}</h2>
                 </a>
-                <h4 class="subtitle">Full-stack .NET & Angular developer | DevOps enthusiast</h4>
+                <h4 class="subtitle">{{ $t("JobTitle") }}</h4>
               </header>
-              <p>
-                I'm a passionate developer with a strong focus on
-                <strong>web development</strong> and <strong>DevOps</strong>. I thrive on learning
-                and working with the <strong>latest technologies and frameworks</strong> to
-                continuously grow my expertise.
-              </p>
-              <p>
-                I enjoy collaborating as part of a team in an <strong>agile</strong> environment,
-                where I can contribute to building impactful solutions. I'm detail-oriented,
-                committed to <strong>getting things right</strong>, and understand that even the
-                smallest details can make a big difference.
-              </p>
+              <ContentDoc :path="localePrefix + '/cv/intro'" :head="false" />
             </section>
             <section class="work-experience flex flex-col gap-2">
               <header>
-                <a href="https://steffbeckers.eu/experience">
-                  <h2>Work experience</h2>
+                <a :href="siteUrl + localePath('experience')">
+                  <h2>{{ $t("WorkExperience") }}</h2>
                 </a>
-                <h4 class="subtitle">Many lines of code and coffee</h4>
+                <h4 class="subtitle">{{ $t("ManyLinesOfCodeAndCoffee") }}</h4>
               </header>
               <div class="flex flex-col gap-2">
                 <div>
                   <header class="flex items-center justify-between">
                     <div class="flex flex-col gap-1">
-                      <a href="https://steffbeckers.eu/experience#software-developer-fuzed">
-                        <h3>Software Developer @ Fuzed</h3>
+                      <a :href="siteUrl + localePath('experience') + '#software-developer'">
+                        <h3>Software Developer</h3>
                       </a>
-                      <h4>Nov 2023 - Present</h4>
+                      <h4>Fuzed | November 2023 - Present</h4>
                     </div>
                     <a href="https://fuzed.app">
                       <img src="/images/logos/fuzed-logo-black.svg" width="90" />
@@ -222,10 +218,11 @@ onMounted(() => {
                 <div>
                   <header class="flex items-center justify-between">
                     <div class="flex flex-col gap-1">
-                      <a href="https://steffbeckers.eu/experience#software-developer-codefined">
-                        <h3>Software Developer @ Codefined</h3>
+                      <!-- TODO: software-developer-1 -->
+                      <a :href="siteUrl + localePath('experience') + '#software-developer-1'">
+                        <h3>Software Developer</h3>
                       </a>
-                      <h4>May 2021 - Oct 2023</h4>
+                      <h4>Codefined | May 2021 - October 2023</h4>
                     </div>
                     <a href="https://codefined.be">
                       <img src="/images/logos/codefined-logo-black.svg" width="150" />
@@ -240,10 +237,10 @@ onMounted(() => {
                 <div>
                   <header class="flex items-center justify-between">
                     <div class="flex flex-col gap-1">
-                      <a href="https://steffbeckers.eu/experience#analyst-developer-aarixa">
-                        <h3>Analyst Developer @ aariXa</h3>
+                      <a :href="siteUrl + localePath('experience') + '#analyst-developer'">
+                        <h3>Analyst Developer</h3>
                       </a>
-                      <h4>July 2017 - April 2021</h4>
+                      <h4>aariXa | July 2017 - April 2021</h4>
                     </div>
                     <a href="https://www.aarixa.be">
                       <img src="/images/logos/aarixa-logo-blue.png" width="80" />
@@ -260,12 +257,10 @@ onMounted(() => {
                 <div>
                   <header class="flex items-center justify-between">
                     <div class="flex flex-col gap-1">
-                      <a
-                        href="https://steffbeckers.eu/experience#dynamics-365-crm-developer-bridgestone"
-                      >
-                        <h3>Dynamics 365 CRM Developer @ Bridgestone</h3>
+                      <a :href="siteUrl + localePath('experience') + '#dynamics-365-crm-developer'">
+                        <h3>Dynamics 365 CRM Developer</h3>
                       </a>
-                      <h4>October 2016 - June 2017</h4>
+                      <h4>Bridgestone | October 2016 - June 2017</h4>
                     </div>
                     <div class="flex gap-2 items-center">
                       <a href="https://be.ctg.com/">
@@ -286,7 +281,7 @@ onMounted(() => {
             </section>
             <section class="education flex flex-col gap-2">
               <header>
-                <a href="https://steffbeckers.eu/experience">
+                <a :href="siteUrl + localePath('experience')">
                   <h2>Education</h2>
                 </a>
                 <h4 class="subtitle">Hours of learning new technologies</h4>
@@ -295,8 +290,13 @@ onMounted(() => {
                 <div>
                   <header class="flex items-center justify-between">
                     <div class="flex flex-col gap-1">
+                      <!-- TODO: localized hashtag? -->
                       <a
-                        href="https://steffbeckers.eu/experience#professional-bachelors-degree-in-applied-computer-science"
+                        :href="
+                          siteUrl +
+                          localePath('experience') +
+                          '#professional-bachelors-degree-in-applied-computer-science'
+                        "
                       >
                         <h3>
                           Professional Bachelor's Degree in Applied Computer Science @ Hogeschool
@@ -318,17 +318,17 @@ onMounted(() => {
         <footer class="text-sm text-center">
           Last updated on <strong>{{ formatDate(runtimeConfig.public.lastUpdatedOn) }}</strong
           >. For more information and
-          <a href="https://steffbeckers.eu/downloads/CV_Steff_Beckers.pdf"
+          <a href="https://steffbeckers.com/downloads/CV_Steff_Beckers.pdf"
             ><strong>latest version</strong></a
           >, visit my website:
-          <a href="https://steffbeckers.eu"><strong>steffbeckers.eu</strong></a>
+          <a href="https://steffbeckers.com"><strong>steffbeckers.com</strong></a>
         </footer>
       </div>
     </div>
   </NuxtLayout>
 </template>
 
-<style lang="postcss" scoped>
+<style lang="postcss">
 html.cv {
   &,
   body,

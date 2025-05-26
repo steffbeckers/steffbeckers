@@ -12,7 +12,7 @@ head:
 # Hi! I'm Steff
 
 ::subtitle{ :primary="true" }
-Full-stack .NET & Angular developer | DevOps enthusiast
+.NET & Angular Developer | DevOps Enthusiast
 ::
 
 I'm a passionate developer with a strong focus on **web development** and **DevOps**. I thrive on learning and working with the **latest technologies and frameworks** to continuously grow my expertise.

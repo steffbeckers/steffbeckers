@@ -62,12 +62,12 @@ export default defineNuxtConfig({
           defaults: {
             author: {
               name: "Steff Beckers",
-              email: "steff@steffbeckers.eu",
-              link: "https://steffbeckers.eu",
+              email: "steff@steffbeckers.com",
+              link: "https://steffbeckers.com",
             },
             categories: ["Development", "DevOps"],
             description: "Tutorials, scripts and other useful notes.",
-            link: "https://steffbeckers.eu/blog",
+            link: "https://steffbeckers.com/blog",
             title: "Steff Beckers Blog",
           },
         },
@@ -97,12 +97,12 @@ export default defineNuxtConfig({
           defaults: {
             author: {
               name: "Steff Beckers",
-              email: "steff@steffbeckers.eu",
-              link: "https://steffbeckers.eu",
+              email: "steff@steffbeckers.com",
+              link: "https://steffbeckers.com",
             },
             categories: ["Development", "DevOps"],
             description: "Handleidingen, scripts en andere handige notities.",
-            link: "https://steffbeckers.eu/nl/blog",
+            link: "https://steffbeckers.com/nl/blog",
             title: "Steff Beckers Blog",
           },
         },
@@ -188,12 +188,13 @@ export default defineNuxtConfig({
   runtimeConfig: {
     public: {
       lastUpdatedOn: process.env.LAST_UPDATED_ON ?? now,
+      siteUrl: "https://steffbeckers.com",
     },
   },
   site: {
     defaultLocale: "en",
     name: "Steff Beckers",
-    url: "https://steffbeckers.eu",
+    url: "https://steffbeckers.com",
   },
   tailwindcss: {
     config: {

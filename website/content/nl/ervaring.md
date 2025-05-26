@@ -4,7 +4,7 @@ description: Mijn werkervaring, behaalde certificaten en opleiding.
 head:
   meta:
     - name: keywords
-      content: Steff, Beckers, Ontwikkelaar, Persoonlijke website, Blog, Projecten, CV, Werkervaring, Fuzed, Codefined, aariXa, CTG, Bridgestone, PXL
+      content: Steff, Beckers, Developer, Persoonlijke website, Blog, Projecten, CV, Werkervaring, Fuzed, Codefined, aariXa, CTG, Bridgestone, PXL
 ---
 
 ::button-link{ external href="/downloads/CV_Steff_Beckers.pdf" target="\_blank" class="hidden sm:block font-semibold float-right" icon="fa-regular:file-code" }
@@ -153,7 +153,7 @@ Bevestiging van kennis en vaardigheden
 ![C# Logo](/images/logos/csharp-logo.svg){ width=50 .my-0 }
 ::
 
-## Microsoft Exam 70-483 - Programming in C#
+## Microsoft Examen 70-483 - Programmeren in C#
 
 ::subtitle
 21 september 2018

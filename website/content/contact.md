@@ -10,7 +10,7 @@ head:
 # Get in touch
 
 ::subtitle{ :primary="true" }
-Add me on [LinkedIn](https://linkedin.com/in/steffbeckers), follow me on [GitHub](https://github.com/steffbeckers) or just contact me by [phone](tel:+32499765192) or [email](mailto:steff@steffbeckers.eu)
+Add me on [LinkedIn](https://linkedin.com/in/steffbeckers), follow me on [GitHub](https://github.com/steffbeckers) or just contact me by [phone](tel:+32499765192) or [email](mailto:steff@steffbeckers.com)
 ::
 
 <div class="flex flex-col sm:flex-row gap-8">
@@ -48,7 +48,7 @@ Add me on [LinkedIn](https://linkedin.com/in/steffbeckers), follow me on [GitHub
             <strong>Email</strong>
           </div>
           <div class="w-3/4">
-            <a class="hover:text-primary-400" href="mailto:steff@steffbeckers.eu" rel="noopener noreferrer">steff@steffbeckers.eu</a>
+            <a class="hover:text-primary-400" href="mailto:steff@steffbeckers.com" rel="noopener noreferrer">steff@steffbeckers.com</a>
           </div>
         </div>
       </div>
