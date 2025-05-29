@@ -7,7 +7,7 @@ head:
       content: Steff, Beckers, Developer, Personal website, Blog, Projects, Resume, CV, Work, Experience, Fuzed, Codefined, aariXa, CTG, Brigestone, PXL
 ---
 
-::button-link{ external href="/downloads/CV_Steff_Beckers.pdf" target="_blank" class="hidden sm:block font-semibold float-right" icon="fa-regular:file-code" }
+::button-link{ external href="/downloads/CV_Steff_Beckers_EN.pdf" target="_blank" class="hidden sm:block font-semibold float-right" icon="fa-regular:file-code" }
 Download CV
 ::
 
@@ -17,7 +17,7 @@ Download CV
 Many lines of code and coffee
 ::
 
-::button-link{ external href="/downloads/CV_Steff_Beckers.pdf" target="_blank" class="block sm:hidden my-8 font-semibold" icon="fa-regular:file-code" }
+::button-link{ external href="/downloads/CV_Steff_Beckers_EN.pdf" target="_blank" class="block sm:hidden my-8 font-semibold" icon="fa-regular:file-code" }
 Download CV
 ::
 

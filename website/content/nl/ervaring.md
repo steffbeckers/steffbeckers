@@ -7,7 +7,7 @@ head:
       content: Steff, Beckers, Developer, Persoonlijke website, Blog, Projecten, CV, Werkervaring, Fuzed, Codefined, aariXa, CTG, Bridgestone, PXL
 ---
 
-::button-link{ external href="/downloads/CV_Steff_Beckers.pdf" target="\_blank" class="hidden sm:block font-semibold float-right" icon="fa-regular:file-code" }
+::button-link{ external href="/downloads/CV_Steff_Beckers_NL.pdf" target="\_blank" class="hidden sm:block font-semibold float-right" icon="fa-regular:file-code" }
 Download CV
 ::
 
@@ -17,7 +17,7 @@ Download CV
 Vele regels code en tassen koffie
 ::
 
-::button-link{ external href="/downloads/CV_Steff_Beckers.pdf" target="\_blank" class="block sm:hidden my-8 font-semibold" icon="fa-regular:file-code" }
+::button-link{ external href="/downloads/CV_Steff_Beckers_NL.pdf" target="\_blank" class="block sm:hidden my-8 font-semibold" icon="fa-regular:file-code" }
 Download CV
 ::
 

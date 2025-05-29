@@ -19,6 +19,6 @@ I'm a passionate developer with a strong focus on **web development** and **DevO
 
 I enjoy collaborating as part of a team in an **agile** environment, where I can contribute to building impactful solutions. I'm **detail-oriented**, committed to **getting things right**, and understand that even the smallest details can make a big difference.
 
-::button-link{ external href="/downloads/CV_Steff_Beckers.pdf" target="_blank" class="font-semibold" icon="fa-regular:file-code" }
+::button-link{ external href="/downloads/CV_Steff_Beckers_EN.pdf" target="_blank" class="font-semibold" icon="fa-regular:file-code" }
 Download CV
 ::
