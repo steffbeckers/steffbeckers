@@ -1,1 +1,0 @@
-import{r as t}from"./BdgzF0Jq.js";import{d as a,c as s,n,e as p,k as c}from"./DutC0c67.js";import"./CxYJgpPD.js";const m=a({__name:"Subtitle",props:{primary:Boolean},setup(e){const o=e;return(r,_)=>(p(),s("h4",{class:n(o.primary?"primary":"")},[t(r.$slots,"default",{unwrap:"p"},void 0,!0)],2))}}),f=c(m,[["__scopeId","data-v-f46006df"]]);export{f as default};

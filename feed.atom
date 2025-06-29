@@ -2,13 +2,13 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id/>
     <title/>
-    <updated>2025-05-29T12:35:44.480Z</updated>
+    <updated>2025-06-29T10:07:19.445Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <entry>
         <title type="html"><![CDATA[Blog]]></title>
         <id/>
         <link/>
-        <updated>2025-05-29T12:35:44.468Z</updated>
+        <updated>2025-06-29T10:07:19.433Z</updated>
         <summary type="html"><![CDATA[Tutorials, scripts and other useful notes.]]></summary>
     </entry>
     <entry>
@@ -43,70 +43,70 @@
         <title type="html"><![CDATA[Contact]]></title>
         <id/>
         <link/>
-        <updated>2025-05-29T12:35:44.472Z</updated>
+        <updated>2025-06-29T10:07:19.437Z</updated>
         <summary type="html"><![CDATA[Get in touch with Steff.]]></summary>
     </entry>
     <entry>
         <title type="html"><![CDATA[Aarixa]]></title>
         <id/>
         <link/>
-        <updated>2025-05-29T12:35:44.472Z</updated>
+        <updated>2025-06-29T10:07:19.438Z</updated>
         <summary type="html"><![CDATA[At aariXa, I worked extensively with a versatile tech stack, including Angular, .NET Core, MS SQL, Azure, and Windows Server, combining modern frameworks and Microsoft-centric technologies to deliver innovative solutions.]]></summary>
     </entry>
     <entry>
         <title type="html"><![CDATA[Bridgestone]]></title>
         <id/>
         <link/>
-        <updated>2025-05-29T12:35:44.473Z</updated>
+        <updated>2025-06-29T10:07:19.438Z</updated>
         <summary type="html"><![CDATA[As a consultant at CTG, I contributed to a project for Bridgestone, focusing on the customization and enhancement of their Dynamics 365 CRM system.]]></summary>
     </entry>
     <entry>
         <title type="html"><![CDATA[Codefined]]></title>
         <id/>
         <link/>
-        <updated>2025-05-29T12:35:44.473Z</updated>
+        <updated>2025-06-29T10:07:19.438Z</updated>
         <summary type="html"><![CDATA[At Codefined, I specialized in developing custom .NET and Angular web applications tailored to meet client-specific requirements.]]></summary>
     </entry>
     <entry>
         <title type="html"><![CDATA[Fuzed]]></title>
         <id/>
         <link/>
-        <updated>2025-05-29T12:35:44.473Z</updated>
+        <updated>2025-06-29T10:07:19.438Z</updated>
         <summary type="html"><![CDATA[At Fuzed (previously known as Codefined), I contribute in developing an innovative, cloud-based ERP system tailored for the food production industry.]]></summary>
     </entry>
     <entry>
         <title type="html"><![CDATA[Intro]]></title>
         <id/>
         <link/>
-        <updated>2025-05-29T12:35:44.474Z</updated>
+        <updated>2025-06-29T10:07:19.439Z</updated>
         <summary type="html"><![CDATA[I'm a passionate developer with a strong focus on web development and DevOps. I thrive on learning and working with the latest technologies and frameworks to continuously grow my expertise.]]></summary>
     </entry>
     <entry>
         <title type="html"><![CDATA[Experience]]></title>
         <id/>
         <link/>
-        <updated>2025-05-29T12:35:44.474Z</updated>
+        <updated>2025-06-29T10:07:19.439Z</updated>
         <summary type="html"><![CDATA[My work experience, acquired certificates and education.]]></summary>
     </entry>
     <entry>
         <title type="html"><![CDATA[]]></title>
         <id/>
         <link/>
-        <updated>2025-05-29T12:35:44.474Z</updated>
+        <updated>2025-06-29T10:07:19.439Z</updated>
         <summary type="html"><![CDATA[I'm a passionate developer with a strong focus on web development and DevOps. I thrive on learning and working with the latest technologies and frameworks to continuously grow my expertise. I enjoy collaborating as part of a team in an agile environment, where I can contribute to building impactful solutions. I'm detail-oriented, committed to getting things right, and understand that even the smallest details can make a big difference.]]></summary>
     </entry>
     <entry>
         <title type="html"><![CDATA[Bijles]]></title>
         <id/>
         <link/>
-        <updated>2025-05-29T12:35:44.475Z</updated>
+        <updated>2025-06-29T10:07:19.440Z</updated>
         <summary type="html"><![CDATA[Boek een bijles met mij.]]></summary>
     </entry>
     <entry>
         <title type="html"><![CDATA[Blog]]></title>
         <id/>
         <link/>
-        <updated>2025-05-29T12:35:44.475Z</updated>
+        <updated>2025-06-29T10:07:19.440Z</updated>
         <summary type="html"><![CDATA[Handleidingen, scripts en andere handige notities.]]></summary>
     </entry>
     <entry>
@@ -141,63 +141,63 @@
         <title type="html"><![CDATA[Contact]]></title>
         <id/>
         <link/>
-        <updated>2025-05-29T12:35:44.476Z</updated>
+        <updated>2025-06-29T10:07:19.441Z</updated>
         <summary type="html"><![CDATA[Kom in contact met Steff.]]></summary>
     </entry>
     <entry>
         <title type="html"><![CDATA[Aarixa]]></title>
         <id/>
         <link/>
-        <updated>2025-05-29T12:35:44.477Z</updated>
+        <updated>2025-06-29T10:07:19.442Z</updated>
         <summary type="html"><![CDATA[Bij aariXa werkte ik met een brede technologiestack waaronder Angular, .NET Core, MS SQL, Azure en Windows Server, waarbij ik moderne frameworks combineerde met Microsoft-technologieën.]]></summary>
     </entry>
     <entry>
         <title type="html"><![CDATA[Bridgestone]]></title>
         <id/>
         <link/>
-        <updated>2025-05-29T12:35:44.477Z</updated>
+        <updated>2025-06-29T10:07:19.442Z</updated>
         <summary type="html"><![CDATA[Als consultant bij CTG werkte ik voor Bridgestone aan de aanpassing en uitbreiding van hun Dynamics 365 CRM-systeem.]]></summary>
     </entry>
     <entry>
         <title type="html"><![CDATA[Codefined]]></title>
         <id/>
         <link/>
-        <updated>2025-05-29T12:35:44.478Z</updated>
+        <updated>2025-06-29T10:07:19.442Z</updated>
         <summary type="html"><![CDATA[Bij Codefined specialiseerde ik me in het bouwen van op maat gemaakte .NET- en Angular-applicaties volgens de wensen van klanten.]]></summary>
     </entry>
     <entry>
         <title type="html"><![CDATA[Fuzed]]></title>
         <id/>
         <link/>
-        <updated>2025-05-29T12:35:44.479Z</updated>
+        <updated>2025-06-29T10:07:19.443Z</updated>
         <summary type="html"><![CDATA[Bij Fuzed (voorheen Codefined) help ik bij de ontwikkeling van een innovatief, cloudgebaseerd ERP-systeem voor de voedingsindustrie.]]></summary>
     </entry>
     <entry>
         <title type="html"><![CDATA[Intro]]></title>
         <id/>
         <link/>
-        <updated>2025-05-29T12:35:44.479Z</updated>
+        <updated>2025-06-29T10:07:19.444Z</updated>
         <summary type="html"><![CDATA[Ik ben een gepassioneerde developer met een sterke focus op web development en DevOps. Ik haal energie uit leren en werken met de nieuwste technologieën en frameworks om mijn expertise voortdurend uit te breiden.]]></summary>
     </entry>
     <entry>
         <title type="html"><![CDATA[Ervaring]]></title>
         <id/>
         <link/>
-        <updated>2025-05-29T12:35:44.479Z</updated>
+        <updated>2025-06-29T10:07:19.444Z</updated>
         <summary type="html"><![CDATA[Mijn werkervaring, behaalde certificaten en opleiding.]]></summary>
     </entry>
     <entry>
         <title type="html"><![CDATA[]]></title>
         <id/>
         <link/>
-        <updated>2025-05-29T12:35:44.480Z</updated>
+        <updated>2025-06-29T10:07:19.445Z</updated>
         <summary type="html"><![CDATA[I'm a passionate developer with a strong focus on web development and DevOps. I thrive on learning and working with the latest technologies and frameworks to continuously grow my expertise. I enjoy collaborating as part of a team in an agile environment, where I can contribute to building impactful solutions. I'm detail-oriented, committed to getting things right, and understand that even the smallest details can make a big difference.]]></summary>
     </entry>
     <entry>
         <title type="html"><![CDATA[Tutoring]]></title>
         <id/>
         <link/>
-        <updated>2025-05-29T12:35:44.480Z</updated>
+        <updated>2025-06-29T10:07:19.445Z</updated>
         <summary type="html"><![CDATA[Book a tutoring session with me.]]></summary>
     </entry>
 </feed>
