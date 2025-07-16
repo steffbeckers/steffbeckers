@@ -1,0 +1,1 @@
+import{ar as n,as as s,u as i,ai as t}from"./CbQLfb8Q.js";const a=n({}),e=n({socials:{twitter:"",github:"",mastodon:""},nuxtIcon:{aliases:{"dark-mode":"ph:moon-bold","light-mode":"ph:sun-bold"}}}),p={nuxt:{}},f=s(a,e,p);function u(){const o=i();return o._appConfig||(o._appConfig=t(f)),o._appConfig}export{u};

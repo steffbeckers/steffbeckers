@@ -1,1 +1,0 @@
-import{u as o,P as r,C as t,e as a,J as p,K as n,D as u}from"./B_RKX__Z.js";const _={__name:"DisqusCount",props:{...r.props,shortname:{type:String,default:()=>{var s,e;return(e=(s=o())==null?void 0:s.$disqusOptions)==null?void 0:e.shortname}}},setup(s){const e=s;return(c,i)=>(a(),t(u(r),p(n(e)),null,16))}};export{_};
