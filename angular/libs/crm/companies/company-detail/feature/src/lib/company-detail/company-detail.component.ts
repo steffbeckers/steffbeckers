@@ -6,7 +6,7 @@ import {
   inject,
   input,
 } from '@angular/core';
-import { CommonModule } from '@angular/common';
+
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { LocalizationModule as AbpLocalizationModule } from '@abp/ng.core';
 import { FormsModule } from '@angular/forms';
@@ -15,13 +15,7 @@ import { ButtonComponent } from '@steffbeckers/shared/ui/components';
 
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [
-    AbpLocalizationModule,
-    ButtonComponent,
-    CommonModule,
-    FormsModule,
-    RouterLink,
-  ],
+  imports: [AbpLocalizationModule, ButtonComponent, FormsModule, RouterLink],
   providers: [CompanyDetailStore],
   selector: 'sb-company-detail',
   styleUrl: './company-detail.component.scss',

@@ -1,6 +1,6 @@
 {
-  "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "name": "crm",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "prefix": "sb",
   "projectType": "application",
   "sourceRoot": "apps/crm/src",
@@ -68,7 +68,6 @@
       "configurations": {
         "development": {
           "buildTarget": "crm:build:development",
-          "host": "0.0.0.0",
           "port": 4200
         },
         "production": {
@@ -76,12 +75,14 @@
         }
       },
       "defaultConfiguration": "development",
-      "executor": "@angular-devkit/build-angular:dev-server"
+      "executor": "@angular-devkit/build-angular:dev-server",
+      "continuous": true
     },
     "test": {
       "executor": "@nx/jest:jest",
       "options": {
-        "jestConfig": "apps/crm/jest.config.ts"
+        "jestConfig": "apps/crm/jest.config.ts",
+        "tsConfig": "apps/crm/tsconfig.spec.json"
       },
       "outputs": ["{workspaceRoot}/coverage/{projectRoot}"]
     }

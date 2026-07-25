@@ -47,8 +47,8 @@ interface CompanyData {
 }
 
 export const UpdateCompanyStore = signalStore(
-  withForm<CompanyForm, CompanyData>(
-    fb => fb.group({
+  withForm<CompanyForm, CompanyData>((fb) =>
+    fb.group({
       name: ['', Validators.required],
       phoneNumber: '',
       email: '',
@@ -63,8 +63,8 @@ export const UpdateCompanyStore = signalStore(
   })),
   withProps(({ id }, companiesService = inject(CompaniesService)) => ({
     company: resource({
-      request: () => ({ id: id() }),
-      loader: ({ request }) => firstValueFrom(companiesService.get(request.id)),
+      params: () => ({ id: id() }),
+      loader: ({ params }) => firstValueFrom(companiesService.get(params.id)),
     }),
   })),
   withHooks(({ company, form }) => ({
@@ -85,13 +85,13 @@ export const UpdateCompanyStore = signalStore(
       });
     },
   })),
-  withMethods(({ submit, id }, companiesService = inject(CompaniesService)) => ({
-    async save(): Promise<void> {
-      await submit(async (data) => {
-        await firstValueFrom(
-          companiesService.update(id(), data)
-        );
-      });
-    },
-  }))
+  withMethods(
+    ({ submit, id }, companiesService = inject(CompaniesService)) => ({
+      async save(): Promise<void> {
+        await submit(async (data) => {
+          await firstValueFrom(companiesService.update(id(), data));
+        });
+      },
+    })
+  )
 );

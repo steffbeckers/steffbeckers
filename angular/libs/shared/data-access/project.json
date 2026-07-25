@@ -1,6 +1,6 @@
 {
-  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
   "name": "shared-data-access",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
   "prefix": "steffbeckers",
   "projectType": "library",
   "sourceRoot": "libs/shared/data-access/src",
@@ -13,7 +13,8 @@
     "test": {
       "executor": "@nx/jest:jest",
       "options": {
-        "jestConfig": "libs/shared/data-access/jest.config.ts"
+        "jestConfig": "libs/shared/data-access/jest.config.ts",
+        "tsConfig": "libs/shared/data-access/tsconfig.spec.json"
       },
       "outputs": ["{workspaceRoot}/coverage/{projectRoot}"]
     }

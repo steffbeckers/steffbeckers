@@ -3,14 +3,15 @@
   "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "libs/shared/utils/page-title/src",
   "prefix": "sb",
-  "tags": [],
   "projectType": "library",
+  "tags": [],
   "targets": {
     "test": {
       "executor": "@nx/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
       "options": {
-        "jestConfig": "libs/shared/utils/page-title/jest.config.ts"
+        "jestConfig": "libs/shared/utils/page-title/jest.config.ts",
+        "tsConfig": "libs/shared/utils/page-title/tsconfig.spec.json"
       }
     },
     "lint": {

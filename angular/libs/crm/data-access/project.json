@@ -1,6 +1,6 @@
 {
-  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
   "name": "crm-data-access",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
   "prefix": "steffbeckers",
   "projectType": "library",
   "sourceRoot": "libs/crm/data-access/src",
@@ -22,7 +22,8 @@
     "test": {
       "executor": "@nx/jest:jest",
       "options": {
-        "jestConfig": "libs/crm/data-access/jest.config.ts"
+        "jestConfig": "libs/crm/data-access/jest.config.ts",
+        "tsConfig": "libs/crm/data-access/tsconfig.spec.json"
       },
       "outputs": ["{workspaceRoot}/coverage/{projectRoot}"]
     }

@@ -1,6 +1,6 @@
 {
-  "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
   "name": "crm-companies-feature",
+  "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
   "prefix": "sb",
   "projectType": "library",
   "sourceRoot": "libs/crm/companies/feature/src",
@@ -13,7 +13,8 @@
     "test": {
       "executor": "@nx/jest:jest",
       "options": {
-        "jestConfig": "libs/crm/companies/feature/jest.config.ts"
+        "jestConfig": "libs/crm/companies/feature/jest.config.ts",
+        "tsConfig": "libs/crm/companies/feature/tsconfig.spec.json"
       },
       "outputs": ["{workspaceRoot}/coverage/{projectRoot}"]
     }
